@@ -42,7 +42,7 @@ class gscredit(guoshui):
         self.batchid = batchid
         self.companyid = companyid
         self.customerid = customerid
-        self.host, self.port, self.db ='main01','1433','ACTCenter'
+        self.host, self.port, self.db ='39.108.1.170', '3433', 'Platform'
 
     def login(self):
         try_times = 0
@@ -351,7 +351,7 @@ class gscredit(guoshui):
             jsoncookies = json.dumps(cookies, ensure_ascii=False)
             if "账号和密码不匹配" in jsoncookies:
                 self.logger.warn("customerid:{}账号和密码不匹配".format(self.customerid))
-                job_finish('main01', '1433', 'ACTCenter', self.batchid, self.companyid, self.customerid, '-2',
+                job_finish('39.108.1.170', '3433', 'Platform',  self.batchid, self.companyid, self.customerid, '-2',
                            "账号和密码不匹配")
                 return
             with open('cookies/{}cookies.json'.format(self.batchid), 'w') as f:  # 将login后的cookies提取出来
@@ -360,7 +360,7 @@ class gscredit(guoshui):
         except Exception as e:
             self.logger.warn(e)
             self.logger.warn("customerid:{}登陆失败".format(self.customerid))
-            job_finish('main01', '1433', 'ACTCenter', self.batchid, self.companyid, self.customerid, '-1', "登录失败")
+            job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1', "登录失败")
             return False
         try:
             dcap = dict(DesiredCapabilities.PHANTOMJS)
@@ -369,12 +369,12 @@ class gscredit(guoshui):
             dcap["phantomjs.page.settings.loadImages"] = True
             service_args = []
             service_args.append('--webdriver=szgs')
-            browser = webdriver.PhantomJS(
-                executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
-                desired_capabilities=dcap,service_args=service_args)
             # browser = webdriver.PhantomJS(
-            #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-            #     desired_capabilities=dcap)
+            #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
+            #     desired_capabilities=dcap,service_args=service_args)
+            browser = webdriver.PhantomJS(
+                executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+                desired_capabilities=dcap)
             browser.implicitly_wait(10)
             browser.viewportSize = {'width': 2200, 'height': 2200}
             browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
@@ -385,7 +385,7 @@ class gscredit(guoshui):
         except Exception as e:
             self.logger.warn(e)
             self.logger.warn("浏览器启动失败")
-            job_finish('main01', '1433', 'ACTCenter', self.batchid, self.companyid, self.customerid, '-1', "浏览器启动失败")
+            job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1', "浏览器启动失败")
             return False
         try:
             index_url = "http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html"
@@ -410,7 +410,7 @@ class gscredit(guoshui):
             self.logger.info("customerid:{}SFZ出错".format(self.customerid))
             self.logger.warn(e)
             self.logger.info("SFZ查询失败")
-            job_finish('main01', '1433', 'ACTCenter', self.batchid, self.companyid, self.customerid, '-1', "SFZ查询失败")
+            job_finish('39.108.1.170', '3433', 'Platform',  self.batchid, self.companyid, self.customerid, '-1', "SFZ查询失败")
             browser.quit()
             return False
         try:
@@ -422,7 +422,7 @@ class gscredit(guoshui):
             except Exception as e:
                 self.logger.info(e)
                 self.logger.info("国税基本查询失败")
-                job_finish('main01', '1433', 'ACTCenter', self.batchid, self.companyid, self.customerid, '-1',
+                job_finish('39.108.1.170', '3433', 'Platform',  self.batchid, self.companyid, self.customerid, '-1',
                            "gs查询失败")
                 browser.quit()
                 return False
@@ -452,18 +452,18 @@ class gscredit(guoshui):
             except Exception as e:
                 self.logger.info("数据库插入失败")
                 self.logger.warn(e)
-                job_finish('main01', '1433', 'ACTCenter', self.batchid, self.companyid, self.customerid, '-1',
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1',
                            "数据库插入失败")
                 browser.quit()
                 return False
-            job_finish('main01', '1433', 'ACTCenter', self.batchid, self.companyid, self.customerid, '1', '成功爬取')
+            job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1', '成功爬取')
             print("爬取完成")
             self.logger.info("customerid:{}全部爬取完成".format(self.customerid))
             browser.quit()
         except Exception as e:
             self.logger.warn(e)
             self.logger.warn("数据异常")
-            job_finish('main01', '1433', 'ACTCenter', self.batchid, self.companyid, self.customerid, '-1', "数据异常")
+            job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1', "数据异常")
             browser.quit()
 
 
@@ -488,7 +488,7 @@ class szcredit(object):
         self.companyid = companyid
         self.customerid = customerid
         self.query = [sID, cn]
-        self.host, self.port, self.db = 'main01','1433','ACTCenter'
+        self.host, self.port, self.db ='39.108.1.170', '3433', 'Platform'
 
     def insert_db(self, sql, params):
         conn = pymssql.connect(host=self.host, port=self.port, user='Python', password='pl,okmPL<OKM',

@@ -1,5 +1,22 @@
-[INFO  - 2018-02-03T08:03:22.004Z] GhostDriver - Main - running on port 44694
-[INFO  - 2018-02-03T08:03:23.034Z] Session [b4832b60-08b8-11e8-98e3-3facb18a6783] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-02-03T08:03:23.034Z] Session [b4832b60-08b8-11e8-98e3-3facb18a6783] - page.customHeaders:  - {}
-[INFO  - 2018-02-03T08:03:23.034Z] Session [b4832b60-08b8-11e8-98e3-3facb18a6783] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","phantomjs.page.settings.loadImages":true}
-[INFO  - 2018-02-03T08:03:23.034Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: b4832b60-08b8-11e8-98e3-3facb18a6783
+[INFO  - 2018-02-05T09:19:32.349Z] GhostDriver - Main - running on port 15413
+[INFO  - 2018-02-05T09:19:33.466Z] Session [ad876670-0a55-11e8-90c6-d9af2769bcfb] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-02-05T09:19:33.466Z] Session [ad876670-0a55-11e8-90c6-d9af2769bcfb] - page.customHeaders:  - {}
+[INFO  - 2018-02-05T09:19:33.466Z] Session [ad876670-0a55-11e8-90c6-d9af2769bcfb] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","phantomjs.page.settings.loadImages":true}
+[INFO  - 2018-02-05T09:19:33.466Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: ad876670-0a55-11e8-90c6-d9af2769bcfb
+[ERROR - 2018-02-05T09:19:55.206Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1517822395191
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-02-05T09:19:56.148Z] Session [ad876670-0a55-11e8-90c6-d9af2769bcfb] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-02-05T09:19:56.148Z] Session [ad876670-0a55-11e8-90c6-d9af2769bcfb] - page.customHeaders:  - {}
+[ERROR - 2018-02-05T09:19:56.941Z] Session [ad876670-0a55-11e8-90c6-d9af2769bcfb] - page.onError - msg: SyntaxError: Unexpected EOF
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-02-05T09:19:56.941Z] Session [ad876670-0a55-11e8-90c6-d9af2769bcfb] - page.onError - stack:
+  eval (https://dzswj.szds.gov.cn/dzswj/resources-2.47/pageJs/dzswj/qyyh/main/index_content.js:42)
+  (anonymous function) (https://dzswj.szds.gov.cn/dzswj/resources-2.47/pageJs/dzswj/qyyh/main/index_content.js:42)
+  j (https://dzswj.szds.gov.cn/dzswj/resources-2.47/commonBaseJs/jquery/jquery-1.11.3.min.js:3)
+  fireWith (https://dzswj.szds.gov.cn/dzswj/resources-2.47/commonBaseJs/jquery/jquery-1.11.3.min.js:3)
+  x (https://dzswj.szds.gov.cn/dzswj/resources-2.47/commonBaseJs/jquery/jquery-1.11.3.min.js:6)
+  b (https://dzswj.szds.gov.cn/dzswj/resources-2.47/commonBaseJs/jquery/jquery-1.11.3.min.js:6)
+
+  phantomjs://platform/console++.js:263 in error

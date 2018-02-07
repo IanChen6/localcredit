@@ -1070,12 +1070,27 @@ def run_test(user, pwd, batchid, companyid, customerid):
     try:
         szxinyong.clear()
         cd = gscredit(user, pwd, batchid, companyid, customerid, logger)
-        browser = cd.excute_spider()
+        try:
+            browser = cd.excute_spider()
+        except:
+            job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')
+            return 0
         cn = szxinyong['cn']
         sID = szxinyong['xydm']
         credit = szcredit(cn=cn, sID=sID, batchid=batchid, companyid=companyid, customerid=customerid, logger=logger)
         try:
             credit.ssdjp()
+            try:
+                credit.login()
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取')
+            except Exception as e:
+                logger.info("信用网爬取失败")
+                logger.info(e)
+                xinyong_dict = {"1": cn, "2": sID, "3": batchid, "4": companyid,
+                                "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
+                pjson = json.dumps(xinyong_dict, ensure_ascii=False)
+                redis_cli.lpush("xinyong", pjson)
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取失败')
         except Exception as e:
             logger.warn(e)
             logger.warn("工商网爬取失败")
@@ -1083,20 +1098,21 @@ def run_test(user, pwd, batchid, companyid, customerid):
                          "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
             pjson = json.dumps(goshng_dict,ensure_ascii=False)
             redis_cli.lpush("gongshang",pjson)
-        try:
-            credit.login()
-        except Exception as e:
-            logger.info("信用网爬取失败")
-            logger.info(e)
-            xinyong_dict = {"1": cn, "2": sID, "3": batchid, "4": companyid,
-                         "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
-            pjson = json.dumps(xinyong_dict,ensure_ascii=False)
-            redis_cli.lpush("xinyong",pjson)
-        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取')
+            try:
+                credit.login()
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取成功、工商网爬取失败')
+            except Exception as e:
+                logger.info("信用网爬取失败")
+                logger.info(e)
+                xinyong_dict = {"1": cn, "2": sID, "3": batchid, "4": companyid,
+                                "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
+                pjson = json.dumps(xinyong_dict, ensure_ascii=False)
+                redis_cli.lpush("xinyong", pjson)
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网、工商网爬取失败')
         logger.info("深圳企业信用网信息抓取完成")
     except Exception as e:
         logger.error(e)
-        # job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', 'error')
+        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '爬取失败')
     print('jobs[ts_id=%s] done' % batchid)
     result = True
     return result

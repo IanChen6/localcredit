@@ -18,6 +18,12 @@ import random
 import time
 import pymssql
 import os
+from urllib import parse
+from pdfminer.converter import PDFPageAggregator
+from pdfminer.layout import LTTextBoxHorizontal, LAParams
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfinterp import PDFTextExtractionNotAllowed
+from pdfminer.pdfparser import PDFParser, PDFDocument
 import redis
 import requests
 from lxml import etree
@@ -42,7 +48,7 @@ class gscredit(guoshui):
         self.batchid = batchid
         self.companyid = companyid
         self.customerid = customerid
-        self.host, self.port, self.db ='39.108.1.170', '3433', 'Platform'
+        self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
 
     def login(self):
         try_times = 0
@@ -251,6 +257,244 @@ class gscredit(guoshui):
         self.logger.info("customerid:{},json信息{}".format(self.customerid, jcsj))
         return jcsj
 
+    def gsndsb(self, browser, session):
+        niandu = {}
+        shenbaobiao = {}
+        content = browser.page_source
+        browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
+        browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(20170101)
+        browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+        # 所属日期
+        browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").send_keys(20160101)
+        browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(20161231)
+        browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+        time.sleep(2)
+        content = browser.page_source
+        root = etree.HTML(content)
+        select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
+        a = 1
+        for i in select[1:]:
+            shuizhong = i.xpath('.//text()')
+            a += 1
+            if "中华人民共和国企业所得税年度纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong:
+                browser.find_element_by_xpath(
+                    '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()
+                handle = browser.current_window_handle
+                handles = browser.window_handles
+                for c in handles:
+                    if c != handle:
+                        browser.close()
+                        browser.switch_to_window(c)
+                wait = ui.WebDriverWait(browser, 5)
+                wait.until(
+                    lambda browser: browser.find_element_by_css_selector("#mini-2"))
+                time.sleep(0.5)
+                browser.find_element_by_css_selector('#mini-2 span').click()
+                postdata = 'djxh=10114403000048444932&zsxmDm=10104&sbrqq=20170101&sbrqz=20171231&sssqq=20160101&sssqz=20161231&sbztDm='
+                headers = {'Host': 'dzswj.szgs.gov.cn',
+                           'Accept': 'application/json, text/javascript, */*; q=0.01',
+                           'Accept-Language': 'zh-CN,zh;q=0.8',
+                           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+                           'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html',
+                           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                           # 'x-form-id': 'mobile-signin-form',
+                           'X-Requested-With': 'XMLHttpRequest',
+                           'Origin': 'http://dzswj.szgs.gov.cn'}
+                res = session.post('http://dzswj.szgs.gov.cn/sb/sbcommon_querySbqkSbxxBySbztAndSbny.do', data=postdata,
+                                   headers=headers)
+                res_json = res.json()
+                qqwjm = res_json['data'][0]['qqwjm']
+                # 基础信息表
+                postdata = 'id=003&sbzlcode=10423&qqwjm=%s' % (qqwjm,)
+                headers = {'Host': 'dzswj.szgs.gov.cn',
+                           'Accept': 'application/json, text/javascript, */*; q=0.01',
+                           'Accept-Language': 'zh-CN,zh;q=0.8',
+                           'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+                           'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/003/suodeshuiA_year_003.html?preview?popup&_winid=w9695&_t=594645',
+                           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                           # 'x-form-id': 'mobile-signin-form',
+                           'X-Requested-With': 'XMLHttpRequest',
+                           'Origin': 'http://dzswj.szgs.gov.cn'}
+                jcfh = session.post('http://dzswj.szgs.gov.cn/api/viewSBPageInfo', data=postdata, headers=headers)
+                qykjzz = ['一般企业', '银行', '证劵', '保险', '担保', '小企业会计准则', '企业会计制度']
+                for i in qykjzz:
+                    if i in jcfh.text:
+                        print("企业会计准则为", i)
+                        niandu['企业会计准则为'] = i
+                        break
+                cbjj = ['先进先出法', '移动加权平均法', '月末一次加权平均法', '个别计价法', '毛利率法', '零售价法', '计划成本法', '其它']
+                for i in cbjj:
+                    if i in jcfh.text:
+                        print("存货计价方法为", i)
+                        niandu['存货计价方法'] = i
+                        break
+                # 股东信息
+                try:
+                    # browser.get('http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
+                    # browser.find_element_by_css_selector('#mini-2 span').click()
+                    browser.find_element_by_xpath('/html/body/div[2]/div[1]/table/tbody/tr[3]/td[3]/a[3]').click()
+                    time.sleep(2)
+                    content = browser.page_source
+                    iframe = browser.find_element_by_xpath(
+                        '//div[@class="mini-panel mini-window fixedWindowTop0"]//iframe')
+                    browser.switch_to_frame(iframe)
+                    content = browser.page_source
+                    root = etree.HTML(content)
+                    select = root.xpath('//table[@id="table_003"]/tbody/tr')
+                    a = 1
+                    gdhz = {}
+                    for i in select[28:33]:
+                        try:
+                            gd = i.xpath('./td[1]/input/@value')[0]
+                            zl = i.xpath('./td[2]/span/text()')[0]
+                            haoma = i.xpath('./td[4]/input/@value')[0]
+                            jjxz = i.xpath('./td[6]/span/text()')[0]
+                            tzbl = i.xpath('./td[7]/input/@value')[0]
+                            gj = i.xpath('./td[8]/span/text()')[0]
+                            xq = {}
+                            xq['姓名'] = gd
+                            xq['证件种类'] = zl
+                            xq['证件号码'] = haoma
+                            xq['经济性质'] = jjxz
+                            xq['投资比例'] = tzbl
+                            xq['国籍'] = gj
+                            gdhz[gd] = xq
+                        except:
+                            continue
+                    niandu['主要股东'] = gdhz
+                except Exception as e:
+                    print(e)
+                    pass
+                # 年度纳税申报表
+                shenbaobiao = {}
+                browser.get(
+                    'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
+                time.sleep(1)
+                browser.find_element_by_css_selector('#mini-2 span').click()
+                time.sleep(0.5)
+                browser.find_element_by_xpath('/html/body/div[2]/div[1]/table/tbody/tr[4]/td[3]/a[3]').click()
+                time.sleep(2)
+                iframe = browser.find_element_by_xpath('//div[@class="mini-panel mini-window fixedWindowTop0"]//iframe')
+                browser.switch_to_frame(iframe)
+                content = browser.page_source
+                root = etree.HTML(content)
+                select = root.xpath('//table[@id="table_004"]/tbody/tr')
+                a = 1
+                sb = {}
+                for i in select[1:]:
+                    try:
+                        lb = i.xpath('./td[2]/text()')[0]
+                        if lb != None:
+                            leibie = lb
+                        else:
+                            leibie = xq['类别']
+                        xiangmu = i.xpath('./td[3]/text()')[0]
+                        jiner = i.xpath('./td[4]/input/@value')[0]
+                        xq = {}
+                        xq['类别'] = leibie
+                        xq['项目'] = xiangmu
+                        xq['金额'] = xiangmu
+                        shenbaobiao["{}".format(a)] = xq
+                        a += 1
+                    except:
+                        leibie = leibie
+                        xiangmu = i.xpath('./td[3]/text()')[0]
+                        jiner = i.xpath('./td[4]/input/@value')[0]
+                        xq = {}
+                        xq['类别'] = leibie
+                        xq['项目'] = xiangmu
+                        xq['金额'] = xiangmu
+                        shenbaobiao["{}".format(a)] = xq
+                        a += 1
+                        continue
+                # 亏损明细表
+                try:
+                    kuisun = {}
+                    browser.get(
+                        'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
+                    time.sleep(1)
+                    browser.find_element_by_css_selector('#mini-2 span').click()
+                    time.sleep(0.5)
+                    content = browser.page_source
+                    browser.find_element_by_xpath('/html/body/div[2]/div[1]/table/tbody/tr[10]/td[3]/a[3]').click()
+                    time.sleep(2)
+                    iframe = browser.find_element_by_xpath(
+                        '//div[@class="mini-panel mini-window fixedWindowTop0"]//iframe')
+                    browser.switch_to_frame(iframe)
+                    content = browser.page_source
+                    root = etree.HTML(content)
+                    select = root.xpath('//table[@id="table_026"]/tbody/tr')
+                    a = 1
+                    for i in select[5:-2]:
+                        try:
+                            xiangmu = i.xpath('./td[2]/text()')[0]
+                            niandu = i.xpath('./td[3]/input/@value')[0]
+                            nstzhsd = i.xpath('./td[4]/input/@value')[0]
+                            xq = {}
+                            xq['项目'] = xiangmu
+                            xq['年度'] = niandu
+                            xq['纳税调整后所得'] = nstzhsd
+                            kuisun["{}".format(a)] = xq
+                            a += 1
+                        except:
+                            continue
+                    niandu['亏损明细'] = kuisun
+                except:
+                    print("无选填")
+        self.logger.info("customerid:{},json信息{}".format(self.customerid, niandu))
+        return niandu, shenbaobiao
+
+    def gsjdsb(self, browser, session):
+        niandu = {}
+        content = browser.page_source
+        browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
+        browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(20170101)
+        # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+        # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+        # 所属日期
+        browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").send_keys(20171001)
+        browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
+        browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(20171231)
+        browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+        time.sleep(2)
+        content = browser.page_source
+        root = etree.HTML(content)
+        select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
+        a = 1
+        for i in select[1:]:
+            shuizhong = i.xpath('.//text()')
+            a += 1
+            if "企业所得税（查账征收）月季度预缴纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong:
+                browser.find_element_by_xpath(
+                    '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()
+                wait = ui.WebDriverWait(browser, 5)
+                # wait.until(
+                #     lambda browser: browser.find_element_by_css_selector("#mini-2"))
+                # time.sleep(0.5)
+                # 股东信息
+                try:
+                    iframe = browser.find_element_by_xpath('//div[@id="mini-39"]//iframe')
+                    browser.switch_to_frame(iframe)
+                    content = browser.page_source
+                    root = etree.HTML(content)
+                    yiyujiao = root.xpath('//*[@id="table0"]/tbody/tr[14]/td[7]/span/text()')[0]
+                    ybutui = root.xpath('//*[@id="table0"]/tbody/tr[16]/td[7]/span/text()')[0]
+                    jibao = {}
+                    jibao["实际已预缴所得税额"] = yiyujiao
+                    jibao["应补(退)所得税额)"] = ybutui
+
+                except Exception as e:
+                    print(e)
+                    pass
+
     # 前往地税
     def qwdishui(self, browser):
         try_times = 0
@@ -270,8 +514,8 @@ class gscredit(guoshui):
                 print("无该弹窗")
             browser.find_element_by_xpath("//a[@href='javascript:gotoDs()']").click()
             try:
-                dsdjxx, dssfz = self.dishui(browser)
-                return dsdjxx, dssfz
+                dsdjxx, dssfz,tz3,tz4 = self.dishui(browser)
+                return dsdjxx, dssfz,tz3,tz4
             except Exception as e:
                 self.logger.warn(e)
                 pg = browser.page_source
@@ -281,6 +525,54 @@ class gscredit(guoshui):
                 try_times += 1
                 if try_times > 3:
                     return {}, {}
+
+    def parse_pdf(self, pdf_path):
+        fp = open(pdf_path, "rb")
+        # 用文件对象创建一个pdf文档分析器
+        parse_pdf = PDFParser(fp)
+        # 创建一个PDF文档
+        doc = PDFDocument()
+        parse_pdf.set_document(doc)
+        doc.set_parser(parse_pdf)
+        doc.initialize()
+        # 检测文档是否提供txt转换，不提供就忽略
+        if not doc.is_extractable:
+            raise PDFTextExtractionNotAllowed
+        else:
+            # 创建PDf资源管理器 来管理共享资源
+            rsrcmgr = PDFResourceManager()
+            # 创建一个PDF参数分析器
+            laparams = LAParams()
+            # 创建聚合器
+            device = PDFPageAggregator(rsrcmgr, laparams=laparams)
+            # 创建一个PDF页面解释器对象
+            interpreter = PDFPageInterpreter(rsrcmgr, device)
+            # 循环遍历列表，每次处理一页的内容
+            # doc.get_pages() 获取page列表
+            for page in doc.get_pages():
+                # 使用页面解释器来读取
+                interpreter.process_page(page)
+                # 使用聚合器获取内容
+                layout = device.get_result()
+                results_last = ""
+                # 这里layout是一个LTPage对象 里面存放着 这个page解析出的各种对象 一般包括LTTextBox, LTFigure, LTImage, LTTextBoxHorizontal 等等 想要获取文本就获得对象的text属性，
+                a = 0
+                for out in layout:
+                    # 判断是否含有get_text()方法，图片之类的就没有
+                    # if hasattr(out,"get_text"):
+                    a += 1
+                    if isinstance(out, LTTextBoxHorizontal):
+                        results = out.get_text()
+                        if a == 21:
+                            sz = results.strip("").split("\n")
+                            print(sz)
+                            break
+                break
+        pdf_dict = {}
+        pdf_dict['实际已预缴所得税额'] = sz[11]
+        pdf_dict['应补退所得税额'] = sz[13]
+        print(pdf_dict)
+        return pdf_dict
 
     def dishui(self, browser):
         self.logger.info("customerid:{}截取地税登记信息".format(self.customerid))
@@ -342,7 +634,93 @@ class gscredit(guoshui):
             for j in range(len(dssfztb)):
                 tiaomu[title[j]] = dssfztb[j]
             dssfz[dssfztb[0]] = tiaomu
-        return dsdjxx, dssfz
+
+        # 投资方信息
+        browser.switch_to_default_content()
+        browser.switch_to_frame('qyIndex')
+        browser.find_element_by_css_selector('#menu3_6_110103').click()
+        browser.switch_to_frame('qymain')
+        # wait.until(
+        #     lambda browser: browser.find_element_by_css_selector("#btn_query"))  # timeout
+        # browser.find_element_by_css_selector('#btn_query').click()
+        time.sleep(1)
+        content = browser.page_source
+        root = etree.HTML(content)
+        select = root.xpath('//table[@id="hdTab"]/tbody/tr')
+        tzfxx = {}
+        for i in select:
+            tiaomu = {}
+            tzftb = i.xpath('.//text()')
+            title = ['序号', '投资方', '国籍', '地址', '证件名称', '证件号码', '投资金额', '投资比例', '分配比例', '有效期起', '有效期止']
+            for j in range(len(tzftb)):
+                tiaomu[title[j]] = tzftb[j]
+            tzfxx[tzftb[0]] = tiaomu
+        # 企业所得税
+        browser.switch_to_default_content()
+        browser.switch_to_frame('qyIndex')
+        browser.find_element_by_css_selector('#menu2_13_110200').click()
+        time.sleep(2)
+        browser.find_element_by_css_selector('#menu3_15_110202').click()
+        browser.switch_to_frame('qymain')
+        wait.until(lambda browser: browser.find_element_by_css_selector('#sbqq'))
+        time.sleep(0.5)
+        browser.find_element_by_css_selector('#zsxmDm').find_element_by_xpath(
+            '//option[@value="10104"]').click()  # 选择企业所得税
+        sb_startd = browser.find_element_by_css_selector('#sbqq')
+        sb_startd.clear()
+        sb_startd.send_keys('2017-01-01')
+        # sb_endd = browser.find_element_by_css_selector('#sbqz')
+        # sb_endd.clear()
+        # sb_endd.send_keys('{}-{}-{}'.format(self.batchyear, self.batchmonth, self.days))
+        sb_startd = browser.find_element_by_css_selector('#skssqq')
+        sb_startd.clear()
+        sb_startd.send_keys('2017-10-01')
+        sb_endd = browser.find_element_by_css_selector('#skssqz')
+        sb_endd.clear()
+        sb_endd.send_keys('2017-12-31')
+        # time.sleep(1)
+        browser.find_element_by_css_selector('#query').click()
+        time.sleep(2)
+        self.logger.info("customerid:{}地税个人所得税信息查询".format(self.customerid))
+        # 表格信息爬取
+        content = browser.page_source
+        root = etree.HTML(content)
+        select = root.xpath('//table[@id="ysbjl_table"]/tbody/tr')
+        index = 0
+        pg = browser.page_source
+        if "没有" not in pg:
+            for i in select:
+                browser.find_element_by_xpath(
+                    '//table[@id="ysbjl_table"]/tbody/tr[@data-index="{}"]//input[@name="btSelectItem"]'.format(
+                        index)).click()
+                time.sleep(2)
+                browser.find_element_by_css_selector('#print').click()
+                # url=browser.find_element_by_name('sbbFormCj').get_attribute('action')
+                jsxx = i.xpath('.//text()')
+                pzxh = jsxx[0]
+                print(jsxx)
+                b_ck = browser.get_cookies()
+                ck = {}
+                for x in b_ck:
+                    ck[x['name']] = x['value']
+                post_url = parse.urljoin("https://dzswj.szds.gov.cn",
+                                         browser.find_element_by_name('sbbFormCj').get_attribute('action'))
+                post_data = {'SubmitTokenTokenId': '', 'yzpzxhArray': pzxh, 'btSelectItem': 'on'}
+                headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                           'Accept-Language': 'zh-CN,zh;q=0.8',
+                           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                           'X-Requested-With': 'XMLHttpRequest'}
+                resp = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
+                                     cookies=ck).text
+                pdf_content = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
+                                            cookies=ck).content
+
+                if "错误" not in resp:
+                    with open("申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
+                        w.write(pdf_content)
+                    pdf_dict = self.parse_pdf("申报表详情{}.pdf".format(self.user, pzxh))
+                index += 1
+        return dsdjxx, dssfz, tzfxx, pdf_dict
 
     def excute_spider(self):
         try:
@@ -351,7 +729,7 @@ class gscredit(guoshui):
             jsoncookies = json.dumps(cookies, ensure_ascii=False)
             if "账号和密码不匹配" in jsoncookies:
                 self.logger.warn("customerid:{}账号和密码不匹配".format(self.customerid))
-                job_finish('39.108.1.170', '3433', 'Platform',  self.batchid, self.companyid, self.customerid, '-2',
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
                            "账号和密码不匹配")
                 return
             with open('cookies/{}cookies.json'.format(self.batchid), 'w') as f:  # 将login后的cookies提取出来
@@ -371,7 +749,7 @@ class gscredit(guoshui):
             service_args.append('--webdriver=szgs')
             browser = webdriver.PhantomJS(
                 executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
-                desired_capabilities=dcap,service_args=service_args)
+                desired_capabilities=dcap, service_args=service_args)
             # browser = webdriver.PhantomJS(
             #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
             #     desired_capabilities=dcap)
@@ -385,7 +763,8 @@ class gscredit(guoshui):
         except Exception as e:
             self.logger.warn(e)
             self.logger.warn("浏览器启动失败")
-            job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1', "浏览器启动失败")
+            job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1',
+                       "浏览器启动失败")
             return False
         try:
             index_url = "http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html"
@@ -410,7 +789,8 @@ class gscredit(guoshui):
             self.logger.info("customerid:{}SFZ出错".format(self.customerid))
             self.logger.warn(e)
             self.logger.info("SFZ查询失败")
-            job_finish('39.108.1.170', '3433', 'Platform',  self.batchid, self.companyid, self.customerid, '-1', "SFZ查询失败")
+            job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1',
+                       "SFZ查询失败")
             browser.quit()
             return False
         try:
@@ -422,12 +802,36 @@ class gscredit(guoshui):
             except Exception as e:
                 self.logger.info(e)
                 self.logger.info("国税基本查询失败")
-                job_finish('39.108.1.170', '3433', 'Platform',  self.batchid, self.companyid, self.customerid, '-1',
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1',
                            "gs查询失败")
                 browser.quit()
                 return False
+            # 去年年度所得税申报结果
+            jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
+            browser.get(url=jk_url)
             try:
-                dsdjxx, dssfz = self.qwdishui(browser)
+                niandu, shenbaobiao = self.gsndsb(browser, session)
+            except Exception as e:
+                self.logger.info(e)
+                self.logger.info("年度所得税查询失败")
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1',
+                           "年度所得税失败")
+                browser.quit()
+                return False
+            # 上个季度所得税申报结果
+            jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
+            browser.get(url=jk_url)
+            try:
+                preseason = self.gsjdsb(browser, session)
+            except Exception as e:
+                self.logger.info(e)
+                self.logger.info("季度所得税查询失败")
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1',
+                           "季度所得税失败")
+                browser.quit()
+                return False
+            try:
+                dsdjxx, dssfz ,tzfxx, pdf_dict= self.qwdishui(browser)
             except Exception as e:
                 self.logger.warn(e)
                 self.logger.info("地税失败")
@@ -439,16 +843,25 @@ class gscredit(guoshui):
             dsshuifei = {}
             gsshuifei["国税税费种信息"] = sfzrd
             dsshuifei["地税税费种信息"] = dssfz
+            tuozan1 = niandu
+            tuozan2 = shenbaobiao
+            tuozan2['季度所得税']=preseason
+            tuozan3=tzfxx
+            tuozan4=pdf_dict
             gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
             dsxiangqing = json.dumps(dsxiangqing, ensure_ascii=False)
             dsshuifei = json.dumps(dsshuifei, ensure_ascii=False)
             gsxiangqing = json.dumps(gsxiangqing, ensure_ascii=False)
             gsshuifei = json.dumps(gsshuifei, ensure_ascii=False)
+            tuozan1=json.dumps(tuozan1,ensure_ascii=False)
+            tuozan2=json.dumps(tuozan2,ensure_ascii=False)
+            tuozan3=json.dumps(tuozan3,ensure_ascii=False)
+            tuozan4=json.dumps(tuozan4,ensure_ascii=False)
             params = (
-            self.batchid, "0", "0", self.companyid, self.customerid, gsxiangqing, gsshuifei, dsxiangqing, dsshuifei)
+                self.batchid, "0", "0", self.companyid, self.customerid, gsxiangqing, gsshuifei, dsxiangqing, dsshuifei,tuozan1,tuozan2,tuozan3,tuozan4)
             self.logger.info(params)
             try:
-                self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_Add]", params)
+                self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddV1]", params)
             except Exception as e:
                 self.logger.info("数据库插入失败")
                 self.logger.warn(e)
@@ -488,7 +901,7 @@ class szcredit(object):
         self.companyid = companyid
         self.customerid = customerid
         self.query = [sID, cn]
-        self.host, self.port, self.db ='39.108.1.170', '3433', 'Platform'
+        self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
 
     def insert_db(self, sql, params):
         conn = pymssql.connect(host=self.host, port=self.port, user='Python', password='pl,okmPL<OKM',
@@ -528,8 +941,8 @@ class szcredit(object):
                 post_data = {"a": 2, "b": base64_data}
                 post_data = json.dumps({"a": 2, "b": base64_data})
                 res = session.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data)
-                    # print(res.text)
-                    # f.close()
+                # print(res.text)
+                # f.close()
                 postdata = {'action': 'GetEntList',
                             'keyword': q,
                             'type': 'query',
@@ -1059,7 +1472,7 @@ class szcredit(object):
 
 
 logger = create_logger(path=os.path.dirname(sys.argv[0]).split('/')[-1])
-redis_cli = redis.StrictRedis(host='localhost', port=6379, decode_responses=True,db=1)
+redis_cli = redis.StrictRedis(host='localhost', port=6379, decode_responses=True, db=1)
 
 
 def run_test(user, pwd, batchid, companyid, customerid):
@@ -1095,9 +1508,9 @@ def run_test(user, pwd, batchid, companyid, customerid):
             logger.warn(e)
             logger.warn("工商网爬取失败")
             goshng_dict = {"1": cn, "2": sID, "3": batchid, "4": companyid,
-                         "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
-            pjson = json.dumps(goshng_dict,ensure_ascii=False)
-            redis_cli.lpush("gongshang",pjson)
+                           "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
+            pjson = json.dumps(goshng_dict, ensure_ascii=False)
+            redis_cli.lpush("gongshang", pjson)
             try:
                 credit.login()
                 job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取成功、工商网爬取失败')

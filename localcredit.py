@@ -49,6 +49,8 @@ class gscredit(guoshui):
         self.companyid = companyid
         self.customerid = customerid
         self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
+        if not os.path.exists('resource/{}'.format(user)):
+            os.mkdir('resource/{}'.format(user))
 
     def login(self):
         try_times = 0
@@ -574,6 +576,87 @@ class gscredit(guoshui):
         print(pdf_dict)
         return pdf_dict
 
+    def parse_ndpdf(self, pdf_path):
+        fp = open(pdf_path, "rb")
+        # 用文件对象创建一个pdf文档分析器
+        parse_pdf = PDFParser(fp)
+        # 创建一个PDF文档
+        doc = PDFDocument()
+        parse_pdf.set_document(doc)
+        doc.set_parser(parse_pdf)
+        doc.initialize()
+        # 检测文档是否提供txt转换，不提供就忽略
+        if not doc.is_extractable:
+            raise PDFTextExtractionNotAllowed
+        else:
+            # 创建PDf资源管理器 来管理共享资源
+            rsrcmgr = PDFResourceManager()
+            # 创建一个PDF参数分析器
+            laparams = LAParams()
+            # 创建聚合器
+            device = PDFPageAggregator(rsrcmgr, laparams=laparams)
+            # 创建一个PDF页面解释器对象
+            interpreter = PDFPageInterpreter(rsrcmgr, device)
+            # 循环遍历列表，每次处理一页的内容
+            # doc.get_pages() 获取page列表
+            for page in doc.get_pages():
+                # 使用页面解释器来读取
+                interpreter.process_page(page)
+                # 使用聚合器获取内容
+                layout = device.get_result()
+                results_last = ""
+                # 这里layout是一个LTPage对象 里面存放着 这个page解析出的各种对象 一般包括LTTextBox, LTFigure, LTImage, LTTextBoxHorizontal 等等 想要获取文本就获得对象的text属性，
+                a = 0
+                gd=[]
+                zj=[]
+                hm=[]
+                xingzhi=[]
+                bili=[]
+                guoji=[]
+
+                for out in layout:
+                    # 判断是否含有get_text()方法，图片之类的就没有
+                    # if hasattr(out,"get_text"):
+                    a += 1
+                    if isinstance(out, LTTextBoxHorizontal):
+                        results = out.get_text()
+                        if a ==1:
+                            if results!="A000000企业基础信息表\n" and results!="中华人民共和国企业所得税年度纳税申报表（A类）\n":
+                                break
+                        # if results_last == "301企业主要股东（前5位）\n股东名称\n":
+                        #     sz = results.strip("").split("\n")
+                        #     print(sz)
+                        #     gd.append(sz[0])
+                        # if results_last == "证件种类\n":
+                        #     sz = results.strip("").split("\n")
+                        #     print(sz)
+                        #     zj.append(sz[0])
+                        # if results_last == "证件号码\n":
+                        #     sz = results.strip("").split("\n")
+                        #     print(sz)
+                        #     hm.append(sz[0])
+                        # if results_last == "经济性质\n":
+                        #     sz = results.strip("").split("\n")
+                        #     print(sz)
+                        #     xingzhi.append(sz[0])
+                        # if results_last == "投资比例\n":
+                        #     sz = results.strip("").split("\n")
+                        #     print(sz)
+                        #     bili.append(sz[0])
+                        # if results_last == "国籍（注册地址）\n":
+                        #     sz = results.strip("").split("\n")
+                        #     print(sz)
+                        #     guoji.append(sz[0])
+                        if results_last=='金额\n' and a==11:
+                            sz = results.strip("").split("\n")
+                            print(sz)
+                            break
+                        results_last = results
+        pdf_dict = {}
+        pdf_dict['纳税调整后所得'] = sz[18]
+        print(pdf_dict)
+        return pdf_dict
+
     def dishui(self, browser):
         self.logger.info("customerid:{}截取地税登记信息".format(self.customerid))
         time.sleep(2)
@@ -655,7 +738,8 @@ class gscredit(guoshui):
             for j in range(len(tzftb)):
                 tiaomu[title[j]] = tzftb[j]
             tzfxx[tzftb[0]] = tiaomu
-        # 企业所得税
+        # 企业所得税(上个季度的季报)
+        pdf_dict={}
         browser.switch_to_default_content()
         browser.switch_to_frame('qyIndex')
         browser.find_element_by_css_selector('#menu2_13_110200').click()
@@ -681,7 +765,7 @@ class gscredit(guoshui):
         # time.sleep(1)
         browser.find_element_by_css_selector('#query').click()
         time.sleep(2)
-        self.logger.info("customerid:{}地税个人所得税信息查询".format(self.customerid))
+        self.logger.info("customerid:{}地税企业所得税（季报）信息查询".format(self.customerid))
         # 表格信息爬取
         content = browser.page_source
         root = etree.HTML(content)
@@ -716,10 +800,68 @@ class gscredit(guoshui):
                                             cookies=ck).content
 
                 if "错误" not in resp:
-                    with open("申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
+                    with open("resource/{}/申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
                         w.write(pdf_content)
-                    pdf_dict = self.parse_pdf("申报表详情{}.pdf".format(self.user, pzxh))
+                    pdf_dict = self.parse_pdf("resource/{}/申报表详情{}.pdf".format(self.user, pzxh))
                 index += 1
+        #企业所得税（年度）
+        ndpdf_dict={}
+        sb_startd = browser.find_element_by_css_selector('#sbqq')
+        sb_startd.clear()
+        sb_startd.send_keys('2017-01-01')
+        # sb_endd = browser.find_element_by_css_selector('#sbqz')
+        # sb_endd.clear()
+        # sb_endd.send_keys('{}-{}-{}'.format(self.batchyear, self.batchmonth, self.days))
+        sb_startd = browser.find_element_by_css_selector('#skssqq')
+        sb_startd.clear()
+        sb_startd.send_keys('2016-01-01')
+        sb_endd = browser.find_element_by_css_selector('#skssqz')
+        sb_endd.clear()
+        sb_endd.send_keys('2016-12-31')
+        # time.sleep(1)
+        browser.find_element_by_css_selector('#query').click()
+        time.sleep(2)
+        self.logger.info("customerid:{}地税企业所得税（年度）信息查询".format(self.customerid))
+        # 表格信息爬取
+        content = browser.page_source
+        root = etree.HTML(content)
+        select = root.xpath('//table[@id="ysbjl_table"]/tbody/tr')
+        index = 0
+        pg = browser.page_source
+        if "没有" not in pg:
+            for i in select:
+                browser.find_element_by_xpath(
+                    '//table[@id="ysbjl_table"]/tbody/tr[@data-index="{}"]//input[@name="btSelectItem"]'.format(
+                        index)).click()
+                time.sleep(2)
+                browser.find_element_by_css_selector('#print').click()
+                # url=browser.find_element_by_name('sbbFormCj').get_attribute('action')
+                jsxx = i.xpath('.//text()')
+                pzxh = jsxx[0]
+                print(jsxx)
+                b_ck = browser.get_cookies()
+                ck = {}
+                for x in b_ck:
+                    ck[x['name']] = x['value']
+                post_url = parse.urljoin("https://dzswj.szds.gov.cn",
+                                         browser.find_element_by_name('sbbFormCj').get_attribute('action'))
+                post_data = {'SubmitTokenTokenId': '', 'yzpzxhArray': pzxh, 'btSelectItem': 'on'}
+                headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                           'Accept-Language': 'zh-CN,zh;q=0.8',
+                           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                           'X-Requested-With': 'XMLHttpRequest'}
+                resp = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
+                                     cookies=ck).text
+                pdf_content = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
+                                            cookies=ck).content
+
+                if "错误" not in resp:
+                    with open("resource/{}/年度申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
+                        w.write(pdf_content)
+                    ndpdf_dict = self.parse_ndpdf("resource/{}/年度申报表详情{}.pdf".format(self.user, pzxh))
+                index += 1
+                break
+        pdf_dict["年度纳税申报表"]=ndpdf_dict
         return dsdjxx, dssfz, tzfxx, pdf_dict
 
     def excute_spider(self):
@@ -747,12 +889,12 @@ class gscredit(guoshui):
             dcap["phantomjs.page.settings.loadImages"] = True
             service_args = []
             service_args.append('--webdriver=szgs')
-            browser = webdriver.PhantomJS(
-                executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
-                desired_capabilities=dcap, service_args=service_args)
             # browser = webdriver.PhantomJS(
-            #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-            #     desired_capabilities=dcap)
+            #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
+            #     desired_capabilities=dcap, service_args=service_args)
+            browser = webdriver.PhantomJS(
+                executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+                desired_capabilities=dcap)
             browser.implicitly_wait(10)
             browser.viewportSize = {'width': 2200, 'height': 2200}
             browser.set_window_size(1400, 1600)  # Chrome无法使用这功能

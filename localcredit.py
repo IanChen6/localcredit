@@ -462,6 +462,7 @@ class gscredit(guoshui):
                 except:
                     print("无选填")
         self.logger.info("customerid:{},json信息{}".format(self.customerid, niandu))
+        shenbaobiao["年度纳税申报表"]=shenbaobiao
         return niandu, shenbaobiao
 
     def gsjdsb(self, browser, session):

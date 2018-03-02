@@ -428,29 +428,37 @@ class gscredit(guoshui):
                     browser.find_element_by_css_selector('#mini-2 span').click()
                     time.sleep(0.5)
                     content = browser.page_source
-                    browser.find_element_by_xpath('/html/body/div[2]/div[1]/table/tbody/tr[11]/td[3]/a[3]').click()
-                    time.sleep(2)
-                    iframe = browser.find_element_by_xpath(
-                        '//div[@class="mini-panel mini-window fixedWindowTop0"]//iframe')
-                    browser.switch_to_frame(iframe)
-                    content = browser.page_source
                     root = etree.HTML(content)
-                    select = root.xpath('//table[@id="table_026"]/tbody/tr')
-                    a = 1
-                    for i in select[5:-1]:
-                        try:
-                            xiangmu = i.xpath('./td[2]/text()')[0]
-                            nianfen = i.xpath('./td[3]/input/@value')[0]
-                            nstzhsd = i.xpath('./td[4]/input/@value')[0]
-                            xq = {}
-                            xq['项目'] = xiangmu
-                            xq['年度'] = nianfen
-                            xq['纳税调整后所得'] = nstzhsd
-                            kuisun["{}".format(a)] = xq
-                            a += 1
-                        except:
-                            continue
-                    niandu['亏损明细'] = kuisun
+                    select = root.xpath('//table[@class="content-table preview-table"]/tbody/tr')
+                    a = 10
+                    for i in select[9:]:
+                        biaodan = i.xpath('.//text()')
+                        if "A106000企业所得税弥补亏损明细表" in biaodan:
+                            browser.find_element_by_xpath(
+                                '/html/body/div[2]/div[1]/table/tbody/tr[{}]/td[3]/a[3]'.format(a)).click()
+                            time.sleep(2)
+                            iframe = browser.find_element_by_xpath(
+                                '//div[@class="mini-panel mini-window fixedWindowTop0"]//iframe')
+                            browser.switch_to_frame(iframe)
+                            content = browser.page_source
+                            root = etree.HTML(content)
+                            select = root.xpath('//table[@id="table_026"]/tbody/tr')
+                            a = 1
+                            for i in select[5:-1]:
+                                try:
+                                    xiangmu = i.xpath('./td[2]/text()')[0]
+                                    nianfen = i.xpath('./td[3]/input/@value')[0]
+                                    nstzhsd = i.xpath('./td[4]/input/@value')[0]
+                                    xq = {}
+                                    xq['项目'] = xiangmu
+                                    xq['年度'] = nianfen
+                                    xq['纳税调整后所得'] = nstzhsd
+                                    kuisun["{}".format(a)] = xq
+                                    a += 1
+                                except:
+                                    continue
+                            niandu['亏损明细'] = kuisun
+                        a+=1
                 except:
                     print("无选填")
         self.logger.info("customerid:{},json信息{}".format(self.customerid, niandu))
@@ -1017,7 +1025,6 @@ class gscredit(guoshui):
             niandu["上季度纳税情况"]=preseason
             tuozan1 = niandu
             tuozan2 = shenbaobiao
-            tuozan2['季度所得税']=preseason
             tuozan3=tzfxx
             tuozan4=pdf_dict
             gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
@@ -1029,6 +1036,10 @@ class gscredit(guoshui):
             tuozan2=json.dumps(tuozan2,ensure_ascii=False)
             tuozan3=json.dumps(tuozan3,ensure_ascii=False)
             tuozan4=json.dumps(tuozan4,ensure_ascii=False)
+            self.logger.info(tuozan1)
+            self.logger.info(tuozan2)
+            self.logger.info(tuozan3)
+            self.logger.info(tuozan4)
             params = (
                 self.batchid, "0", "0", self.companyid, self.customerid, gsxiangqing, gsshuifei, dsxiangqing, dsshuifei,tuozan1,tuozan2,tuozan3,tuozan4)
             self.logger.info(params)

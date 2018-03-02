@@ -1045,7 +1045,9 @@ class gscredit(guoshui):
                 self.batchid, "0", "0", self.companyid, self.customerid, gsxiangqing, gsshuifei, dsxiangqing, dsshuifei,tuozan1,tuozan2,tuozan3,tuozan4)
             self.logger.info(params)
             try:
+                self.logger.info("customerid:{}开始插入数据库".format(self.customerid))
                 self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddV1]", params)
+                self.logger.info("customerid:{}数据插入完成".format(self.customerid))
             except Exception as e:
                 self.logger.info("数据库插入失败")
                 self.logger.warn(e)

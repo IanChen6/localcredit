@@ -223,7 +223,10 @@ class gscredit(guoshui):
         nsrxx = {}
         for i in select[1:]:
             shuizhong = i.xpath('.//text()')
-            nsrxx[shuizhong[0]] = shuizhong[1]
+            if len(shuizhong)==2:
+                nsrxx[shuizhong[0]] = shuizhong[1]
+            elif len(shuizhong)==1:
+                nsrxx[shuizhong[0]] = ""
         jbxx = session.get("http://dzswj.szgs.gov.cn/gzcx/gzcxAction_queryNsrxxBynsrsbh.do").json()
         jbxx = jbxx["data"]
         data = jbxx[0]
@@ -347,6 +350,7 @@ class gscredit(guoshui):
                     browser.switch_to_frame(iframe)
                     content = browser.page_source
                     root = etree.HTML(content)
+                    sshymx=root.xpath('//*[@id="table_003"]/tbody/tr[5]/td[3]/span/text()')[0]
                     select = root.xpath('//table[@id="table_003"]/tbody/tr')
                     a = 1
                     gdhz = {}
@@ -369,6 +373,7 @@ class gscredit(guoshui):
                         except:
                             continue
                     niandu['主要股东'] = gdhz
+                    niandu['所属行业明细']=sshymx
                 except Exception as e:
                     print(e)
                     pass
@@ -423,7 +428,7 @@ class gscredit(guoshui):
                     browser.find_element_by_css_selector('#mini-2 span').click()
                     time.sleep(0.5)
                     content = browser.page_source
-                    browser.find_element_by_xpath('/html/body/div[2]/div[1]/table/tbody/tr[10]/td[3]/a[3]').click()
+                    browser.find_element_by_xpath('/html/body/div[2]/div[1]/table/tbody/tr[11]/td[3]/a[3]').click()
                     time.sleep(2)
                     iframe = browser.find_element_by_xpath(
                         '//div[@class="mini-panel mini-window fixedWindowTop0"]//iframe')
@@ -432,14 +437,14 @@ class gscredit(guoshui):
                     root = etree.HTML(content)
                     select = root.xpath('//table[@id="table_026"]/tbody/tr')
                     a = 1
-                    for i in select[5:-2]:
+                    for i in select[5:-1]:
                         try:
                             xiangmu = i.xpath('./td[2]/text()')[0]
-                            niandu = i.xpath('./td[3]/input/@value')[0]
+                            nianfen = i.xpath('./td[3]/input/@value')[0]
                             nstzhsd = i.xpath('./td[4]/input/@value')[0]
                             xq = {}
                             xq['项目'] = xiangmu
-                            xq['年度'] = niandu
+                            xq['年度'] = nianfen
                             xq['纳税调整后所得'] = nstzhsd
                             kuisun["{}".format(a)] = xq
                             a += 1
@@ -452,7 +457,6 @@ class gscredit(guoshui):
         return niandu, shenbaobiao
 
     def gsjdsb(self, browser, session):
-        niandu = {}
         content = browser.page_source
         browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
         browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
@@ -478,6 +482,7 @@ class gscredit(guoshui):
                 browser.find_element_by_xpath(
                     '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()
                 wait = ui.WebDriverWait(browser, 5)
+                time.sleep(2)
                 # wait.until(
                 #     lambda browser: browser.find_element_by_css_selector("#mini-2"))
                 # time.sleep(0.5)
@@ -489,12 +494,18 @@ class gscredit(guoshui):
                     root = etree.HTML(content)
                     yiyujiao = root.xpath('//*[@id="table0"]/tbody/tr[14]/td[7]/span/text()')[0]
                     ybutui = root.xpath('//*[@id="table0"]/tbody/tr[16]/td[7]/span/text()')[0]
+                    ynsds=root.xpath('//*[@id="table0"]/tbody/tr[12]/td[7]/span/text()')[0]
+                    jmsds=root.xpath('//*[@id="table0"]/tbody/tr[13]/td[7]/span/text()')[0]
                     jibao = {}
                     jibao["实际已预缴所得税额"] = yiyujiao
                     jibao["应补(退)所得税额)"] = ybutui
+                    jibao["应纳所得税额"] = ynsds
+                    jibao["减:减免所得税额（请填附表3）"] = jmsds
+                    return jibao
 
                 except Exception as e:
                     print(e)
+                    return {}
                     pass
 
     # 前往地税
@@ -526,7 +537,7 @@ class gscredit(guoshui):
                 browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html")
                 try_times += 1
                 if try_times > 3:
-                    return {}, {}
+                    return {}, {},{},{}
 
     def parse_pdf(self, pdf_path):
         fp = open(pdf_path, "rb")
@@ -621,7 +632,7 @@ class gscredit(guoshui):
                     if isinstance(out, LTTextBoxHorizontal):
                         results = out.get_text()
                         if a ==1:
-                            if results!="A000000企业基础信息表\n" and results!="中华人民共和国企业所得税年度纳税申报表（A类）\n":
+                            if results!="A106000企业所得税弥补亏损明细表\n" and results!="中华人民共和国企业所得税年度纳税申报表（A类）\n":
                                 break
                         # if results_last == "301企业主要股东（前5位）\n股东名称\n":
                         #     sz = results.strip("").split("\n")
@@ -651,9 +662,20 @@ class gscredit(guoshui):
                             sz = results.strip("").split("\n")
                             print(sz)
                             break
+                        if results_last=='前五年度\n前四年度\n前三年度\n前二年度\n前一年度\n本年度\n可结转以后年度弥补的亏损额合计\n':
+                            nf = results.strip("").split("\n")
+                            print(nf)
+                        if results_last=='2\n':
+                            nstzhsd = results.strip("").split("\n")
+                            print(nstzhsd)
+                            break
                         results_last = results
         pdf_dict = {}
         pdf_dict['纳税调整后所得'] = sz[18]
+        ksmx={}
+        for i in range(len(nf)-1):
+            ksmx[nf[i]]=nstzhsd[i]
+        pdf_dict["亏损明细"]=ksmx
         print(pdf_dict)
         return pdf_dict
 
@@ -739,7 +761,7 @@ class gscredit(guoshui):
                 tiaomu[title[j]] = tzftb[j]
             tzfxx[tzftb[0]] = tiaomu
         # 企业所得税(上个季度的季报)
-        pdf_dict={}
+        jdpdf_dict={}
         browser.switch_to_default_content()
         browser.switch_to_frame('qyIndex')
         browser.find_element_by_css_selector('#menu2_13_110200').click()
@@ -750,19 +772,20 @@ class gscredit(guoshui):
         time.sleep(0.5)
         browser.find_element_by_css_selector('#zsxmDm').find_element_by_xpath(
             '//option[@value="10104"]').click()  # 选择企业所得税
-        sb_startd = browser.find_element_by_css_selector('#sbqq')
-        sb_startd.clear()
-        sb_startd.send_keys('2017-01-01')
-        # sb_endd = browser.find_element_by_css_selector('#sbqz')
-        # sb_endd.clear()
-        # sb_endd.send_keys('{}-{}-{}'.format(self.batchyear, self.batchmonth, self.days))
         sb_startd = browser.find_element_by_css_selector('#skssqq')
         sb_startd.clear()
         sb_startd.send_keys('2017-10-01')
         sb_endd = browser.find_element_by_css_selector('#skssqz')
         sb_endd.clear()
         sb_endd.send_keys('2017-12-31')
-        # time.sleep(1)
+        sb_startd = browser.find_element_by_css_selector('#sbqq')
+        sb_startd.clear()
+        sb_startd.send_keys('2017-01-01')
+        sb_startd.click()
+        # sb_endd = browser.find_element_by_css_selector('#sbqz')
+        # sb_endd.clear()
+        # sb_endd.send_keys('{}-{}-{}'.format(self.batchyear, self.batchmonth, self.days))
+        time.sleep(1)
         browser.find_element_by_css_selector('#query').click()
         time.sleep(2)
         self.logger.info("customerid:{}地税企业所得税（季报）信息查询".format(self.customerid))
@@ -774,6 +797,9 @@ class gscredit(guoshui):
         pg = browser.page_source
         if "没有" not in pg:
             for i in select:
+                wait.until(lambda browser: browser.find_element_by_xpath(
+                    '//table[@id="ysbjl_table"]/tbody/tr[@data-index="{}"]//input[@name="btSelectItem"]'.format(
+                        index)))
                 browser.find_element_by_xpath(
                     '//table[@id="ysbjl_table"]/tbody/tr[@data-index="{}"]//input[@name="btSelectItem"]'.format(
                         index)).click()
@@ -802,22 +828,23 @@ class gscredit(guoshui):
                 if "错误" not in resp:
                     with open("resource/{}/申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
                         w.write(pdf_content)
-                    pdf_dict = self.parse_pdf("resource/{}/申报表详情{}.pdf".format(self.user, pzxh))
+                    jdpdf_dict = self.parse_pdf("resource/{}/申报表详情{}.pdf".format(self.user, pzxh))
                 index += 1
         #企业所得税（年度）
         ndpdf_dict={}
-        sb_startd = browser.find_element_by_css_selector('#sbqq')
-        sb_startd.clear()
-        sb_startd.send_keys('2017-01-01')
-        # sb_endd = browser.find_element_by_css_selector('#sbqz')
-        # sb_endd.clear()
-        # sb_endd.send_keys('{}-{}-{}'.format(self.batchyear, self.batchmonth, self.days))
         sb_startd = browser.find_element_by_css_selector('#skssqq')
         sb_startd.clear()
         sb_startd.send_keys('2016-01-01')
         sb_endd = browser.find_element_by_css_selector('#skssqz')
         sb_endd.clear()
         sb_endd.send_keys('2016-12-31')
+        sb_startd = browser.find_element_by_css_selector('#sbqq')
+        sb_startd.clear()
+        sb_startd.send_keys('2017-01-01')
+        sb_startd.click()
+        # sb_endd = browser.find_element_by_css_selector('#sbqz')
+        # sb_endd.clear()
+        # sb_endd.send_keys('{}-{}-{}'.format(self.batchyear, self.batchmonth, self.days))
         # time.sleep(1)
         browser.find_element_by_css_selector('#query').click()
         time.sleep(2)
@@ -861,8 +888,10 @@ class gscredit(guoshui):
                     ndpdf_dict = self.parse_ndpdf("resource/{}/年度申报表详情{}.pdf".format(self.user, pzxh))
                 index += 1
                 break
-        pdf_dict["年度纳税申报表"]=ndpdf_dict
-        return dsdjxx, dssfz, tzfxx, pdf_dict
+        ds_pdf={}
+        ds_pdf["年度纳税申报表"]=ndpdf_dict
+        ds_pdf['季度纳税申报表']=jdpdf_dict
+        return dsdjxx, dssfz, tzfxx, ds_pdf
 
     def excute_spider(self):
         try:
@@ -985,6 +1014,7 @@ class gscredit(guoshui):
             dsshuifei = {}
             gsshuifei["国税税费种信息"] = sfzrd
             dsshuifei["地税税费种信息"] = dssfz
+            niandu["上季度纳税情况"]=preseason
             tuozan1 = niandu
             tuozan2 = shenbaobiao
             tuozan2['季度所得税']=preseason

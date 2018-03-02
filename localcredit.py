@@ -390,35 +390,37 @@ class gscredit(guoshui):
                 browser.switch_to_frame(iframe)
                 content = browser.page_source
                 root = etree.HTML(content)
-                select = root.xpath('//table[@id="table_004"]/tbody/tr')
-                a = 1
-                sb = {}
-                for i in select[1:]:
-                    try:
-                        lb = i.xpath('./td[2]/text()')[0]
-                        if lb != None:
-                            leibie = lb
-                        else:
-                            leibie = xq['类别']
-                        xiangmu = i.xpath('./td[3]/text()')[0]
-                        jiner = i.xpath('./td[4]/input/@value')[0]
-                        xq = {}
-                        xq['类别'] = leibie
-                        xq['项目'] = xiangmu
-                        xq['金额'] = xiangmu
-                        shenbaobiao["{}".format(a)] = xq
-                        a += 1
-                    except:
-                        leibie = leibie
-                        xiangmu = i.xpath('./td[3]/text()')[0]
-                        jiner = i.xpath('./td[4]/input/@value')[0]
-                        xq = {}
-                        xq['类别'] = leibie
-                        xq['项目'] = xiangmu
-                        xq['金额'] = xiangmu
-                        shenbaobiao["{}".format(a)] = xq
-                        a += 1
-                        continue
+                # select = root.xpath('//table[@id="table_004"]/tbody/tr')
+                gstzns=root.xpath('//*[@id="table_004"]/tbody/tr[20]/td[4]/input/@value')[0]
+                shenbaobiao['国税调整纳税后所得']=gstzns
+                # a = 1
+                # sb = {}
+                # for i in select[1:]:
+                #     try:
+                #         lb = i.xpath('./td[2]/text()')[0]
+                #         if lb != None:
+                #             leibie = lb
+                #         else:
+                #             leibie = xq['类别']
+                #         xiangmu = i.xpath('./td[3]/text()')[0]
+                #         jiner = i.xpath('./td[4]/input/@value')[0]
+                #         xq = {}
+                #         xq['类别'] = leibie
+                #         xq['项目'] = xiangmu
+                #         xq['金额'] = xiangmu
+                #         shenbaobiao["{}".format(a)] = xq
+                #         a += 1
+                #     except:
+                #         leibie = leibie
+                #         xiangmu = i.xpath('./td[3]/text()')[0]
+                #         jiner = i.xpath('./td[4]/input/@value')[0]
+                #         xq = {}
+                #         xq['类别'] = leibie
+                #         xq['项目'] = xiangmu
+                #         xq['金额'] = xiangmu
+                #         shenbaobiao["{}".format(a)] = xq
+                #         a += 1
+                #         continue
                 # 亏损明细表
                 try:
                     kuisun = {}

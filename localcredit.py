@@ -462,9 +462,9 @@ class gscredit(guoshui):
                 except:
                     print("无选填")
         self.logger.info("customerid:{},json信息{}".format(self.customerid, niandu))
-        ndsb={}
-        ndsb["年度纳税申报表"]=shenbaobiao
-        return niandu, ndsb
+        # ndsb={}
+        # ndsb["年度纳税申报表"]=shenbaobiao
+        return niandu, shenbaobiao
 
     def gsjdsb(self, browser, session):
         content = browser.page_source

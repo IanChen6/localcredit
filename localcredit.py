@@ -596,6 +596,8 @@ class gscredit(guoshui):
         pdf_dict = {}
         pdf_dict['实际已预缴所得税额'] = sz[11]
         pdf_dict['应补退所得税额'] = sz[13]
+        pdf_dict['应纳所得税额']=sz[9]
+        pdf_dict['减:减免所得税额（请填附表3）']=sz[10]
         print(pdf_dict)
         return pdf_dict
 

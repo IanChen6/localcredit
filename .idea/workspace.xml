@@ -17,7 +17,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/xygs$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517209116086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517822356585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1519987215192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520218919691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -59,11 +59,11 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="940" column="64" lean-forward="true" selection-start-line="940" selection-start-column="64" selection-end-line="940" selection-end-column="64" />
+            <state relative-caret-position="529">
+              <caret line="939" column="42" lean-forward="true" selection-start-line="939" selection-start-column="42" selection-end-line="939" selection-end-column="42" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
-                <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+                <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
               </folding>
             </state>
           </provider>
@@ -72,7 +72,7 @@
       <file leaf-file-name="localcreditlog.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
+            <state relative-caret-position="-1099">
               <caret line="732" column="73" lean-forward="false" selection-start-line="732" selection-start-column="73" selection-end-line="732" selection-end-column="73" />
               <folding />
             </state>
@@ -100,8 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>inse</find>
-      <find>信用网</find>
       <find>shuifei</find>
       <find>head</find>
       <find>content = browser.page_source</find>
@@ -130,6 +128,8 @@
       <find>resource/{}</find>
       <find>shenbaobiao</find>
       <find>phanto</find>
+      <find>credit</find>
+      <find>应纳</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,6 +191,12 @@
               <item name="localcredit" type="b2602c69:ProjectViewProjectNode" />
               <item name="localcredit" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="localcredit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="localcredit" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="440300081895167" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -322,57 +328,57 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1656</line>
+          <line>1658</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1478</line>
+          <line>1480</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1591</line>
+          <line>1593</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1511</line>
+          <line>1513</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1469</line>
+          <line>1471</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1579</line>
+          <line>1581</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>693</line>
+          <line>695</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1046</line>
+          <line>1048</line>
           <option name="timeStamp" value="77" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>899</line>
+          <line>901</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>601</line>
+          <line>603</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>684</line>
+          <line>686</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -402,27 +408,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>689</line>
+          <line>691</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>809</line>
+          <line>811</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>788</line>
+          <line>790</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>845</line>
+          <line>847</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>869</line>
+          <line>871</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -452,7 +458,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1021</line>
+          <line>1023</line>
           <option name="timeStamp" value="134" />
         </line-breakpoint>
       </breakpoints>
@@ -492,7 +498,7 @@
           <caret line="850" column="42" lean-forward="true" selection-start-line="850" selection-start-column="42" selection-end-line="850" selection-end-column="42" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -519,7 +525,7 @@
           <caret line="290" column="35" lean-forward="true" selection-start-line="290" selection-start-column="35" selection-end-line="290" selection-end-column="35" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -564,7 +570,7 @@
           <caret line="346" column="8" lean-forward="false" selection-start-line="346" selection-start-column="8" selection-end-line="346" selection-end-column="8" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -599,7 +605,7 @@
           <caret line="274" column="0" lean-forward="false" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -634,7 +640,7 @@
           <caret line="243" column="54" lean-forward="true" selection-start-line="243" selection-start-column="54" selection-end-line="243" selection-end-column="54" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -661,7 +667,7 @@
           <caret line="254" column="44" lean-forward="true" selection-start-line="254" selection-start-column="44" selection-end-line="254" selection-end-column="44" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -697,7 +703,7 @@
           <caret line="256" column="66" lean-forward="true" selection-start-line="256" selection-start-column="66" selection-end-line="256" selection-end-column="66" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -742,7 +748,7 @@
           <caret line="689" column="0" lean-forward="true" selection-start-line="689" selection-start-column="0" selection-end-line="689" selection-end-column="0" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -798,7 +804,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
+        <state relative-caret-position="-1099">
           <caret line="732" column="73" lean-forward="false" selection-start-line="732" selection-start-column="73" selection-end-line="732" selection-end-column="73" />
           <folding />
         </state>
@@ -806,11 +812,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="940" column="64" lean-forward="true" selection-start-line="940" selection-start-column="64" selection-end-line="940" selection-end-column="64" />
+        <state relative-caret-position="529">
+          <caret line="939" column="42" lean-forward="true" selection-start-line="939" selection-start-column="42" selection-end-line="939" selection-end-column="42" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1519987323392" expanded="true" signature="46192:46384" ph="..." />
+            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a278a7-1197-45b6-937e-16e401451265" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cookies/5590cookies.json" afterPath="$PROJECT_DIR$/cookies/5590cookies.json" />
       <change beforePath="$PROJECT_DIR$/ghostdriver.log" afterPath="$PROJECT_DIR$/ghostdriver.log" />
       <change beforePath="$PROJECT_DIR$/localcredit.py" afterPath="$PROJECT_DIR$/localcredit.py" />
       <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="$PROJECT_DIR$/logs/localcreditlog.log" />
+      <change beforePath="$PROJECT_DIR$/resource/440300081895167/年度申报表详情10024417000014709743.pdf" afterPath="$PROJECT_DIR$/resource/440300081895167/年度申报表详情10024417000014709743.pdf" />
+      <change beforePath="$PROJECT_DIR$/resource/440300081895167/申报表详情10024418000003358200.pdf" afterPath="$PROJECT_DIR$/resource/440300081895167/申报表详情10024418000003358200.pdf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +20,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/xygs$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517209116086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517822356585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520218919691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520230224541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -49,7 +52,7 @@
       <file leaf-file-name="get_db.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/get_db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="844">
+            <state relative-caret-position="912">
               <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
@@ -63,7 +66,6 @@
               <caret line="939" column="42" lean-forward="true" selection-start-line="939" selection-start-column="42" selection-end-line="939" selection-end-column="42" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
-                <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
               </folding>
             </state>
           </provider>
@@ -72,8 +74,8 @@
       <file leaf-file-name="localcreditlog.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1099">
-              <caret line="732" column="73" lean-forward="false" selection-start-line="732" selection-start-column="73" selection-end-line="732" selection-end-column="73" />
+            <state relative-caret-position="612">
+              <caret line="867" column="135" lean-forward="false" selection-start-line="867" selection-start-column="135" selection-end-line="867" selection-end-column="135" />
               <folding />
             </state>
           </provider>
@@ -82,7 +84,7 @@
       <file leaf-file-name="guoshui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/guoshui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2302">
+            <state relative-caret-position="13889">
               <caret line="735" column="50" lean-forward="false" selection-start-line="735" selection-start-column="39" selection-end-line="735" selection-end-column="50" />
               <folding />
             </state>
@@ -119,7 +121,6 @@
       <find>tz</find>
       <find>tzfxx</find>
       <find>niandu</find>
-      <find>上季度纳税情况</find>
       <find>季度所得</find>
       <find>上季度</find>
       <find>季度所得税</find>
@@ -127,8 +128,9 @@
       <find>phan</find>
       <find>resource/{}</find>
       <find>shenbaobiao</find>
-      <find>phanto</find>
       <find>credit</find>
+      <find>phanto</find>
+      <find>上季度纳税情况</find>
       <find>应纳</find>
     </findStrings>
   </component>
@@ -173,8 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,15 +198,23 @@
               <item name="resource" type="462c0819:PsiDirectoryNode" />
               <item name="440300081895167" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="localcredit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="localcredit" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="440300754285743" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xygs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -301,7 +309,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17643923" sideWeight="0.49616858" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17803837" sideWeight="0.49616858" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -498,7 +506,6 @@
           <caret line="850" column="42" lean-forward="true" selection-start-line="850" selection-start-column="42" selection-end-line="850" selection-end-column="42" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -525,7 +532,6 @@
           <caret line="290" column="35" lean-forward="true" selection-start-line="290" selection-start-column="35" selection-end-line="290" selection-end-column="35" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -570,7 +576,6 @@
           <caret line="346" column="8" lean-forward="false" selection-start-line="346" selection-start-column="8" selection-end-line="346" selection-end-column="8" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -605,7 +610,6 @@
           <caret line="274" column="0" lean-forward="false" selection-start-line="274" selection-start-column="0" selection-end-line="274" selection-end-column="0" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -640,7 +644,6 @@
           <caret line="243" column="54" lean-forward="true" selection-start-line="243" selection-start-column="54" selection-end-line="243" selection-end-column="54" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -667,7 +670,6 @@
           <caret line="254" column="44" lean-forward="true" selection-start-line="254" selection-start-column="44" selection-end-line="254" selection-end-column="44" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -703,7 +705,6 @@
           <caret line="256" column="66" lean-forward="true" selection-start-line="256" selection-start-column="66" selection-end-line="256" selection-end-column="66" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -748,7 +749,6 @@
           <caret line="689" column="0" lean-forward="true" selection-start-line="689" selection-start-column="0" selection-end-line="689" selection-end-column="0" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>
@@ -774,13 +774,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="1526" column="0" lean-forward="false" selection-start-line="1526" selection-start-column="0" selection-end-line="1526" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/get_db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="844">
+        <state relative-caret-position="912">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
@@ -796,7 +795,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/guoshui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2302">
+        <state relative-caret-position="13889">
           <caret line="735" column="50" lean-forward="false" selection-start-line="735" selection-start-column="39" selection-end-line="735" selection-end-column="50" />
           <folding />
         </state>
@@ -804,8 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1099">
-          <caret line="732" column="73" lean-forward="false" selection-start-line="732" selection-start-column="73" selection-end-line="732" selection-end-column="73" />
+        <state relative-caret-position="612">
+          <caret line="867" column="135" lean-forward="false" selection-start-line="867" selection-start-column="135" selection-end-line="867" selection-end-column="135" />
           <folding />
         </state>
       </provider>
@@ -816,7 +815,6 @@
           <caret line="939" column="42" lean-forward="true" selection-start-line="939" selection-start-column="42" selection-end-line="939" selection-end-column="42" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
-            <marker date="1520230048832" expanded="true" signature="46268:46460" ph="..." />
           </folding>
         </state>
       </provider>

@@ -510,7 +510,7 @@ class gscredit(guoshui):
                     jmsds=root.xpath('//*[@id="table0"]/tbody/tr[13]/td[7]/span/text()')[0]
                     jibao = {}
                     jibao["实际已预缴所得税额"] = yiyujiao
-                    jibao["应补(退)所得税额)"] = ybutui
+                    jibao["应补(退)所得税额"] = ybutui
                     jibao["应纳所得税额"] = ynsds
                     jibao["减:减免所得税额（请填附表3）"] = jmsds
                     return jibao
@@ -595,7 +595,7 @@ class gscredit(guoshui):
                 break
         pdf_dict = {}
         pdf_dict['实际已预缴所得税额'] = sz[11]
-        pdf_dict['应补退所得税额'] = sz[13]
+        pdf_dict['应补(退)所得税额'] = sz[13]
         pdf_dict['应纳所得税额']=sz[9]
         pdf_dict['减:减免所得税额（请填附表3）']=sz[10]
         print(pdf_dict)

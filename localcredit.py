@@ -351,7 +351,7 @@ class gscredit(guoshui):
                     content = browser.page_source
                     root = etree.HTML(content)
                     sshymx=root.xpath('//*[@id="table_003"]/tbody/tr[5]/td[3]/span/text()')[0]
-                    cyrs=root.xpath('//*[@id="table_003"]/tbody/tr[6]/td[3]/input/text()')[0]
+                    cyrs=root.xpath('//*[@id="table_003"]/tbody/tr[6]/td[3]/input/@value')[0]
                     select = root.xpath('//table[@id="table_003"]/tbody/tr')
                     a = 1
                     gdhz = {}

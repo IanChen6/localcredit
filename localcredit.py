@@ -351,6 +351,7 @@ class gscredit(guoshui):
                     content = browser.page_source
                     root = etree.HTML(content)
                     sshymx=root.xpath('//*[@id="table_003"]/tbody/tr[5]/td[3]/span/text()')[0]
+                    cyrs=root.xpath('//*[@id="table_003"]/tbody/tr[6]/td[3]/input/text()')[0]
                     select = root.xpath('//table[@id="table_003"]/tbody/tr')
                     a = 1
                     gdhz = {}
@@ -374,6 +375,7 @@ class gscredit(guoshui):
                             continue
                     niandu['主要股东'] = gdhz
                     niandu['所属行业明细']=sshymx
+                    niandu['从业人数']=cyrs
                 except Exception as e:
                     print(e)
                     pass
@@ -646,32 +648,17 @@ class gscredit(guoshui):
                     if isinstance(out, LTTextBoxHorizontal):
                         results = out.get_text()
                         if a ==1:
-                            if results!="A106000企业所得税弥补亏损明细表\n" and results!="中华人民共和国企业所得税年度纳税申报表（A类）\n":
+                            if results!="A106000企业所得税弥补亏损明细表\n" and results!="中华人民共和国企业所得税年度纳税申报表（A类）\n" and results!="A000000企业基础信息表\n":
                                 break
+                            else:
+                                biaoge=results
                         # if results_last == "301企业主要股东（前5位）\n股东名称\n":
                         #     sz = results.strip("").split("\n")
                         #     print(sz)
                         #     gd.append(sz[0])
-                        # if results_last == "证件种类\n":
-                        #     sz = results.strip("").split("\n")
-                        #     print(sz)
-                        #     zj.append(sz[0])
-                        # if results_last == "证件号码\n":
-                        #     sz = results.strip("").split("\n")
-                        #     print(sz)
-                        #     hm.append(sz[0])
-                        # if results_last == "经济性质\n":
-                        #     sz = results.strip("").split("\n")
-                        #     print(sz)
-                        #     xingzhi.append(sz[0])
-                        # if results_last == "投资比例\n":
-                        #     sz = results.strip("").split("\n")
-                        #     print(sz)
-                        #     bili.append(sz[0])
-                        # if results_last == "国籍（注册地址）\n":
-                        #     sz = results.strip("").split("\n")
-                        #     print(sz)
-                        #     guoji.append(sz[0])
+                        if biaoge=="A000000企业基础信息表\n" and a==10:
+                            jcxx = results.strip("").split("\n")
+                            break
                         if results_last=='金额\n' and a==11:
                             sz = results.strip("").split("\n")
                             print(sz)
@@ -685,6 +672,12 @@ class gscredit(guoshui):
                             break
                         results_last = results
         pdf_dict = {}
+        try:
+            pdf_dict['所属行业明细'] = jcxx[2]
+            pdf_dict['从业人数'] = jcxx[3]
+        except:
+            pdf_dict['所属行业明细'] = ""
+            pdf_dict['从业人数'] = ""
         pdf_dict['纳税调整后所得'] = sz[18]
         ksmx={}
         for i in range(len(nf)-1):

@@ -685,7 +685,6 @@ class gscredit(guoshui):
         pdf_dict["亏损明细"]=ksmx
         print(pdf_dict)
         return pdf_dict
-
     def dishui(self, browser):
         self.logger.info("customerid:{}截取地税登记信息".format(self.customerid))
         time.sleep(2)
@@ -1095,8 +1094,11 @@ class szcredit(object):
             raise Exception("数据库连接失败")
         # cur.callproc('[dbo].[Python_Serivce_DSTaxApplyShenZhen_Add]', (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
         len(params)
+        self.logger.info(params)
         cur.callproc(sql, params)
+        self.logger.info("调用procedure成功")
         conn.commit()
+        self.logger.info("提交成功")
         cur.close()
 
     def login(self):
@@ -1151,10 +1153,29 @@ class szcredit(object):
                     print(result_dict["RecordID"])  # 获取ID
                     detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(
                         result_dict["RecordID"])
-                    detail = session.get(url=detai_url, headers=self.headers, timeout=30)
-                    detail.encoding = detail.apparent_encoding
-                    root = etree.HTML(detail.text)  # 将request.content 转化为 Element
+                    # detail = session.get(url=detai_url, headers=self.headers, timeout=30)
+                    # detail.encoding = detail.apparent_encoding
+                    # root = etree.HTML(detail.text)  # 将request.content 转化为 Element
+                    dcap = dict(DesiredCapabilities.PHANTOMJS)
+                    dcap["phantomjs.page.settings.userAgent"] = (
+                        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
+                    dcap["phantomjs.page.settings.loadImages"] = True
+                    service_args = []
+                    service_args.append('--webdriver=szgs')
+                    # browser = webdriver.PhantomJS(
+                    #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
+                    #     desired_capabilities=dcap, service_args=service_args)
+                    browser = webdriver.PhantomJS(
+                        executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+                        desired_capabilities=dcap)
+                    browser.implicitly_wait(10)
+                    browser.viewportSize = {'width': 2200, 'height': 2200}
+                    browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
+                    browser.get(detai_url)
+                    content = browser.page_source
+                    root = etree.HTML(content)
                     self.parse(root)
+                    browser.quit()
                 return
 
     def parse(self, root):
@@ -1415,7 +1436,6 @@ class szcredit(object):
                 d1 = {}
                 get_data = data_dict["企业变更信息"]
                 d2 = {}
-
                 for i in get_data[1:]:
                     d2['变更日期'] = i[1]
                     d2['变更事项'] = i[2]
@@ -1431,7 +1451,7 @@ class szcredit(object):
         for i in gdxx[1:]:
             lianjie = i.xpath('.//@href')[0]
             lianjie = lianjie.strip()
-            gdm = i.xpath('./td[1]/text()')[0]
+            gdm = i.xpath('./td[1]//text()')[0]
             print(lianjie)
             all_urls.append(lianjie)
             all_gd.append(gdm)
@@ -1466,9 +1486,11 @@ class szcredit(object):
         infojson = json.dumps(data_dict, ensure_ascii=False)
         self.logger.info(infojson)
         params = (
-            self.batchid, self.companyid, self.customerid, self.cn, self.sID, infojson
-        )
+            self.batchid, self.companyid, self.customerid, self.cn, self.sID, infojson)
+        self.logger.info("信用网数据插入")
         self.insert_db("[dbo].[Python_Serivce_WXWebShenZhen_Add]", params)
+        self.logger.info(params)
+        self.logger.info("信用网数据插入完成")
 
     def ssdjp(self):
         ip = ['121.31.159.197', '175.30.238.78', '124.202.247.110']

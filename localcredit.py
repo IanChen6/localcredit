@@ -697,8 +697,11 @@ class gscredit(guoshui):
             pdf_dict['企业会计准则为'] = ""
         pdf_dict['纳税调整后所得'] = sz[18]
         ksmx={}
-        for i in range(len(nf)-1):
-            ksmx[nf[i]]=nstzhsd[i]
+        try:
+            for i in range(len(nf)-1):
+                ksmx[nf[i]]=nstzhsd[i]
+        except:
+            print("ksmx")
         pdf_dict["亏损明细"]=ksmx
         print(pdf_dict)
         return pdf_dict
@@ -778,13 +781,25 @@ class gscredit(guoshui):
         tzfxx = {}
         tzfxx1={}
         tzfxx2,tzfxx3,tzfxx4,tzfxx5,tzfxx6,tzfxx7,tzfxx8,tzfxx9,tzfxx10={},{},{},{},{},{},{},{},{}
+        rq=[]
+        for i in select:
+            tzftb = i.xpath('.//text()')
+            rq.append(tzftb[9])
+        rq=list(set(rq))
+        tran=0
+        for r in rq:
+            last_stamp = time.mktime(time.strptime(r, '%Y-%m-%d'))
+            if last_stamp > tran:
+                last_update = r
+                tran = last_stamp
         for i in select:
             tiaomu = {}
             tzftb = i.xpath('.//text()')
             title = ['序号', '投资方', '国籍', '地址', '证件名称', '证件号码', '投资金额', '投资比例', '分配比例', '有效期起', '有效期止']
-            for j in range(len(tzftb)):
-                tiaomu[title[j]] = tzftb[j]
-            tzfxx[tzftb[0]] = tiaomu
+            if tzftb[9]==last_update:
+                for j in range(len(tzftb)):
+                    tiaomu[title[j]] = tzftb[j]
+                tzfxx[tzftb[0]] = tiaomu
         if len(tzfxx)>20:
             txfxx1={}
             for i in range(1,21):

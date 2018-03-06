@@ -19,6 +19,8 @@ import time
 import pymssql
 import os
 from urllib import parse
+
+import re
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LTTextBoxHorizontal, LAParams
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -658,15 +660,26 @@ class gscredit(guoshui):
                         #     gd.append(sz[0])
                         if biaoge=="A000000企业基础信息表\n" and a==10:
                             jcxx = results.strip("").split("\n")
-                            break
-                        if results_last=='金额\n' and a==11:
+                            # break
+                        if biaoge == "A000000企业基础信息表\n" and a == 13:
+                            cbjj=results.strip("").split("\n")
+                        if biaoge == "A000000企业基础信息表\n" and a == 8:
+                            kjzz=results.strip("").split("\n")
+                            try:
+                                # match = re.search(r'201适用的会计准则或会计制度 (.*?)', kjzz[0])
+                                # print(match.group(1))
+                                kjzzz=kjzz[0].split(" ")
+                                kjzzzd=kjzzz[1]
+                            except:
+                                kjzzzd=""
+                        if biaoge == "中华人民共和国企业所得税年度纳税申报表（A类）\n" and results_last=='金额\n' and a==11:
                             sz = results.strip("").split("\n")
                             print(sz)
                             break
-                        if results_last=='前五年度\n前四年度\n前三年度\n前二年度\n前一年度\n本年度\n可结转以后年度弥补的亏损额合计\n':
+                        if biaoge == "A106000企业所得税弥补亏损明细表\n" and results_last=='前五年度\n前四年度\n前三年度\n前二年度\n前一年度\n本年度\n可结转以后年度弥补的亏损额合计\n':
                             nf = results.strip("").split("\n")
                             print(nf)
-                        if results_last=='2\n':
+                        if biaoge == "A106000企业所得税弥补亏损明细表\n" and results_last=='2\n':
                             nstzhsd = results.strip("").split("\n")
                             print(nstzhsd)
                             break
@@ -675,9 +688,13 @@ class gscredit(guoshui):
         try:
             pdf_dict['所属行业明细'] = jcxx[2]
             pdf_dict['从业人数'] = jcxx[3]
+            pdf_dict['存货计价方法']=cbjj[1]
+            pdf_dict['企业会计准则为']=kjzzzd
         except:
             pdf_dict['所属行业明细'] = ""
             pdf_dict['从业人数'] = ""
+            pdf_dict['存货计价方法']=""
+            pdf_dict['企业会计准则为'] = ""
         pdf_dict['纳税调整后所得'] = sz[18]
         ksmx={}
         for i in range(len(nf)-1):
@@ -759,6 +776,8 @@ class gscredit(guoshui):
         root = etree.HTML(content)
         select = root.xpath('//table[@id="hdTab"]/tbody/tr')
         tzfxx = {}
+        tzfxx1={}
+        tzfxx2,tzfxx3,tzfxx4,tzfxx5,tzfxx6,tzfxx7,tzfxx8,tzfxx9,tzfxx10={},{},{},{},{},{},{},{},{}
         for i in select:
             tiaomu = {}
             tzftb = i.xpath('.//text()')
@@ -766,6 +785,35 @@ class gscredit(guoshui):
             for j in range(len(tzftb)):
                 tiaomu[title[j]] = tzftb[j]
             tzfxx[tzftb[0]] = tiaomu
+        if len(tzfxx)>20:
+            txfxx1={}
+            for i in range(1,21):
+                tzfxx1["{}".format(i)]=tzfxx["{}".format(i)]
+            try:
+                for i in range(21,41):
+                    tzfxx2["{}".format(i)] = tzfxx["{}".format(i)]
+                for i in range(41, 61):
+                    tzfxx3["{}".format(i)] = tzfxx["{}".format(i)]
+                for i in range(61, 81):
+                    tzfxx4["{}".format(i)] = tzfxx["{}".format(i)]
+                for i in range(81, 101):
+                    tzfxx5["{}".format(i)] = tzfxx["{}".format(i)]
+            except:
+                pass
+        else:
+            tzfxx1=tzfxx
+        tzfxx1=json.dumps(tzfxx1,ensure_ascii=False)
+        tzfxx2=json.dumps(tzfxx2,ensure_ascii=False)
+        tzfxx3=json.dumps(tzfxx3,ensure_ascii=False)
+        tzfxx4=json.dumps(tzfxx4,ensure_ascii=False)
+        tzfxx5=json.dumps(tzfxx5,ensure_ascii=False)
+        tzfxx6=json.dumps(tzfxx6,ensure_ascii=False)
+        tzfxx7=json.dumps(tzfxx7,ensure_ascii=False)
+        tzfxx8=json.dumps(tzfxx8,ensure_ascii=False)
+        tzfxx9=json.dumps(tzfxx9,ensure_ascii=False)
+        tzfxx10=json.dumps(tzfxx10,ensure_ascii=False)
+        params=(self.batchid,"0","0",self.companyid,self.customerid,tzfxx1,tzfxx2,tzfxx3,tzfxx4,tzfxx5,tzfxx6,tzfxx7,tzfxx8,tzfxx9,tzfxx10)
+        self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]",params)
         # 企业所得税(上个季度的季报)
         jdpdf_dict={}
         browser.switch_to_default_content()
@@ -1034,6 +1082,7 @@ class gscredit(guoshui):
             tuozan2=json.dumps(tuozan2,ensure_ascii=False)
             tuozan3=json.dumps(tuozan3,ensure_ascii=False)
             tuozan4=json.dumps(tuozan4,ensure_ascii=False)
+            tz3=len(tuozan3)
             self.logger.info(tuozan1)
             self.logger.info(tuozan2)
             self.logger.info(tuozan3)

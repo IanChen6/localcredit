@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a278a7-1197-45b6-937e-16e401451265" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cookies/5590cookies.json" afterPath="$PROJECT_DIR$/cookies/5590cookies.json" />
       <change beforePath="$PROJECT_DIR$/ghostdriver.log" afterPath="$PROJECT_DIR$/ghostdriver.log" />
       <change beforePath="$PROJECT_DIR$/localcredit.py" afterPath="$PROJECT_DIR$/localcredit.py" />
-      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="$PROJECT_DIR$/logs/localcreditlog.log" />
-      <change beforePath="$PROJECT_DIR$/resource/440300081895167/年度申报表详情10024417000014709743.pdf" afterPath="$PROJECT_DIR$/resource/440300081895167/年度申报表详情10024417000014709743.pdf" />
-      <change beforePath="$PROJECT_DIR$/resource/440300081895167/申报表详情10024418000003358200.pdf" afterPath="$PROJECT_DIR$/resource/440300081895167/申报表详情10024418000003358200.pdf" />
+      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resource/440300349616406/年度申报表详情10024417000014718405.pdf" afterPath="$PROJECT_DIR$/resource/440300349616406/年度申报表详情10024417000014718405.pdf" />
+      <change beforePath="$PROJECT_DIR$/resource/440300349616406/申报表详情10024418000002494417.pdf" afterPath="$PROJECT_DIR$/resource/440300349616406/申报表详情10024418000002494417.pdf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +20,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/xygs$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517209116086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517822356585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520336878998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520419840805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -71,8 +72,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="1235" column="49" lean-forward="false" selection-start-line="1235" selection-start-column="49" selection-end-line="1235" selection-end-column="49" />
+            <state relative-caret-position="169">
+              <caret line="1290" column="57" lean-forward="false" selection-start-line="1290" selection-start-column="52" selection-end-line="1290" selection-end-column="57" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -83,8 +84,8 @@
       <file leaf-file-name="localcreditlog.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4689">
-              <caret line="307" column="863" lean-forward="false" selection-start-line="307" selection-start-column="859" selection-end-line="307" selection-end-column="863" />
+            <state relative-caret-position="150">
+              <caret line="20" column="686" lean-forward="false" selection-start-line="20" selection-start-column="686" selection-end-line="20" selection-end-column="686" />
               <folding />
             </state>
           </provider>
@@ -101,21 +102,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gsjbxx</find>
-      <find>jbxx</find>
-      <find>所属</find>
-      <find>niandu</find>
-      <find>移动加权平均法</find>
-      <find>法</find>
-      <find>phant</find>
-      <find>login</find>
       <find>root</find>
       <find>冯</find>
       <find>callproc</find>
       <find>phantomjs</find>
       <find>ins</find>
       <find>爬取完成</find>
-      <find>从业人数</find>
       <find>mini-39</find>
       <find>经营范围</find>
       <find>登记备案</find>
@@ -131,6 +123,15 @@
       <find>有效期起</find>
       <find>mk</find>
       <find>phantom</find>
+      <find>phanto</find>
+      <find>从业人数</find>
+      <find>parse</find>
+      <find>sfzrd</find>
+      <find>niandu</find>
+      <find>无亏损</find>
+      <find>jd</find>
+      <find>gsjdsb</find>
+      <find>phant</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,8 +154,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="571" />
-    <option name="y" value="165" />
+    <option name="x" value="199" />
+    <option name="y" value="192" />
     <option name="width" value="1735" />
     <option name="height" value="910" />
   </component>
@@ -202,6 +203,12 @@
               <item name="localcredit" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
               <item name="440300349616406" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="localcredit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="localcredit" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="914403007320709525" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -299,12 +306,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="571" y="165" width="1735" height="910" extended-state="0" />
+    <frame x="199" y="192" width="1735" height="910" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23938224" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -313,7 +320,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2985843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2985843" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2228145" sideWeight="0.50383145" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -335,106 +342,116 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1737</line>
+          <line>1795</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1672</line>
+          <line>1730</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1548</line>
+          <line>1606</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1660</line>
+          <line>1718</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>956</line>
+          <line>1007</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>607</line>
+          <line>648</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1217</line>
+          <line>1275</line>
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1244</line>
+          <line>1302</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1298</line>
+          <line>1356</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1239</line>
+          <line>1297</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1152</line>
+          <line>1210</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1099</line>
+          <line>1153</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1119</line>
+          <line>1177</line>
           <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>527</line>
+          <line>568</line>
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>707</line>
+          <line>758</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1073</line>
+          <line>1124</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>697</line>
-          <option name="timeStamp" value="185" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>686</line>
-          <option name="timeStamp" value="186" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>789</line>
+          <line>840</line>
           <option name="timeStamp" value="190" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>802</line>
+          <line>853</line>
           <option name="timeStamp" value="191" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localcredit.py</url>
+          <line>493</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localcredit.py</url>
+          <line>496</line>
+          <option name="timeStamp" value="193" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localcredit.py</url>
+          <line>524</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localcredit.py</url>
+          <line>552</line>
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="192" />
+      <option name="time" value="196" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -758,14 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4689">
-          <caret line="307" column="863" lean-forward="false" selection-start-line="307" selection-start-column="859" selection-end-line="307" selection-end-column="863" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/guoshui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -774,10 +783,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="20" column="686" lean-forward="false" selection-start-line="20" selection-start-column="686" selection-end-line="20" selection-end-column="686" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="1235" column="49" lean-forward="false" selection-start-line="1235" selection-start-column="49" selection-end-line="1235" selection-end-column="49" />
+        <state relative-caret-position="169">
+          <caret line="1290" column="57" lean-forward="false" selection-start-line="1290" selection-start-column="52" selection-end-line="1290" selection-end-column="57" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

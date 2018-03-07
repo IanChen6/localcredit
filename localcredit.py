@@ -518,11 +518,52 @@ class gscredit(guoshui):
                     jibao["应纳所得税额"] = ynsds
                     jibao["减:减免所得税额（请填附表3）"] = jmsds
                     return jibao
-
                 except Exception as e:
                     print(e)
                     return {}
                     pass
+            elif "度预缴纳税申报表" in shuizhong[1] and "查询申报表" not in shuizhong and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
+                browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html")
+                content = browser.page_source
+                browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+                browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
+                browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+                browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(20170101)
+                # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+                # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+                # 所属日期
+                browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+                time.sleep(2)
+                content = browser.page_source
+                root = etree.HTML(content)
+                select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
+                a = 1
+                for i in select[1:]:
+                    shuizhong = i.xpath('.//text()')
+                    a += 1
+                    if "月季度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[4]:
+                        first_season=shuizhong[6]
+                    if "月季度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[4]:
+                        second_season=shuizhong[6]
+                    if "月季度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in shuizhong[4]:
+                        third_season=shuizhong[6]
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
+                        fourth_season=shuizhong[6]
+                jibao = {}
+                try:
+                    first_season=float(first_season)
+                    second_season=float(second_season)
+                    third_season=float(third_season)
+                    fourth_season=float(fourth_season)
+                    yyj=first_season+second_season
+                    ybt=third_season+fourth_season
+                    jibao["实际已预缴所得税额"] = str(yyj)
+                    jibao["应补(退)所得税额"] = str(ybt)
+                    jibao["应纳所得税额"] = ""
+                    jibao["减:减免所得税额（请填附表3）"] = ""
+                except:
+                    return {}
+                return jibao
 
     # 前往地税
     def qwdishui(self, browser):
@@ -636,12 +677,12 @@ class gscredit(guoshui):
                 results_last = ""
                 # 这里layout是一个LTPage对象 里面存放着 这个page解析出的各种对象 一般包括LTTextBox, LTFigure, LTImage, LTTextBoxHorizontal 等等 想要获取文本就获得对象的text属性，
                 a = 0
-                gd=[]
-                zj=[]
-                hm=[]
-                xingzhi=[]
-                bili=[]
-                guoji=[]
+                gd = []
+                zj = []
+                hm = []
+                xingzhi = []
+                bili = []
+                guoji = []
 
                 for out in layout:
                     # 判断是否含有get_text()方法，图片之类的就没有
@@ -649,60 +690,70 @@ class gscredit(guoshui):
                     a += 1
                     if isinstance(out, LTTextBoxHorizontal):
                         results = out.get_text()
-                        if a ==1:
-                            if results!="A106000企业所得税弥补亏损明细表\n" and results!="中华人民共和国企业所得税年度纳税申报表（A类）\n" and results!="A000000企业基础信息表\n":
+                        # 解析亏损表
+                        if a == 1:
+                            if results != "A106000企业所得税弥补亏损明细表\n" and results != "中华人民共和国企业所得税年度纳税申报表（A类）\n" and results != "A000000企业基础信息表\n":
                                 break
                             else:
-                                biaoge=results
-                        # if results_last == "301企业主要股东（前5位）\n股东名称\n":
-                        #     sz = results.strip("").split("\n")
-                        #     print(sz)
-                        #     gd.append(sz[0])
-                        if biaoge=="A000000企业基础信息表\n" and a==10:
-                            jcxx = results.strip("").split("\n")
-                            # break
-                        if biaoge == "A000000企业基础信息表\n" and a == 13:
-                            cbjj=results.strip("").split("\n")
+                                biaoge = results
+                        # print(results)
+                        # results_last = results
+                        if biaoge == "A106000企业所得税弥补亏损明细表\n" and results_last == '前五年度\n前四年度\n前三年度\n前二年度\n前一年度\n本年度\n可结转以后年度弥补的亏损额合计\n':
+                            nf = results.strip("").split("\n")
+                            print(nf)
+                        if biaoge == "A106000企业所得税弥补亏损明细表\n":
+                            if results_last == '2\n' or results_last == "2011\n2012\n2013\n2014\n2015\n2016\n":
+                                nstzhs = results.strip("").split("\n")
+                                if len(nstzhs) == 7:
+                                    nstzhsd = nstzhs
+                                    print(nstzhsd)
+                        # 解析年度纳税申报表
+                        if biaoge == "中华人民共和国企业所得税年度纳税申报表（A类）\n" and results_last == '金额\n' and a == 11:
+                            sz = results.strip("").split("\n")
+                            print(sz)
+                        # 解析基础信息表
+                        if biaoge == "A000000企业基础信息表\n":
+                            if "备抵法" in results or "直接核销法" in results:
+                                cbjj = results.strip("").split("\n")
+                                print(cbjj)
                         if biaoge == "A000000企业基础信息表\n" and a == 8:
-                            kjzz=results.strip("").split("\n")
+                            kjzz = results.strip("").split("\n")
                             try:
                                 # match = re.search(r'201适用的会计准则或会计制度 (.*?)', kjzz[0])
                                 # print(match.group(1))
-                                kjzzz=kjzz[0].split(" ")
-                                kjzzzd=kjzzz[1]
+                                kjzzz = kjzz[0].split(" ")
+                                kjzzzd = kjzzz[1]
+                                print(kjzzzd)
                             except:
-                                kjzzzd=""
-                        if biaoge == "中华人民共和国企业所得税年度纳税申报表（A类）\n" and results_last=='金额\n' and a==11:
-                            sz = results.strip("").split("\n")
-                            print(sz)
-                            break
-                        if biaoge == "A106000企业所得税弥补亏损明细表\n" and results_last=='前五年度\n前四年度\n前三年度\n前二年度\n前一年度\n本年度\n可结转以后年度弥补的亏损额合计\n':
-                            nf = results.strip("").split("\n")
-                            print(nf)
-                        if biaoge == "A106000企业所得税弥补亏损明细表\n" and results_last=='2\n':
-                            nstzhsd = results.strip("").split("\n")
-                            print(nstzhsd)
-                            break
+                                kjzzzd = ""
+                                print(kjzzzd)
+                        if biaoge == "A000000企业基础信息表\n" and "否" in results:
+                            jcx = results.strip("").split("\n")
+                            if len(jcx) == 6:
+                                jcxx = jcx
+                                print(jcxx)
+                            else:
+                                continue
                         results_last = results
         pdf_dict = {}
         try:
             pdf_dict['所属行业明细'] = jcxx[2]
             pdf_dict['从业人数'] = jcxx[3]
-            pdf_dict['存货计价方法']=cbjj[1]
-            pdf_dict['企业会计准则为']=kjzzzd
+            pdf_dict['存货计价方法'] = cbjj[1]
+            pdf_dict['企业会计准则为'] = kjzzzd
         except:
             pdf_dict['所属行业明细'] = ""
             pdf_dict['从业人数'] = ""
-            pdf_dict['存货计价方法']=""
+            pdf_dict['存货计价方法'] = ""
             pdf_dict['企业会计准则为'] = ""
         pdf_dict['纳税调整后所得'] = sz[18]
-        ksmx={}
+        ksmx = {}
         try:
-            for i in range(len(nf)-1):
-                ksmx[nf[i]]=nstzhsd[i]
+            for i in range(len(nf) - 1):
+                ksmx[nf[i]] = nstzhsd[i]
         except:
             print("ksmx")
-        pdf_dict["亏损明细"]=ksmx
+        pdf_dict["亏损明细"] = ksmx
         print(pdf_dict)
         return pdf_dict
     def dishui(self, browser):
@@ -1088,11 +1139,14 @@ class gscredit(guoshui):
             tuozan2 = shenbaobiao
             tuozan3=tzfxx
             tuozan4=pdf_dict
+            gs_exist=len(tuozan2)
+            ds_exist=len(tuozan4["年度纳税申报表"])
             gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
             dsxiangqing = json.dumps(dsxiangqing, ensure_ascii=False)
             dsshuifei = json.dumps(dsshuifei, ensure_ascii=False)
             gsxiangqing = json.dumps(gsxiangqing, ensure_ascii=False)
             gsshuifei = json.dumps(gsshuifei, ensure_ascii=False)
+
             tuozan1=json.dumps(tuozan1,ensure_ascii=False)
             tuozan2=json.dumps(tuozan2,ensure_ascii=False)
             tuozan3=json.dumps(tuozan3,ensure_ascii=False)
@@ -1116,7 +1170,11 @@ class gscredit(guoshui):
                            "数据库插入失败")
                 browser.quit()
                 return False
-            job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1', '成功爬取')
+            if gs_exist==0 and ds_exist==0:
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1', '成功爬取,无亏损表')
+                self.logger.info("customerid:{}全部爬取完成，无亏损表".format(self.customerid))
+            else:
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1', '成功爬取')
             print("爬取完成")
             self.logger.info("customerid:{}全部爬取完成".format(self.customerid))
             browser.quit()

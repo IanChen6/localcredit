@@ -1347,6 +1347,57 @@ class szcredit(object):
                 d3 = {}
                 d3['出资额'] = i[4]
                 d3['出资比例'] = i[5]
+                if "公司" in i[0]:
+                    try:
+                        ip = ['121.31.159.197', '175.30.238.78', '124.202.247.110']
+                        headers = {
+                            'Accept': 'application/json, text/javascript, */*; q=0.01',
+                            'Accept-Encoding': 'gzip, deflate, br',
+                            'Origin': 'https://app02.szmqs.gov.cn',
+                            'Accept-Language': 'zh-CN,zh;q=0.9',
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                            'x-form-id': 'mobile-signin-form',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Referer': 'https://app02.szmqs.gov.cn/outer/entSelect/gs.html',
+                            'X-Forwarded-For': ip[random.randint(0, 2)]
+                            # 'Cookie': 'Hm_lvt_5a517db11da5b1952c8edc36c230a5d6=1516416114; Hm_lpvt_5a517db11da5b1952c8edc36c230a5d6=1516416114; JSESSIONID=0000H--QDbjRJc2YKjpIYc_K3bw:-1'
+                        }
+                        session = requests.session()
+                        try:
+                            session.proxies = sys.argv[1]
+                        except:
+                            self.logger.info("未传代理参数，启用本机IP")
+                        # name='unifsocicrediden=&entname={}&flag=1'
+                        # postdata='unifsocicrediden=&entname={}&flag=1'.format()
+                        s = self.sID
+                        if s.strip():
+                            print('not null')
+                            postdata = 'unifsocicrediden={}&entname=&flag=1'.format(s)
+                            resp = session.post('https://app02.szmqs.gov.cn/outer/entEnt/detail.do', headers=headers,
+                                                data=postdata,
+                                                timeout=30)
+                            self.logger.info(resp.text)
+                            gswsj = resp.json()
+                            gswsj = gswsj['data']
+                            gswsj = gswsj[0]
+                            gswsj = gswsj['data']
+                            jbxx = gswsj[0]
+                            if 'opto' in jbxx.keys():
+                                if jbxx['opto'] == "5000-01-01" or jbxx['opto'] == "1900-01-01" or jbxx['opto'].strip():
+                                    jbxx['营业期限'] = "永续经营"
+                                else:
+                                    jbxx['营业期限'] = "自" + jbxx['opfrom'] + "起至" + jbxx['opto'] + "止"
+                            else:
+                                jbxx['营业期限'] = "永续经营"
+                            index_dict = gswsj[0]
+                            unifsocicrediden = index_dict['unifsocicrediden']
+                            d3["证件号码"]=unifsocicrediden
+                            d3["地址"]=index_dict['dom']
+                            d3["证件名称"]="营业执照"
+                            d3["国籍"]="中国"
+                    except:
+                        print("。。。")
                 d2[i[0]] = d3
             d1['股东名称'] = d2
             data_dict["股东登记信息"] = d1

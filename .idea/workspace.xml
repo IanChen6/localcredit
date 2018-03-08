@@ -6,9 +6,9 @@
       <change beforePath="$PROJECT_DIR$/cookies/5590cookies.json" afterPath="$PROJECT_DIR$/cookies/5590cookies.json" />
       <change beforePath="$PROJECT_DIR$/ghostdriver.log" afterPath="$PROJECT_DIR$/ghostdriver.log" />
       <change beforePath="$PROJECT_DIR$/localcredit.py" afterPath="$PROJECT_DIR$/localcredit.py" />
-      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resource/440300349616406/年度申报表详情10024417000014718405.pdf" afterPath="$PROJECT_DIR$/resource/440300349616406/年度申报表详情10024417000014718405.pdf" />
-      <change beforePath="$PROJECT_DIR$/resource/440300349616406/申报表详情10024418000002494417.pdf" afterPath="$PROJECT_DIR$/resource/440300349616406/申报表详情10024418000002494417.pdf" />
+      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="$PROJECT_DIR$/logs/localcreditlog.log" />
+      <change beforePath="$PROJECT_DIR$/resource/440300081895167/年度申报表详情10024417000014709743.pdf" afterPath="$PROJECT_DIR$/resource/440300081895167/年度申报表详情10024417000014709743.pdf" />
+      <change beforePath="$PROJECT_DIR$/resource/440300081895167/申报表详情10024418000003358200.pdf" afterPath="$PROJECT_DIR$/resource/440300081895167/申报表详情10024418000003358200.pdf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +20,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/xygs$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517209116086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517822356585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520419840805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520494724808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -72,8 +72,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="1290" column="57" lean-forward="false" selection-start-line="1290" selection-start-column="52" selection-end-line="1290" selection-end-column="57" />
+            <state relative-caret-position="402">
+              <caret line="1053" column="30" lean-forward="true" selection-start-line="1053" selection-start-column="30" selection-end-line="1053" selection-end-column="30" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -84,8 +84,8 @@
       <file leaf-file-name="localcreditlog.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="20" column="686" lean-forward="false" selection-start-line="20" selection-start-column="686" selection-end-line="20" selection-end-column="686" />
+            <state relative-caret-position="424">
+              <caret line="36" column="363" lean-forward="false" selection-start-line="36" selection-start-column="357" selection-end-line="36" selection-end-column="363" />
               <folding />
             </state>
           </provider>
@@ -102,15 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>root</find>
-      <find>冯</find>
-      <find>callproc</find>
-      <find>phantomjs</find>
-      <find>ins</find>
-      <find>爬取完成</find>
-      <find>mini-39</find>
-      <find>经营范围</find>
-      <find>登记备案</find>
       <find>基础信息表</find>
       <find>成本</find>
       <find>存货</find>
@@ -132,6 +123,15 @@
       <find>jd</find>
       <find>gsjdsb</find>
       <find>phant</find>
+      <find>jcsj</find>
+      <find>gsjbxx</find>
+      <find>jbxx</find>
+      <find>计价</find>
+      <find>股东登记信息</find>
+      <find>证件种类</find>
+      <find>证件号码</find>
+      <find>国籍</find>
+      <find>phantomjs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,8 +154,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="199" />
-    <option name="y" value="192" />
+    <option name="x" value="271" />
+    <option name="y" value="207" />
     <option name="width" value="1735" />
     <option name="height" value="910" />
   </component>
@@ -306,7 +306,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="199" y="192" width="1735" height="910" extended-state="0" />
+    <frame x="271" y="207" width="1735" height="910" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -342,33 +342,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1795</line>
+          <line>1846</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1730</line>
+          <line>1781</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1606</line>
+          <line>1657</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1718</line>
+          <line>1769</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
           <line>1007</line>
           <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>648</line>
-          <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
@@ -382,7 +377,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1356</line>
+          <line>1407</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -394,16 +389,6 @@
           <url>file://$PROJECT_DIR$/localcredit.py</url>
           <line>1210</line>
           <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1153</line>
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1177</line>
-          <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
@@ -450,8 +435,18 @@
           <line>552</line>
           <option name="timeStamp" value="195" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localcredit.py</url>
+          <line>1349</line>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localcredit.py</url>
+          <line>1393</line>
+          <option name="timeStamp" value="197" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="196" />
+      <option name="time" value="198" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -785,16 +780,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="686" lean-forward="false" selection-start-line="20" selection-start-column="686" selection-end-line="20" selection-end-column="686" />
+        <state relative-caret-position="424">
+          <caret line="36" column="363" lean-forward="false" selection-start-line="36" selection-start-column="357" selection-end-line="36" selection-end-column="363" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="1290" column="57" lean-forward="false" selection-start-line="1290" selection-start-column="52" selection-end-line="1290" selection-end-column="57" />
+        <state relative-caret-position="402">
+          <caret line="1053" column="30" lean-forward="true" selection-start-line="1053" selection-start-column="30" selection-end-line="1053" selection-end-column="30" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

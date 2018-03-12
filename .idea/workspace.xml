@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a278a7-1197-45b6-937e-16e401451265" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cookies/5590cookies.json" afterPath="$PROJECT_DIR$/cookies/5590cookies.json" />
       <change beforePath="$PROJECT_DIR$/ghostdriver.log" afterPath="$PROJECT_DIR$/ghostdriver.log" />
       <change beforePath="$PROJECT_DIR$/localcredit.py" afterPath="$PROJECT_DIR$/localcredit.py" />
-      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resource/440300081895167/年度申报表详情10024417000014709743.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resource/440300081895167/申报表详情10024418000003358200.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resource/440300349616406/年度申报表详情10024417000014718405.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resource/440300349616406/申报表详情10024418000002494417.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resource/914403007320709525/年度申报表详情10024417000013423465.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resource/914403007320709525/申报表详情10024418000002130256.pdf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="$PROJECT_DIR$/logs/localcreditlog.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +18,7 @@
     <SUITE FILE_PATH="coverage/xygs$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517209116086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517822356585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$guoshui.coverage" NAME="guoshui Coverage Results" MODIFIED="1520840294843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520846617375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1520848294764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -47,7 +40,7 @@
       <file leaf-file-name="log_01.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log_ging/log_01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
+            <state relative-caret-position="0">
               <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
               <folding />
             </state>
@@ -67,8 +60,8 @@
       <file leaf-file-name="guoshui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/guoshui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="1217" column="38" lean-forward="false" selection-start-line="1217" selection-start-column="38" selection-end-line="1217" selection-end-column="38" />
+            <state relative-caret-position="241">
+              <caret line="84" column="8" lean-forward="false" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -77,7 +70,7 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="288">
               <caret line="1039" column="29" lean-forward="true" selection-start-line="1039" selection-start-column="29" selection-end-line="1039" selection-end-column="29" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
@@ -89,8 +82,8 @@
       <file leaf-file-name="localcreditlog.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-472">
-              <caret line="43" column="61" lean-forward="false" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="68" />
+            <state relative-caret-position="-2619">
+              <caret line="26" column="414" lean-forward="false" selection-start-line="26" selection-start-column="414" selection-end-line="26" selection-end-column="414" />
               <folding />
             </state>
           </provider>
@@ -107,7 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>有效期起</find>
       <find>mk</find>
       <find>phantom</find>
       <find>从业人数</find>
@@ -135,8 +127,9 @@
       <find>纳税调整后所得</find>
       <find>xinyon</find>
       <find>信用网数据插入</find>
-      <find>phant</find>
       <find>亏损明细</find>
+      <find>ins</find>
+      <find>phant</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,8 +152,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="119" />
-    <option name="y" value="238" />
+    <option name="x" value="101" />
+    <option name="y" value="204" />
     <option name="width" value="1735" />
     <option name="height" value="910" />
   </component>
@@ -309,7 +302,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="119" y="238" width="1735" height="910" extended-state="0" />
+    <frame x="101" y="204" width="1735" height="910" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -768,7 +761,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/log_ging/log_01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="0">
           <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
           <folding />
         </state>
@@ -797,25 +790,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guoshui.py">
+    <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="1217" column="38" lean-forward="false" selection-start-line="1217" selection-start-column="38" selection-end-line="1217" selection-end-column="38" />
+        <state relative-caret-position="-2619">
+          <caret line="26" column="414" lean-forward="false" selection-start-line="26" selection-start-column="414" selection-end-line="26" selection-end-column="414" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
+    <entry file="file://$PROJECT_DIR$/guoshui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-472">
-          <caret line="43" column="61" lean-forward="false" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="68" />
+        <state relative-caret-position="241">
+          <caret line="84" column="8" lean-forward="false" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
+        <state relative-caret-position="288">
           <caret line="1039" column="29" lean-forward="true" selection-start-line="1039" selection-start-column="29" selection-end-line="1039" selection-end-column="29" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />

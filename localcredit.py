@@ -1217,11 +1217,11 @@ class szcredit(object):
             raise Exception("数据库连接失败")
         # cur.callproc('[dbo].[Python_Serivce_DSTaxApplyShenZhen_Add]', (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
         len(params)
-        self.logger.info(params)
+        # self.logger.info(params)
         cur.callproc(sql, params)
-        self.logger.info("调用procedure成功")
+        # self.logger.info("调用procedure成功")
         conn.commit()
-        self.logger.info("提交成功")
+        # self.logger.info("提交成功")
         cur.close()
 
     def login(self):

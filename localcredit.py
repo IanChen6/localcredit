@@ -1305,7 +1305,8 @@ class szcredit(object):
                     browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
                     browser.get(detai_url)
                     content = browser.page_source
-                    for i in range(3):
+                    time.sleep(1.1)
+                    for i in range(10):
                         if "登记备案信息" not in content:
                             sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
                             time.sleep(sleep_time[random.randint(0, 9)])
@@ -1314,6 +1315,7 @@ class szcredit(object):
                             if "登记备案信息"  in content:
                                 break
                     root = etree.HTML(content)
+                    self.logger.info(content)
                     self.parse(root)
                     browser.quit()
                 return

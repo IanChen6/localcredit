@@ -1278,43 +1278,43 @@ class szcredit(object):
                     print(result_dict["RecordID"])  # 获取ID
                     detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(
                         result_dict["RecordID"])
-                    session = requests.session()
-                    try:
-                        session.proxies = sys.argv[1]
-                    except:
-                        self.logger.info("未传代理参数，启用本机IP")
-                    detail = session.get(url=detai_url, headers=self.headers, timeout=30)
-                    detail.encoding = detail.apparent_encoding
-                    if "您的查询过于频繁，请稍候再查" in detail.text:
-                        session = requests.session()
-                        try:
-                            session.proxies = sys.argv[1]
-                        except:
-                            self.logger.info("未传代理参数，启用本机IP")
-                        detail = session.get(url=detai_url, headers=self.headers, timeout=30)
-                        detail.encoding = detail.apparent_encoding
-                    root = etree.HTML(detail.text)  # 将request.content 转化为 Element
-                    self.logger.info(detail.text)
-                    # dcap = dict(DesiredCapabilities.PHANTOMJS)
-                    # dcap["phantomjs.page.settings.userAgent"] = (
-                    #     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
-                    # dcap["phantomjs.page.settings.loadImages"] = True
-                    # service_args = []
-                    # service_args.append('--webdriver=szgs')
+
+                    # session = requests.session()
+                    # try:
+                    #     session.proxies = sys.argv[1]
+                    # except:
+                    #     self.logger.info("未传代理参数，启用本机IP")
+                    # detail = session.get(url=detai_url, headers=self.headers, timeout=30)
+                    # root = etree.HTML(detail.text)  # 将request.content 转化为 Element
+                    # self.logger.info(detail.text)
+
+                    dcap = dict(DesiredCapabilities.PHANTOMJS)
+                    dcap["phantomjs.page.settings.userAgent"] = (
+                        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
+                    dcap["phantomjs.page.settings.loadImages"] = True
+                    service_args = []
+                    service_args.append('--webdriver=szgs')
                     # browser = webdriver.PhantomJS(
                     #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
                     #     desired_capabilities=dcap, service_args=service_args)
-                    # # browser = webdriver.PhantomJS(
-                    # #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-                    # #     desired_capabilities=dcap)
-                    # browser.implicitly_wait(10)
-                    # browser.viewportSize = {'width': 2200, 'height': 2200}
-                    # browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
-                    # browser.get(detai_url)
-                    # content = browser.page_source
-                    # root = etree.HTML(content)
+                    browser = webdriver.PhantomJS(
+                        executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+                        desired_capabilities=dcap)
+                    browser.implicitly_wait(10)
+                    browser.viewportSize = {'width': 2200, 'height': 2200}
+                    browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
+                    browser.get(detai_url)
+                    content = browser.page_source
+                    for i in range(3):
+                        if "登记备案信息" not in content:
+                            sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
+                            time.sleep(sleep_time[random.randint(0, 9)])
+                            content = browser.page_source
+                            if "登记备案信息"  in content:
+                                break
+                    root = etree.HTML(content)
                     self.parse(root)
-                    # browser.quit()
+                    browser.quit()
                 return
 
     def parse(self, root):
@@ -1677,9 +1677,9 @@ class szcredit(object):
         self.logger.info(infojson)
         params = (
             self.batchid, self.companyid, self.customerid, self.cn, self.sID, infojson)
-        if "登记备案信息" not in data_dict.keys():
-            self.logger.info("信用网访问失败")
-            return False
+        # if "登记备案信息" not in data_dict.keys():
+        #     self.logger.info("信用网访问失败")
+        #     return False
         self.logger.info("信用网数据插入")
         self.insert_db("[dbo].[Python_Serivce_WXWebShenZhen_Add]", params)
         self.logger.info(params)

@@ -464,6 +464,7 @@ class gscredit(guoshui):
                                 except:
                                     continue
                             niandu['亏损明细'] = kuisun
+                            break
                         a+=1
                 except:
                     print("无选填")
@@ -494,7 +495,7 @@ class gscredit(guoshui):
         for i in select[1:]:
             shuizhong = i.xpath('.//text()')
             a += 1
-            if "企业所得税（查账征收）月季度预缴纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong:
+            if "度预缴纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
                 browser.find_element_by_xpath(
                     '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()
                 wait = ui.WebDriverWait(browser, 5)
@@ -541,11 +542,11 @@ class gscredit(guoshui):
                 for i in select[1:]:
                     shuizhong = i.xpath('.//text()')
                     a += 1
-                    if "月季度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[4]:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[4]:
                         first_season=shuizhong[6]
-                    if "月季度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[4]:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[4]:
                         second_season=shuizhong[6]
-                    if "月季度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in shuizhong[4]:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in shuizhong[4]:
                         third_season=shuizhong[6]
                     if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
                         fourth_season=shuizhong[6]
@@ -1275,29 +1276,29 @@ class szcredit(object):
                     print(result_dict["RecordID"])  # 获取ID
                     detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(
                         result_dict["RecordID"])
-                    # detail = session.get(url=detai_url, headers=self.headers, timeout=30)
-                    # detail.encoding = detail.apparent_encoding
-                    # root = etree.HTML(detail.text)  # 将request.content 转化为 Element
-                    dcap = dict(DesiredCapabilities.PHANTOMJS)
-                    dcap["phantomjs.page.settings.userAgent"] = (
-                        'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
-                    dcap["phantomjs.page.settings.loadImages"] = True
-                    service_args = []
-                    service_args.append('--webdriver=szgs')
+                    detail = session.get(url=detai_url, headers=self.headers, timeout=30)
+                    detail.encoding = detail.apparent_encoding
+                    root = etree.HTML(detail.text)  # 将request.content 转化为 Element
+                    # dcap = dict(DesiredCapabilities.PHANTOMJS)
+                    # dcap["phantomjs.page.settings.userAgent"] = (
+                    #     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
+                    # dcap["phantomjs.page.settings.loadImages"] = True
+                    # service_args = []
+                    # service_args.append('--webdriver=szgs')
                     # browser = webdriver.PhantomJS(
                     #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
                     #     desired_capabilities=dcap, service_args=service_args)
-                    browser = webdriver.PhantomJS(
-                        executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-                        desired_capabilities=dcap)
-                    browser.implicitly_wait(10)
-                    browser.viewportSize = {'width': 2200, 'height': 2200}
-                    browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
-                    browser.get(detai_url)
-                    content = browser.page_source
-                    root = etree.HTML(content)
+                    # # browser = webdriver.PhantomJS(
+                    # #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+                    # #     desired_capabilities=dcap)
+                    # browser.implicitly_wait(10)
+                    # browser.viewportSize = {'width': 2200, 'height': 2200}
+                    # browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
+                    # browser.get(detai_url)
+                    # content = browser.page_source
+                    # root = etree.HTML(content)
                     self.parse(root)
-                    browser.quit()
+                    # browser.quit()
                 return
 
     def parse(self, root):
@@ -1767,6 +1768,7 @@ class szcredit(object):
             djxx = json.dumps(djxx, ensure_ascii=False)
             params = (self.batchid, self.companyid, self.customerid, self.cn, self.sID, djxx)
             self.logger.info(params)
+            self.logger.info("工商网完成")
             self.insert_db('[dbo].[Python_Serivce_GSWebShenZhen_Add]', params)
         else:
             name = self.cn
@@ -1847,6 +1849,7 @@ class szcredit(object):
             djxx = json.dumps(djxx, ensure_ascii=False)
             params = (self.batchid, self.companyid, self.customerid, self.cn, self.sID, djxx)
             self.logger.info(params)
+            self.logger.info("工商网完成")
             self.insert_db('[dbo].[Python_Serivce_GSWebShenZhen_Add]', params)
 
 

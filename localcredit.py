@@ -1309,6 +1309,7 @@ class szcredit(object):
                         if "登记备案信息" not in content:
                             sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
                             time.sleep(sleep_time[random.randint(0, 9)])
+                            browser.get(detai_url)
                             content = browser.page_source
                             if "登记备案信息"  in content:
                                 break

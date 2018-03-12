@@ -193,3 +193,483 @@ Mon 12 Mar 2018 17:53:29 INFO localcredit.py 1224 17704 14452 提交成功
 Mon 12 Mar 2018 17:53:29 INFO localcredit.py 1666 17704 14452 ('5590', 18282900, 9, '深圳市康兴隆电子有限公司', '914403003062310398', '{"关联公司信息": {"陈昌宇": {"1": {"成立日期": "2014年06月18日", "企业类型": "有限责任公司（自然人独资）", "企业注册号": "440301109620142", "企业名称": "深圳市康兴隆电子有限公司"}}}, "税务登记信息(国税)": {"纳税人状态": "正常", "纳税人识别号": "440300306231039"}, "登记备案信息": {"统一社会信用代码": "914403003062310398", "法定代表人": "陈昌宇", "认缴注册资本总额": "(人民币)50.0000万元", "企业名称": "深圳市康兴隆电子有限公司", "年报情况": "2016年度报告", "住所": "深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室", "注册号": "440301109620142", "成立日期": "2014年6月18日", "年检情况": " ", "营业期限": "永久经营", "经营范围": "仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。^", "企业类型": "有限责任公司（自然人独资）", "企业登记状态": "登记成立", "核准日期": "2015-09-22"}, "电子商务认证企业网站信息": {"网站ICP备案号": " ", "网站地址": "shop1409762369584.1688.com", "网站类型名称": "网店网铺", "网站LOGO链接地址": " ", "网站名称": "深圳市康兴隆电子有限公司", "网站简介": " "}, "电子商务认证企业信息": {"企业证书链接地址": "http://szcert.ebs.org.cn/440301001012014061809204", "企业证书编号": "CE1411201641329204", "认证时间": "2014-11-20"}, "股东登记信息": {"股东名称": {"陈昌宇": {"出资额": "50.0000", "出资比例": "100.0000%"}}}, "企业变更信息": {"2": {"变更事项": "一照一码升级、住所", "变更日期": "2015年09月22日"}, "1": {"变更事项": "一照一码升级、住所", "变更日期": "2015年09月22日"}}, "税务登记信息(地税)": {"纳税人状态": "正常", "纳税人识别号": "440300306231039"}, "机构代码信息": {"机构代码": "306231039"}, "成员登记信息": {"陈昌宇": "执行（常务）董事", "郑侠璇": "监事"}, "企业年报信息": {"网站ICP备案号": " ", "网站地址": "shop1409762369584.1688.com", "网站类型名称": "网店网铺", "网站LOGO链接地址": " ", "网站名称": "深圳市康兴隆电子有限公司", "网站简介": " "}}')
 Mon 12 Mar 2018 17:53:29 INFO localcredit.py 1667 17704 14452 信用网数据插入完成
 Mon 12 Mar 2018 17:53:29 INFO localcredit.py 1907 17704 14452 深圳企业信用网信息抓取完成
+Mon 12 Mar 2018 19:10:04 INFO localcredit.py 60 15144 11052 customerid:9,开始尝试登陆
+Mon 12 Mar 2018 19:10:04 INFO localcredit.py 71 15144 11052 未传代理参数，启用本机IP
+Mon 12 Mar 2018 19:10:05 INFO localcredit.py 97 15144 11052 customerid:9，获取验证码为：None
+Mon 12 Mar 2018 19:10:05 INFO localcredit.py 60 15144 11052 customerid:9,开始尝试登陆
+Mon 12 Mar 2018 19:10:05 INFO localcredit.py 71 15144 11052 未传代理参数，启用本机IP
+Mon 12 Mar 2018 19:10:07 INFO localcredit.py 97 15144 11052 customerid:9，获取验证码为：[{"x":121,"y":84},{"x":220,"y":75},{"x":72,"y":83}]
+Mon 12 Mar 2018 19:10:07 INFO localcredit.py 101 15144 11052 customerid:9，验证验证码[{"x":121,"y":84},{"x":220,"y":75},{"x":72,"y":83}]
+Mon 12 Mar 2018 19:10:07 INFO localcredit.py 104 15144 11052 customerid:9，转换tag
+Mon 12 Mar 2018 19:10:07 INFO localcredit.py 106 15144 11052 customerid:9，转换tag完成
+Mon 12 Mar 2018 19:10:07 INFO localcredit.py 107 15144 11052 customerid:9，440300306231039,017d67ce244cc6333706744c14ab5276a43e58df,"[{\"x\":121,\"y\":84},{\"x\":220,\"y\":75},{\"x\":72,\"y\":83}]",2018-03-12 19:10:07
+Mon 12 Mar 2018 19:10:07 INFO localcredit.py 112 15144 11052 customerid:9,成功post数据
+Mon 12 Mar 2018 19:10:07 INFO localcredit.py 119 15144 11052 customerid:9pass
+Mon 12 Mar 2018 19:10:07 INFO localcredit.py 1020 15144 11052 customerid:9获取cookies
+Mon 12 Mar 2018 19:10:07 WARNING localcredit.py 1056 15144 11052 Message: 'phantomjs' executable needs to be in PATH. 
+
+Mon 12 Mar 2018 19:10:07 WARNING localcredit.py 1057 15144 11052 浏览器启动失败
+Mon 12 Mar 2018 19:10:07 ERROR localcredit.py 1941 15144 11052 (515, b"Cannot insert the value NULL into column 'valuetype', table '@hierarchy'; column does not allow nulls. INSERT fails.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+Mon 12 Mar 2018 19:10:49 INFO localcredit.py 60 5640 17312 customerid:9,开始尝试登陆
+Mon 12 Mar 2018 19:10:49 INFO localcredit.py 71 5640 17312 未传代理参数，启用本机IP
+Mon 12 Mar 2018 19:10:51 INFO localcredit.py 97 5640 17312 customerid:9，获取验证码为：[{"x":23,"y":31},{"x":117,"y":104},{"x":69,"y":30}]
+Mon 12 Mar 2018 19:10:51 INFO localcredit.py 101 5640 17312 customerid:9，验证验证码[{"x":23,"y":31},{"x":117,"y":104},{"x":69,"y":30}]
+Mon 12 Mar 2018 19:10:51 INFO localcredit.py 104 5640 17312 customerid:9，转换tag
+Mon 12 Mar 2018 19:10:51 INFO localcredit.py 106 5640 17312 customerid:9，转换tag完成
+Mon 12 Mar 2018 19:10:51 INFO localcredit.py 107 5640 17312 customerid:9，440300306231039,017d67ce244cc6333706744c14ab5276a43e58df,"[{\"x\":23,\"y\":31},{\"x\":117,\"y\":104},{\"x\":69,\"y\":30}]",2018-03-12 19:10:51
+Mon 12 Mar 2018 19:10:51 INFO localcredit.py 112 5640 17312 customerid:9,成功post数据
+Mon 12 Mar 2018 19:10:51 INFO localcredit.py 119 5640 17312 customerid:9pass
+Mon 12 Mar 2018 19:10:51 INFO localcredit.py 1020 5640 17312 customerid:9获取cookies
+Mon 12 Mar 2018 19:11:05 INFO localcredit.py 218 5640 17312 customerid9税费种信息{'6': {'税目': '其他现代服务', '申报期限': '月', '有效期止': '9999-12-31', '有效期起': '2016-07-01', '税种': '增值税'}, '11': {'税目': '研发服务', '申报期限': '季', '有效期止': '2015-06-30', '有效期起': '2014-07-01', '税种': '增值税'}, '5': {'税目': '研发服务', '申报期限': '月', '有效期止': '9999-12-31', '有效期起': '2016-07-01', '税种': '增值税'}, '9': {'税目': '其他现代服务', '申报期限': '季', '有效期止': '2016-06-30', '有效期起': '2016-04-01', '税种': '增值税'}, '3': {'税目': '商业(17%)', '申报期限': '季', '有效期止': '2014-06-30', '有效期起': '2014-04-01', '税种': '增值税'}, '8': {'税目': '研发服务', '申报期限': '季', '有效期止': '2016-06-30', '有效期起': '2016-04-01', '税种': '增值税'}, '7': {'税目': '商业(17%)', '申报期限': '季', '有效期止': '2016-06-30', '有效期起': '2016-04-01', '税种': '增值税'}, '10': {'税目': '商业(17%)', '申报期限': '季', '有效期止': '2015-06-30', '有效期起': '2014-07-01', '税种': '增值税'}, '13': {'税目': '应纳税所得额', '申报期限': '季', '有效期止': '9999-12-31', '有效期起': '2015-07-01', '税种': '企业所得税'}, '12': {'税目': '应纳税所得额', '申报期限': '季', '有效期止': '2015-06-30', '有效期起': '2014-04-01', '税种': '企业所得税'}, '4': {'税目': '商业(17%)', '申报期限': '月', '有效期止': '9999-12-31', '有效期起': '2016-07-01', '税种': '增值税'}, '1': {'税目': '商业(17%)', '申报期限': '季', '有效期止': '2016-03-31', '有效期起': '2015-07-01', '税种': '增值税'}, '2': {'税目': '研发服务', '申报期限': '季', '有效期止': '2016-03-31', '有效期起': '2015-07-01', '税种': '增值税'}}:
+Mon 12 Mar 2018 19:11:05 INFO localcredit.py 1079 5640 17312 customerid9税费种信息{'6': {'税目': '其他现代服务', '申报期限': '月', '有效期止': '9999-12-31', '有效期起': '2016-07-01', '税种': '增值税'}, '11': {'税目': '研发服务', '申报期限': '季', '有效期止': '2015-06-30', '有效期起': '2014-07-01', '税种': '增值税'}, '5': {'税目': '研发服务', '申报期限': '月', '有效期止': '9999-12-31', '有效期起': '2016-07-01', '税种': '增值税'}, '9': {'税目': '其他现代服务', '申报期限': '季', '有效期止': '2016-06-30', '有效期起': '2016-04-01', '税种': '增值税'}, '3': {'税目': '商业(17%)', '申报期限': '季', '有效期止': '2014-06-30', '有效期起': '2014-04-01', '税种': '增值税'}, '8': {'税目': '研发服务', '申报期限': '季', '有效期止': '2016-06-30', '有效期起': '2016-04-01', '税种': '增值税'}, '7': {'税目': '商业(17%)', '申报期限': '季', '有效期止': '2016-06-30', '有效期起': '2016-04-01', '税种': '增值税'}, '10': {'税目': '商业(17%)', '申报期限': '季', '有效期止': '2015-06-30', '有效期起': '2014-07-01', '税种': '增值税'}, '13': {'税目': '应纳税所得额', '申报期限': '季', '有效期止': '9999-12-31', '有效期起': '2015-07-01', '税种': '企业所得税'}, '12': {'税目': '应纳税所得额', '申报期限': '季', '有效期止': '2015-06-30', '有效期起': '2014-04-01', '税种': '企业所得税'}, '4': {'税目': '商业(17%)', '申报期限': '月', '有效期止': '9999-12-31', '有效期起': '2016-07-01', '税种': '增值税'}, '1': {'税目': '商业(17%)', '申报期限': '季', '有效期止': '2016-03-31', '有效期起': '2015-07-01', '税种': '增值税'}, '2': {'税目': '研发服务', '申报期限': '季', '有效期止': '2016-03-31', '有效期起': '2015-07-01', '税种': '增值税'}}:
+Mon 12 Mar 2018 19:11:06 INFO localcredit.py 241 5640 17312 customerid:9,基础信息{'纳税主管税务机关：': '深圳市龙岗区国家税务局布吉税务分局', '纳税主管科室：': '深圳市龙岗区国家税务局布吉税务分局税源管理四科', '纳税人名称：': '深圳市康兴隆电子有限公司', '主管税务人员：': '潘瑞'}
+Mon 12 Mar 2018 19:11:06 INFO localcredit.py 243 5640 17312 customerid:9,详细信息[{'bsrsfzjlxmc': '居民身份证', 'cyrs': '4', 'jyfw': '仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。 许可经营项目：', 'fddbrsfzjlxmc': '居民身份证', 'bsryddh': '13430839397', 'hhrs': '', 'bsrdzxx': '', 'djzclxmc': '私营有限责任公司', 'bsrgddh': '', 'djxh': '10114403000027645403', 'nsrmc': '深圳市康兴隆电子有限公司', 'zcdz': '深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室', 'cwfzrsfzjlxmc': '居民身份证', 'ggrs': '', 'wjcyrs': '0', 'nsrsbh': '440300306231039', 'fddbrxm': '陈昌宇', 'cwfzrgddh': '', 'scjydyzbm': '518000', 'shxydm': '914403003062310398', 'hydl': '批发业', 'fddbryddh': '15919445471', 'cwfzrsfzjzlDm': '201', 'zzjgDm': '306231039', 'cwfzryddh': '15712073487', 'djrq': '2014-06-23', 'hsfsmc': '独立核算自负盈亏', 'fddbrgddh': '23742260', 'fddbrsfzjhm': '450422198902202171', 'cwfzrxm': '郑侠璇', 'fddbrsfzjlxDm': '201', 'zczb': '500000', 'scjydz': '深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室', 'hyxl': '其他未列明批发业', 'cwfzrsfzjhm': '44058219900822168X', 'fddbrdzxx': '', 'zcdlxdh': '15919445471', 'gdgrs': '', 'bsrsfzjzlDm': '201', 'bsrxm': '韩文章', 'zcdyzbm': '518000', 'nsrztDm': '03', 'bsrsfzjhm': '130124199107084555', 'cwfzrdzxx': '', 'scjydlxdh': '15919445471'}]
+Mon 12 Mar 2018 19:11:08 INFO localcredit.py 264 5640 17312 customerid:9,json信息{'纳税人资格查询': {'1': {'认定日期': '2016-07-12', '序号': '1', '纳税人资格认定名称': '增值税一般纳税人', '有效期起': '2016-07-01', '有效期止': '9999-12-31'}}, 'jcxx': {'纳税主管税务机关：': '深圳市龙岗区国家税务局布吉税务分局', '纳税主管科室：': '深圳市龙岗区国家税务局布吉税务分局税源管理四科', '纳税人名称：': '深圳市康兴隆电子有限公司', '主管税务人员：': '潘瑞'}, 'xxxx': [{'bsrsfzjlxmc': '居民身份证', 'cyrs': '4', 'jyfw': '仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。 许可经营项目：', 'fddbrsfzjlxmc': '居民身份证', 'bsryddh': '13430839397', 'hhrs': '', 'bsrdzxx': '', 'djzclxmc': '私营有限责任公司', 'bsrgddh': '', 'djxh': '10114403000027645403', 'nsrmc': '深圳市康兴隆电子有限公司', 'zcdz': '深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室', 'cwfzrsfzjlxmc': '居民身份证', 'ggrs': '', 'wjcyrs': '0', 'nsrsbh': '440300306231039', 'fddbrxm': '陈昌宇', 'cwfzrgddh': '', 'scjydyzbm': '518000', 'shxydm': '914403003062310398', 'hydl': '批发业', 'fddbryddh': '15919445471', 'cwfzrsfzjzlDm': '201', 'zzjgDm': '306231039', 'cwfzryddh': '15712073487', 'djrq': '2014-06-23', 'hsfsmc': '独立核算自负盈亏', 'fddbrgddh': '23742260', 'fddbrsfzjhm': '450422198902202171', 'cwfzrxm': '郑侠璇', 'fddbrsfzjlxDm': '201', 'zczb': '500000', 'scjydz': '深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室', 'hyxl': '其他未列明批发业', 'cwfzrsfzjhm': '44058219900822168X', 'fddbrdzxx': '', 'zcdlxdh': '15919445471', 'gdgrs': '', 'bsrsfzjzlDm': '201', 'bsrxm': '韩文章', 'zcdyzbm': '518000', 'nsrztDm': '03', 'bsrsfzjhm': '130124199107084555', 'cwfzrdzxx': '', 'scjydlxdh': '15919445471'}]}
+Mon 12 Mar 2018 19:11:27 INFO localcredit.py 471 5640 17312 customerid:9,json信息{'企业会计准则为': '小企业会计准则', '从业人数': '4', '主要股东': {'陈昌宇': {'姓名': '陈昌宇', '证件号码': '450422198902202171', '经济性质': '431|内资个人', '投资比例': '100.0000%', '证件种类': '201|居民身份证', '国籍': '156|中华人民共和国'}}, '亏损明细': {'6': {'项目': '本年度', '纳税调整后所得': '929.70', '年度': '2016'}, '5': {'项目': '前一年度', '纳税调整后所得': '1006.12', '年度': '2015'}, '3': {'项目': '前三年度', '纳税调整后所得': '0.00', '年度': '2013'}, '4': {'项目': '前二年度', '纳税调整后所得': '0.00', '年度': '2014'}, '1': {'项目': '前五年度', '纳税调整后所得': '0.00', '年度': '2011'}, '2': {'项目': '前四年度', '纳税调整后所得': '0.00', '年度': '2012'}}, '所属行业明细': '其他未列明批发业'}
+Mon 12 Mar 2018 19:12:41 INFO localcredit.py 575 5640 17312 customerid:9开始登录地税
+Mon 12 Mar 2018 19:12:42 INFO localcredit.py 761 5640 17312 customerid:9截取地税登记信息
+Mon 12 Mar 2018 19:13:58 INFO localcredit.py 912 5640 17312 customerid:9地税企业所得税（季报）信息查询
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 972 5640 17312 customerid:9地税企业所得税（年度）信息查询
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1156 5640 17312 {"从业人数": "4", "主要股东": {"陈昌宇": {"姓名": "陈昌宇", "证件号码": "450422198902202171", "经济性质": "431|内资个人", "投资比例": "100.0000%", "证件种类": "201|居民身份证", "国籍": "156|中华人民共和国"}}, "上季度纳税情况": {}, "企业会计准则为": "小企业会计准则", "亏损明细": {"6": {"项目": "本年度", "纳税调整后所得": "929.70", "年度": "2016"}, "5": {"项目": "前一年度", "纳税调整后所得": "1006.12", "年度": "2015"}, "3": {"项目": "前三年度", "纳税调整后所得": "0.00", "年度": "2013"}, "4": {"项目": "前二年度", "纳税调整后所得": "0.00", "年度": "2014"}, "1": {"项目": "前五年度", "纳税调整后所得": "0.00", "年度": "2011"}, "2": {"项目": "前四年度", "纳税调整后所得": "0.00", "年度": "2012"}}, "所属行业明细": "其他未列明批发业"}
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1157 5640 17312 {"国税调整纳税后所得": "929.70"}
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1158 5640 17312 {"1": {"证件号码": "450422198902202171", "有效期起": "2014-06-23", "投资金额": "0.00", "有效期止": "9999-12-31", "投资方": "陈昌宇", "证件名称": "居民身份证", "投资比例": "100%", "序号": "1", "地址": "广西藤县金鸡镇金鸡街27号", "分配比例": "0%", "国籍": "中华人民共和国"}}
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1159 5640 17312 {"年度纳税申报表": {}, "季度纳税申报表": {}}
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1162 5640 17312 ('5590', '0', '0', 18282900, 9, '{"国税信息": {"纳税人资格查询": {"1": {"认定日期": "2016-07-12", "序号": "1", "纳税人资格认定名称": "增值税一般纳税人", "有效期起": "2016-07-01", "有效期止": "9999-12-31"}}, "jcxx": {"纳税主管税务机关：": "深圳市龙岗区国家税务局布吉税务分局", "纳税主管科室：": "深圳市龙岗区国家税务局布吉税务分局税源管理四科", "纳税人名称：": "深圳市康兴隆电子有限公司", "主管税务人员：": "潘瑞"}, "xxxx": [{"bsrsfzjlxmc": "居民身份证", "cyrs": "4", "jyfw": "仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。 许可经营项目：", "fddbrsfzjlxmc": "居民身份证", "bsryddh": "13430839397", "hhrs": "", "bsrdzxx": "", "djzclxmc": "私营有限责任公司", "bsrgddh": "", "djxh": "10114403000027645403", "nsrmc": "深圳市康兴隆电子有限公司", "zcdz": "深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室", "cwfzrsfzjlxmc": "居民身份证", "ggrs": "", "wjcyrs": "0", "nsrsbh": "440300306231039", "fddbrxm": "陈昌宇", "cwfzrgddh": "", "scjydyzbm": "518000", "shxydm": "914403003062310398", "hydl": "批发业", "fddbryddh": "15919445471", "cwfzrsfzjzlDm": "201", "zzjgDm": "306231039", "cwfzryddh": "15712073487", "djrq": "2014-06-23", "hsfsmc": "独立核算自负盈亏", "fddbrgddh": "23742260", "fddbrsfzjhm": "450422198902202171", "cwfzrxm": "郑侠璇", "fddbrsfzjlxDm": "201", "zczb": "500000", "scjydz": "深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室", "hyxl": "其他未列明批发业", "cwfzrsfzjhm": "44058219900822168X", "fddbrdzxx": "", "zcdlxdh": "15919445471", "gdgrs": "", "bsrsfzjzlDm": "201", "bsrxm": "韩文章", "zcdyzbm": "518000", "nsrztDm": "03", "bsrsfzjhm": "130124199107084555", "cwfzrdzxx": "", "scjydlxdh": "15919445471"}]}, "账号详情": {"密码": "90091468", "账号": "440300306231039"}}', '{"国税税费种信息": {"6": {"税目": "其他现代服务", "申报期限": "月", "有效期止": "9999-12-31", "有效期起": "2016-07-01", "税种": "增值税"}, "11": {"税目": "研发服务", "申报期限": "季", "有效期止": "2015-06-30", "有效期起": "2014-07-01", "税种": "增值税"}, "5": {"税目": "研发服务", "申报期限": "月", "有效期止": "9999-12-31", "有效期起": "2016-07-01", "税种": "增值税"}, "9": {"税目": "其他现代服务", "申报期限": "季", "有效期止": "2016-06-30", "有效期起": "2016-04-01", "税种": "增值税"}, "3": {"税目": "商业(17%)", "申报期限": "季", "有效期止": "2014-06-30", "有效期起": "2014-04-01", "税种": "增值税"}, "8": {"税目": "研发服务", "申报期限": "季", "有效期止": "2016-06-30", "有效期起": "2016-04-01", "税种": "增值税"}, "7": {"税目": "商业(17%)", "申报期限": "季", "有效期止": "2016-06-30", "有效期起": "2016-04-01", "税种": "增值税"}, "10": {"税目": "商业(17%)", "申报期限": "季", "有效期止": "2015-06-30", "有效期起": "2014-07-01", "税种": "增值税"}, "13": {"税目": "应纳税所得额", "申报期限": "季", "有效期止": "9999-12-31", "有效期起": "2015-07-01", "税种": "企业所得税"}, "12": {"税目": "应纳税所得额", "申报期限": "季", "有效期止": "2015-06-30", "有效期起": "2014-04-01", "税种": "企业所得税"}, "4": {"税目": "商业(17%)", "申报期限": "月", "有效期止": "9999-12-31", "有效期起": "2016-07-01", "税种": "增值税"}, "1": {"税目": "商业(17%)", "申报期限": "季", "有效期止": "2016-03-31", "有效期起": "2015-07-01", "税种": "增值税"}, "2": {"税目": "研发服务", "申报期限": "季", "有效期止": "2016-03-31", "有效期起": "2015-07-01", "税种": "增值税"}}}', '{"地税信息": {"1": {"纳税人识别号：": "440300306231039", "纳税人名称：": "深圳市康兴隆电子有限公司"}, "2": {"统一社会信用代码：": "914403003062310398", "税务登记表类型：": "单位纳税人税务登记"}, "3": {"注册地址：": "深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室"}, "4": {"生产经营地址：": "深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室"}, "5": {"街道乡镇：": "布吉街道"}, "6": {"手机/联系电话：": "15919445471", "法人代表：": "陈昌宇"}, "7": {"手机/联系电话：": "15712073487", "财务负责人：": "郑侠璇"}, "8": {"手机/联系电话：": "13430839397", "办税人员：": "韩文章"}, "9": {"经营期限起：": "2014-06-18", "开业设立日期：": "2014-06-18"}, "10": {"登记注册类型：": "私营有限责任公司", "国地共管户标志：": "国地共管"}, "11": {"纳税人状态：": "正常", "核算方式：": "独立核算自负盈亏"}, "12": {"业务受理点：": "深圳市龙岗区地方税务局布吉税务所", "主管税务机关：": "深圳市龙岗区地方税务局布吉税务所"}}}', '{"地税税费种信息": {"3": {"征收品目": "市区（增值税附征）", "纳税期限": "月", "有效期起": "2015-07-01", "申报期限": "期满之日起15日内", "有效期止": "9999-12-31", "征收代理方式": "自行申报", "税率": "0.07", "序号": "3", "征收项目": "城市维护建设税"}, "4": {"征收品目": "工资薪金所得", "纳税期限": "月", "有效期起": "2014-06-01", "申报期限": "期满之日起15日内", "有效期止": "9999-12-31", "征收代理方式": "代扣代缴", "税率": "0.2", "序号": "4", "征收项目": "个人所得税"}, "1": {"征收品目": "增值税地方教育附加", "纳税期限": "月", "有效期起": "2015-07-01", "申报期限": "期满之日起15日内", "有效期止": "9999-12-31", "征收代理方式": "自行申报", "税率": "0.02", "序号": "1", "征收项目": "地方教育附加"}, "2": {"征收品目": "增值税教育费附加", "纳税期限": "月", "有效期起": "2015-07-01", "申报期限": "期满之日起15日内", "有效期止": "9999-12-31", "征收代理方式": "自行申报", "税率": "0.03", "序号": "2", "征收项目": "教育费附加"}}}', '{"从业人数": "4", "主要股东": {"陈昌宇": {"姓名": "陈昌宇", "证件号码": "450422198902202171", "经济性质": "431|内资个人", "投资比例": "100.0000%", "证件种类": "201|居民身份证", "国籍": "156|中华人民共和国"}}, "上季度纳税情况": {}, "企业会计准则为": "小企业会计准则", "亏损明细": {"6": {"项目": "本年度", "纳税调整后所得": "929.70", "年度": "2016"}, "5": {"项目": "前一年度", "纳税调整后所得": "1006.12", "年度": "2015"}, "3": {"项目": "前三年度", "纳税调整后所得": "0.00", "年度": "2013"}, "4": {"项目": "前二年度", "纳税调整后所得": "0.00", "年度": "2014"}, "1": {"项目": "前五年度", "纳税调整后所得": "0.00", "年度": "2011"}, "2": {"项目": "前四年度", "纳税调整后所得": "0.00", "年度": "2012"}}, "所属行业明细": "其他未列明批发业"}', '{"国税调整纳税后所得": "929.70"}', '{"1": {"证件号码": "450422198902202171", "有效期起": "2014-06-23", "投资金额": "0.00", "有效期止": "9999-12-31", "投资方": "陈昌宇", "证件名称": "居民身份证", "投资比例": "100%", "序号": "1", "地址": "广西藤县金鸡镇金鸡街27号", "分配比例": "0%", "国籍": "中华人民共和国"}}', '{"年度纳税申报表": {}, "季度纳税申报表": {}}')
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1164 5640 17312 customerid:9开始插入数据库
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1166 5640 17312 customerid:9数据插入完成
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1180 5640 17312 customerid:9全部爬取完成
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1720 5640 17312 未传代理参数，启用本机IP
+Mon 12 Mar 2018 19:14:01 INFO localcredit.py 1729 5640 17312 {"data":[{"data":[{"apprdate":"2015-09-22","currency":"人民币","dom":"深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室","entflag":"440301001012014061809204","entname":"深圳市康兴隆电子有限公司","entstatus":"开业（存续）","enttype":"有限责任公司（自然人独资）","estdate":"2014-06-18","id":"41fa4146372f4814913fde6bc202343f","jinyinfuben":1,"lerep":"陈昌宇","opetype":"GS","opfrom":"2014-06-18","opscope":"仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。","opto":"5000-01-01","regcap":50,"regno":"440301109620142","rownum":1,"unifsocicrediden":"914403003062310398"}],"name":"data","vtype":"attr"}]}
+Mon 12 Mar 2018 19:14:02 INFO localcredit.py 1802 5640 17312 ('5590', 18282900, 9, '深圳市康兴隆电子有限公司', '914403003062310398', '{"股东信息": [{"invatt": "自然人", "inv": "陈昌宇", "cerno": "450422198902202171", "invtype": "自然人股东", "conprop": 100, "id": "1b1d57281a424d62a1914d825a1f4f65", "subconam": 50}], "法院冻结信息": [], "变更信息": [{"altdate": "2015/09/22", "altitems": "住所,一照一码升级,一照一码升级", "alttime": 2}, {"altdate": "2015/06/08", "altitems": "住所", "alttime": 1}], "经营异常信息": [], "股权质押信息": [], "严重违法失信信息": [], "成员信息": [{"posbrform": "选举", "post": "总经理", "name": "陈昌宇"}, {"posbrform": "委派", "post": "执行董事", "name": "陈昌宇"}, {"posbrform": "委派", "post": "监事", "name": "郑侠璇"}], "基本信息": {"entstatus": "开业（存续）", "rownum": 1, "dom": "深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室", "营业期限": "永续经营", "apprdate": "2015-09-22", "opetype": "GS", "currency": "人民币", "id": "41fa4146372f4814913fde6bc202343f", "opto": "5000-01-01", "jinyinfuben": 1, "entname": "深圳市康兴隆电子有限公司", "estdate": "2014-06-18", "unifsocicrediden": "914403003062310398", "opscope": "仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。", "opfrom": "2014-06-18", "entflag": "440301001012014061809204", "enttype": "有限责任公司（自然人独资）", "regno": "440301109620142", "年报情况": "2014年报已公示、2015年报已公示、2016年报已公示、", "regcap": 50, "lerep": "陈昌宇"}, "动产抵押信息": [], "许可经营信息": [{"rownum": 1, "cbuitem": "仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。"}]}')
+Mon 12 Mar 2018 19:14:02 INFO localcredit.py 1803 5640 17312 工商网完成
+Mon 12 Mar 2018 19:14:48 INFO localcredit.py 1233 5640 17312 未传代理参数，启用本机IP
+Mon 12 Mar 2018 19:14:49 INFO localcredit.py 1263 5640 17312 {"status":"ok","resultlist":[{"RecordID":"41fa4146372f4814913fde6bc202343f","EntName":"深圳市康兴隆电子有限公司","EntRegNo":"440301109620142","EntTypeName":"有限责任公司（自然人独资）","EstDate":"2014年06月18日"}],"msg":"共找到1条数据。 （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=914403003062310398\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=914403003062310398\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":""}
+Mon 12 Mar 2018 19:15:02 INFO localcredit.py 1286 5640 17312 未传代理参数，启用本机IP
+Mon 12 Mar 2018 19:15:26 INFO localcredit.py 1298 5640 17312 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><link href="../App_Themes/Default/css.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Default/Date/skin/default/datepicker.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Default/Date/skin/WdatePicker.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Default/Date/skin/whyGreen/datepicker.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Default/Login.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Default/Main.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Default/StyleSheet.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Default/StyleSheet1.css" type="text/css" rel="stylesheet" /><title>
+	市场主体信用信息公示
+</title><link href="css/public3.css" type="text/css" rel="stylesheet" /><link rel="stylesheet" type="text/css" href="css/NewCss.css" /></head>
+<body style="background-color: #f0f9fe;">
+    <form method="post" action="./newGSPTDetail3.aspx?ID=41fa4146372f4814913fde6bc202343f" id="form1" style="width: 1009px; margin: 0px auto;">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTE1NjQ2NDIyOQ8WCB4CaWQFIDQxZmE0MTQ2MzcyZjQ4MTQ5MTNmZGU2YmMyMDIzNDNmHgR0eXBlBQExHgRodGR5BQItMR4FZW50SWQFGDQ0MDMwMTAwMTAxMjAxNDA2MTgwOTIwNBYCAgEPZBYKAgUPDxYCHgRUZXh0BSTmt7HlnLPluILlurflhbTpmobnlLXlrZDmnInpmZDlhazlj7hkZAIHDw8WAh8EZWRkAgkPDxYCHwQFCDAwOjAwOjAxZGQCDQ9kFgICAQ9kFgJmD2QWAgIBD2QWAgIBDxYCHwQFlQI8dHI+PHRkPjE8L3RkPjx0ZD4yMDE15bm0MDbmnIgwOOaXpTwvdGQ+PHRkPuS9j+aJgDwvdGQ+PHRkPjxhIENsYXNzPSdiZ3h4Y3gnIG9uY2xpY2s9J2xvZ2RsKDEpJz7mn6XnnIvlj5jmm7Tkv6Hmga88L2E+PC90ZD48L3RyPjx0cj48dGQ+MjwvdGQ+PHRkPjIwMTXlubQwOeaciDIy5pelPC90ZD48dGQ+5LiA54Wn5LiA56CB5Y2H57qn44CB5L2P5omAPC90ZD48dGQ+PGEgQ2xhc3M9J2JneHhjeCcgb25jbGljaz0nbG9nZGwoMiknPuafpeeci+WPmOabtOS/oeaBrzwvYT48L3RkPjwvdHI+ZAITD2QWAmYPDxYCHwQFEzIuMC4xLjQgfCAyMDE4LzMvMTJkZGTK49Dhb8X9hf5B69jkB/a3F/Y2LQ==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/web/WebResource.axd?d=5d5KGRMAyLvBqg6D0Z6Xhj3Bik0iH8Qt5h7ZqLwbqRWMcG_QNGx9uHHYTzhIEQhPxWH_P8u88WPt72kX0&amp;t=635802961220000000" type="text/javascript"></script>
+
+
+<script src="/web/ScriptResource.axd?d=a8XuVJe3RPmNNezBCV4fnhmFCTQPZUJuIVB1PICLRIFB0h0iFOT51is_Q9pzVzBg5YWBLBKS1CWtbSPylPaRTjWmvnSuN_4Vp_BgSDtPqcL64afEn05pWbSSNySR9Mydpi-0VtLHKkLXQpp5CBE1Sm7fImxVdYLGKHFTJg2&amp;t=5f9d5645" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax 客户端框架未能加载。');
+//]]>
+</script>
+
+<script src="/web/ScriptResource.axd?d=_qZPvnuQ-IwWQrnKXhnIvLRxioe9O-Ab28fk3EAfgQLrvQZtwHiPgSDxbsHi67wW8f6eI0EuCp8CTlwgUL3vc2j57a0O3cWaN1_EDEf2zcEG9MkETRna5PCL5Le_ddeJuIRt7UWsXRMwb7i8yeDTW26c9B0FuBPQG3y93LM-E-2H2qGe0&amp;t=5f9d5645" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B2C48C15" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAI/IH3ZIvlV0GBh+XYDo0pNbKnzHSiJpJsAltt7yYPWcq7W9LSFEKB4YoLkQ4vcrx4WLjr1" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+    
+
+<script type="text/javascript" src="javascript/base-loading.js"></script>
+<div style="text-align: center; width: 1009px; margin:0 auto; position:relative;">
+    <div style=" position:absolute;  width:160px; height:22px; margin-left:828px;  margin-top:18px;  box-shadow: 0px 0px 0px 0px;">
+        
+        <a style=" float:left;display:inline-block; width:80px; height:22px; line-height:22px; " href="https://www.szcredit.com.cn/web/GSPT/NewUserRegister.aspx"></a>
+        <a style=" float:right;display:inline-block; width:80px; height:22px; line-height:22px;  " href='/web/GSPT/Newlogin.aspx'></a>
+    </div>
+ <table width="1009" border="0" align="center" cellpadding="0" cellspacing="0" style=" margin-top:10px;">
+ 
+  <tr>
+    <td height="110" colspan="6">
+    <img src="/web/gspt/images/banner1.jpg" />
+    </td>
+  </tr>
+
+  <tr>
+    <td height="60" colspan="6"><table width="" height="" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="95"><a href='/web/newIndex.aspx'><img src='/web/GSPT/images/sy1.jpg' width="95" height="56" border="0" /></a></td>
+        
+        <td width="18"><a href='/web/GSPT/NewLists.aspx?type=6000'><img src='/web/GSPT/images/gs1.jpg' width="93" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/NewLists.aspx?type=4000'><img src='/web/GSPT/images/js1.jpg' width="93" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/XzcfInfo.aspx'><img src='/web/GSPT/images/bgt1.jpg' width="93" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/NewLists.aspx?type=6005'><img src='/web/GSPT/images/fg1.jpg' width="93" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/newComInfoIndex.aspx'><img src='/web/GSPT/images/bsmhy1.jpg' width="93" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/newDeptList.aspx'><img src='/web/GSPT/images/xxml1.jpg' width="93" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/newlogin.aspx'><img src='/web/GSPT/images/yhzx1.jpg' width="93" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/NewOnlinePub.aspx'><img src='/web/GSPT/images/bz1.jpg' width="93" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/NewYdyy.aspx'><img src='/web/GSPT/images/ydyy1.jpg' width="83" height="56" border="0" /></a></td>
+        <td width="18"><a href='/web/GSPT/NewLists.aspx?type=B000'><img src='/web/GSPT/images/xydb1.jpg' width="80" height="56" border="0" /></a></td>
+        
+      </tr>
+    </table>
+   </td>
+  </tr>
+  </table>
+ </div>
+    <div id="details" class="clear">
+        <div style="height: 40px; width: 990px;">
+            <div style="float: left; width: 890px; height: 40px;">
+                <h2>
+                    <span id="labEntName" style="font-size: 18px; font-family: 幼圆;
+                        font-weight: bold;">深圳市康兴隆电子有限公司</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="labEetRegNO" style="color:Red;font-family:幼圆;font-weight:bold;font-size: 18px;"></span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="sjtxt" style="color:#F0F9FE;font-family:幼圆;font-weight:bold;font-size: 18px;">00:00:01</span></h2>
+            </div>
+            <div class="xxday" style="background-image: url('images/1ff.jpg')" onclick="checsessoin()">
+                信息打印
+            </div>
+        </div>
+        <div id="detailsCon" style="width: 990px;">
+            <div>
+                <div id="detailinfo" style="width: 987px;">
+                    
+                    <table width="930px" cellspacing="1" cellpadding="0" style="background: #e3f5ff;">
+                        <tr>
+                            <td width="40px;" style="background-color: #d9d9d6;">
+                                <span style="display: block; background-color: #d9d9d6; font-size: 18px; width: 25px;
+                                    padding-left: 10px;">基<br />
+                                    本<br />
+                                    信<br />
+                                    息</span>
+                            </td>
+                            <td style="vertical-align: top;">
+                                <table id="Table31" cellspacing="1" cellpadding="0" style="width:930px;">
+	<tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;0&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">登记备案信息</a><a class="sja">[更新时间：2018-03-12]</a></li><li id="lidown_0" class="up"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_0" class="detailsList" style="width:930px;">
+			<tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">注册号</td><td align="left" style="height:22px;">440301109620142</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">统一社会信用代码</td><td align="left" style="height:22px;">914403003062310398</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">企业名称</td><td align="left" style="height:22px;">深圳市康兴隆电子有限公司</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">法定代表人</td><td align="left" style="height:22px;">陈昌宇<a href='SZQueryConditionList.aspx?method=queryEntInfoByLeRepName&keyword=陈昌宇&rid=9baf693e076240b99d5d183532418206' target=_blank>[<font color=red>点击查看任职企业情况</font>]</a></td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">住所</td><td align="left" style="height:22px;">深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">成立日期</td><td align="left" style="height:22px;">2014年6月18日</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">营业期限</td><td align="left" style="height:22px;">永久经营</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">核准日期</td><td align="left" style="height:22px;">2015-09-22</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">认缴注册资本总额</td><td align="left" style="height:22px;">(人民币)50.0000万元</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">企业类型</td><td align="left" style="height:22px;">有限责任公司（自然人独资）</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">经营范围</td><td align="left" style="height:22px;">仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。^</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">企业登记状态</td><td align="left" style="height:22px;">登记成立</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">年检情况</td><td align="left" style="height:22px;"> </td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">年报情况</td><td align="left" style="height:22px;">2016年度报告</td>
+			</tr>
+		</table></td>
+	</tr><tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;1&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">股东登记信息</a><a class="sja">[更新时间：2018-03-12]</a></li><li id="lidown_1" class="down"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_1" class="detailsListNone" style="width:930px;">
+			<tr style="background-color:rgb(243, 243, 243);">
+				<td align="left" style="height:22px;">股东名称</td><td align="left" style="height:22px;">出资额</td><td align="left" style="height:22px;">出资比例</td>
+			</tr><tr>
+				<td align="left" style="height:22px;">陈昌宇<a href='SZQueryConditionList.aspx?method=queryEntInfoBySHName&keyword=陈昌宇&rid=ffa2f4f142d14237b3b7c4e6ed51507e&shatt=0   ' target=_blank> [<font color=red>点击查看开办企业情况</font>] </a></td><td align="left" style="height:22px;">50.0000</td><td align="left" style="height:22px;">100.0000%</td>
+			</tr>
+		</table></td>
+	</tr><tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;2&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">成员登记信息</a><a class="sja">[更新时间：2018-03-12]</a></li><li id="lidown_2" class="down"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_2" class="detailsListNone" style="width:930px;">
+			<tr style="background-color:rgb(243, 243, 243);">
+				<td align="left" style="height:22px;">成员名称</td><td align="left" style="height:22px;">职务</td>
+			</tr><tr>
+				<td align="left" style="height:22px;">陈昌宇</td><td align="left" style="height:22px;">总经理</td>
+			</tr><tr>
+				<td align="left" style="height:22px;">郑侠璇</td><td align="left" style="height:22px;">监事</td>
+			</tr><tr>
+				<td align="left" style="height:22px;">陈昌宇</td><td align="left" style="height:22px;">执行（常务）董事</td>
+			</tr>
+		</table></td>
+	</tr><tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;3&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">企业年报信息</a><a class="sja">[更新时间：2018-03-12]</a></li><li id="lidown_3" class="down"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_3" class="detailsListNone" style="width:930px;">
+			<tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">报送年度</td><td align="left" style="height:22px;"><a href="https://www.szcredit.org.cn/GJQYCredit/GSZJGSPTS/QYNBInfo.aspx?Entid=440301001012014061809204&NBYear=2014" target=_blank><font color=Blue>2014年度报告</font></td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">发布日期</td><td align="left" style="height:22px;">2015-06-11</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(252, 252 ,252);width:180px;">报送年度</td><td align="left" style="height:22px;"><a href="https://www.szcredit.org.cn/GJQYCredit/GSZJGSPTS/QYNBInfo.aspx?Entid=440301001012014061809204&NBYear=2015" target=_blank><font color=Blue>2015年度报告</font></td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(252, 252 ,252);width:180px;">发布日期</td><td align="left" style="height:22px;">2016-06-11</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">报送年度</td><td align="left" style="height:22px;"><a href="https://www.szcredit.org.cn/GJQYCredit/GSZJGSPTS/QYNBInfo.aspx?Entid=440301001012014061809204&NBYear=2016" target=_blank><font color=Blue>2016年度报告</font></td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">发布日期</td><td align="left" style="height:22px;">2017-05-17</td>
+			</tr>
+		</table></td>
+	</tr><tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;4&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">税务登记信息(国税)</a><a class="sja">[更新时间：2018-03-10]</a></li><li id="lidown_4" class="down"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_4" class="detailsListNone" style="width:930px;">
+			<tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">纳税人识别号</td><td align="left" style="height:22px;">440300306231039</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">纳税人状态</td><td align="left" style="height:22px;">正常</td>
+			</tr>
+		</table></td>
+	</tr><tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;5&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">税务登记信息(地税)</a><a class="sja">[更新时间：2018-03-11]</a></li><li id="lidown_5" class="down"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_5" class="detailsListNone" style="width:930px;">
+			<tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">纳税人识别号</td><td align="left" style="height:22px;">440300306231039</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">纳税人状态</td><td align="left" style="height:22px;">正常</td>
+			</tr>
+		</table></td>
+	</tr><tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;6&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">机构代码信息</a><a class="sja">[更新时间：2018-03-12]</a></li><li id="lidown_6" class="down"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_6" class="detailsListNone" style="width:930px;">
+			<tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">机构代码</td><td align="left" style="height:22px;">306231039</td>
+			</tr>
+		</table></td>
+	</tr><tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;7&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">电子商务认证企业信息</a><a class="sja">[更新时间：2018-03-07]</a></li><li id="lidown_7" class="down"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_7" class="detailsListNone" style="width:930px;">
+			<tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">企业证书编号</td><td align="left" style="height:22px;">CE1411201641329204</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">企业证书链接地址</td><td align="left" style="height:22px;">http://szcert.ebs.org.cn/440301001012014061809204</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">认证时间</td><td align="left" style="height:22px;">2014-11-20</td>
+			</tr>
+		</table></td>
+	</tr><tr style="font-weight:bold;">
+		<td align="left" onclick="show(&#39;8&#39;)" style="height:25px;"><div class="tabs" id="tabs"><li class="current"><a class="sjli">电子商务认证企业网站信息</a><a class="sja">[更新时间：2018-03-07]</a></li><li id="lidown_8" class="down"></li></div></td>
+	</tr><tr style="width:930px;">
+		<td><table id="tb_8" class="detailsListNone" style="width:930px;">
+			<tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">网站地址</td><td align="left" style="height:22px;">shop1409762369584.1688.com</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">网站名称</td><td align="left" style="height:22px;">深圳市康兴隆电子有限公司</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">网站类型名称</td><td align="left" style="height:22px;">网店网铺</td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">网站ICP备案号</td><td align="left" style="height:22px;"> </td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">网站LOGO链接地址</td><td align="left" style="height:22px;"> </td>
+			</tr><tr>
+				<td align="left" style="background-color:rgb(243, 243, 243);width:180px;">网站简介</td><td align="left" style="height:22px;"> </td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+                                
+                                <table id="Table123" cellpadding="0" style="width: 930px;">
+	<tr>
+		<td onclick="showbg()">
+                                            <div class="tabs" id="tabs">
+                                                <li class="current" style="background-color: #aedffd;">企业变更信息<a class="sja">[更新时间：2018-03-12]</a></li><li
+                                                    id="lidowns_0" class="down"></li>
+                                            </div>
+                                        </td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;">
+                                            <div id="listdiv">
+                                                <table id="tbs_1" class="detailsListNone" style="width: 930px;">
+                                                    <tr style="background-color: rgb(243, 243, 243);">
+                                                        <td align="left" style="height: 22px;">
+                                                            变更次数
+                                                        </td>
+                                                        <td align="left" style="height: 22px;">
+                                                            变更日期
+                                                        </td>
+                                                        <td align="left" style="height: 22px;">
+                                                            变更事项
+                                                        </td>
+                                                        <td align="left" style="height: 22px;">
+                                                            <a class="bgxxcx" onclick='logdl(0,-1)'>查看全部信息</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr><td>1</td><td>2015年06月08日</td><td>住所</td><td><a Class='bgxxcx' onclick='logdl(1)'>查看变更信息</a></td></tr><tr><td>2</td><td>2015年09月22日</td><td>一照一码升级、住所</td><td><a Class='bgxxcx' onclick='logdl(2)'>查看变更信息</a></td></tr>
+                                                </table>
+                                            </div>
+                                            
+                                        </td>
+	</tr>
+</table>
+
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <!--底部模块开始-->
+        
+<div style="text-align: left; width: 992px; margin: 0 auto; font-size: 12px; font-family: 微软雅黑;
+    color: Black; overflow-y: none; overflow-x: none;">
+    <table width="992" border="0" align="left" cellpadding="0" cellspacing="0">
+        <tr>
+            <td height="103" colspan="6" background='/web/gspt/images/newdown.jpg'>
+                <table width="992" height="90" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="39">
+                            &nbsp;
+                        </td>
+                        <td>
+                            <p style="height: 20px;">
+                                <a style="color: Black;" href="/web/gspt/newAboutUs.aspx">关于我们</a>｜保留所有权｜
+                                <a style="color: Black;" href="/web/gspt/newAboutUs.aspx">联系我们</a>
+                                <span id="lbVerson">版本V<span id="PageFooter4_lblVersion">2.0.1.4 | 2018/3/12</span></span></p>
+                            <p style="height: 20px;">
+                                深圳市公共信用中心 
+                                技术支持：12315-3-3
+                                备案许可证编号为：粤ICP备12007392号-1</p>
+                            <p style="height: 20px;">
+                                地址：深圳市福田区竹子林益华大厦四楼 建议使用1024*768分辨率以上的显示器和IE浏览器<script type="text/javascript">                                                                                  var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1260729719'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260729719%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                            </p>
+                        </td>
+                        
+                        <td width="60" height="40">
+                            <a href="http://bszs.conac.cn/sitename?method=show&id=0A9CDDF925C00AF8E053012819AC98FD"
+                                target="_blank">
+                                <img src='/web/gspt/images/blue_error.png' /></a>
+                        </td>
+                        <td width="100">
+                            <a href="http://www.sznet110.gov.cn/index.jsp" target="_blank">
+                                <img src='/web/gspt/images/down_1.jpg' width="94" height="40" /></a>
+                        </td>
+                        <td width="100">
+                            <a href="http://www.sznet110.gov.cn/webrecord/innernet/Welcome.jsp?bano=4403501900689"
+                                target="_blank">
+                                <img src='/web/gspt/images/down_2.jpg' width="94" height="40" /></a>
+                        </td>
+                        <td width="90">
+                            <a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=027102001080700295" target="_blank">
+                                <img src='/web/gspt/images/down_3.jpg' width="93" height="40" /></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+
+        <!--底部模块结束-->
+        <input type="hidden" name="hfEstDate" id="hfEstDate" value="2014-06-18" />
+    </form>
+</body>
+</html>
+<script src="javascript/jquery-1.9.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="javascript/gspt.js"></script>
+<script type="text/javascript">
+
+    //循环登记备案信息，给法定代表人加上超链接
+    $("#tb_0 td").each(function () {
+        var tdname = $(this).html();
+        if (tdname == "法定代表人") {
+            var nexttd = $(this).next();  //法定代表人值td
+            var tdhtml = nexttd.html();
+            var fddbr = tdhtml.substring(0, tdhtml.indexOf("<a"));
+            var obj = tdhtml.substring(tdhtml.indexOf("<a"));
+            var objhref = $(obj).attr("href");
+            nexttd.html("<a href='" + objhref + "' style='color:blue' target='_blank'>" + fddbr + "</a>" + obj);
+            return false;
+        }
+    });
+
+    //循环股东登记信息，给股东名称加上超链接
+    var headername = $("#tb_1 tr:eq(0) td:eq(0)").html();
+    if (headername == "股东名称") {
+        $("#tb_1 tr:gt(0)").each(function () {
+            var gdtd = $(this).children('td').eq(0);
+            var gdhtml = gdtd.html();
+            var gdmc = gdhtml.substring(0, gdhtml.indexOf("<a"));
+            var obj = gdhtml.substring(gdhtml.indexOf("<a"));
+            var objhref = $(obj).attr("href");
+            var shatt = objhref.substring(objhref.indexOf("shatt=") + 6);  //股东类型
+            var entId = objhref.substring(objhref.indexOf("rid=") + 4, objhref.indexOf("&shatt")); //企业EntId
+            if (shatt == 1)
+                objhref += "&ismc=true";
+            gdtd.html("<a href='" + objhref + "' style='color:blue' target='_blank'>" + gdmc + "</a>" + obj);
+        });
+    }
+</script>
+<script type="text/javascript" defer="defer">
+    function checsessoin() {
+        var strSession = getCookie("CreditUserList");
+        if (strSession == null) {
+            window.open('SignIn.aspx', '', 'height=350, width=550, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no;');
+            //window.location.reload();
+        }
+        else {
+            window.open('../WebPages/search/SZQuery/SZQueryItem.aspx?ID=41fa4146372f4814913fde6bc202343f&type=1&htdy=-1');
+        }
+    }
+    function logdl(count,itemId) {
+        var strSession = getCookie("CreditUserList");
+        if (strSession == null) {
+            window.open('SignIn.aspx', '', 'height=350, width=550, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no;');
+            //window.location.reload();
+        }
+        else {
+            window.open('newGsptHistoryItem.aspx?ID=' + count + '&entId=440301001012014061809204&itemId=' + itemId + '&recdid=41fa4146372f4814913fde6bc202343f', '', 'dialogWidth:1020px;dialogHeight:500px;status:no;');
+        }
+    }
+
+    function getCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+</script>
+
+Mon 12 Mar 2018 19:15:46 INFO localcredit.py 1690 5640 17312 {"登记备案信息": {"企业登记状态": "登记成立", "统一社会信用代码": "914403003062310398", "企业类型": "有限责任公司（自然人独资）", "法定代表人": "陈昌宇", "认缴注册资本总额": "(人民币)50.0000万元", "年检情况": " ", "住所": "深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室", "成立日期": "2014年6月18日", "经营范围": "仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。^", "注册号": "440301109620142", "核准日期": "2015-09-22", "营业期限": "永久经营", "年报情况": "2016年度报告", "企业名称": "深圳市康兴隆电子有限公司"}, "税务登记信息(国税)": {"纳税人状态": "正常", "纳税人识别号": "440300306231039"}, "成员登记信息": {"陈昌宇": "执行（常务）董事", "郑侠璇": "监事"}, "电子商务认证企业网站信息": {"网站类型名称": "网店网铺", "网站名称": "深圳市康兴隆电子有限公司", "网站地址": "shop1409762369584.1688.com", "网站LOGO链接地址": " ", "网站ICP备案号": " ", "网站简介": " "}, "企业变更信息": {"1": {"变更日期": "2015年09月22日", "变更事项": "一照一码升级、住所"}, "2": {"变更日期": "2015年09月22日", "变更事项": "一照一码升级、住所"}}, "电子商务认证企业信息": {"企业证书编号": "CE1411201641329204", "企业证书链接地址": "http://szcert.ebs.org.cn/440301001012014061809204", "认证时间": "2014-11-20"}, "股东登记信息": {"股东名称": {"陈昌宇": {"出资额": "50.0000", "出资比例": "100.0000%"}}}, "关联公司信息": {"陈昌宇": {"1": {"成立日期": "2014年06月18日", "企业注册号": "440301109620142", "企业类型": "有限责任公司（自然人独资）", "企业名称": "深圳市康兴隆电子有限公司"}}}, "税务登记信息(地税)": {"纳税人状态": "正常", "纳税人识别号": "440300306231039"}, "机构代码信息": {"机构代码": "306231039"}, "企业年报信息": {"网站类型名称": "网店网铺", "网站名称": "深圳市康兴隆电子有限公司", "网站地址": "shop1409762369584.1688.com", "网站LOGO链接地址": " ", "网站ICP备案号": " ", "网站简介": " "}}
+Mon 12 Mar 2018 19:15:46 INFO localcredit.py 1696 5640 17312 信用网数据插入
+Mon 12 Mar 2018 19:15:47 INFO localcredit.py 1698 5640 17312 ('5590', 18282900, 9, '深圳市康兴隆电子有限公司', '914403003062310398', '{"登记备案信息": {"企业登记状态": "登记成立", "统一社会信用代码": "914403003062310398", "企业类型": "有限责任公司（自然人独资）", "法定代表人": "陈昌宇", "认缴注册资本总额": "(人民币)50.0000万元", "年检情况": " ", "住所": "深圳市龙岗区布吉街道佳兆业新都汇家园2栋D单元2306室", "成立日期": "2014年6月18日", "经营范围": "仪器仪表、电子产品、五金制品、数码产品、塑胶产品、日用品、自动化设备及配件、计算机软硬件的技术开发及销售，经营电子商务，国内贸易，经营进出口业务。^", "注册号": "440301109620142", "核准日期": "2015-09-22", "营业期限": "永久经营", "年报情况": "2016年度报告", "企业名称": "深圳市康兴隆电子有限公司"}, "税务登记信息(国税)": {"纳税人状态": "正常", "纳税人识别号": "440300306231039"}, "成员登记信息": {"陈昌宇": "执行（常务）董事", "郑侠璇": "监事"}, "电子商务认证企业网站信息": {"网站类型名称": "网店网铺", "网站名称": "深圳市康兴隆电子有限公司", "网站地址": "shop1409762369584.1688.com", "网站LOGO链接地址": " ", "网站ICP备案号": " ", "网站简介": " "}, "企业变更信息": {"1": {"变更日期": "2015年09月22日", "变更事项": "一照一码升级、住所"}, "2": {"变更日期": "2015年09月22日", "变更事项": "一照一码升级、住所"}}, "电子商务认证企业信息": {"企业证书编号": "CE1411201641329204", "企业证书链接地址": "http://szcert.ebs.org.cn/440301001012014061809204", "认证时间": "2014-11-20"}, "股东登记信息": {"股东名称": {"陈昌宇": {"出资额": "50.0000", "出资比例": "100.0000%"}}}, "关联公司信息": {"陈昌宇": {"1": {"成立日期": "2014年06月18日", "企业注册号": "440301109620142", "企业类型": "有限责任公司（自然人独资）", "企业名称": "深圳市康兴隆电子有限公司"}}}, "税务登记信息(地税)": {"纳税人状态": "正常", "纳税人识别号": "440300306231039"}, "机构代码信息": {"机构代码": "306231039"}, "企业年报信息": {"网站类型名称": "网店网铺", "网站名称": "深圳市康兴隆电子有限公司", "网站地址": "shop1409762369584.1688.com", "网站LOGO链接地址": " ", "网站ICP备案号": " ", "网站简介": " "}}')
+Mon 12 Mar 2018 19:15:47 INFO localcredit.py 1699 5640 17312 信用网数据插入完成
+Mon 12 Mar 2018 19:15:47 INFO localcredit.py 1939 5640 17312 深圳企业信用网信息抓取完成

@@ -1278,8 +1278,21 @@ class szcredit(object):
                     print(result_dict["RecordID"])  # 获取ID
                     detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(
                         result_dict["RecordID"])
+                    session = requests.session()
+                    try:
+                        session.proxies = sys.argv[1]
+                    except:
+                        self.logger.info("未传代理参数，启用本机IP")
                     detail = session.get(url=detai_url, headers=self.headers, timeout=30)
                     detail.encoding = detail.apparent_encoding
+                    if "您的查询过于频繁，请稍候再查" in detail.text:
+                        session = requests.session()
+                        try:
+                            session.proxies = sys.argv[1]
+                        except:
+                            self.logger.info("未传代理参数，启用本机IP")
+                        detail = session.get(url=detai_url, headers=self.headers, timeout=30)
+                        detail.encoding = detail.apparent_encoding
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
                     self.logger.info(detail.text)
                     # dcap = dict(DesiredCapabilities.PHANTOMJS)

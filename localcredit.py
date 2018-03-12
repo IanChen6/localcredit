@@ -1279,6 +1279,7 @@ class szcredit(object):
                     detail = session.get(url=detai_url, headers=self.headers, timeout=30)
                     detail.encoding = detail.apparent_encoding
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
+                    self.logger.info(detail.text)
                     # dcap = dict(DesiredCapabilities.PHANTOMJS)
                     # dcap["phantomjs.page.settings.userAgent"] = (
                     #     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
@@ -1661,6 +1662,9 @@ class szcredit(object):
         self.logger.info(infojson)
         params = (
             self.batchid, self.companyid, self.customerid, self.cn, self.sID, infojson)
+        if "登记备案信息" not in data_dict.keys():
+            self.logger.info("信用网访问失败")
+            return False
         self.logger.info("信用网数据插入")
         self.insert_db("[dbo].[Python_Serivce_WXWebShenZhen_Add]", params)
         self.logger.info(params)

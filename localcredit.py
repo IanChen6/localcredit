@@ -1272,6 +1272,8 @@ class szcredit(object):
                     time.sleep(sleep_time[random.randint(0, 9)])
                     continue
                 if resp1 is not None and resp1.status_code == 200 and result:
+                    sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
+                    time.sleep(sleep_time[random.randint(0, 9)])
                     result_dict = result[0]
                     print(result_dict["RecordID"])  # 获取ID
                     detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(

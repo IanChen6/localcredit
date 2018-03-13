@@ -475,30 +475,46 @@ class gscredit(guoshui):
         return niandu, shenbaobiao
 
     def gsjdsb(self, browser, session):
+        self.logger.info("国税季度查询")
         content = browser.page_source
         browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+        time.sleep(0.1)
         browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
+        time.sleep(0.1)
         browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+        time.sleep(0.1)
         browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(20170101)
+        time.sleep(0.1)
         # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
         # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
         # 所属日期
         browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").clear()
+        time.sleep(0.1)
         browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").send_keys(20171001)
+        time.sleep(0.1)
         browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
+        time.sleep(0.1)
         browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(20171231)
+        time.sleep(0.1)
         browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
-        time.sleep(2)
+        time.sleep(3)
         content = browser.page_source
+        # with open("jieguo.html",'w') as f:
+        #     f.write(content)
         root = etree.HTML(content)
         select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
         a = 1
+        print(a)
         for i in select[1:]:
             shuizhong = i.xpath('.//text()')
+            print(shuizhong)
             a += 1
             if "度预缴纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
+                self.logger.info("查询到季度表")
+                print("查询到季度表")
                 browser.find_element_by_xpath(
                     '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()
+                self.logger.info(a)
                 wait = ui.WebDriverWait(browser, 5)
                 time.sleep(2)
                 # wait.until(
@@ -507,7 +523,9 @@ class gscredit(guoshui):
                 # 股东信息
                 try:
                     iframe = browser.find_element_by_xpath('//div[@id="mini-39"]//iframe')
+                    print("进入查询结果")
                     browser.switch_to_frame(iframe)
+                    time.sleep(1.5)
                     content = browser.page_source
                     root = etree.HTML(content)
                     yiyujiao = root.xpath('//*[@id="table0"]/tbody/tr[14]/td[7]/span/text()')[0]
@@ -519,6 +537,8 @@ class gscredit(guoshui):
                     jibao["应补(退)所得税额"] = ybutui
                     jibao["应纳所得税额"] = ynsds
                     jibao["减:减免所得税额（请填附表3）"] = jmsds
+                    self.logger.info("季度表已查询")
+                    self.logger.info(jibao)
                     return jibao
                 except Exception as e:
                     print(e)
@@ -563,6 +583,7 @@ class gscredit(guoshui):
                     jibao["应补(退)所得税额"] = str(ybt)
                     jibao["应纳所得税额"] = ""
                     jibao["减:减免所得税额（请填附表3）"] = ""
+                    self.logger.info(jibao)
                 except:
                     return {}
                 return jibao
@@ -1022,9 +1043,9 @@ class gscredit(guoshui):
             jsoncookies = json.dumps(cookies, ensure_ascii=False)
             if "账号和密码不匹配" in jsoncookies:
                 self.logger.warn("customerid:{}账号和密码不匹配".format(self.customerid))
-                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
-                           "账号和密码不匹配")
-                return -1
+                # job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
+                #            "账号和密码不匹配")
+                return 12
             with open('cookies/{}cookies.json'.format(self.batchid), 'w') as f:  # 将login后的cookies提取出来
                 f.write(jsoncookies)
                 f.close()
@@ -1076,7 +1097,7 @@ class gscredit(guoshui):
             browser.get(url="http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html")
             browser.get(url=shenbao_url)
             time.sleep(3)
-            sfzrd = self.gssfzrd(browser)
+            sfzrd = {}
             self.logger.info("customerid{}税费种信息{}:".format(self.customerid, sfzrd))
         except Exception as e:
             self.logger.info("customerid:{}SFZ出错".format(self.customerid))
@@ -1104,6 +1125,7 @@ class gscredit(guoshui):
             browser.get(url=jk_url)
             try:
                 niandu, shenbaobiao = self.gsndsb(browser, session)
+                time.sleep(0.5)
             except Exception as e:
                 self.logger.info(e)
                 self.logger.info("年度所得税查询失败")
@@ -1114,6 +1136,7 @@ class gscredit(guoshui):
             # 上个季度所得税申报结果
             jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
             browser.get(url=jk_url)
+            time.sleep(0.5)
             try:
                 preseason = self.gsjdsb(browser, session)
             except Exception as e:
@@ -1918,9 +1941,11 @@ def run_test(user, pwd, batchid, companyid, customerid):
             if not jieguo:
                 job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')
                 return 0
-            if jieguo==-1:
-                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
-                           "账号和密码不匹配")
+            if jieguo==12:
+                try:
+                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "账号和密码不匹配")
+                except:
+                    pass
                 return 0
         except:
             job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')

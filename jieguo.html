@@ -1,0 +1,164 @@
+<!DOCTYPE html><html><head lang="en">
+<meta charset="UTF-8">
+<title>申报结果查询</title>
+<!--[if lt IE 9]>
+    <link rel="stylesheet" href="/BsfwtWeb/apps/css/ie.css"/>
+    <![endif]-->
+
+
+<link rel="stylesheet" type="text/css" href="/BsfwtWeb/apps/css/ws_default.css">
+<link rel="stylesheet" href="/BsfwtWeb/apps/views/sb/cxdy/sbcx.css">
+
+</head>
+<body style=""><div><!--
+公共头部(登录后)引用说明:
+1. 头部+底部+右侧工具条:
+<script type="text/javascript" src="/BsfwtWeb/apps/js/common_include.js" id="includeScript" data="isAll"></script>
+2. 底部+右侧工具条:
+<script type="text/javascript" src="/BsfwtWeb/apps/js/common_include.js" id="includeScript" data="noHead"></script>
+3. 头部:
+<script type="text/javascript" src="/BsfwtWeb/apps/js/common_include.js"></script>
+-->
+<div class="header">
+  <div class="header-container">
+    <div class="navbar">
+      <div class="navbar-logo"></div>
+      <div class="navbar-zh fr" id="headerUserBtn">
+        <div class="zh-logo"></div>
+        <div class="absolute-bar zh-bar" id="headerUserMenu">
+          <a href="javascript:void(0)" id="myAccount" class="zh-bar-btn">我的账户</a>
+          <!-- <a href="javascript:void(0)" class="zh-bar-btn">短信订阅</a> -->
+          <a href="javascript:;" id="exit" class="zh-bar-btn btn-border-top">退出</a>
+        </div>
+      </div>
+      <div class="navbar-form navbar-left navbar-search fr">
+        <input id="banner-search" type="text" autocomplete="off" style="width: 248px; height: 30px;color:#999999;line-height:30px" value="请输入关键字..." onfocus="if(value==defaultValue){value='';this.style.color='#000'}" onblur="if(!value){value=defaultValue;this.style.color='#999'}">
+        <a href="javascript:void(0)" class="searchBtn inconstruction"></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="user">
+    <div class="user-container">
+        <span class="user-logo"></span>
+        <span class="user-info">
+            <span>当前用户：</span>
+            <a class="user-detail" href="javascript:void(0)" id="headerDetailBtn">
+                <span class="user-name" id="headerUserName">深圳市快视电子有限公司</span>
+                <span class="user-company" id="headerCompany">深圳市龙华区国家税务局（91440300MA5DCXYE4M）</span>
+                <span class="user-info-btn"></span>
+            </a>
+        </span>
+        <div class="absolute-bar user-detail-bar" id="headerDetail" style="">
+            <div class="top">
+                <a href="javascript:void(0)" class="detail-bar-closeBtn fr" id="headerDetailClosebtn"></a>
+                    <div class="user-info1">
+                        <div id="header_nsrsbh" style="width: 400px" class="sbh" data-tooltip="91440300MA5DCXYE4M"><span>纳税人识别号：</span>91440300MA5DCXYE4M</div>
+                        <div id="header_nsrmc" class="sbh-w"><span>纳税人名称：</span><span class="span_nsrmc text_ellipsis" data-tooltip="深圳市快视电子有限公司">深圳市快视电子有限公司</span></div>
+                        <div id="header_swjg" style="width: 400px" class="sbh-w2" data-tooltip="深圳市龙华区国家税务局"><span>纳税主管税务机关：</span>深圳市龙华区国家税务局</div>
+                        <div id="header_zgswry" class="sbh-w" data-tooltip="廖杰文"><span>主管税务人员：</span>廖杰文</div>
+                        <div id="header_swzgks" style="width: 500px" class="sbh-w2" data-tooltip="深圳市龙华区国家税务局税源管理七科"><span>纳税主管科室：</span>深圳市龙华区国家税务局税源管理七科</div>
+                    </div>
+                    <!--<div class="szxx-title">当前有效税种信息</div>
+                    <table width="817" border="0" cellpadding="0" cellspacing="0" class="szxx-list">
+                      <thead>
+                        <tr>
+                          <td width="25%">征收项目</td>
+                          <td>征收品目</td>
+                          <td width="18%">税种有效期起</td>
+                          <td width="18%">税种有效期止</td>
+                        </tr>
+                      </thead>
+                      <tbody id="header_table_list">
+
+                      </tbody>
+                    </table>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--<script id="userinfo-tmpl" type="text/template">
+{{ for (var i = 0, l = it.data.length; i < l; i++) { }}
+<tr>
+  <td id="zsxmmc">{{=it.data[i].zsxmmc}}</td>
+  <td id="zspmmc">{{=it.data[i].zspmmc}}</td>
+  <td id="rdyxqq" align="center">{{=it.data[i].rdyxqq}}</td>
+  <td id="rdyxqz" align="center">{{=it.data[i].rdyxqz}}</td>
+</tr>
+{{ } }}
+</script>-->
+</div>
+<!--引入头部--> 
+<!--
+    @require 'apps/css/miniui.scss'
+    @require 'apps/css/reset.scss'
+    @require 'apps/views/header/header.scss'
+    @require 'apps/views/header/header.js'
+-->
+
+<!--引入头部-->
+<script type="text/javascript" src="/BsfwtWeb/apps/js/common_include.js"></script>
+
+<div class="container">
+  <div class="main-title"> 申报结果查询 </div>
+  <div class="sbcx_help">
+    <ul class="sbcx_menu">
+      <li class="menu_blue">在线帮助</li>
+    </ul>
+  </div>
+  <div class="main">
+  <div class="errorText">温馨提示：金税三期取消了预约扣款缴税和系统自动扣款缴税功能，需要您在纳税申报完成后，对所申报的税费自行实时缴纳</div>
+  <table class="tab_query" width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto">
+		<tbody>
+			<tr class="tr_query">
+				<th class="text-right pdr2" width="10%" nowrap="nowrap">税种：</th>
+				<td width="25%" align="left"><span class="mini-buttonedit mini-combobox mini-popupedit mini-buttonedit-focus" id="sz" style="border-width: 0px; padding: 0px; width: 100%;"><span class="mini-buttonedit-border" style="padding-right: 32px;"><input type="input" class="mini-buttonedit-input" autocomplete="off" placeholder="-请选择-" id="sz$text"><span class="mini-buttonedit-buttons"><span class="mini-buttonedit-close" style="display: inline-block;"></span><span class="mini-buttonedit-button" onmouseover="mini.addClass(this, 'mini-buttonedit-button-hover');" onmouseout="mini.removeClass(this, 'mini-buttonedit-button-hover');"><span class="mini-buttonedit-icon"></span></span></span></span><input name="sz" type="hidden" id="sz$value" value="10104"></span></td>
+				<th width="22%" class="text-right" nowrap="nowrap">申报日期：</th>
+				<td width="45%" align="right">
+					<span class="mini-buttonedit mini-datepicker mini-popupedit" id="sbrqq" style="border-width: 0px; padding: 0px; width: 220px;"><span class="mini-buttonedit-border" style="padding-right: 23px;"><input type="input" class="mini-buttonedit-input" autocomplete="off" placeholder="" id="sbrqq$text"><span class="mini-buttonedit-buttons"><span class="mini-buttonedit-close"></span><span class="mini-buttonedit-button" onmouseover="mini.addClass(this, 'mini-buttonedit-button-hover');" onmouseout="mini.removeClass(this, 'mini-buttonedit-button-hover');"><span class="mini-buttonedit-icon"></span></span></span></span><input name="" type="hidden" id="sbrqq$value" value="20170101"></span>
+					<span>至</span>
+					<span class="mini-buttonedit mini-datepicker mini-popupedit" id="sbrqz" style="border-width: 0px; padding: 0px; width: 220px;"><span class="mini-buttonedit-border" style="padding-right: 23px;"><input type="input" class="mini-buttonedit-input" autocomplete="off" placeholder="" id="sbrqz$text"><span class="mini-buttonedit-buttons"><span class="mini-buttonedit-close"></span><span class="mini-buttonedit-button" onmouseover="mini.addClass(this, 'mini-buttonedit-button-hover');" onmouseout="mini.removeClass(this, 'mini-buttonedit-button-hover');"><span class="mini-buttonedit-icon"></span></span></span></span><input name="" type="hidden" id="sbrqz$value" value="20180313"></span>
+				</td>
+			</tr>
+			<tr class="tr_query">
+				<th width="10%" class="text-right pdr2" nowrap="nowrap">申报状态：</th>
+				<td width="25%" align="left"><span class="mini-buttonedit mini-combobox mini-popupedit" id="sbzt" style="border-width: 0px; padding: 0px; width: 100%;"><span class="mini-buttonedit-border" style="padding-right: 17px;"><input type="input" class="mini-buttonedit-input" autocomplete="off" placeholder="-请选择-" id="sbzt$text"><span class="mini-buttonedit-buttons"><span class="mini-buttonedit-close" style="display: none;"></span><span class="mini-buttonedit-button" onmouseover="mini.addClass(this, 'mini-buttonedit-button-hover');" onmouseout="mini.removeClass(this, 'mini-buttonedit-button-hover');"><span class="mini-buttonedit-icon"></span></span></span></span><input name="sbzt" type="hidden" id="sbzt$value" value=""></span></td>
+				<th width="20%" class="text-right" nowrap="nowrap">所属时期：</th>
+				<td width="45%" align="right">
+					<span class="mini-buttonedit mini-datepicker mini-popupedit" id="sssqq" style="border-width: 0px; padding: 0px; width: 220px;"><span class="mini-buttonedit-border" style="padding-right: 23px;"><input type="input" class="mini-buttonedit-input" autocomplete="off" placeholder="" id="sssqq$text"><span class="mini-buttonedit-buttons"><span class="mini-buttonedit-close"></span><span class="mini-buttonedit-button" onmouseover="mini.addClass(this, 'mini-buttonedit-button-hover');" onmouseout="mini.removeClass(this, 'mini-buttonedit-button-hover');"><span class="mini-buttonedit-icon"></span></span></span></span><input name="" type="hidden" id="sssqq$value" value="20171001"></span>
+					<span>至</span>
+					<span class="mini-buttonedit mini-datepicker mini-popupedit" id="sssqz" style="border-width: 0px; padding: 0px; width: 220px;"><span class="mini-buttonedit-border" style="padding-right: 23px;"><input type="input" class="mini-buttonedit-input" autocomplete="off" placeholder="" id="sssqz$text"><span class="mini-buttonedit-buttons"><span class="mini-buttonedit-close"></span><span class="mini-buttonedit-button" onmouseover="mini.addClass(this, 'mini-buttonedit-button-hover');" onmouseout="mini.removeClass(this, 'mini-buttonedit-button-hover');"><span class="mini-buttonedit-icon"></span></span></span></span><input name="" type="hidden" id="sssqz$value" value="20171231"></span>
+				</td>
+			</tr>
+			<tr>
+				<th height="60" colspan="6" align="center" nowrap="nowrap"><a class="mini-button btn-blue mini-button-span" href="javascript:void(0)" id="stepnext"><span class="mini-button-text  mini-button-icon ico-next pngbg">查询</span></a></th>
+			</tr>
+		</tbody>
+	</table>
+ 
+
+  <div class="cx-line"></div>
+    <!--列表开始-->
+    <div class="mini-grid mini-datagrid mini-grid-auto mini-grid-headerWrap" tabindex="1" id="sbqkGrid" style="display: block; border-width: 0px; padding: 0px; width: 100%; height: auto; min-height: 200px;"><div class="mini-grid-border" style="border-bottom-width: 0px;"><div class="mini-grid-header"><div class="mini-grid-headerInner" style="width: 100%;"><table style="display: table; width: 1157px;" class="mini-grid-table" cellspacing="0" cellpadding="0" id="mini-grid-table-headsbqkGrid"><tbody><tr style="height:0px"><td id="mini-25$column$0$header" style="padding:0;border:0;margin:0;height:0px;width:30px"></td><td id="mini-25$column$1$header" style="padding:0;border:0;margin:0;height:0px;width:150px"></td><td id="mini-25$column$2$header" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$3$header" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$4$header" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$5$header" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$6$header" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$7$header" style="padding:0;border:0;margin:0;height:0px;width:120px"></td></tr><tr><td id="mini-25$column$0" class="mini-grid-headerCell   " style="text-align:center;"><div class="mini-grid-cellInner"> 序号 </div></td><td id="mini-25$column$1" class="mini-grid-headerCell   " style="text-align:center;"><div class="mini-grid-cellInner"> 税种 </div></td><td id="mini-25$column$2" class="mini-grid-headerCell   " style="text-align:center;"><div class="mini-grid-cellInner"> 申报日期 </div></td><td id="mini-25$column$3" class="mini-grid-headerCell   " style="text-align:center;"><div class="mini-grid-cellInner"> 所属时期起始 </div></td><td id="mini-25$column$4" class="mini-grid-headerCell   " style="text-align:center;"><div class="mini-grid-cellInner"> 所属时期终止 </div></td><td id="mini-25$column$5" class="mini-grid-headerCell   " style="text-align:center;"><div class="mini-grid-cellInner"> 申报状态 </div></td><td id="mini-25$column$6" class="mini-grid-headerCell   " style="text-align:center;"><div class="mini-grid-cellInner">申报税额</div></td><td id="mini-25$column$7" class="mini-grid-headerCell    mini-grid-last-column " style="text-align:center;"><div class="mini-grid-cellInner">快速链接</div></td></tr></tbody></table><div class="mini-grid-scrollHeaderCell"></div><div class="mini-grid-topRightCell" style="border-left-width: 0px; left: 1158px; height: 36px;"></div><div class="mini-grid-splitters"><div id="0" class="mini-grid-splitter" style="left:54px;top:0px;height:37px;"></div><div id="1" class="mini-grid-splitter" style="left:344px;top:0px;height:37px;"></div><div id="2" class="mini-grid-splitter" style="left:460px;top:0px;height:37px;"></div><div id="3" class="mini-grid-splitter" style="left:576px;top:0px;height:37px;"></div><div id="4" class="mini-grid-splitter" style="left:692px;top:0px;height:37px;"></div><div id="5" class="mini-grid-splitter" style="left:807px;top:0px;height:37px;"></div><div id="6" class="mini-grid-splitter" style="left:922px;top:0px;height:37px;"></div><div id="7" class="mini-grid-splitter" style="left:1153px;top:0px;height:37px;"></div></div></div></div><div class="mini-grid-filterRow" style="display: none; width: 100%;"><table class="mini-grid-table" cellspacing="0" cellpadding="0" style="width: 1157px;"><tbody><tr style="height:0px"><td id="mini-25$column$0$filter" style="padding:0;border:0;margin:0;height:0px;width:30px"></td><td id="mini-25$column$1$filter" style="padding:0;border:0;margin:0;height:0px;width:150px"></td><td id="mini-25$column$2$filter" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$3$filter" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$4$filter" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$5$filter" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$6$filter" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$7$filter" style="padding:0;border:0;margin:0;height:0px;width:120px"></td></tr><tr><td id="mini-25$filter$0" class="mini-grid-filterCell" style=""><span class="mini-grid-hspace"></span></td><td id="mini-25$filter$1" class="mini-grid-filterCell" style=""><span class="mini-grid-hspace"></span></td><td id="mini-25$filter$2" class="mini-grid-filterCell" style=""><span class="mini-grid-hspace"></span></td><td id="mini-25$filter$3" class="mini-grid-filterCell" style=""><span class="mini-grid-hspace"></span></td><td id="mini-25$filter$4" class="mini-grid-filterCell" style=""><span class="mini-grid-hspace"></span></td><td id="mini-25$filter$5" class="mini-grid-filterCell" style=""><span class="mini-grid-hspace"></span></td><td id="mini-25$filter$6" class="mini-grid-filterCell" style=""><span class="mini-grid-hspace"></span></td><td id="mini-25$filter$7" class="mini-grid-filterCell" style=""><span class="mini-grid-hspace"></span></td></tr></tbody></table><div class="mini-grid-scrollCell"></div></div><div class="mini-grid-body" style="height: auto;"><div class="mini-grid-bodyInner"><table class="mini-grid-table" cellspacing="0" cellpadding="0" id="mini-grid-table-bodysbqkGrid" style="width: 1157px;"><tbody><tr style="height:0px"><td id="mini-25$column$0$body" style="padding:0;border:0;margin:0;height:0px;width:30px"></td><td id="mini-25$column$1$body" style="padding:0;border:0;margin:0;height:0px;width:150px"></td><td id="mini-25$column$2$body" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$3$body" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$4$body" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$5$body" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$6$body" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$7$body" style="padding:0;border:0;margin:0;height:0px;width:120px"></td></tr><tr id="mini-25$0" class="mini-grid-row  " style=" "><td id="mini-25$0$0" class="mini-grid-cell  mini-grid-last-row " style="text-align:center;white-space:normal;text-overflow:normal;word-break:break-all;"><div id="mini-25$number$0">1</div></td><td id="mini-25$0$1" class="mini-grid-cell  mini-grid-last-row " style="text-align:left;white-space:normal;text-overflow:normal;word-break:break-all;">《企业所得税（查账征收）月季度预缴纳税申报表（A类，2015版）》</td><td id="mini-25$0$2" class="mini-grid-cell  mini-grid-last-row " style="text-align:center;white-space:normal;text-overflow:normal;word-break:break-all;">2018-01-14</td><td id="mini-25$0$3" class="mini-grid-cell  mini-grid-last-row " style="text-align:center;white-space:normal;text-overflow:normal;word-break:break-all;">2017-10-01</td><td id="mini-25$0$4" class="mini-grid-cell  mini-grid-last-row " style="text-align:center;white-space:normal;text-overflow:normal;word-break:break-all;">2017-12-31</td><td id="mini-25$0$5" class="mini-grid-cell  mini-grid-last-row " style="text-align:center;white-space:normal;text-overflow:normal;word-break:break-all;">申报成功</td><td id="mini-25$0$6" class="mini-grid-cell  mini-grid-last-row " style="text-align:center;white-space:normal;text-overflow:normal;word-break:break-all;">0</td><td id="mini-25$0$7" class="mini-grid-cell  mini-grid-last-row  mini-grid-last-column " style="text-align:center;white-space:normal;text-overflow:normal;word-break:break-all;"><a href='javascript:viewSbxml({"djxh":"10114403000030180631","lrsj":"","nsrsbh":"","pzxh":"10014418000004481610","qdid":"","qqwjm":"taxML_10418_2017-10-01_2017-12-31_91440300MA5DCXYE4M_265866_1_V1.0_ZCSB","sblxDm":"","sbny":"","sbrq":"2018-01-14","sbse":"0","sbzlDm":"10418","sbzlMc":"《企业所得税（查账征收）月季度预缴纳税申报表（A类，2015版）》","sbztDm":"0000","sbztms":"[80409318]申报成功","scpzxh":"","skssqq":"2017-10-01","skssqz":"2017-12-31","zsxmDm":"","_uid":0,"_index":0},"/BsfwtWeb/pages/sb/qysds/suodeshuiA.html")' '="">查询申报表</a><a href='javascript:sbzf({"djxh":"10114403000030180631","lrsj":"","nsrsbh":"","pzxh":"10014418000004481610","qdid":"","qqwjm":"taxML_10418_2017-10-01_2017-12-31_91440300MA5DCXYE4M_265866_1_V1.0_ZCSB","sblxDm":"","sbny":"","sbrq":"2018-01-14","sbse":"0","sbzlDm":"10418","sbzlMc":"《企业所得税（查账征收）月季度预缴纳税申报表（A类，2015版）》","sbztDm":"0000","sbztms":"[80409318]申报成功","scpzxh":"","skssqq":"2017-10-01","skssqz":"2017-12-31","zsxmDm":"","_uid":0,"_index":0})' style="margin-left: 15px;">作废</a></td></tr></tbody></table></div><div class="mini-grid-body-scrollHeight" style="display: none;"></div></div><div class="mini-grid-scroller"><div></div></div><div class="mini-grid-summaryRow" style="display: none; width: 100%;"><table class="mini-grid-table" cellspacing="0" cellpadding="0" style="width: 1157px;"><tbody><tr style="height:0px"><td id="mini-25$column$0$summary" style="padding:0;border:0;margin:0;height:0px;width:30px"></td><td id="mini-25$column$1$summary" style="padding:0;border:0;margin:0;height:0px;width:150px"></td><td id="mini-25$column$2$summary" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$3$summary" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$4$summary" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$5$summary" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$6$summary" style="padding:0;border:0;margin:0;height:0px;width:60px"></td><td id="mini-25$column$7$summary" style="padding:0;border:0;margin:0;height:0px;width:120px"></td></tr><tr><td id="mini-25$summary$0" class="mini-grid-summaryCell " style=";">&nbsp;</td><td id="mini-25$summary$1" class="mini-grid-summaryCell " style=";">&nbsp;</td><td id="mini-25$summary$2" class="mini-grid-summaryCell " style=";">&nbsp;</td><td id="mini-25$summary$3" class="mini-grid-summaryCell " style=";">&nbsp;</td><td id="mini-25$summary$4" class="mini-grid-summaryCell " style=";">&nbsp;</td><td id="mini-25$summary$5" class="mini-grid-summaryCell " style=";">&nbsp;</td><td id="mini-25$summary$6" class="mini-grid-summaryCell " style=";">&nbsp;</td><td id="mini-25$summary$7" class="mini-grid-summaryCell " style=";">&nbsp;</td></tr></tbody></table><div class="mini-grid-scrollCell"></div></div><div class="mini-grid-footer" style="width: auto;"><div class="mini-pager" id="mini-27"><div class="mini-pager-left"><span class="mini-pager-size"><span class="mini-buttonedit mini-combobox mini-popupedit" id="mini-28" style="border-width: 0px; padding: 0px; width: 48px;"><span class="mini-buttonedit-border" style="padding-right: 32px;"><input type="input" class="mini-buttonedit-input" autocomplete="off" placeholder="-请选择-"><span class="mini-buttonedit-buttons"><span class="mini-buttonedit-close" style="display: inline-block;"></span><span class="mini-buttonedit-button" onmouseover="mini.addClass(this, 'mini-buttonedit-button-hover');" onmouseout="mini.removeClass(this, 'mini-buttonedit-button-hover');"><span class="mini-buttonedit-icon"></span></span></span></span><input name="pagesize" type="hidden" value="10"></span><span class="separator"></span></span><a class="mini-button mini-button-plain mini-button-disabled" href="javascript:void(0)" id="mini-31" title="首页"><span class="mini-button-text  mini-button-iconOnly mini-pager-first">&nbsp;</span></a><a class="mini-button mini-button-plain mini-button-disabled" href="javascript:void(0)" id="mini-32" title="上一页"><span class="mini-button-text  mini-button-iconOnly mini-pager-prev">&nbsp;</span></a><span class="mini-pager-index"><input id="" type="text" class="mini-pager-num"><span class="mini-pager-pages">/ 1</span></span><a class="mini-button mini-button-plain mini-button-disabled" href="javascript:void(0)" id="mini-33" title="下一页"><span class="mini-button-text  mini-button-iconOnly mini-pager-next">&nbsp;</span></a><a class="mini-button mini-button-plain mini-button-disabled" href="javascript:void(0)" id="mini-34" title="尾页"><span class="mini-button-text  mini-button-iconOnly mini-pager-last">&nbsp;</span></a><span class="separator"></span><a class="mini-button mini-button-plain" href="javascript:void(0)" id="mini-35"><span class="mini-button-text  mini-button-iconOnly mini-pager-reload">&nbsp;</span></a></div><div class="mini-pager-right">每页 10 条, 共 1 条</div></div></div><div class="mini-resizer-trigger" style="display: none;"></div><a href="#" class="mini-grid-focus" style="position:absolute;left:-10px;top:-10px;width:0px;height:0px;outline:none;" hidefocus="" onclick="return false"></a></div></div>     
+    <!--列表结束--> 
+    <!--
+    <div class="pages">
+      <table border="0" align="center" cellpadding="0" cellspacing="0" style="margin:auto;">
+        <tr>
+          <td><A href="#"><</A> <STRONG>1</STRONG> <A href="#">2</A> <A href="#">3</A> <A href="#">4</A> <A href="#">5</A> <A href="#">6</A> <A href="#">7</A> <A href="#">...12</A> <A href="#">></A></td>
+        </tr>
+      </table>
+    </div>
+    -->
+  </div>
+</div>
+
+  <script src="../../../../lib/jquery/jquery.min.js" type="text/javascript"></script>
+  <script src="../../../js/common.js" type="text/javascript"></script><script type="text/javascript" src="/BsfwtWeb/apps/js/message.js"></script>
+  <script src="../../../js/miniui.js" type="text/javascript"></script><script type="text/javascript" src="/BsfwtWeb/lib/sui-miniui/mini-all-min.js"></script><script type="text/javascript" src="/BsfwtWeb/apps/js/miniui-plugin.js"></script>
+  <script src="/BsfwtWeb/apps/js/scripts/sui/store.js" type="text/javascript"></script>
+  <script src="../../../../scripts/pagejs/sb/sbcommon.js" type="text/javascript"></script>
+  <script src="sbcx.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/BsfwtWeb/apps/views/gdyth/gdyth.js"></script>
+
+<span class="lengthspan" id="lengthspan"></span><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><div class="mini-buttonedittip" style="display: none;"><div class="mini-buttonedittip-colortip"><div class="mini-buttonedittip-content"></div></div></div><script src="/BsfwtWeb/apps/js/doT.min.js"></script><script src="/BsfwtWeb/apps/views/header/header.js"></script><div class="mini-popup" id="mini-2" style="width: 288px; height: 98px; position: absolute; left: 236px; top: 263px; z-index: 1003; display: none;"><div class="mini-listbox mini-listbox-hideCheckBox" id="mini-3" style="border-width: 0px; padding: 0px; width: 100%; height: 100%;"><div class="mini-listbox-border" style="border: 0px;"><div class="mini-listbox-header" style="display: none; width: 100%;"></div><div class="mini-listbox-view" style="width: 286px; height: 96px;"><div class="mini-listbox-content"><table class="mini-listbox-items" cellspacing="0" cellpadding="0"><tbody><tr id="mini-3$0" index="0" class="mini-listbox-item mini-listbox-item-selected" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$0" type="checkbox" checked=""></td><td class="" style="">-请选择-</td></tr><tr id="mini-3$1" index="1" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$1" type="checkbox"></td><td class="" style="">增值税</td></tr><tr id="mini-3$2" index="2" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$2" type="checkbox"></td><td class="" style="">消费税</td></tr><tr id="mini-3$3" index="3" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$3" type="checkbox"></td><td class="" style="">所得税</td></tr><tr id="mini-3$4" index="4" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$4" type="checkbox"></td><td class="" style="">财务报表</td></tr><tr id="mini-3$5" index="5" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$5" type="checkbox"></td><td class="" style="">文化事业建设费</td></tr><tr id="mini-3$6" index="6" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$6" type="checkbox"></td><td class="" style="">储蓄存款</td></tr><tr id="mini-3$7" index="7" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$7" type="checkbox"></td><td class="" style="">废旧电子</td></tr><tr id="mini-3$8" index="8" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$8" type="checkbox"></td><td class="" style="">房产税</td></tr><tr id="mini-3$9" index="9" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$9" type="checkbox"></td><td class="" style="">印花税</td></tr><tr id="mini-3$10" index="10" class="mini-listbox-item" style=" "><td class="mini-listbox-checkbox"><input id="mini-3$ck$10" type="checkbox"></td><td class="" style="">城镇土地使用税</td></tr></tbody></table></div></div><input type="hidden" value=""></div><div class="mini-errorIcon"></div></div></div><div class="mini-shadow" style="width: 288px; height: 98px; left: 236px; top: 263px; z-index: 1001; display: none;"></div></body></html>

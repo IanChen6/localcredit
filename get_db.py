@@ -46,6 +46,7 @@ def job_finish(host, port, db,batchid,companyid,customerid,status,result):
     cur = conn.cursor()
     sql = '[dbo].[Python_Serivce_Job_Finish]'
     params = (batchid,companyid,customerid,status,result)
+    print(params)
     foo = cur.callproc(sql, params)
     conn.close()
 

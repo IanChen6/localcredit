@@ -1040,12 +1040,12 @@ class gscredit(guoshui):
             dcap["phantomjs.page.settings.loadImages"] = True
             service_args = []
             service_args.append('--webdriver=szgs')
-            # browser = webdriver.PhantomJS(
-            #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
-            #     desired_capabilities=dcap, service_args=service_args)
             browser = webdriver.PhantomJS(
-                executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-                desired_capabilities=dcap)
+                executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
+                desired_capabilities=dcap, service_args=service_args)
+            # browser = webdriver.PhantomJS(
+            #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+            #     desired_capabilities=dcap)
             browser.implicitly_wait(10)
             browser.viewportSize = {'width': 2200, 'height': 2200}
             browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
@@ -1134,8 +1134,8 @@ class gscredit(guoshui):
             dsxiangqing["地税信息"] = dsdjxx
             gsshuifei = {}
             dsshuifei = {}
-            gsshuifei["国税税费种信息"] = sfzrd
-            dsshuifei["地税税费种信息"] = dssfz
+            gsshuifei["国税税费种信息"] = {}
+            dsshuifei["地税税费种信息"] = {}
             niandu["上季度纳税情况"]=preseason
             tuozan1 = niandu
             tuozan2 = shenbaobiao

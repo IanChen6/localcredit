@@ -1175,12 +1175,13 @@ class gscredit(guoshui):
             if gs_exist==0 and ds_exist==0:
                 job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1', '成功爬取,无亏损表')
                 self.logger.info("customerid:{}全部爬取完成，无亏损表".format(self.customerid))
+                return 2
             else:
                 job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1', '成功爬取')
             print("爬取完成")
             self.logger.info("customerid:{}全部爬取完成".format(self.customerid))
             browser.quit()
-            return True
+            return 1
         except Exception as e:
             self.logger.warn(e)
             self.logger.warn("数据异常")
@@ -1927,7 +1928,13 @@ def run_test(user, pwd, batchid, companyid, customerid):
             credit.ssdjp()
             try:
                 credit.login()
-                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取')
+                try:
+                    if jieguo==2:
+                        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取,无亏损表')
+                    else:
+                        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取')
+                except:
+                    pass
             except Exception as e:
                 logger.info("信用网爬取失败")
                 logger.info(e)

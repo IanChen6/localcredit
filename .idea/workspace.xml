@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a278a7-1197-45b6-937e-16e401451265" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/cookies/5590cookies.json" afterPath="$PROJECT_DIR$/cookies/5590cookies.json" />
-      <change beforePath="$PROJECT_DIR$/ghostdriver.log" afterPath="$PROJECT_DIR$/ghostdriver.log" />
       <change beforePath="$PROJECT_DIR$/localcredit.py" afterPath="$PROJECT_DIR$/localcredit.py" />
-      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="$PROJECT_DIR$/logs/localcreditlog.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,8 +67,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="1047" column="42" lean-forward="true" selection-start-line="1047" selection-start-column="42" selection-end-line="1047" selection-end-column="42" />
+            <state relative-caret-position="383">
+              <caret line="1924" column="15" lean-forward="true" selection-start-line="1924" selection-start-column="15" selection-end-line="1924" selection-end-column="15" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -121,7 +118,6 @@
       <find>parse</find>
       <find>信用网访问失败</find>
       <find>tbody/</find>
-      <find>excute_spider</find>
       <find>phanto</find>
       <find>a += 1</find>
       <find>a</find>
@@ -130,6 +126,7 @@
       <find>phant</find>
       <find>jieguo</find>
       <find>phantom</find>
+      <find>excute_spider</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -373,12 +370,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1930</line>
+          <line>1934</line>
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1931</line>
+          <line>1935</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
       </breakpoints>
@@ -723,8 +720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="1047" column="42" lean-forward="true" selection-start-line="1047" selection-start-column="42" selection-end-line="1047" selection-end-column="42" />
+        <state relative-caret-position="383">
+          <caret line="1924" column="15" lean-forward="true" selection-start-line="1924" selection-start-column="15" selection-end-line="1924" selection-end-column="15" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

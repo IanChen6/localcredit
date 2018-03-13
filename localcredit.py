@@ -1024,7 +1024,7 @@ class gscredit(guoshui):
                 self.logger.warn("customerid:{}账号和密码不匹配".format(self.customerid))
                 job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
                            "账号和密码不匹配")
-                return
+                return -1
             with open('cookies/{}cookies.json'.format(self.batchid), 'w') as f:  # 将login后的cookies提取出来
                 f.write(jsoncookies)
                 f.close()
@@ -1917,6 +1917,10 @@ def run_test(user, pwd, batchid, companyid, customerid):
             jieguo = cd.excute_spider()
             if not jieguo:
                 job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')
+                return 0
+            if jieguo==-1:
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
+                           "账号和密码不匹配")
                 return 0
         except:
             job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')

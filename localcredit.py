@@ -1040,12 +1040,12 @@ class gscredit(guoshui):
             dcap["phantomjs.page.settings.loadImages"] = True
             service_args = []
             service_args.append('--webdriver=szgs')
-            browser = webdriver.PhantomJS(
-                executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
-                desired_capabilities=dcap, service_args=service_args)
             # browser = webdriver.PhantomJS(
-            #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-            #     desired_capabilities=dcap)
+            #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
+            #     desired_capabilities=dcap, service_args=service_args)
+            browser = webdriver.PhantomJS(
+                executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+                desired_capabilities=dcap)
             browser.implicitly_wait(10)
             browser.viewportSize = {'width': 2200, 'height': 2200}
             browser.set_window_size(1400, 1600)  # Chrome无法使用这功能

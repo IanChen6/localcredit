@@ -67,8 +67,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="1044" column="56" lean-forward="false" selection-start-line="1044" selection-start-column="56" selection-end-line="1044" selection-end-column="56" />
+            <state relative-caret-position="307">
+              <caret line="1049" column="55" lean-forward="false" selection-start-line="1049" selection-start-column="55" selection-end-line="1049" selection-end-column="55" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -720,8 +720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="1044" column="56" lean-forward="false" selection-start-line="1044" selection-start-column="56" selection-end-line="1044" selection-end-column="56" />
+        <state relative-caret-position="307">
+          <caret line="1049" column="55" lean-forward="false" selection-start-line="1049" selection-start-column="55" selection-end-line="1049" selection-end-column="55" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

@@ -1293,6 +1293,8 @@ class szcredit(object):
                             session = requests.session()
                             try:
                                 proxy = json.loads(sys.argv[1])
+                                self.logger.info(type(proxy))
+                                self.logger.info(proxy)
                                 session.proxies = proxy
                             except:
                                 self.logger.info("未传代理参数，启用本机IP")

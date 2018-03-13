@@ -1278,10 +1278,10 @@ class szcredit(object):
                     print(result_dict["RecordID"])  # 获取ID
                     detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(
                         result_dict["RecordID"])
-
                     session = requests.session()
                     try:
-                        session.proxies = sys.argv[1]
+                        proxy=json.loads(sys.argv[1])
+                        session.proxies = proxy
                     except:
                         self.logger.info("未传代理参数，启用本机IP")
                     detail = session.get(url=detai_url, headers=self.headers, timeout=30)
@@ -1290,7 +1290,13 @@ class szcredit(object):
                         if "登记备案信息" not in detail.text:
                             sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
                             time.sleep(sleep_time[random.randint(0, 9)])
-                            detail=requests.get(detai_url,headers=self.headers,timeout=30)
+                            session = requests.session()
+                            try:
+                                proxy = json.loads(sys.argv[1])
+                                session.proxies = proxy
+                            except:
+                                self.logger.info("未传代理参数，启用本机IP")
+                            detail=session.get(detai_url,headers=self.headers,timeout=30)
                             detail.encoding = detail.apparent_encoding
                             if "登记备案信息" in detail.text:
                                 break

@@ -579,10 +579,11 @@ class gscredit(guoshui):
                     fourth_season=float(fourth_season)
                     yyj=first_season+second_season
                     ybt=third_season+fourth_season
+                    ynsdse=yyj+ybt
                     jibao["实际已预缴所得税额"] = str(yyj)
                     jibao["应补(退)所得税额"] = str(ybt)
-                    jibao["应纳所得税额"] = ""
-                    jibao["减:减免所得税额（请填附表3）"] = ""
+                    jibao["应纳所得税额"] = str(ynsdse)
+                    jibao["减:减免所得税额（请填附表3）"] = "0"
                     self.logger.info(jibao)
                 except:
                     return {}

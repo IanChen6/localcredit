@@ -67,8 +67,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="1318" column="52" lean-forward="true" selection-start-line="1318" selection-start-column="52" selection-end-line="1318" selection-end-column="52" />
+            <state relative-caret-position="193">
+              <caret line="1289" column="39" lean-forward="true" selection-start-line="1289" selection-start-column="39" selection-end-line="1289" selection-end-column="39" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -149,8 +149,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="377" />
-    <option name="y" value="74" />
+    <option name="x" value="731" />
+    <option name="y" value="149" />
     <option name="width" value="1735" />
     <option name="height" value="910" />
   </component>
@@ -299,7 +299,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="377" y="74" width="1735" height="910" extended-state="0" />
+    <frame x="731" y="149" width="1735" height="910" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -335,12 +335,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1888</line>
+          <line>1889</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1823</line>
+          <line>1824</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -355,17 +355,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1340</line>
+          <line>1341</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1333</line>
+          <line>1334</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1431</line>
+          <line>1432</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
       </breakpoints>
@@ -710,8 +710,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="1318" column="52" lean-forward="true" selection-start-line="1318" selection-start-column="52" selection-end-line="1318" selection-end-column="52" />
+        <state relative-caret-position="193">
+          <caret line="1289" column="39" lean-forward="true" selection-start-line="1289" selection-start-column="39" selection-end-line="1289" selection-end-column="39" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

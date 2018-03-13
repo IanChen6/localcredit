@@ -1282,12 +1282,14 @@ class szcredit(object):
                     try:
                         proxy=json.loads(sys.argv[1])
                         session.proxies = proxy
-                    except:
+                    except Exception as e:
+                        self.logger.info(e)
                         self.logger.info("未传代理参数，启用本机IP")
                     detail = session.get(url=detai_url, headers=self.headers, timeout=30)
                     detail.encoding=detail.apparent_encoding
                     for i in range(10):
                         if "登记备案信息" not in detail.text:
+                            self.logger.info("您的查询过于频繁，请稍候再查")
                             sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
                             time.sleep(sleep_time[random.randint(0, 9)])
                             session = requests.session()
@@ -1303,7 +1305,6 @@ class szcredit(object):
                             if "登记备案信息" in detail.text:
                                 break
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
-                    self.logger.info(detail.text)
 
                     # dcap = dict(DesiredCapabilities.PHANTOMJS)
                     # dcap["phantomjs.page.settings.userAgent"] = (

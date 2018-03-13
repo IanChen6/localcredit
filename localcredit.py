@@ -1280,6 +1280,8 @@ class szcredit(object):
                         result_dict["RecordID"])
                     session = requests.session()
                     try:
+                        self.logger.info(type(sys.argv[1]))
+                        self.logger.info(sys.argv[1])
                         proxy=json.loads(sys.argv[1])
                         session.proxies = proxy
                     except Exception as e:

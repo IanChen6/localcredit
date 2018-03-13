@@ -67,8 +67,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="1285" column="47" lean-forward="true" selection-start-line="1285" selection-start-column="47" selection-end-line="1285" selection-end-column="47" />
+            <state relative-caret-position="345">
+              <caret line="1041" column="44" lean-forward="true" selection-start-line="1041" selection-start-column="44" selection-end-line="1041" selection-end-column="44" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -97,8 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>从业人数</find>
-      <find>sfzrd</find>
       <find>niandu</find>
       <find>无亏损</find>
       <find>jd</find>
@@ -127,6 +125,8 @@
       <find>信用网访问失败</find>
       <find>phant</find>
       <find>phantom</find>
+      <find>tbody/</find>
+      <find>excute_spider</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -149,8 +149,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="731" />
-    <option name="y" value="149" />
+    <option name="x" value="545" />
+    <option name="y" value="138" />
     <option name="width" value="1735" />
     <option name="height" value="910" />
   </component>
@@ -181,6 +181,11 @@
               <item name="localcredit" type="b2602c69:ProjectViewProjectNode" />
               <item name="localcredit" type="462c0819:PsiDirectoryNode" />
               <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="localcredit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="localcredit" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -299,7 +304,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="731" y="149" width="1735" height="910" extended-state="0" />
+    <frame x="545" y="138" width="1735" height="910" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -335,12 +340,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1892</line>
+          <line>1894</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1827</line>
+          <line>1829</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -350,22 +355,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1278</line>
+          <line>1280</line>
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1344</line>
+          <line>1346</line>
           <option name="timeStamp" value="143" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1337</line>
+          <line>1339</line>
           <option name="timeStamp" value="148" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1435</line>
+          <line>1437</line>
           <option name="timeStamp" value="197" />
         </line-breakpoint>
       </breakpoints>
@@ -710,8 +715,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="1285" column="47" lean-forward="true" selection-start-line="1285" selection-start-column="47" selection-end-line="1285" selection-end-column="47" />
+        <state relative-caret-position="345">
+          <caret line="1041" column="44" lean-forward="true" selection-start-line="1041" selection-start-column="44" selection-end-line="1041" selection-end-column="44" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

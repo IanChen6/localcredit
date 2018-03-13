@@ -1179,11 +1179,13 @@ class gscredit(guoshui):
             print("爬取完成")
             self.logger.info("customerid:{}全部爬取完成".format(self.customerid))
             browser.quit()
+            return True
         except Exception as e:
             self.logger.warn(e)
             self.logger.warn("数据异常")
             job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-1', "数据异常")
             browser.quit()
+            return False
 
 
 class szcredit(object):
@@ -1910,7 +1912,10 @@ def run_test(user, pwd, batchid, companyid, customerid):
         szxinyong.clear()
         cd = gscredit(user, pwd, batchid, companyid, customerid, logger)
         try:
-            browser = cd.excute_spider()
+            jieguo = cd.excute_spider()
+            if not jieguo:
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')
+                return 0
         except:
             job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')
             return 0

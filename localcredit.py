@@ -1281,8 +1281,9 @@ class szcredit(object):
                     session = requests.session()
                     try:
                         self.logger.info(type(sys.argv[1]))
-                        self.logger.info(sys.argv[1])
-                        proxy=json.loads(sys.argv[1])
+                        proxy=sys.argv[1].replace("'", '"')
+                        self.logger.info(proxy)
+                        proxy=json.loads(proxy)
                         session.proxies = proxy
                     except Exception as e:
                         self.logger.info(e)

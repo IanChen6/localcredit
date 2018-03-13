@@ -288,7 +288,7 @@ class gscredit(guoshui):
         for i in select[1:]:
             shuizhong = i.xpath('.//text()')
             a += 1
-            if "中华人民共和国企业所得税年度纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong:
+            if "中华人民共和国企业所得税年度纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong and "申报成功" in shuizhong:
                 browser.find_element_by_xpath(
                     '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()
                 handle = browser.current_window_handle
@@ -468,6 +468,7 @@ class gscredit(guoshui):
                         a+=1
                 except:
                     print("无选填")
+                break
         self.logger.info("customerid:{},json信息{}".format(self.customerid, niandu))
         # ndsb={}
         # ndsb["年度纳税申报表"]=shenbaobiao

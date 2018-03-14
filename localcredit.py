@@ -384,11 +384,11 @@ class gscredit(guoshui):
                     for i in select[28:33]:
                         try:
                             gd = i.xpath('./td[1]/input/@value')[0]
-                            zl = i.xpath('./td[2]/span/text()')[0]
+                            zl = i.xpath('./td[2]/span/text()')[0].split("|")[1]
                             haoma = i.xpath('./td[4]/input/@value')[0]
-                            jjxz = i.xpath('./td[6]/span/text()')[0]
+                            jjxz = i.xpath('./td[6]/span/text()')[0].split("|")[1]
                             tzbl = i.xpath('./td[7]/input/@value')[0]
-                            gj = i.xpath('./td[8]/span/text()')[0]
+                            gj = i.xpath('./td[8]/span/text()')[0].split("|")[1]
                             xq = {}
                             xq['股东名称'] = gd
                             xq['证件种类'] = zl

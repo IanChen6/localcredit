@@ -1826,40 +1826,42 @@ class szcredit(object):
         all_urls = []
         all_gd = []
         gdjg = {}
-        gdxx = root.xpath('//*[@id="tb_1"]//tr')
-        for i in gdxx[1:]:
-            lianjie = i.xpath('.//@href')[0]
-            lianjie = lianjie.strip()
-            gdm = i.xpath('./td[1]//text()')[0]
-            print(lianjie)
-            all_urls.append(lianjie)
-            all_gd.append(gdm)
-        for j in range(len(all_urls)):
-            clean_dict = {}
-            gd_url = "https://www.szcredit.org.cn/web/gspt/{}".format(all_urls[j])
-            gd_resp = requests.get(url=gd_url, headers=self.headers)
-            gd_resp.encoding = gd_resp.apparent_encoding
-            root = etree.HTML(gd_resp.text)
-            gdxq = root.xpath('//table[@class="list"]//tr')
-            a = 1
-            for xq in gdxq[1:21]:
-                sb = {}
-                xx = xq.xpath('.//text()')
-                clean = []
-                for s in xx:
-                    s = s.strip()
-                    if s.strip and s is not "":
-                        clean.append(s)
-                print(clean)
-                sb["企业名称"] = clean[0]
-                sb["企业注册号"] = clean[1]
-                sb["企业类型"] = clean[2]
-                sb["成立日期"] = clean[3]
-                clean_dict["{}".format(a)] = sb
-                a += 1
-            gdjg[all_gd[j]] = clean_dict
+        try:
+            gdxx = root.xpath('//*[@id="tb_1"]//tr')
+            for i in gdxx[1:]:
+                lianjie = i.xpath('.//@href')[0]
+                lianjie = lianjie.strip()
+                gdm = i.xpath('./td[1]//text()')[0]
+                print(lianjie)
+                all_urls.append(lianjie)
+                all_gd.append(gdm)
+            for j in range(len(all_urls)):
+                clean_dict = {}
+                gd_url = "https://www.szcredit.org.cn/web/gspt/{}".format(all_urls[j])
+                gd_resp = requests.get(url=gd_url, headers=self.headers)
+                gd_resp.encoding = gd_resp.apparent_encoding
+                root = etree.HTML(gd_resp.text)
+                gdxq = root.xpath('//table[@class="list"]//tr')
+                a = 1
+                for xq in gdxq[1:21]:
+                    sb = {}
+                    xx = xq.xpath('.//text()')
+                    clean = []
+                    for s in xx:
+                        s = s.strip()
+                        if s.strip and s is not "":
+                            clean.append(s)
+                    print(clean)
+                    sb["企业名称"] = clean[0]
+                    sb["企业注册号"] = clean[1]
+                    sb["企业类型"] = clean[2]
+                    sb["成立日期"] = clean[3]
+                    clean_dict["{}".format(a)] = sb
+                    a += 1
+                gdjg[all_gd[j]] = clean_dict
+        except:
+            self.logger.info("无股东信息")
         print(gdjg)
-
         print(data_dict)
         data_dict["关联公司信息"] = gdjg
         infojson = json.dumps(data_dict, ensure_ascii=False)

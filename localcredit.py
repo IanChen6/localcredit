@@ -458,7 +458,13 @@ class gscredit(guoshui):
                                     xq = {}
                                     xq['项目'] = xiangmu
                                     xq['年度'] = nianfen
-                                    xq['纳税调整后所得'] = nstzhsd
+                                    try:
+                                        if nianfen=="2016":
+                                            xq['纳税调整后所得'] = gstzns
+                                        else:
+                                            xq['纳税调整后所得'] = nstzhsd
+                                    except:
+                                        xq['纳税调整后所得'] = nstzhsd
                                     kuisun["{}".format(a)] = xq
                                     a += 1
                                 except:
@@ -774,7 +780,13 @@ class gscredit(guoshui):
         ksmx = {}
         try:
             for i in range(len(nf) - 1):
-                ksmx[nf[i]] = nstzhsd[i]
+                try:
+                    if nf[i]=="2016":
+                        ksmx[nf[i]] = sz[18]
+                    else:
+                        ksmx[nf[i]] = nstzhsd[i]
+                except:
+                    ksmx[nf[i]] = nstzhsd[i]
         except:
             print("ksmx")
         pdf_dict["亏损明细"] = ksmx

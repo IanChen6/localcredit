@@ -219,16 +219,32 @@ class gscredit(guoshui):
         return sfz
 
     def gsjbxx(self, browser, session):
+        time.sleep(0.5)
         content = browser.page_source
         root = etree.HTML(content)
-        select = root.xpath('//div[@class="user-info1"]//div')
-        nsrxx = {}
-        for i in select[1:]:
-            shuizhong = i.xpath('.//text()')
-            if len(shuizhong)==2:
-                nsrxx[shuizhong[0]] = shuizhong[1]
-            elif len(shuizhong)==1:
-                nsrxx[shuizhong[0]] = ""
+        select = root.xpath('//table[@class="table-common"]//tr')
+        a=0
+        dsdjxx={}
+        for i in select:
+            dsdjxx1 = {}
+            a += 1
+            dsdjtb = i.xpath('.//text()')
+            thlist=i.xpath('.//th')
+            tdlist=i.xpath('.//td')
+            for tt in range(len(thlist)):
+                try:
+                    dsdjxx1[thlist[tt].xpath('./text()')[0]]=tdlist[tt].xpath('./text()')[0]
+                except Exception as e:
+                    print(e)
+                    dsdjxx1[thlist[tt].xpath('./text()')[0]] = ""
+            dsdjxx[a] = dsdjxx1
+        # nsrxx = {}
+        # for i in select[1:]:
+        #     shuizhong = i.xpath('.//text()')
+        #     if len(shuizhong)==2:
+        #         nsrxx[shuizhong[0]] = shuizhong[1]
+        #     elif len(shuizhong)==1:
+        #         nsrxx[shuizhong[0]] = ""
         jbxx = session.get("http://dzswj.szgs.gov.cn/gzcx/gzcxAction_queryNsrxxBynsrsbh.do").json()
         jbxx = jbxx["data"]
         data = jbxx[0]
@@ -236,12 +252,12 @@ class gscredit(guoshui):
         nsrmc = data['nsrmc']
         szxinyong['xydm'] = shxydm
         szxinyong['cn'] = nsrmc
-        jcsj = {}
-        jcsj["jcxx"] = nsrxx
-        self.logger.info("customerid:{},基础信息{}".format(self.customerid, jcsj["jcxx"]))
-        jcsj['xxxx'] = jbxx
-        self.logger.info("customerid:{},详细信息{}".format(self.customerid, jcsj['xxxx']))
-
+        # jcsj = {}
+        # jcsj["jcxx"] = nsrxx
+        # self.logger.info("customerid:{},基础信息{}".format(self.customerid, jcsj["jcxx"]))
+        # jcsj['xxxx'] = jbxx
+        # self.logger.info("customerid:{},详细信息{}".format(self.customerid, jcsj['xxxx']))
+        jcsj={}
         # 资格查询
         browser.get('http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sscx/nsrzgxxcx/nsrzgrdxxcx.html')
         browser.find_element_by_xpath('//input[@id="nsrsbh$text"]').send_keys(self.user)
@@ -260,6 +276,7 @@ class gscredit(guoshui):
             gszgcx[zgtb[0]] = tiaomu
 
         jcsj['纳税人资格查询'] = gszgcx
+        jcsj["纳税人基本信息"]=dsdjxx
         # jcsj=json.dumps(jcsj,ensure_ascii=False)
         self.logger.info("customerid:{},json信息{}".format(self.customerid, jcsj))
         return jcsj
@@ -726,6 +743,7 @@ class gscredit(guoshui):
                                 break
                             else:
                                 biaoge = results
+                                gd=False
                         # print(results)
                         # results_last = results
                         if biaoge == "A106000企业所得税弥补亏损明细表\n" and results_last == '前五年度\n前四年度\n前三年度\n前二年度\n前一年度\n本年度\n可结转以后年度弥补的亏损额合计\n':
@@ -764,6 +782,12 @@ class gscredit(guoshui):
                                 print(jcxx)
                             else:
                                 continue
+                        if biaoge == "A000000企业基础信息表\n" and "301企业主要股东" in results:
+                            gd = True
+                            gdxx = []
+                        if biaoge == "A000000企业基础信息表\n" and gd:
+                            if "证件" not in results and "主要股东" not in results and "经济性质" not in results and "投资比例" not in results and "国籍" not in results and "302中国境内" not in results:
+                                gdxx.append(results)
                         results_last = results
         pdf_dict = {}
         try:
@@ -771,6 +795,63 @@ class gscredit(guoshui):
             pdf_dict['从业人数'] = jcxx[3]
             pdf_dict['存货计价方法'] = cbjj[1]
             pdf_dict['企业会计准则为'] = kjzzzd
+            index = 0
+            for gl in gdxx:
+                index += 1
+                if "居民身份证" in gl or "营业执照" in gl:
+                    zjhm = gl.replace("\n", "")
+                    zjhm = zjhm.split('居民身份证')[1:]
+                    clean = []
+                    for g in zjhm:
+                        if "营业执照" in g:
+                            yy = g.split("营业执照")
+                            if len(yy[0]) != 0:
+                                clean.append("居民身份证")
+                                clean.append(yy[0])
+                            for zz in yy[1:]:
+                                clean.append("营业执照")
+                                clean.append(zz)
+                        else:
+                            clean.append("居民身份证")
+                            clean.append(g)
+                    break
+            tzxx = []
+            end = index + len(clean)
+            for tz in gdxx[index:end]:
+                tz = tz.replace("\n", "")
+                tzxx.append(tz)
+            gj = []
+            end2 = end + int(len(clean) / 2)
+            for country in gdxx[end:end2]:
+                country = country.replace("\n", "")
+                gj.append(country)
+            xm = []
+            gs = int(len(clean) / 2)
+            if index - 1 == gs:
+                for mc in gdxx[:index - 1]:
+                    mc = mc.replace("\n", "")
+                    xm.append(mc)
+            else:
+                for mc in gdxx[:index - 1]:
+                    mc = mc.replace("\n", "")
+                    xm.append(mc)
+                for mc in gdxx[end2:]:
+                    mc = mc.replace("\n", "")
+                    xm.append(mc)
+            zhenghe = {}
+            sb = 0
+            for j in range(0, len(clean), 2):
+                gdxxdict = {}
+                gdxxdict["证件种类"] = clean[j]
+                gdxxdict["证件号码"] = clean[j + 1]
+                gdxxdict["经济性质"] = tzxx[j]
+                gdxxdict["投资比例"] = tzxx[j + 1]
+                gdxxdict["国籍"] = gj[sb]
+                gdxxdict["股东名称"] = xm[sb]
+                wc = gdxxdict
+                sb += 1
+                zhenghe["{}".format(sb)] = wc
+            pdf_dict['股东信息'] = zhenghe
         except:
             pdf_dict['所属行业明细'] = ""
             pdf_dict['从业人数'] = ""
@@ -1122,7 +1203,7 @@ class gscredit(guoshui):
             return False
         try:
             # JBXXCX
-            jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sscx/nsrjbxxcx/nsrjbxxcx.html'
+            jk_url = 'http://dzswj.szgs.gov.cn:8601/yhs-web/yhscx/'
             browser.get(url=jk_url)
             try:
                 jbxx = self.gsjbxx(browser, session)
@@ -1171,7 +1252,7 @@ class gscredit(guoshui):
             gsshuifei = {}
             dsshuifei = {}
             gsshuifei["国税税费种信息"] = {}
-            dsshuifei["地税税费种信息"] = {}
+            dsshuifei["地税税费种信息"] = dssfz
             niandu["上季度纳税情况"]=preseason
             tuozan1 = niandu
             tuozan2 = shenbaobiao
@@ -1268,7 +1349,11 @@ class szcredit(object):
         for t in range(3):
             session = requests.session()
             try:
-                session.proxies = sys.argv[1]
+                self.logger.info(type(sys.argv[1]))
+                proxy = sys.argv[1].replace("'", '"')
+                self.logger.info(proxy)
+                proxy = json.loads(proxy)
+                session.proxies = proxy
             except:
                 self.logger.info("未传代理参数，启用本机IP")
             yzm_url = 'https://www.szcredit.org.cn/web/WebPages/Member/CheckCode.aspx?'
@@ -1312,7 +1397,7 @@ class szcredit(object):
                     time.sleep(sleep_time[random.randint(0, 9)])
                     continue
                 if resp1 is not None and resp1.status_code == 200 and result:
-                    sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
+                    sleep_time = [8, 9, 8.5, 9.5, 8.2, 8.8, 8.1, 8.7, 8.3, 8.6]
                     time.sleep(sleep_time[random.randint(0, 9)])
                     result_dict = result[0]
                     print(result_dict["RecordID"])  # 获取ID
@@ -1329,24 +1414,25 @@ class szcredit(object):
                         self.logger.info(e)
                         self.logger.info("未传代理参数，启用本机IP")
                     detail = session.get(url=detai_url, headers=self.headers, timeout=30)
-                    detail.encoding=detail.apparent_encoding
-                    for i in range(10):
-                        if "登记备案信息" not in detail.text:
+                    for i in range(3):
+                        if self.cn not in detail.text:
                             self.logger.info("您的查询过于频繁，请稍候再查")
-                            sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
+                            sleep_time = [13, 14, 13.5, 14.5, 13.2, 13.8, 13.1, 13.7, 13.3, 13.6]
                             time.sleep(sleep_time[random.randint(0, 9)])
                             session = requests.session()
                             try:
-                                proxy = json.loads(sys.argv[1])
-                                self.logger.info(type(proxy))
+                                proxy = sys.argv[1].replace("'", '"')
                                 self.logger.info(proxy)
+                                proxy = json.loads(proxy)
                                 session.proxies = proxy
                             except:
                                 self.logger.info("未传代理参数，启用本机IP")
                             detail=session.get(detai_url,headers=self.headers,timeout=30)
-                            detail.encoding = detail.apparent_encoding
-                            if "登记备案信息" in detail.text:
+                            if self.cn in detail.text:
                                 break
+                            else:
+                                return 4
+                    detail.encoding=detail.apparent_encoding
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
 
                     # dcap = dict(DesiredCapabilities.PHANTOMJS)
@@ -1767,7 +1853,11 @@ class szcredit(object):
         }
         session = requests.session()
         try:
-            session.proxies = sys.argv[1]
+            self.logger.info(type(sys.argv[1]))
+            proxy = sys.argv[1].replace("'", '"')
+            self.logger.info(proxy)
+            proxy = json.loads(proxy)
+            session.proxies = proxy
         except:
             self.logger.info("未传代理参数，启用本机IP")
         # name='unifsocicrediden=&entname={}&flag=1'
@@ -1969,7 +2059,12 @@ def run_test(user, pwd, batchid, companyid, customerid):
         try:
             credit.ssdjp()
             try:
-                credit.login()
+                pd=credit.login()
+                try:
+                    if pd==4:
+                        return 4
+                except:
+                    pass
                 try:
                     if jieguo==2:
                         job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取,无亏损表')
@@ -2020,7 +2115,12 @@ while True:
     if ss is not None:
         # print(redis_cli.lpop("list"))
         sd = json.loads(ss)
-        run_test(sd["1"], sd["2"], sd["3"], sd["4"], sd["5"])
+        aa=run_test(sd["1"], sd["2"], sd["3"], sd["4"], sd["5"])
+        try:
+            if aa==4:
+                redis_cli.lpush("sz_credit_list", ss)
+        except:
+            pass
     else:
         time.sleep(10)
         print("no task waited")

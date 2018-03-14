@@ -399,6 +399,21 @@ class gscredit(guoshui):
                         except:
                             continue
                     niandu['主要股东'] = gdhz
+                    tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10 = {}, {}, {}, {}, {}, {}, {}, {}, {}
+                    tzfxx1 = json.dumps(gdhz, ensure_ascii=False)
+                    tzfxx2 = json.dumps(tzfxx2, ensure_ascii=False)
+                    tzfxx3 = json.dumps(tzfxx3, ensure_ascii=False)
+                    tzfxx4 = json.dumps(tzfxx4, ensure_ascii=False)
+                    tzfxx5 = json.dumps(tzfxx5, ensure_ascii=False)
+                    tzfxx6 = json.dumps(tzfxx6, ensure_ascii=False)
+                    tzfxx7 = json.dumps(tzfxx7, ensure_ascii=False)
+                    tzfxx8 = json.dumps(tzfxx8, ensure_ascii=False)
+                    tzfxx9 = json.dumps(tzfxx9, ensure_ascii=False)
+                    tzfxx10 = json.dumps(tzfxx10, ensure_ascii=False)
+                    params = (
+                    self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5,
+                    tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10)
+                    self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
                     niandu['所属行业明细']=sshymx
                     niandu['从业人数']=cyrs
                 except Exception as e:
@@ -858,6 +873,21 @@ class gscredit(guoshui):
                 sb += 1
                 zhenghe["{}".format(sb)] = wc
             pdf_dict['股东信息'] = zhenghe
+            tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10 = {}, {}, {}, {}, {}, {}, {}, {}, {}
+            tzfxx1 = json.dumps(zhenghe, ensure_ascii=False)
+            tzfxx2 = json.dumps(tzfxx2, ensure_ascii=False)
+            tzfxx3 = json.dumps(tzfxx3, ensure_ascii=False)
+            tzfxx4 = json.dumps(tzfxx4, ensure_ascii=False)
+            tzfxx5 = json.dumps(tzfxx5, ensure_ascii=False)
+            tzfxx6 = json.dumps(tzfxx6, ensure_ascii=False)
+            tzfxx7 = json.dumps(tzfxx7, ensure_ascii=False)
+            tzfxx8 = json.dumps(tzfxx8, ensure_ascii=False)
+            tzfxx9 = json.dumps(tzfxx9, ensure_ascii=False)
+            tzfxx10 = json.dumps(tzfxx10, ensure_ascii=False)
+            params = (
+                self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5,
+                tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10)
+            self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
         except:
             pdf_dict['所属行业明细'] = ""
             pdf_dict['从业人数'] = ""
@@ -1001,8 +1031,8 @@ class gscredit(guoshui):
         tzfxx8=json.dumps(tzfxx8,ensure_ascii=False)
         tzfxx9=json.dumps(tzfxx9,ensure_ascii=False)
         tzfxx10=json.dumps(tzfxx10,ensure_ascii=False)
-        params=(self.batchid,"0","0",self.companyid,self.customerid,tzfxx1,tzfxx2,tzfxx3,tzfxx4,tzfxx5,tzfxx6,tzfxx7,tzfxx8,tzfxx9,tzfxx10)
-        self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]",params)
+        # params=(self.batchid,"0","0",self.companyid,self.customerid,tzfxx1,tzfxx2,tzfxx3,tzfxx4,tzfxx5,tzfxx6,tzfxx7,tzfxx8,tzfxx9,tzfxx10)
+        # self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]",params)
         # 企业所得税(上个季度的季报)
         jdpdf_dict={}
         browser.switch_to_default_content()

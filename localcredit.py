@@ -238,13 +238,20 @@ class gscredit(guoshui):
                     print(e)
                     dsdjxx1[thlist[tt].xpath('./text()')[0]] = ""
             dsdjxx[a] = dsdjxx1
-        # nsrxx = {}
-        # for i in select[1:]:
-        #     shuizhong = i.xpath('.//text()')
-        #     if len(shuizhong)==2:
-        #         nsrxx[shuizhong[0]] = shuizhong[1]
-        #     elif len(shuizhong)==1:
-        #         nsrxx[shuizhong[0]] = ""
+
+        jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sscx/nsrjbxxcx/nsrjbxxcx.html'
+        browser.get(url=jk_url)
+        time.sleep(1.4)
+        content = browser.page_source
+        root = etree.HTML(content)
+        select = root.xpath('//div[@class="user-info1"]//div')
+        nsrxx = {}
+        for i in select[1:]:
+            shuizhong = i.xpath('.//text()')
+            if len(shuizhong)==2:
+                nsrxx[shuizhong[0]] = shuizhong[1]
+            elif len(shuizhong)==1:
+                nsrxx[shuizhong[0]] = ""
         jbxx = session.get("http://dzswj.szgs.gov.cn/gzcx/gzcxAction_queryNsrxxBynsrsbh.do").json()
         jbxx = jbxx["data"]
         data = jbxx[0]
@@ -252,12 +259,11 @@ class gscredit(guoshui):
         nsrmc = data['nsrmc']
         szxinyong['xydm'] = shxydm
         szxinyong['cn'] = nsrmc
-        # jcsj = {}
-        # jcsj["jcxx"] = nsrxx
-        # self.logger.info("customerid:{},基础信息{}".format(self.customerid, jcsj["jcxx"]))
-        # jcsj['xxxx'] = jbxx
-        # self.logger.info("customerid:{},详细信息{}".format(self.customerid, jcsj['xxxx']))
-        jcsj={}
+        jcsj = {}
+        jcsj["jcxx"] = nsrxx
+        self.logger.info("customerid:{},基础信息{}".format(self.customerid, jcsj["jcxx"]))
+        jcsj['xxxx'] = jbxx
+        self.logger.info("customerid:{},详细信息{}".format(self.customerid, jcsj['xxxx']))
         # 资格查询
         browser.get('http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sscx/nsrzgxxcx/nsrzgrdxxcx.html')
         browser.find_element_by_xpath('//input[@id="nsrsbh$text"]').send_keys(self.user)

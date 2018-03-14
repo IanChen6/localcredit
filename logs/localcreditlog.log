@@ -2150,3 +2150,19 @@ Wed 14 Mar 2018 16:31:37 INFO localcredit.py 1410 10444 17020 list index out of 
 Wed 14 Mar 2018 16:31:37 INFO localcredit.py 1411 10444 17020 未传代理参数，启用本机IP
 Wed 14 Mar 2018 16:31:54 INFO localcredit.py 1534 10444 17020 未传代理参数，启用本机IP
 Wed 14 Mar 2018 16:31:59 INFO localcredit.py 1544 10444 17020 {"data":[{"data":[{"apprdate":"2016-12-16","currency":"人民币","dom":"深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）","entflag":"440301001012013102312110","entname":"深圳市麦哲伦资本管理有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2013-10-23","id":"1e1656b53c1748eab25283512c369c81","jinyinfuben":1,"lerep":"樊五洲","opetype":"GS","opfrom":"2013-10-23","opscope":"资产管理（不得从事信托、金融资产管理、证券资产管理及其他限制项目）；股权投资；投资管理（不含限制项目）；投资咨询（不含限制项目）。","opto":"5000-01-01","regcap":3000,"regno":"440301108174840","rownum":1,"unifsocicrediden":"914403000818951675"}],"name":"data","vtype":"attr"}]}
+Wed 14 Mar 2018 17:55:40 INFO localcredit.py 60 18548 12156 customerid:9,开始尝试登陆
+Wed 14 Mar 2018 17:55:40 INFO localcredit.py 71 18548 12156 未传代理参数，启用本机IP
+Wed 14 Mar 2018 17:55:41 INFO localcredit.py 97 18548 12156 customerid:9，获取验证码为：None
+Wed 14 Mar 2018 17:55:41 INFO localcredit.py 60 18548 12156 customerid:9,开始尝试登陆
+Wed 14 Mar 2018 17:55:41 INFO localcredit.py 71 18548 12156 未传代理参数，启用本机IP
+Wed 14 Mar 2018 17:55:43 INFO localcredit.py 97 18548 12156 customerid:9，获取验证码为：[{"x":168,"y":59},{"x":124,"y":78},{"x":70,"y":31}]
+Wed 14 Mar 2018 17:55:43 INFO localcredit.py 101 18548 12156 customerid:9，验证验证码[{"x":168,"y":59},{"x":124,"y":78},{"x":70,"y":31}]
+Wed 14 Mar 2018 17:55:43 INFO localcredit.py 104 18548 12156 customerid:9，转换tag
+Wed 14 Mar 2018 17:55:43 INFO localcredit.py 106 18548 12156 customerid:9，转换tag完成
+Wed 14 Mar 2018 17:55:43 INFO localcredit.py 107 18548 12156 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":168,\"y\":59},{\"x\":124,\"y\":78},{\"x\":70,\"y\":31}]",2018-03-14 17:55:43
+Wed 14 Mar 2018 17:55:43 INFO localcredit.py 112 18548 12156 customerid:9,成功post数据
+Wed 14 Mar 2018 17:55:43 INFO localcredit.py 119 18548 12156 customerid:9pass
+Wed 14 Mar 2018 17:55:43 INFO localcredit.py 1174 18548 12156 customerid:9获取cookies
+Wed 14 Mar 2018 17:55:43 WARNING localcredit.py 1210 18548 12156 Message: 'phantomjs' executable needs to be in PATH. 
+
+Wed 14 Mar 2018 17:55:43 WARNING localcredit.py 1211 18548 12156 浏览器启动失败

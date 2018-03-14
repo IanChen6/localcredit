@@ -390,7 +390,7 @@ class gscredit(guoshui):
                             tzbl = i.xpath('./td[7]/input/@value')[0]
                             gj = i.xpath('./td[8]/span/text()')[0]
                             xq = {}
-                            xq['姓名'] = gd
+                            xq['股东名称'] = gd
                             xq['证件种类'] = zl
                             xq['证件号码'] = haoma
                             xq['经济性质'] = jjxz

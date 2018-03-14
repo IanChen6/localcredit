@@ -380,6 +380,7 @@ class gscredit(guoshui):
                     select = root.xpath('//table[@id="table_003"]/tbody/tr')
                     a = 1
                     gdhz = {}
+                    sb=0
                     for i in select[28:33]:
                         try:
                             gd = i.xpath('./td[1]/input/@value')[0]
@@ -395,7 +396,8 @@ class gscredit(guoshui):
                             xq['经济性质'] = jjxz
                             xq['投资比例'] = tzbl
                             xq['国籍'] = gj
-                            gdhz[gd] = xq
+                            sb+=1
+                            gdhz["{}".format(sb)] = xq
                         except:
                             continue
                     niandu['主要股东'] = gdhz

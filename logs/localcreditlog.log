@@ -2245,3 +2245,434 @@ Wed 14 Mar 2018 18:31:04 INFO localcredit.py 1396 19204 15812 未传代理参数
 Wed 14 Mar 2018 18:31:17 INFO localcredit.py 1426 19204 15812 {"status":"ok","resultlist":[{"RecordID":"45c32b3ae8c345fd9c4889f00d73a9ad","EntName":"深圳合乐手袋制品厂","EntRegNo":"440309602280353","EntTypeName":"个人独资企业","EstDate":"2011年09月09日"}],"msg":"共找到1条数据。 （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=91440300582721683G\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=91440300582721683G\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":""}
 Wed 14 Mar 2018 18:31:45 INFO localcredit.py 1452 19204 15812 list index out of range
 Wed 14 Mar 2018 18:31:46 INFO localcredit.py 1453 19204 15812 未传代理参数，启用本机IP
+Wed 14 Mar 2018 19:13:03 INFO localcredit.py 2114 19204 15812 信用网爬取失败
+Wed 14 Mar 2018 19:13:03 INFO localcredit.py 2115 19204 15812 list index out of range
+Wed 14 Mar 2018 19:13:03 WARNING localcredit.py 2122 19204 15812 [Errno 22] Invalid argument
+Wed 14 Mar 2018 19:13:03 WARNING localcredit.py 2123 19204 15812 工商网爬取失败
+Wed 14 Mar 2018 19:13:03 INFO localcredit.py 1396 19204 15812 未传代理参数，启用本机IP
+Wed 14 Mar 2018 19:13:04 INFO localcredit.py 1426 19204 15812 {"status":"ok","resultlist":[{"RecordID":"45c32b3ae8c345fd9c4889f00d73a9ad","EntName":"深圳合乐手袋制品厂","EntRegNo":"440309602280353","EntTypeName":"个人独资企业","EstDate":"2011年09月09日"}],"msg":"共找到1条数据。 （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=91440300582721683G\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=91440300582721683G\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":""}
+Thu 15 Mar 2018 10:43:31 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:31 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:43:33 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：[{"x":21,"y":97},{"x":171,"y":71},{"x":272,"y":38}]
+Thu 15 Mar 2018 10:43:33 INFO localcredit.py 101 15276 13316 customerid:9，验证验证码[{"x":21,"y":97},{"x":171,"y":71},{"x":272,"y":38}]
+Thu 15 Mar 2018 10:43:33 INFO localcredit.py 104 15276 13316 customerid:9，转换tag
+Thu 15 Mar 2018 10:43:33 INFO localcredit.py 106 15276 13316 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:43:33 INFO localcredit.py 107 15276 13316 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":21,\"y\":97},{\"x\":171,\"y\":71},{\"x\":272,\"y\":38}]",2018-03-15 10:43:33
+Thu 15 Mar 2018 10:43:33 INFO localcredit.py 112 15276 13316 customerid:9,成功post数据
+Thu 15 Mar 2018 10:43:36 WARNING localcredit.py 134 15276 13316 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:43:36 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:36 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:43:37 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：[{"x":67,"y":23},{"x":225,"y":22},{"x":277,"y":57}]
+Thu 15 Mar 2018 10:43:38 INFO localcredit.py 101 15276 13316 customerid:9，验证验证码[{"x":67,"y":23},{"x":225,"y":22},{"x":277,"y":57}]
+Thu 15 Mar 2018 10:43:38 INFO localcredit.py 104 15276 13316 customerid:9，转换tag
+Thu 15 Mar 2018 10:43:38 INFO localcredit.py 106 15276 13316 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:43:38 INFO localcredit.py 107 15276 13316 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":67,\"y\":23},{\"x\":225,\"y\":22},{\"x\":277,\"y\":57}]",2018-03-15 10:43:38
+Thu 15 Mar 2018 10:43:38 INFO localcredit.py 112 15276 13316 customerid:9,成功post数据
+Thu 15 Mar 2018 10:43:41 WARNING localcredit.py 134 15276 13316 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:43:41 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:41 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:43:42 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：[{"x":270,"y":103},{"x":67,"y":89},{"x":221,"y":104}]
+Thu 15 Mar 2018 10:43:42 INFO localcredit.py 101 15276 13316 customerid:9，验证验证码[{"x":270,"y":103},{"x":67,"y":89},{"x":221,"y":104}]
+Thu 15 Mar 2018 10:43:42 INFO localcredit.py 104 15276 13316 customerid:9，转换tag
+Thu 15 Mar 2018 10:43:42 INFO localcredit.py 106 15276 13316 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:43:42 INFO localcredit.py 107 15276 13316 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":270,\"y\":103},{\"x\":67,\"y\":89},{\"x\":221,\"y\":104}]",2018-03-15 10:43:42
+Thu 15 Mar 2018 10:43:42 INFO localcredit.py 112 15276 13316 customerid:9,成功post数据
+Thu 15 Mar 2018 10:43:45 WARNING localcredit.py 134 15276 13316 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:43:45 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:45 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:43:47 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：[{"x":19,"y":59},{"x":166,"y":61},{"x":120,"y":51}]
+Thu 15 Mar 2018 10:43:47 INFO localcredit.py 101 15276 13316 customerid:9，验证验证码[{"x":19,"y":59},{"x":166,"y":61},{"x":120,"y":51}]
+Thu 15 Mar 2018 10:43:47 INFO localcredit.py 104 15276 13316 customerid:9，转换tag
+Thu 15 Mar 2018 10:43:47 INFO localcredit.py 106 15276 13316 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:43:47 INFO localcredit.py 107 15276 13316 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":19,\"y\":59},{\"x\":166,\"y\":61},{\"x\":120,\"y\":51}]",2018-03-15 10:43:47
+Thu 15 Mar 2018 10:43:47 INFO localcredit.py 112 15276 13316 customerid:9,成功post数据
+Thu 15 Mar 2018 10:43:50 WARNING localcredit.py 134 15276 13316 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:43:50 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:50 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:43:51 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:43:51 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:51 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:43:53 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:43:53 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:53 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:43:54 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:43:54 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:54 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:43:56 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：[{"x":270,"y":43},{"x":170,"y":61},{"x":74,"y":41}]
+Thu 15 Mar 2018 10:43:56 INFO localcredit.py 101 15276 13316 customerid:9，验证验证码[{"x":270,"y":43},{"x":170,"y":61},{"x":74,"y":41}]
+Thu 15 Mar 2018 10:43:56 INFO localcredit.py 104 15276 13316 customerid:9，转换tag
+Thu 15 Mar 2018 10:43:56 INFO localcredit.py 106 15276 13316 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:43:56 INFO localcredit.py 107 15276 13316 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":270,\"y\":43},{\"x\":170,\"y\":61},{\"x\":74,\"y\":41}]",2018-03-15 10:43:56
+Thu 15 Mar 2018 10:43:56 INFO localcredit.py 112 15276 13316 customerid:9,成功post数据
+Thu 15 Mar 2018 10:43:59 WARNING localcredit.py 134 15276 13316 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:43:59 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:43:59 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:44:00 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：[{"x":17,"y":50},{"x":70,"y":58},{"x":218,"y":99}]
+Thu 15 Mar 2018 10:44:00 INFO localcredit.py 101 15276 13316 customerid:9，验证验证码[{"x":17,"y":50},{"x":70,"y":58},{"x":218,"y":99}]
+Thu 15 Mar 2018 10:44:00 INFO localcredit.py 104 15276 13316 customerid:9，转换tag
+Thu 15 Mar 2018 10:44:00 INFO localcredit.py 106 15276 13316 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:44:00 INFO localcredit.py 107 15276 13316 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":17,\"y\":50},{\"x\":70,\"y\":58},{\"x\":218,\"y\":99}]",2018-03-15 10:44:00
+Thu 15 Mar 2018 10:44:00 INFO localcredit.py 112 15276 13316 customerid:9,成功post数据
+Thu 15 Mar 2018 10:44:03 WARNING localcredit.py 134 15276 13316 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:44:03 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:44:03 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:44:05 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:44:05 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:44:06 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:44:07 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:44:07 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:44:08 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:44:10 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：[{"x":220,"y":99},{"x":271,"y":31},{"x":170,"y":32}]
+Thu 15 Mar 2018 10:44:10 INFO localcredit.py 101 15276 13316 customerid:9，验证验证码[{"x":220,"y":99},{"x":271,"y":31},{"x":170,"y":32}]
+Thu 15 Mar 2018 10:44:10 INFO localcredit.py 104 15276 13316 customerid:9，转换tag
+Thu 15 Mar 2018 10:44:10 INFO localcredit.py 106 15276 13316 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:44:10 INFO localcredit.py 107 15276 13316 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":220,\"y\":99},{\"x\":271,\"y\":31},{\"x\":170,\"y\":32}]",2018-03-15 10:44:10
+Thu 15 Mar 2018 10:44:10 INFO localcredit.py 112 15276 13316 customerid:9,成功post数据
+Thu 15 Mar 2018 10:44:13 WARNING localcredit.py 134 15276 13316 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:44:13 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:44:14 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:44:16 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:44:16 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:44:17 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:44:18 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：[{"x":272,"y":92},{"x":120,"y":27},{"x":21,"y":32}]
+Thu 15 Mar 2018 10:44:18 INFO localcredit.py 101 15276 13316 customerid:9，验证验证码[{"x":272,"y":92},{"x":120,"y":27},{"x":21,"y":32}]
+Thu 15 Mar 2018 10:44:18 INFO localcredit.py 104 15276 13316 customerid:9，转换tag
+Thu 15 Mar 2018 10:44:18 INFO localcredit.py 106 15276 13316 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:44:18 INFO localcredit.py 107 15276 13316 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":272,\"y\":92},{\"x\":120,\"y\":27},{\"x\":21,\"y\":32}]",2018-03-15 10:44:18
+Thu 15 Mar 2018 10:44:18 INFO localcredit.py 112 15276 13316 customerid:9,成功post数据
+Thu 15 Mar 2018 10:44:21 WARNING localcredit.py 134 15276 13316 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:44:21 INFO localcredit.py 60 15276 13316 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:44:22 INFO localcredit.py 71 15276 13316 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:44:24 INFO localcredit.py 97 15276 13316 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:44:24 WARNING localcredit.py 1185 15276 13316 tuple index out of range
+Thu 15 Mar 2018 10:44:24 WARNING localcredit.py 1186 15276 13316 customerid:9登陆失败
+Thu 15 Mar 2018 10:45:02 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:02 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:04 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：[{"x":21,"y":56},{"x":124,"y":42},{"x":269,"y":101}]
+Thu 15 Mar 2018 10:45:04 INFO localcredit.py 101 14612 2288 customerid:9，验证验证码[{"x":21,"y":56},{"x":124,"y":42},{"x":269,"y":101}]
+Thu 15 Mar 2018 10:45:04 INFO localcredit.py 104 14612 2288 customerid:9，转换tag
+Thu 15 Mar 2018 10:45:04 INFO localcredit.py 106 14612 2288 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:45:04 INFO localcredit.py 107 14612 2288 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":21,\"y\":56},{\"x\":124,\"y\":42},{\"x\":269,\"y\":101}]",2018-03-15 10:45:04
+Thu 15 Mar 2018 10:45:04 INFO localcredit.py 112 14612 2288 customerid:9,成功post数据
+Thu 15 Mar 2018 10:45:07 WARNING localcredit.py 134 14612 2288 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:45:07 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:07 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:09 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:45:09 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:09 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:10 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：[{"x":217,"y":63},{"x":70,"y":61},{"x":23,"y":76}]
+Thu 15 Mar 2018 10:45:11 INFO localcredit.py 101 14612 2288 customerid:9，验证验证码[{"x":217,"y":63},{"x":70,"y":61},{"x":23,"y":76}]
+Thu 15 Mar 2018 10:45:11 INFO localcredit.py 104 14612 2288 customerid:9，转换tag
+Thu 15 Mar 2018 10:45:11 INFO localcredit.py 106 14612 2288 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:45:11 INFO localcredit.py 107 14612 2288 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":217,\"y\":63},{\"x\":70,\"y\":61},{\"x\":23,\"y\":76}]",2018-03-15 10:45:11
+Thu 15 Mar 2018 10:45:11 INFO localcredit.py 112 14612 2288 customerid:9,成功post数据
+Thu 15 Mar 2018 10:45:14 WARNING localcredit.py 134 14612 2288 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:45:14 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:14 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:16 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：[{"x":218,"y":32},{"x":268,"y":64},{"x":69,"y":88}]
+Thu 15 Mar 2018 10:45:16 INFO localcredit.py 101 14612 2288 customerid:9，验证验证码[{"x":218,"y":32},{"x":268,"y":64},{"x":69,"y":88}]
+Thu 15 Mar 2018 10:45:16 INFO localcredit.py 104 14612 2288 customerid:9，转换tag
+Thu 15 Mar 2018 10:45:16 INFO localcredit.py 106 14612 2288 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:45:16 INFO localcredit.py 107 14612 2288 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":218,\"y\":32},{\"x\":268,\"y\":64},{\"x\":69,\"y\":88}]",2018-03-15 10:45:16
+Thu 15 Mar 2018 10:45:17 INFO localcredit.py 112 14612 2288 customerid:9,成功post数据
+Thu 15 Mar 2018 10:45:20 WARNING localcredit.py 134 14612 2288 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:45:20 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:20 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:21 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:45:21 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:21 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:23 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：[{"x":172,"y":45},{"x":116,"y":24},{"x":21,"y":49}]
+Thu 15 Mar 2018 10:45:23 INFO localcredit.py 101 14612 2288 customerid:9，验证验证码[{"x":172,"y":45},{"x":116,"y":24},{"x":21,"y":49}]
+Thu 15 Mar 2018 10:45:23 INFO localcredit.py 104 14612 2288 customerid:9，转换tag
+Thu 15 Mar 2018 10:45:23 INFO localcredit.py 106 14612 2288 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:45:23 INFO localcredit.py 107 14612 2288 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":172,\"y\":45},{\"x\":116,\"y\":24},{\"x\":21,\"y\":49}]",2018-03-15 10:45:23
+Thu 15 Mar 2018 10:45:23 INFO localcredit.py 112 14612 2288 customerid:9,成功post数据
+Thu 15 Mar 2018 10:45:26 WARNING localcredit.py 134 14612 2288 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:45:26 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:26 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:28 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：[{"x":217,"y":100},{"x":118,"y":74},{"x":168,"y":55}]
+Thu 15 Mar 2018 10:45:28 INFO localcredit.py 101 14612 2288 customerid:9，验证验证码[{"x":217,"y":100},{"x":118,"y":74},{"x":168,"y":55}]
+Thu 15 Mar 2018 10:45:28 INFO localcredit.py 104 14612 2288 customerid:9，转换tag
+Thu 15 Mar 2018 10:45:28 INFO localcredit.py 106 14612 2288 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:45:28 INFO localcredit.py 107 14612 2288 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":217,\"y\":100},{\"x\":118,\"y\":74},{\"x\":168,\"y\":55}]",2018-03-15 10:45:28
+Thu 15 Mar 2018 10:45:28 INFO localcredit.py 112 14612 2288 customerid:9,成功post数据
+Thu 15 Mar 2018 10:45:31 WARNING localcredit.py 134 14612 2288 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:45:31 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:31 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:33 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：[{"x":272,"y":63},{"x":224,"y":68},{"x":166,"y":97}]
+Thu 15 Mar 2018 10:45:33 INFO localcredit.py 101 14612 2288 customerid:9，验证验证码[{"x":272,"y":63},{"x":224,"y":68},{"x":166,"y":97}]
+Thu 15 Mar 2018 10:45:33 INFO localcredit.py 104 14612 2288 customerid:9，转换tag
+Thu 15 Mar 2018 10:45:33 INFO localcredit.py 106 14612 2288 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:45:33 INFO localcredit.py 107 14612 2288 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":272,\"y\":63},{\"x\":224,\"y\":68},{\"x\":166,\"y\":97}]",2018-03-15 10:45:33
+Thu 15 Mar 2018 10:45:33 INFO localcredit.py 112 14612 2288 customerid:9,成功post数据
+Thu 15 Mar 2018 10:45:36 WARNING localcredit.py 134 14612 2288 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:45:36 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:36 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:38 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:45:38 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:38 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:39 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:45:39 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:40 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:42 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:45:42 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:43 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:44 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：[{"x":70,"y":87},{"x":22,"y":18},{"x":168,"y":101}]
+Thu 15 Mar 2018 10:45:44 INFO localcredit.py 101 14612 2288 customerid:9，验证验证码[{"x":70,"y":87},{"x":22,"y":18},{"x":168,"y":101}]
+Thu 15 Mar 2018 10:45:44 INFO localcredit.py 104 14612 2288 customerid:9，转换tag
+Thu 15 Mar 2018 10:45:44 INFO localcredit.py 106 14612 2288 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:45:44 INFO localcredit.py 107 14612 2288 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":70,\"y\":87},{\"x\":22,\"y\":18},{\"x\":168,\"y\":101}]",2018-03-15 10:45:44
+Thu 15 Mar 2018 10:45:45 INFO localcredit.py 112 14612 2288 customerid:9,成功post数据
+Thu 15 Mar 2018 10:45:48 WARNING localcredit.py 134 14612 2288 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:45:48 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:49 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:50 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:45:50 INFO localcredit.py 60 14612 2288 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:45:51 INFO localcredit.py 71 14612 2288 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:45:53 INFO localcredit.py 97 14612 2288 customerid:9，获取验证码为：[{"x":68,"y":99},{"x":269,"y":51},{"x":173,"y":48}]
+Thu 15 Mar 2018 10:45:53 INFO localcredit.py 101 14612 2288 customerid:9，验证验证码[{"x":68,"y":99},{"x":269,"y":51},{"x":173,"y":48}]
+Thu 15 Mar 2018 10:45:53 INFO localcredit.py 104 14612 2288 customerid:9，转换tag
+Thu 15 Mar 2018 10:45:53 INFO localcredit.py 106 14612 2288 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:45:53 INFO localcredit.py 107 14612 2288 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":68,\"y\":99},{\"x\":269,\"y\":51},{\"x\":173,\"y\":48}]",2018-03-15 10:45:53
+Thu 15 Mar 2018 10:45:53 INFO localcredit.py 112 14612 2288 customerid:9,成功post数据
+Thu 15 Mar 2018 10:46:51 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:46:51 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:46:53 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：[{"x":18,"y":20},{"x":219,"y":91},{"x":69,"y":58}]
+Thu 15 Mar 2018 10:46:53 INFO localcredit.py 101 4128 8184 customerid:9，验证验证码[{"x":18,"y":20},{"x":219,"y":91},{"x":69,"y":58}]
+Thu 15 Mar 2018 10:46:53 INFO localcredit.py 104 4128 8184 customerid:9，转换tag
+Thu 15 Mar 2018 10:46:53 INFO localcredit.py 106 4128 8184 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:46:53 INFO localcredit.py 107 4128 8184 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":18,\"y\":20},{\"x\":219,\"y\":91},{\"x\":69,\"y\":58}]",2018-03-15 10:46:53
+Thu 15 Mar 2018 10:46:53 INFO localcredit.py 112 4128 8184 customerid:9,成功post数据
+Thu 15 Mar 2018 10:46:56 WARNING localcredit.py 134 4128 8184 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:46:56 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:46:56 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:46:58 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:46:58 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:46:58 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:46:59 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:46:59 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:46:59 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:01 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：[{"x":66,"y":44},{"x":23,"y":60},{"x":273,"y":41}]
+Thu 15 Mar 2018 10:47:01 INFO localcredit.py 101 4128 8184 customerid:9，验证验证码[{"x":66,"y":44},{"x":23,"y":60},{"x":273,"y":41}]
+Thu 15 Mar 2018 10:47:01 INFO localcredit.py 104 4128 8184 customerid:9，转换tag
+Thu 15 Mar 2018 10:47:01 INFO localcredit.py 106 4128 8184 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:47:01 INFO localcredit.py 107 4128 8184 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":66,\"y\":44},{\"x\":23,\"y\":60},{\"x\":273,\"y\":41}]",2018-03-15 10:47:01
+Thu 15 Mar 2018 10:47:01 INFO localcredit.py 112 4128 8184 customerid:9,成功post数据
+Thu 15 Mar 2018 10:47:04 WARNING localcredit.py 134 4128 8184 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:47:04 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:47:04 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:06 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：[{"x":174,"y":27},{"x":21,"y":53},{"x":72,"y":25}]
+Thu 15 Mar 2018 10:47:06 INFO localcredit.py 101 4128 8184 customerid:9，验证验证码[{"x":174,"y":27},{"x":21,"y":53},{"x":72,"y":25}]
+Thu 15 Mar 2018 10:47:06 INFO localcredit.py 104 4128 8184 customerid:9，转换tag
+Thu 15 Mar 2018 10:47:06 INFO localcredit.py 106 4128 8184 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:47:06 INFO localcredit.py 107 4128 8184 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":174,\"y\":27},{\"x\":21,\"y\":53},{\"x\":72,\"y\":25}]",2018-03-15 10:47:06
+Thu 15 Mar 2018 10:47:06 INFO localcredit.py 112 4128 8184 customerid:9,成功post数据
+Thu 15 Mar 2018 10:47:09 WARNING localcredit.py 134 4128 8184 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:47:09 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:47:09 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:11 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:47:11 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:47:11 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:12 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：[{"x":167,"y":83},{"x":268,"y":62},{"x":68,"y":33}]
+Thu 15 Mar 2018 10:47:12 INFO localcredit.py 101 4128 8184 customerid:9，验证验证码[{"x":167,"y":83},{"x":268,"y":62},{"x":68,"y":33}]
+Thu 15 Mar 2018 10:47:12 INFO localcredit.py 104 4128 8184 customerid:9，转换tag
+Thu 15 Mar 2018 10:47:12 INFO localcredit.py 106 4128 8184 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:47:12 INFO localcredit.py 107 4128 8184 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":167,\"y\":83},{\"x\":268,\"y\":62},{\"x\":68,\"y\":33}]",2018-03-15 10:47:12
+Thu 15 Mar 2018 10:47:13 INFO localcredit.py 112 4128 8184 customerid:9,成功post数据
+Thu 15 Mar 2018 10:47:16 WARNING localcredit.py 134 4128 8184 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:47:16 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:47:16 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:18 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:47:18 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:47:18 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:19 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:47:19 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:47:19 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:21 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：[{"x":70,"y":75},{"x":20,"y":78},{"x":268,"y":59}]
+Thu 15 Mar 2018 10:47:21 INFO localcredit.py 101 4128 8184 customerid:9，验证验证码[{"x":70,"y":75},{"x":20,"y":78},{"x":268,"y":59}]
+Thu 15 Mar 2018 10:47:21 INFO localcredit.py 104 4128 8184 customerid:9，转换tag
+Thu 15 Mar 2018 10:47:21 INFO localcredit.py 106 4128 8184 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:47:21 INFO localcredit.py 107 4128 8184 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":70,\"y\":75},{\"x\":20,\"y\":78},{\"x\":268,\"y\":59}]",2018-03-15 10:47:21
+Thu 15 Mar 2018 10:47:21 INFO localcredit.py 112 4128 8184 customerid:9,成功post数据
+Thu 15 Mar 2018 10:47:24 WARNING localcredit.py 134 4128 8184 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:47:24 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:47:25 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:27 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：[{"x":173,"y":80},{"x":265,"y":80},{"x":120,"y":20}]
+Thu 15 Mar 2018 10:47:27 INFO localcredit.py 101 4128 8184 customerid:9，验证验证码[{"x":173,"y":80},{"x":265,"y":80},{"x":120,"y":20}]
+Thu 15 Mar 2018 10:47:27 INFO localcredit.py 104 4128 8184 customerid:9，转换tag
+Thu 15 Mar 2018 10:47:27 INFO localcredit.py 106 4128 8184 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:47:27 INFO localcredit.py 107 4128 8184 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":173,\"y\":80},{\"x\":265,\"y\":80},{\"x\":120,\"y\":20}]",2018-03-15 10:47:27
+Thu 15 Mar 2018 10:47:28 INFO localcredit.py 112 4128 8184 customerid:9,成功post数据
+Thu 15 Mar 2018 10:47:31 WARNING localcredit.py 134 4128 8184 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:47:31 INFO localcredit.py 60 4128 8184 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:47:32 INFO localcredit.py 71 4128 8184 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:47:33 INFO localcredit.py 97 4128 8184 customerid:9，获取验证码为：[{"x":272,"y":100},{"x":116,"y":40},{"x":219,"y":68}]
+Thu 15 Mar 2018 10:47:33 INFO localcredit.py 101 4128 8184 customerid:9，验证验证码[{"x":272,"y":100},{"x":116,"y":40},{"x":219,"y":68}]
+Thu 15 Mar 2018 10:47:33 INFO localcredit.py 104 4128 8184 customerid:9，转换tag
+Thu 15 Mar 2018 10:47:33 INFO localcredit.py 106 4128 8184 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:47:33 INFO localcredit.py 107 4128 8184 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":272,\"y\":100},{\"x\":116,\"y\":40},{\"x\":219,\"y\":68}]",2018-03-15 10:47:33
+Thu 15 Mar 2018 10:47:34 INFO localcredit.py 112 4128 8184 customerid:9,成功post数据
+Thu 15 Mar 2018 10:48:40 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:48:40 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:48:41 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：[{"x":71,"y":64},{"x":117,"y":29},{"x":22,"y":22}]
+Thu 15 Mar 2018 10:48:41 INFO localcredit.py 101 9796 16284 customerid:9，验证验证码[{"x":71,"y":64},{"x":117,"y":29},{"x":22,"y":22}]
+Thu 15 Mar 2018 10:48:41 INFO localcredit.py 104 9796 16284 customerid:9，转换tag
+Thu 15 Mar 2018 10:48:41 INFO localcredit.py 106 9796 16284 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:48:41 INFO localcredit.py 107 9796 16284 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":71,\"y\":64},{\"x\":117,\"y\":29},{\"x\":22,\"y\":22}]",2018-03-15 10:48:41
+Thu 15 Mar 2018 10:48:42 INFO localcredit.py 112 9796 16284 customerid:9,成功post数据
+Thu 15 Mar 2018 10:48:45 WARNING localcredit.py 134 9796 16284 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:48:45 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:48:45 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:48:47 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：[{"x":172,"y":54},{"x":269,"y":91},{"x":217,"y":68}]
+Thu 15 Mar 2018 10:48:47 INFO localcredit.py 101 9796 16284 customerid:9，验证验证码[{"x":172,"y":54},{"x":269,"y":91},{"x":217,"y":68}]
+Thu 15 Mar 2018 10:48:47 INFO localcredit.py 104 9796 16284 customerid:9，转换tag
+Thu 15 Mar 2018 10:48:47 INFO localcredit.py 106 9796 16284 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:48:47 INFO localcredit.py 107 9796 16284 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":172,\"y\":54},{\"x\":269,\"y\":91},{\"x\":217,\"y\":68}]",2018-03-15 10:48:47
+Thu 15 Mar 2018 10:48:47 INFO localcredit.py 112 9796 16284 customerid:9,成功post数据
+Thu 15 Mar 2018 10:48:50 WARNING localcredit.py 134 9796 16284 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:48:50 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:48:50 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:48:52 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：[{"x":266,"y":41},{"x":220,"y":88},{"x":71,"y":87}]
+Thu 15 Mar 2018 10:48:52 INFO localcredit.py 101 9796 16284 customerid:9，验证验证码[{"x":266,"y":41},{"x":220,"y":88},{"x":71,"y":87}]
+Thu 15 Mar 2018 10:48:52 INFO localcredit.py 104 9796 16284 customerid:9，转换tag
+Thu 15 Mar 2018 10:48:52 INFO localcredit.py 106 9796 16284 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:48:52 INFO localcredit.py 107 9796 16284 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":266,\"y\":41},{\"x\":220,\"y\":88},{\"x\":71,\"y\":87}]",2018-03-15 10:48:52
+Thu 15 Mar 2018 10:48:52 INFO localcredit.py 112 9796 16284 customerid:9,成功post数据
+Thu 15 Mar 2018 10:48:55 WARNING localcredit.py 134 9796 16284 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:48:55 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:48:55 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:48:57 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：[{"x":171,"y":21},{"x":71,"y":85},{"x":269,"y":45}]
+Thu 15 Mar 2018 10:48:57 INFO localcredit.py 101 9796 16284 customerid:9，验证验证码[{"x":171,"y":21},{"x":71,"y":85},{"x":269,"y":45}]
+Thu 15 Mar 2018 10:48:57 INFO localcredit.py 104 9796 16284 customerid:9，转换tag
+Thu 15 Mar 2018 10:48:57 INFO localcredit.py 106 9796 16284 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:48:57 INFO localcredit.py 107 9796 16284 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":171,\"y\":21},{\"x\":71,\"y\":85},{\"x\":269,\"y\":45}]",2018-03-15 10:48:57
+Thu 15 Mar 2018 10:48:58 INFO localcredit.py 112 9796 16284 customerid:9,成功post数据
+Thu 15 Mar 2018 10:49:01 WARNING localcredit.py 134 9796 16284 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:49:01 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:49:01 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:49:02 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：[{"x":20,"y":65},{"x":271,"y":28},{"x":121,"y":60}]
+Thu 15 Mar 2018 10:49:02 INFO localcredit.py 101 9796 16284 customerid:9，验证验证码[{"x":20,"y":65},{"x":271,"y":28},{"x":121,"y":60}]
+Thu 15 Mar 2018 10:49:02 INFO localcredit.py 104 9796 16284 customerid:9，转换tag
+Thu 15 Mar 2018 10:49:02 INFO localcredit.py 106 9796 16284 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:49:02 INFO localcredit.py 107 9796 16284 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":20,\"y\":65},{\"x\":271,\"y\":28},{\"x\":121,\"y\":60}]",2018-03-15 10:49:02
+Thu 15 Mar 2018 10:49:03 INFO localcredit.py 112 9796 16284 customerid:9,成功post数据
+Thu 15 Mar 2018 10:49:06 WARNING localcredit.py 134 9796 16284 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:49:06 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:49:06 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:49:08 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：[{"x":24,"y":83},{"x":168,"y":51},{"x":122,"y":89}]
+Thu 15 Mar 2018 10:49:08 INFO localcredit.py 101 9796 16284 customerid:9，验证验证码[{"x":24,"y":83},{"x":168,"y":51},{"x":122,"y":89}]
+Thu 15 Mar 2018 10:49:08 INFO localcredit.py 104 9796 16284 customerid:9，转换tag
+Thu 15 Mar 2018 10:49:08 INFO localcredit.py 106 9796 16284 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:49:08 INFO localcredit.py 107 9796 16284 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":24,\"y\":83},{\"x\":168,\"y\":51},{\"x\":122,\"y\":89}]",2018-03-15 10:49:08
+Thu 15 Mar 2018 10:49:08 INFO localcredit.py 112 9796 16284 customerid:9,成功post数据
+Thu 15 Mar 2018 10:49:11 WARNING localcredit.py 134 9796 16284 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:49:11 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:49:11 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:49:13 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:49:13 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:49:13 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:49:14 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:49:14 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:49:14 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:49:16 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:49:16 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:49:16 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:49:17 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：[{"x":66,"y":20},{"x":266,"y":102},{"x":173,"y":45}]
+Thu 15 Mar 2018 10:49:17 INFO localcredit.py 101 9796 16284 customerid:9，验证验证码[{"x":66,"y":20},{"x":266,"y":102},{"x":173,"y":45}]
+Thu 15 Mar 2018 10:49:17 INFO localcredit.py 104 9796 16284 customerid:9，转换tag
+Thu 15 Mar 2018 10:49:17 INFO localcredit.py 106 9796 16284 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:49:17 INFO localcredit.py 107 9796 16284 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":66,\"y\":20},{\"x\":266,\"y\":102},{\"x\":173,\"y\":45}]",2018-03-15 10:49:17
+Thu 15 Mar 2018 10:49:18 INFO localcredit.py 112 9796 16284 customerid:9,成功post数据
+Thu 15 Mar 2018 10:49:21 WARNING localcredit.py 134 9796 16284 customerid:9登录失败,开始重试
+Thu 15 Mar 2018 10:49:21 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:49:22 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:49:24 INFO localcredit.py 97 9796 16284 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 10:49:24 INFO localcredit.py 60 9796 16284 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:49:25 INFO localcredit.py 71 9796 16284 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:50:16 INFO localcredit.py 60 11300 10868 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 10:50:16 INFO localcredit.py 71 11300 10868 未传代理参数，启用本机IP
+Thu 15 Mar 2018 10:50:22 INFO localcredit.py 97 11300 10868 customerid:9，获取验证码为：[{"x":271,"y":76},{"x":72,"y":20},{"x":172,"y":83}]
+Thu 15 Mar 2018 10:50:24 INFO localcredit.py 101 11300 10868 customerid:9，验证验证码[{"x":271,"y":76},{"x":72,"y":20},{"x":172,"y":83}]
+Thu 15 Mar 2018 10:50:26 INFO localcredit.py 104 11300 10868 customerid:9，转换tag
+Thu 15 Mar 2018 10:50:29 INFO localcredit.py 106 11300 10868 customerid:9，转换tag完成
+Thu 15 Mar 2018 10:50:29 INFO localcredit.py 107 11300 10868 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":271,\"y\":76},{\"x\":72,\"y\":20},{\"x\":172,\"y\":83}]",2018-03-15 10:50:25
+Thu 15 Mar 2018 11:25:28 INFO localcredit.py 60 12836 15148 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 11:25:28 INFO localcredit.py 71 12836 15148 未传代理参数，启用本机IP
+Thu 15 Mar 2018 11:25:32 INFO localcredit.py 97 12836 15148 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 11:25:34 INFO localcredit.py 60 12836 15148 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 11:25:35 INFO localcredit.py 71 12836 15148 未传代理参数，启用本机IP
+Thu 15 Mar 2018 11:25:42 INFO localcredit.py 97 12836 15148 customerid:9，获取验证码为：[{"x":221,"y":72},{"x":119,"y":83},{"x":174,"y":36}]
+Thu 15 Mar 2018 11:25:43 INFO localcredit.py 101 12836 15148 customerid:9，验证验证码[{"x":221,"y":72},{"x":119,"y":83},{"x":174,"y":36}]
+Thu 15 Mar 2018 11:25:46 INFO localcredit.py 104 12836 15148 customerid:9，转换tag
+Thu 15 Mar 2018 11:25:47 INFO localcredit.py 106 12836 15148 customerid:9，转换tag完成
+Thu 15 Mar 2018 11:25:47 INFO localcredit.py 107 12836 15148 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":221,\"y\":72},{\"x\":119,\"y\":83},{\"x\":174,\"y\":36}]",2018-03-15 11:25:43
+Thu 15 Mar 2018 11:26:05 INFO localcredit.py 112 12836 15148 customerid:9,成功post数据
+Thu 15 Mar 2018 11:26:06 INFO localcredit.py 119 12836 15148 customerid:9pass
+Thu 15 Mar 2018 11:26:06 INFO localcredit.py 1174 12836 15148 customerid:9获取cookies
+Thu 15 Mar 2018 11:26:41 INFO localcredit.py 1233 12836 15148 customerid9税费种信息{}:
+Thu 15 Mar 2018 11:27:09 INFO localcredit.py 264 12836 15148 customerid:9,基础信息{'纳税人名称：': '深圳市麦哲伦资本管理有限公司', '主管税务人员：': '前海国税局税源管理二科', '纳税主管科室：': '深圳市前海国家税务局税源管理二科', '纳税主管税务机关：': '深圳市前海国家税务局'}
+Thu 15 Mar 2018 11:27:09 INFO localcredit.py 266 12836 15148 customerid:9,详细信息[{'fddbrsfzjlxmc': '居民身份证', 'cwfzrdzxx': '', 'gdgrs': '', 'cwfzrsfzjhm': '445222199206260067', 'shxydm': '914403000818951675', 'cwfzrxm': '刘缨', 'hydl': '商务服务业', 'zcdyzbm': '518000', 'hhrs': '', 'zzjgDm': '081895167', 'scjydz': '深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）', 'cwfzrsfzjlxmc': '居民身份证', 'scjydlxdh': '1801272369', 'bsrgddh': '18012723699', 'bsrxm': '樊五洲', 'fddbrsfzjhm': '610103196811083619', 'zcdz': '深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）', 'fddbrxm': '樊五洲', 'zczb': '10000000', 'nsrztDm': '03', 'fddbrdzxx': '', 'cyrs': '8', 'djzclxmc': '其他有限责任公司', 'cwfzrgddh': '18012723699', 'ggrs': '', 'cwfzrsfzjzlDm': '201', 'djxh': '10114403000026297877', 'bsrsfzjzlDm': '201', 'zcdlxdh': '1801272369', 'hyxl': '企业总部管理', 'wjcyrs': '', 'cwfzryddh': '13538929567', 'hsfsmc': '独立核算自负盈亏', 'fddbrsfzjlxDm': '201', 'nsrsbh': '440300081895167', 'djrq': '2013-10-30', 'fddbrgddh': '18012723699', 'jyfw': '资产管理；股权投资；投资管理；投资咨询；企业管理；企业管理咨询；企业营销策划。^', 'nsrmc': '深圳市麦哲伦资本管理有限公司', 'bsrdzxx': '', 'bsrsfzjlxmc': '居民身份证', 'bsryddh': '13538929567', 'fddbryddh': '18620392666', 'bsrsfzjhm': '610103196811083619', 'scjydyzbm': '518000'}]
+Thu 15 Mar 2018 11:27:11 INFO localcredit.py 287 12836 15148 customerid:9,json信息{'xxxx': [{'fddbrsfzjlxmc': '居民身份证', 'cwfzrdzxx': '', 'gdgrs': '', 'cwfzrsfzjhm': '445222199206260067', 'shxydm': '914403000818951675', 'cwfzrxm': '刘缨', 'hydl': '商务服务业', 'zcdyzbm': '518000', 'hhrs': '', 'zzjgDm': '081895167', 'scjydz': '深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）', 'cwfzrsfzjlxmc': '居民身份证', 'scjydlxdh': '1801272369', 'bsrgddh': '18012723699', 'bsrxm': '樊五洲', 'fddbrsfzjhm': '610103196811083619', 'zcdz': '深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）', 'fddbrxm': '樊五洲', 'zczb': '10000000', 'nsrztDm': '03', 'fddbrdzxx': '', 'cyrs': '8', 'djzclxmc': '其他有限责任公司', 'cwfzrgddh': '18012723699', 'ggrs': '', 'cwfzrsfzjzlDm': '201', 'djxh': '10114403000026297877', 'bsrsfzjzlDm': '201', 'zcdlxdh': '1801272369', 'hyxl': '企业总部管理', 'wjcyrs': '', 'cwfzryddh': '13538929567', 'hsfsmc': '独立核算自负盈亏', 'fddbrsfzjlxDm': '201', 'nsrsbh': '440300081895167', 'djrq': '2013-10-30', 'fddbrgddh': '18012723699', 'jyfw': '资产管理；股权投资；投资管理；投资咨询；企业管理；企业管理咨询；企业营销策划。^', 'nsrmc': '深圳市麦哲伦资本管理有限公司', 'bsrdzxx': '', 'bsrsfzjlxmc': '居民身份证', 'bsryddh': '13538929567', 'fddbryddh': '18620392666', 'bsrsfzjhm': '610103196811083619', 'scjydyzbm': '518000'}], '纳税人资格查询': {'没有对应查询数据': {'序号': '没有对应查询数据'}}, '纳税人基本信息': {}, 'jcxx': {'纳税人名称：': '深圳市麦哲伦资本管理有限公司', '主管税务人员：': '前海国税局税源管理二科', '纳税主管科室：': '深圳市前海国家税务局税源管理二科', '纳税主管税务机关：': '深圳市前海国家税务局'}}
+Thu 15 Mar 2018 11:27:20 INFO localcredit.py 518 12836 15148 customerid:9,json信息{}
+Thu 15 Mar 2018 11:27:28 INFO localcredit.py 524 12836 15148 国税季度查询
+Thu 15 Mar 2018 11:27:47 INFO localcredit.py 644 12836 15148 customerid:9开始登录地税
+Thu 15 Mar 2018 11:27:51 INFO localcredit.py 915 12836 15148 customerid:9截取地税登记信息
+Thu 15 Mar 2018 11:28:09 INFO localcredit.py 1066 12836 15148 customerid:9地税企业所得税（季报）信息查询
+Thu 15 Mar 2018 11:28:18 INFO localcredit.py 1126 12836 15148 customerid:9地税企业所得税（年度）信息查询
+Thu 15 Mar 2018 11:30:15 INFO localcredit.py 60 8800 13116 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 11:30:15 INFO localcredit.py 71 8800 13116 未传代理参数，启用本机IP
+Thu 15 Mar 2018 11:30:19 INFO localcredit.py 97 8800 13116 customerid:9，获取验证码为：[{"x":18,"y":95},{"x":274,"y":59},{"x":122,"y":92}]
+Thu 15 Mar 2018 11:30:19 INFO localcredit.py 101 8800 13116 customerid:9，验证验证码[{"x":18,"y":95},{"x":274,"y":59},{"x":122,"y":92}]
+Thu 15 Mar 2018 11:30:19 INFO localcredit.py 104 8800 13116 customerid:9，转换tag
+Thu 15 Mar 2018 11:30:19 INFO localcredit.py 106 8800 13116 customerid:9，转换tag完成
+Thu 15 Mar 2018 11:30:19 INFO localcredit.py 107 8800 13116 customerid:9，440300081895167,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":18,\"y\":95},{\"x\":274,\"y\":59},{\"x\":122,\"y\":92}]",2018-03-15 11:30:19
+Thu 15 Mar 2018 11:30:19 INFO localcredit.py 112 8800 13116 customerid:9,成功post数据
+Thu 15 Mar 2018 11:30:19 INFO localcredit.py 119 8800 13116 customerid:9pass
+Thu 15 Mar 2018 11:30:19 INFO localcredit.py 1174 8800 13116 customerid:9获取cookies
+Thu 15 Mar 2018 11:30:35 INFO localcredit.py 1233 8800 13116 customerid9税费种信息{}:
+Thu 15 Mar 2018 11:31:04 INFO localcredit.py 264 8800 13116 customerid:9,基础信息{'主管税务人员：': '前海国税局税源管理二科', '纳税主管税务机关：': '深圳市前海国家税务局', '纳税主管科室：': '深圳市前海国家税务局税源管理二科', '纳税人名称：': '深圳市麦哲伦资本管理有限公司'}
+Thu 15 Mar 2018 11:31:04 INFO localcredit.py 266 8800 13116 customerid:9,详细信息[{'djzclxmc': '其他有限责任公司', 'fddbrsfzjlxmc': '居民身份证', 'hydl': '商务服务业', 'cwfzrsfzjlxmc': '居民身份证', 'zcdlxdh': '1801272369', 'scjydz': '深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）', 'cwfzrsfzjhm': '445222199206260067', 'scjydyzbm': '518000', 'nsrmc': '深圳市麦哲伦资本管理有限公司', 'bsrsfzjzlDm': '201', 'bsrgddh': '18012723699', 'gdgrs': '', 'bsrdzxx': '', 'zcdz': '深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）', 'nsrsbh': '440300081895167', 'nsrztDm': '03', 'scjydlxdh': '1801272369', 'fddbrgddh': '18012723699', 'cyrs': '8', 'cwfzrsfzjzlDm': '201', 'bsryddh': '13538929567', 'hsfsmc': '独立核算自负盈亏', 'bsrsfzjlxmc': '居民身份证', 'fddbryddh': '18620392666', 'fddbrdzxx': '', 'djxh': '10114403000026297877', 'shxydm': '914403000818951675', 'hyxl': '企业总部管理', 'cwfzryddh': '13538929567', 'bsrxm': '樊五洲', 'fddbrsfzjhm': '610103196811083619', 'zcdyzbm': '518000', 'ggrs': '', 'fddbrsfzjlxDm': '201', 'cwfzrgddh': '18012723699', 'djrq': '2013-10-30', 'hhrs': '', 'zczb': '10000000', 'cwfzrxm': '刘缨', 'jyfw': '资产管理；股权投资；投资管理；投资咨询；企业管理；企业管理咨询；企业营销策划。^', 'zzjgDm': '081895167', 'fddbrxm': '樊五洲', 'bsrsfzjhm': '610103196811083619', 'cwfzrdzxx': '', 'wjcyrs': ''}]
+Thu 15 Mar 2018 11:31:07 INFO localcredit.py 287 8800 13116 customerid:9,json信息{'jcxx': {'主管税务人员：': '前海国税局税源管理二科', '纳税主管税务机关：': '深圳市前海国家税务局', '纳税主管科室：': '深圳市前海国家税务局税源管理二科', '纳税人名称：': '深圳市麦哲伦资本管理有限公司'}, '纳税人资格查询': {'没有对应查询数据': {'序号': '没有对应查询数据'}}, 'xxxx': [{'djzclxmc': '其他有限责任公司', 'fddbrsfzjlxmc': '居民身份证', 'hydl': '商务服务业', 'cwfzrsfzjlxmc': '居民身份证', 'zcdlxdh': '1801272369', 'scjydz': '深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）', 'cwfzrsfzjhm': '445222199206260067', 'scjydyzbm': '518000', 'nsrmc': '深圳市麦哲伦资本管理有限公司', 'bsrsfzjzlDm': '201', 'bsrgddh': '18012723699', 'gdgrs': '', 'bsrdzxx': '', 'zcdz': '深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）', 'nsrsbh': '440300081895167', 'nsrztDm': '03', 'scjydlxdh': '1801272369', 'fddbrgddh': '18012723699', 'cyrs': '8', 'cwfzrsfzjzlDm': '201', 'bsryddh': '13538929567', 'hsfsmc': '独立核算自负盈亏', 'bsrsfzjlxmc': '居民身份证', 'fddbryddh': '18620392666', 'fddbrdzxx': '', 'djxh': '10114403000026297877', 'shxydm': '914403000818951675', 'hyxl': '企业总部管理', 'cwfzryddh': '13538929567', 'bsrxm': '樊五洲', 'fddbrsfzjhm': '610103196811083619', 'zcdyzbm': '518000', 'ggrs': '', 'fddbrsfzjlxDm': '201', 'cwfzrgddh': '18012723699', 'djrq': '2013-10-30', 'hhrs': '', 'zczb': '10000000', 'cwfzrxm': '刘缨', 'jyfw': '资产管理；股权投资；投资管理；投资咨询；企业管理；企业管理咨询；企业营销策划。^', 'zzjgDm': '081895167', 'fddbrxm': '樊五洲', 'bsrsfzjhm': '610103196811083619', 'cwfzrdzxx': '', 'wjcyrs': ''}], '纳税人基本信息': {}}
+Thu 15 Mar 2018 11:31:13 INFO localcredit.py 518 8800 13116 customerid:9,json信息{}
+Thu 15 Mar 2018 11:31:17 INFO localcredit.py 524 8800 13116 国税季度查询
+Thu 15 Mar 2018 11:31:25 INFO localcredit.py 644 8800 13116 customerid:9开始登录地税
+Thu 15 Mar 2018 11:31:25 INFO localcredit.py 915 8800 13116 customerid:9截取地税登记信息
+Thu 15 Mar 2018 11:31:42 INFO localcredit.py 1066 8800 13116 customerid:9地税企业所得税（季报）信息查询
+Thu 15 Mar 2018 11:31:50 INFO localcredit.py 1126 8800 13116 customerid:9地税企业所得税（年度）信息查询
+Thu 15 Mar 2018 11:32:52 INFO localcredit.py 1348 8800 13116 {"上季度纳税情况": null}
+Thu 15 Mar 2018 11:32:52 INFO localcredit.py 1349 8800 13116 {}
+Thu 15 Mar 2018 11:32:52 INFO localcredit.py 1350 8800 13116 {"2": {"有效期止": "9999-12-31", "投资比例": "15%", "股东名称": "王向东", "证件种类": "居民身份证", "地址": "广东省深圳市福田区荔林苑荔翠阁17E", "有效期起": "2013-10-30", "分配比例": "0%", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "410105196907124417"}, "1": {"有效期止": "9999-12-31", "投资比例": "70%", "股东名称": "樊五洲", "证件种类": "居民身份证", "地址": "广东省深圳市福田区滨河路信托花园10栋A101", "有效期起": "2013-10-30", "分配比例": "0%", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "610103196811083619"}, "3": {"有效期止": "9999-12-31", "投资比例": "15%", "股东名称": "任永恒", "证件种类": "居民身份证", "地址": "广东省深圳市南山区沙河深圳湾畔花园6幢17D", "有效期起": "2013-10-30", "分配比例": "0%", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "610113196706170051"}}
+Thu 15 Mar 2018 11:32:52 INFO localcredit.py 1351 8800 13116 {"年度纳税申报表": {"股东信息": {"2": {"投资比例": "5.00%", "经济性质": "其他有限责任公司", "股东名称": "王向东", "证件种类": "居民身份证", "国籍": "中国", "证件号码": " 410105196907124417"}, "1": {"投资比例": "23.33%", "经济性质": "其他有限责任公司", "股东名称": "樊五洲", "证件种类": "居民身份证", "国籍": "中国", "证件号码": " 610103196811083619"}, "4": {"投资比例": "66.67%", "经济性质": "其他有限责任公司", "股东名称": "深圳市华屹投资管理有限公司", "证件种类": "营业执照", "国籍": "中国", "证件号码": " 91440300359482472D"}, "3": {"投资比例": "5.00%", "经济性质": "其他有限责任公司", "股东名称": "任永恒", "证件种类": "居民身份证", "国籍": "中国", "证件号码": " 610113196706170051"}}, "所属行业明细": "7299", "纳税调整后所得": "-3,990,749.40", "亏损明细": {"2015": "4,035,480.18", "2013": "0.0", "2016": "-3,990,749.40", "2014": "-3,861,008.67", "2011": "0.0", "2012": "0.0"}, "从业人数": "15", "企业会计准则为": "", "存货计价方法": "先进先出法"}, "季度纳税申报表": {"减:减免所得税额（请填附表3）": "0.00", "实际已预缴所得税额": "0", "应补(退)所得税额": "0.00", "应纳所得税额": "0.00"}}
+Thu 15 Mar 2018 11:32:53 INFO localcredit.py 1354 8800 13116 ('5590', '0', '0', 18282900, 9, '{"账号详情": {"密码": "88272474", "账号": "440300081895167"}, "国税信息": {"jcxx": {"主管税务人员：": "前海国税局税源管理二科", "纳税主管税务机关：": "深圳市前海国家税务局", "纳税主管科室：": "深圳市前海国家税务局税源管理二科", "纳税人名称：": "深圳市麦哲伦资本管理有限公司"}, "纳税人资格查询": {"没有对应查询数据": {"序号": "没有对应查询数据"}}, "xxxx": [{"djzclxmc": "其他有限责任公司", "fddbrsfzjlxmc": "居民身份证", "hydl": "商务服务业", "cwfzrsfzjlxmc": "居民身份证", "zcdlxdh": "1801272369", "scjydz": "深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）", "cwfzrsfzjhm": "445222199206260067", "scjydyzbm": "518000", "nsrmc": "深圳市麦哲伦资本管理有限公司", "bsrsfzjzlDm": "201", "bsrgddh": "18012723699", "gdgrs": "", "bsrdzxx": "", "zcdz": "深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）", "nsrsbh": "440300081895167", "nsrztDm": "03", "scjydlxdh": "1801272369", "fddbrgddh": "18012723699", "cyrs": "8", "cwfzrsfzjzlDm": "201", "bsryddh": "13538929567", "hsfsmc": "独立核算自负盈亏", "bsrsfzjlxmc": "居民身份证", "fddbryddh": "18620392666", "fddbrdzxx": "", "djxh": "10114403000026297877", "shxydm": "914403000818951675", "hyxl": "企业总部管理", "cwfzryddh": "13538929567", "bsrxm": "樊五洲", "fddbrsfzjhm": "610103196811083619", "zcdyzbm": "518000", "ggrs": "", "fddbrsfzjlxDm": "201", "cwfzrgddh": "18012723699", "djrq": "2013-10-30", "hhrs": "", "zczb": "10000000", "cwfzrxm": "刘缨", "jyfw": "资产管理；股权投资；投资管理；投资咨询；企业管理；企业管理咨询；企业营销策划。^", "zzjgDm": "081895167", "fddbrxm": "樊五洲", "bsrsfzjhm": "610103196811083619", "cwfzrdzxx": "", "wjcyrs": ""}], "纳税人基本信息": {}}}', '{"国税税费种信息": {}}', '{"地税信息": {"1": {"纳税人识别号：": "440300081895167", "纳税人名称：": "深圳市麦哲伦资本管理有限公司"}, "2": {"税务登记表类型：": "单位纳税人税务登记", "统一社会信用代码：": "914403000818951675"}, "3": {"注册地址：": "深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）"}, "4": {"生产经营地址：": "深圳市前海深港合作区前湾一路鲤鱼门街一号前海深港合作区管理局综合办公楼A栋201室（入驻深圳市前海商务秘书有限公司）"}, "5": {"街道乡镇：": "粤海街道"}, "6": {"手机/联系电话：": "18620392666", "法人代表：": "樊五洲"}, "7": {"财务负责人：": "刘缨", "手机/联系电话：": "13538929567"}, "8": {"办税人员：": "樊五洲", "手机/联系电话：": "13538929567"}, "9": {"开业设立日期：": "2013-10-23", "经营期限起：": "2013-10-23"}, "10": {"国地共管户标志：": "国地共管", "登记注册类型：": "其他有限责任公司"}, "11": {"纳税人状态：": "正常", "核算方式：": "独立核算自负盈亏"}, "12": {"业务受理点：": "深圳市前海地方税务局办税服务科", "主管税务机关：": "深圳市前海地方税务局办税服务科"}}}', '{"地税税费种信息": {"2": {"有效期止": "9999-12-31", "征收项目": "个人所得税", "有效期起": "2014-01-01", "申报期限": "期满之日起15日内", "税率": "0.2", "纳税期限": "月", "征收代理方式": "代扣代缴", "征收品目": "工资薪金所得", "序号": "2"}, "1": {"有效期止": "9999-12-31", "征收项目": "城市维护建设税", "有效期起": "2014-01-01", "申报期限": "期满之日起15日内", "税率": "0.07", "纳税期限": "季", "征收代理方式": "自行申报", "征收品目": "市区（增值税附征）", "序号": "1"}, "4": {"有效期止": "9999-12-31", "征收项目": "企业所得税", "有效期起": "2015-01-01", "申报期限": "期满之日起15日内", "税率": "0.25", "纳税期限": "季", "征收代理方式": "自行申报", "征收品目": "应纳税所得额", "序号": "4"}, "3": {"有效期止": "9999-12-31", "征收项目": "教育费附加", "有效期起": "2014-01-01", "申报期限": "期满之日起15日内", "税率": "0.03", "纳税期限": "季", "征收代理方式": "自行申报", "征收品目": "增值税教育费附加", "序号": "3"}, "5": {"有效期止": "9999-12-31", "征收项目": "地方教育附加", "有效期起": "2014-01-01", "申报期限": "期满之日起15日内", "税率": "0.02", "纳税期限": "季", "征收代理方式": "自行申报", "征收品目": "增值税地方教育附加", "序号": "5"}}}', '{"上季度纳税情况": null}', '{}', '{"2": {"有效期止": "9999-12-31", "投资比例": "15%", "股东名称": "王向东", "证件种类": "居民身份证", "地址": "广东省深圳市福田区荔林苑荔翠阁17E", "有效期起": "2013-10-30", "分配比例": "0%", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "410105196907124417"}, "1": {"有效期止": "9999-12-31", "投资比例": "70%", "股东名称": "樊五洲", "证件种类": "居民身份证", "地址": "广东省深圳市福田区滨河路信托花园10栋A101", "有效期起": "2013-10-30", "分配比例": "0%", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "610103196811083619"}, "3": {"有效期止": "9999-12-31", "投资比例": "15%", "股东名称": "任永恒", "证件种类": "居民身份证", "地址": "广东省深圳市南山区沙河深圳湾畔花园6幢17D", "有效期起": "2013-10-30", "分配比例": "0%", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "610113196706170051"}}', '{"年度纳税申报表": {"股东信息": {"2": {"投资比例": "5.00%", "经济性质": "其他有限责任公司", "股东名称": "王向东", "证件种类": "居民身份证", "国籍": "中国", "证件号码": " 410105196907124417"}, "1": {"投资比例": "23.33%", "经济性质": "其他有限责任公司", "股东名称": "樊五洲", "证件种类": "居民身份证", "国籍": "中国", "证件号码": " 610103196811083619"}, "4": {"投资比例": "66.67%", "经济性质": "其他有限责任公司", "股东名称": "深圳市华屹投资管理有限公司", "证件种类": "营业执照", "国籍": "中国", "证件号码": " 91440300359482472D"}, "3": {"投资比例": "5.00%", "经济性质": "其他有限责任公司", "股东名称": "任永恒", "证件种类": "居民身份证", "国籍": "中国", "证件号码": " 610113196706170051"}}, "所属行业明细": "7299", "纳税调整后所得": "-3,990,749.40", "亏损明细": {"2015": "4,035,480.18", "2013": "0.0", "2016": "-3,990,749.40", "2014": "-3,861,008.67", "2011": "0.0", "2012": "0.0"}, "从业人数": "15", "企业会计准则为": "", "存货计价方法": "先进先出法"}, "季度纳税申报表": {"减:减免所得税额（请填附表3）": "0.00", "实际已预缴所得税额": "0", "应补(退)所得税额": "0.00", "应纳所得税额": "0.00"}}')
+Thu 15 Mar 2018 11:32:53 INFO localcredit.py 1356 8800 13116 customerid:9开始插入数据库
+Thu 15 Mar 2018 11:32:54 INFO localcredit.py 1358 8800 13116 customerid:9数据插入完成
+Thu 15 Mar 2018 11:36:14 INFO localcredit.py 60 7556 8116 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 11:36:14 INFO localcredit.py 71 7556 8116 未传代理参数，启用本机IP
+Thu 15 Mar 2018 11:36:16 INFO localcredit.py 97 7556 8116 customerid:9，获取验证码为：[{"x":266,"y":82},{"x":221,"y":29},{"x":119,"y":33}]
+Thu 15 Mar 2018 11:36:16 INFO localcredit.py 101 7556 8116 customerid:9，验证验证码[{"x":266,"y":82},{"x":221,"y":29},{"x":119,"y":33}]
+Thu 15 Mar 2018 11:36:16 INFO localcredit.py 104 7556 8116 customerid:9，转换tag
+Thu 15 Mar 2018 11:36:16 INFO localcredit.py 106 7556 8116 customerid:9，转换tag完成
+Thu 15 Mar 2018 11:36:16 INFO localcredit.py 107 7556 8116 customerid:9，440300350030103,cd9a28bab40f912e1877bc1d472118846cb7593c,"[{\"x\":266,\"y\":82},{\"x\":221,\"y\":29},{\"x\":119,\"y\":33}]",2018-03-15 11:36:16
+Thu 15 Mar 2018 11:36:16 INFO localcredit.py 112 7556 8116 customerid:9,成功post数据
+Thu 15 Mar 2018 11:36:16 INFO localcredit.py 119 7556 8116 customerid:9pass
+Thu 15 Mar 2018 11:36:16 INFO localcredit.py 1174 7556 8116 customerid:9获取cookies
+Thu 15 Mar 2018 11:36:25 INFO localcredit.py 1233 7556 8116 customerid9税费种信息{}:
+Thu 15 Mar 2018 11:36:36 INFO localcredit.py 264 7556 8116 customerid:9,基础信息{'纳税主管科室：': '深圳市罗湖区国家税务局税源管理三科', '纳税人名称：': '深圳市百迈生命科学有限公司', '纳税主管税务机关：': '深圳市罗湖区国家税务局', '主管税务人员：': '刘明'}
+Thu 15 Mar 2018 11:36:36 INFO localcredit.py 266 7556 8116 customerid:9,详细信息[{'djzclxmc': '其他有限责任公司', 'gdgrs': '', 'hhrs': '', 'cwfzrsfzjlxmc': '居民身份证', 'hydl': '研究和试验发展', 'scjydyzbm': '518003', 'bsrgddh': '13418687090', 'djxh': '10114403000027220111', 'hsfsmc': '独立核算自负盈亏', 'bsrxm': '刘斯文', 'nsrztDm': '03', 'bsrdzxx': '', 'fddbrsfzjlxmc': '居民身份证', 'zcdlxdh': '13418687090', 'cwfzryddh': '13632818515', 'djrq': '2015-09-02', 'fddbrsfzjhm': '42082219840422311X', 'zcdz': '深圳市罗湖区黄贝街道延芳路588号曦龙山庄曦菊阁A座603', 'wjcyrs': '0', 'cwfzrsfzjzlDm': '201', 'zzjgDm': '350030103', 'ggrs': '', 'fddbrsfzjlxDm': '201', 'fddbrdzxx': '124781243@qq.com', 'jyfw': '生物医药、化工产品（不含易燃易爆化学危险品）的技术开发及相关技术咨询，自有技术成果转让；仪器仪表、自动化设备、检测仪器、光机电设备、软件的技术开发及销售；医疗器械的技术开发；从事货物及技术的进出口业务。（企业经营涉及前置性行政许可的，须取得前置性行政许可文件后方可经营）^', 'shxydm': '914403003500301031', 'cwfzrgddh': '13418687090', 'cwfzrxm': '刘斯文', 'scjydlxdh': '13418687090', 'cwfzrdzxx': '', 'cwfzrsfzjhm': '43022519891211652X', 'bsrsfzjhm': '43022519891211652X', 'bsrsfzjlxmc': '居民身份证', 'fddbrxm': '车雷', 'fddbrgddh': '13418687090', 'cyrs': '4', 'fddbryddh': '13632818515', 'hyxl': '自然科学研究和试验发展', 'nsrmc': '深圳市百迈生命科学有限公司', 'zcdyzbm': '518003', 'zczb': '5000000', 'bsrsfzjzlDm': '201', 'bsryddh': '13632818515', 'scjydz': '深圳市罗湖区黄贝街道延芳路588号曦龙山庄曦菊阁A座603', 'nsrsbh': '440300350030103'}]
+Thu 15 Mar 2018 11:36:38 INFO localcredit.py 287 7556 8116 customerid:9,json信息{'xxxx': [{'djzclxmc': '其他有限责任公司', 'gdgrs': '', 'hhrs': '', 'cwfzrsfzjlxmc': '居民身份证', 'hydl': '研究和试验发展', 'scjydyzbm': '518003', 'bsrgddh': '13418687090', 'djxh': '10114403000027220111', 'hsfsmc': '独立核算自负盈亏', 'bsrxm': '刘斯文', 'nsrztDm': '03', 'bsrdzxx': '', 'fddbrsfzjlxmc': '居民身份证', 'zcdlxdh': '13418687090', 'cwfzryddh': '13632818515', 'djrq': '2015-09-02', 'fddbrsfzjhm': '42082219840422311X', 'zcdz': '深圳市罗湖区黄贝街道延芳路588号曦龙山庄曦菊阁A座603', 'wjcyrs': '0', 'cwfzrsfzjzlDm': '201', 'zzjgDm': '350030103', 'ggrs': '', 'fddbrsfzjlxDm': '201', 'fddbrdzxx': '124781243@qq.com', 'jyfw': '生物医药、化工产品（不含易燃易爆化学危险品）的技术开发及相关技术咨询，自有技术成果转让；仪器仪表、自动化设备、检测仪器、光机电设备、软件的技术开发及销售；医疗器械的技术开发；从事货物及技术的进出口业务。（企业经营涉及前置性行政许可的，须取得前置性行政许可文件后方可经营）^', 'shxydm': '914403003500301031', 'cwfzrgddh': '13418687090', 'cwfzrxm': '刘斯文', 'scjydlxdh': '13418687090', 'cwfzrdzxx': '', 'cwfzrsfzjhm': '43022519891211652X', 'bsrsfzjhm': '43022519891211652X', 'bsrsfzjlxmc': '居民身份证', 'fddbrxm': '车雷', 'fddbrgddh': '13418687090', 'cyrs': '4', 'fddbryddh': '13632818515', 'hyxl': '自然科学研究和试验发展', 'nsrmc': '深圳市百迈生命科学有限公司', 'zcdyzbm': '518003', 'zczb': '5000000', 'bsrsfzjzlDm': '201', 'bsryddh': '13632818515', 'scjydz': '深圳市罗湖区黄贝街道延芳路588号曦龙山庄曦菊阁A座603', 'nsrsbh': '440300350030103'}], '纳税人基本信息': {}, 'jcxx': {'纳税主管科室：': '深圳市罗湖区国家税务局税源管理三科', '纳税人名称：': '深圳市百迈生命科学有限公司', '纳税主管税务机关：': '深圳市罗湖区国家税务局', '主管税务人员：': '刘明'}, '纳税人资格查询': {'1': {'序号': '1', '有效期止': '9999-12-31', '认定日期': '2016-07-19', '有效期起': '2016-07-01', '纳税人资格认定名称': '增值税一般纳税人'}}}
+Thu 15 Mar 2018 11:38:08 INFO localcredit.py 518 7556 8116 customerid:9,json信息{'亏损明细': {'2': {'年度': '2012', '项目': '前四年度', '纳税调整后所得': '0.00'}, '5': {'年度': '2015', '项目': '前一年度', '纳税调整后所得': '0.00'}, '6': {'年度': '2016', '项目': '本年度', '纳税调整后所得': '318.20'}, '3': {'年度': '2013', '项目': '前三年度', '纳税调整后所得': '0.00'}, '1': {'年度': '2011', '项目': '前五年度', '纳税调整后所得': '0.00'}, '4': {'年度': '2014', '项目': '前二年度', '纳税调整后所得': '0.00'}}, '主要股东': {'2': {'国籍': '中华人民共和国', '证件号码': '340826198709238721', '经济性质': '内资个人', '股东名称': '黎敏', '投资比例': '50.0000%', '证件种类': '居民身份证'}, '1': {'国籍': '中华人民共和国', '证件号码': '43022519891211652X', '经济性质': '内资个人', '股东名称': '刘斯文', '投资比例': '50.0000%', '证件种类': '居民身份证'}}, '企业会计准则为': '一般企业', '从业人数': '3', '所属行业明细': '自然科学研究和试验发展', '存货计价方法': '先进先出法'}
+Thu 15 Mar 2018 11:38:12 INFO localcredit.py 524 7556 8116 国税季度查询
+Thu 15 Mar 2018 11:38:19 INFO localcredit.py 559 7556 8116 查询到季度表
+Thu 15 Mar 2018 11:38:19 INFO localcredit.py 563 7556 8116 2
+Thu 15 Mar 2018 11:38:23 INFO localcredit.py 586 7556 8116 季度表已查询
+Thu 15 Mar 2018 11:38:23 INFO localcredit.py 587 7556 8116 {'减:减免所得税额（请填附表3）': '700.81', '实际已预缴所得税额': '321.53', '应补(退)所得税额': '145.68', '应纳所得税额': '1168.02'}
+Thu 15 Mar 2018 11:38:26 INFO localcredit.py 644 7556 8116 customerid:9开始登录地税
+Thu 15 Mar 2018 11:38:26 INFO localcredit.py 915 7556 8116 customerid:9截取地税登记信息
+Thu 15 Mar 2018 11:38:44 INFO localcredit.py 1066 7556 8116 customerid:9地税企业所得税（季报）信息查询
+Thu 15 Mar 2018 11:38:47 INFO localcredit.py 1126 7556 8116 customerid:9地税企业所得税（年度）信息查询
+Thu 15 Mar 2018 11:39:32 INFO localcredit.py 1369 7556 8116 {"亏损明细": {"2": {"年度": "2012", "项目": "前四年度", "纳税调整后所得": "0.00"}, "5": {"年度": "2015", "项目": "前一年度", "纳税调整后所得": "0.00"}, "6": {"年度": "2016", "项目": "本年度", "纳税调整后所得": "318.20"}, "3": {"年度": "2013", "项目": "前三年度", "纳税调整后所得": "0.00"}, "1": {"年度": "2011", "项目": "前五年度", "纳税调整后所得": "0.00"}, "4": {"年度": "2014", "项目": "前二年度", "纳税调整后所得": "0.00"}}, "主要股东": {"2": {"国籍": "中华人民共和国", "证件号码": "340826198709238721", "经济性质": "内资个人", "股东名称": "黎敏", "投资比例": "50.0000%", "证件种类": "居民身份证"}, "1": {"国籍": "中华人民共和国", "证件号码": "43022519891211652X", "经济性质": "内资个人", "股东名称": "刘斯文", "投资比例": "50.0000%", "证件种类": "居民身份证"}}, "企业会计准则为": "一般企业", "上季度纳税情况": {"减:减免所得税额（请填附表3）": "700.81", "实际已预缴所得税额": "321.53", "应补(退)所得税额": "145.68", "应纳所得税额": "1168.02"}, "从业人数": "3", "所属行业明细": "自然科学研究和试验发展", "存货计价方法": "先进先出法"}
+Thu 15 Mar 2018 11:39:32 INFO localcredit.py 1370 7556 8116 {"国税调整纳税后所得": "318.20"}
+Thu 15 Mar 2018 11:39:32 INFO localcredit.py 1371 7556 8116 {"2": {"有效期起": "2017-09-20", "投资比例": "90%", "证件号码": "42082219840422311X", "有效期止": "9999-12-31", "分配比例": "0%", "股东名称": "车雷", "证件种类": "居民身份证", "地址": "湖北", "投资金额": "0.00", "国籍": "中华人民共和国"}, "1": {"有效期起": "2017-09-20", "投资比例": "10%", "证件号码": "42082219870217319X", "有效期止": "9999-12-31", "分配比例": "0%", "股东名称": "车力", "证件种类": "居民身份证", "地址": "东莞", "投资金额": "0.00", "国籍": "中华人民共和国"}}
+Thu 15 Mar 2018 11:39:32 INFO localcredit.py 1372 7556 8116 {"年度纳税申报表": {}, "季度纳税申报表": {}}
+Thu 15 Mar 2018 11:39:33 INFO localcredit.py 1375 7556 8116 ('5590', '0', '0', 18282900, 9, '{"国税信息": {"xxxx": [{"djzclxmc": "其他有限责任公司", "gdgrs": "", "hhrs": "", "cwfzrsfzjlxmc": "居民身份证", "hydl": "研究和试验发展", "scjydyzbm": "518003", "bsrgddh": "13418687090", "djxh": "10114403000027220111", "hsfsmc": "独立核算自负盈亏", "bsrxm": "刘斯文", "nsrztDm": "03", "bsrdzxx": "", "fddbrsfzjlxmc": "居民身份证", "zcdlxdh": "13418687090", "cwfzryddh": "13632818515", "djrq": "2015-09-02", "fddbrsfzjhm": "42082219840422311X", "zcdz": "深圳市罗湖区黄贝街道延芳路588号曦龙山庄曦菊阁A座603", "wjcyrs": "0", "cwfzrsfzjzlDm": "201", "zzjgDm": "350030103", "ggrs": "", "fddbrsfzjlxDm": "201", "fddbrdzxx": "124781243@qq.com", "jyfw": "生物医药、化工产品（不含易燃易爆化学危险品）的技术开发及相关技术咨询，自有技术成果转让；仪器仪表、自动化设备、检测仪器、光机电设备、软件的技术开发及销售；医疗器械的技术开发；从事货物及技术的进出口业务。（企业经营涉及前置性行政许可的，须取得前置性行政许可文件后方可经营）^", "shxydm": "914403003500301031", "cwfzrgddh": "13418687090", "cwfzrxm": "刘斯文", "scjydlxdh": "13418687090", "cwfzrdzxx": "", "cwfzrsfzjhm": "43022519891211652X", "bsrsfzjhm": "43022519891211652X", "bsrsfzjlxmc": "居民身份证", "fddbrxm": "车雷", "fddbrgddh": "13418687090", "cyrs": "4", "fddbryddh": "13632818515", "hyxl": "自然科学研究和试验发展", "nsrmc": "深圳市百迈生命科学有限公司", "zcdyzbm": "518003", "zczb": "5000000", "bsrsfzjzlDm": "201", "bsryddh": "13632818515", "scjydz": "深圳市罗湖区黄贝街道延芳路588号曦龙山庄曦菊阁A座603", "nsrsbh": "440300350030103"}], "纳税人基本信息": {}, "jcxx": {"纳税主管科室：": "深圳市罗湖区国家税务局税源管理三科", "纳税人名称：": "深圳市百迈生命科学有限公司", "纳税主管税务机关：": "深圳市罗湖区国家税务局", "主管税务人员：": "刘明"}, "纳税人资格查询": {"1": {"序号": "1", "有效期止": "9999-12-31", "认定日期": "2016-07-19", "有效期起": "2016-07-01", "纳税人资格认定名称": "增值税一般纳税人"}}}, "账号详情": {"账号": "440300350030103", "密码": "94943579"}}', '{"国税税费种信息": {}}', '{"地税信息": {"1": {"纳税人名称：": "深圳市百迈生命科学有限公司", "纳税人识别号：": "440300350030103"}, "2": {"税务登记表类型：": "单位纳税人税务登记", "统一社会信用代码：": "914403003500301031"}, "3": {"注册地址：": "深圳市罗湖区黄贝街道延芳路588号曦龙山庄曦菊阁A座603"}, "4": {"生产经营地址：": "深圳市罗湖区黄贝街道延芳路588号曦龙山庄曦菊阁A座603"}, "5": {"街道乡镇：": "黄贝街道"}, "6": {"手机/联系电话：": "15012699060", "法人代表：": "车雷"}, "7": {"财务负责人：": "刘斯文", "手机/联系电话：": "13632818515"}, "8": {"办税人员：": "刘斯文", "手机/联系电话：": "13632818515"}, "9": {"经营期限起：": "", "开业设立日期：": "2015-09-02"}, "10": {"登记注册类型：": "其他有限责任公司", "国地共管户标志：": "国地共管"}, "11": {"核算方式：": "独立核算自负盈亏", "纳税人状态：": "正常"}, "12": {"主管税务机关：": "深圳市罗湖区地方税务局办税服务科", "业务受理点：": "深圳市罗湖区地方税务局办税服务科"}}}', '{"地税税费种信息": {"2": {"序号": "2", "征收项目": "地方教育附加", "申报期限": "期满之日起15日内", "征收代理方式": "自行申报", "有效期止": "9999-12-31", "税率": "0.02", "征收品目": "增值税地方教育附加", "有效期起": "2015-07-01", "纳税期限": "月"}, "3": {"序号": "3", "征收项目": "教育费附加", "申报期限": "期满之日起15日内", "征收代理方式": "自行申报", "有效期止": "9999-12-31", "税率": "0.03", "征收品目": "增值税教育费附加", "有效期起": "2015-07-01", "纳税期限": "月"}, "1": {"序号": "1", "征收项目": "城市维护建设税", "申报期限": "期满之日起15日内", "征收代理方式": "自行申报", "有效期止": "9999-12-31", "税率": "0.07", "征收品目": "市区（增值税附征）", "有效期起": "2015-07-01", "纳税期限": "月"}, "4": {"序号": "4", "征收项目": "个人所得税", "申报期限": "期满之日起15日内", "征收代理方式": "代扣代缴", "有效期止": "9999-12-31", "税率": "0.2", "征收品目": "工资薪金所得", "有效期起": "2015-10-01", "纳税期限": "月"}}}', '{"亏损明细": {"2": {"年度": "2012", "项目": "前四年度", "纳税调整后所得": "0.00"}, "5": {"年度": "2015", "项目": "前一年度", "纳税调整后所得": "0.00"}, "6": {"年度": "2016", "项目": "本年度", "纳税调整后所得": "318.20"}, "3": {"年度": "2013", "项目": "前三年度", "纳税调整后所得": "0.00"}, "1": {"年度": "2011", "项目": "前五年度", "纳税调整后所得": "0.00"}, "4": {"年度": "2014", "项目": "前二年度", "纳税调整后所得": "0.00"}}, "主要股东": {"2": {"国籍": "中华人民共和国", "证件号码": "340826198709238721", "经济性质": "内资个人", "股东名称": "黎敏", "投资比例": "50.0000%", "证件种类": "居民身份证"}, "1": {"国籍": "中华人民共和国", "证件号码": "43022519891211652X", "经济性质": "内资个人", "股东名称": "刘斯文", "投资比例": "50.0000%", "证件种类": "居民身份证"}}, "企业会计准则为": "一般企业", "上季度纳税情况": {"减:减免所得税额（请填附表3）": "700.81", "实际已预缴所得税额": "321.53", "应补(退)所得税额": "145.68", "应纳所得税额": "1168.02"}, "从业人数": "3", "所属行业明细": "自然科学研究和试验发展", "存货计价方法": "先进先出法"}', '{"国税调整纳税后所得": "318.20"}', '{"2": {"有效期起": "2017-09-20", "投资比例": "90%", "证件号码": "42082219840422311X", "有效期止": "9999-12-31", "分配比例": "0%", "股东名称": "车雷", "证件种类": "居民身份证", "地址": "湖北", "投资金额": "0.00", "国籍": "中华人民共和国"}, "1": {"有效期起": "2017-09-20", "投资比例": "10%", "证件号码": "42082219870217319X", "有效期止": "9999-12-31", "分配比例": "0%", "股东名称": "车力", "证件种类": "居民身份证", "地址": "东莞", "投资金额": "0.00", "国籍": "中华人民共和国"}}', '{"年度纳税申报表": {}, "季度纳税申报表": {}}')
+Thu 15 Mar 2018 11:39:33 INFO localcredit.py 1377 7556 8116 customerid:9开始插入数据库

@@ -1001,9 +1001,9 @@ class gscredit(guoshui):
         for i in select:
             tiaomu = {}
             tzftb = i.xpath('.//text()')
-            title = ['序号', '投资方', '国籍', '地址', '证件名称', '证件号码', '投资金额', '投资比例', '分配比例', '有效期起', '有效期止']
+            title = ['序号', '股东名称', '国籍', '地址', '证件种类', '证件号码', '投资金额', '投资比例', '分配比例', '有效期起', '有效期止']
             if tzftb[9]==last_update:
-                for j in range(len(tzftb)):
+                for j in range(1,len(tzftb)):
                     tiaomu[title[j]] = tzftb[j]
                 tzfxx[tzftb[0]] = tiaomu
         if len(tzfxx)>20:
@@ -1303,7 +1303,64 @@ class gscredit(guoshui):
             dsshuifei = json.dumps(dsshuifei, ensure_ascii=False)
             gsxiangqing = json.dumps(gsxiangqing, ensure_ascii=False)
             gsshuifei = json.dumps(gsshuifei, ensure_ascii=False)
-
+            #股东信息
+            try:
+                tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10 = {}, {}, {}, {}, {}, {}, {}, {}, {}
+                tzfxx1=niandu['主要股东']
+                tzfxx2=tzfxx
+                tzfxx1 = json.dumps(tzfxx1, ensure_ascii=False)
+                tzfxx2 = json.dumps(tzfxx2, ensure_ascii=False)
+                tzfxx3 = json.dumps(tzfxx3, ensure_ascii=False)
+                tzfxx4 = json.dumps(tzfxx4, ensure_ascii=False)
+                tzfxx5 = json.dumps(tzfxx5, ensure_ascii=False)
+                tzfxx6 = json.dumps(tzfxx6, ensure_ascii=False)
+                tzfxx7 = json.dumps(tzfxx7, ensure_ascii=False)
+                tzfxx8 = json.dumps(tzfxx8, ensure_ascii=False)
+                tzfxx9 = json.dumps(tzfxx9, ensure_ascii=False)
+                tzfxx10 = json.dumps(tzfxx10, ensure_ascii=False)
+                params = (
+                self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6,
+                tzfxx7, tzfxx8, tzfxx9, tzfxx10)
+                self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
+            except:
+                try:
+                    tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10 = {}, {}, {}, {}, {}, {}, {}, {}, {}
+                    tzfxx1 = pdf_dict["年度纳税申报表"]["股东信息"]
+                    tzfxx2 = tzfxx
+                    tzfxx1 = json.dumps(tzfxx1, ensure_ascii=False)
+                    tzfxx2 = json.dumps(tzfxx2, ensure_ascii=False)
+                    tzfxx3 = json.dumps(tzfxx3, ensure_ascii=False)
+                    tzfxx4 = json.dumps(tzfxx4, ensure_ascii=False)
+                    tzfxx5 = json.dumps(tzfxx5, ensure_ascii=False)
+                    tzfxx6 = json.dumps(tzfxx6, ensure_ascii=False)
+                    tzfxx7 = json.dumps(tzfxx7, ensure_ascii=False)
+                    tzfxx8 = json.dumps(tzfxx8, ensure_ascii=False)
+                    tzfxx9 = json.dumps(tzfxx9, ensure_ascii=False)
+                    tzfxx10 = json.dumps(tzfxx10, ensure_ascii=False)
+                    params = (
+                        self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5,
+                        tzfxx6,
+                        tzfxx7, tzfxx8, tzfxx9, tzfxx10)
+                    self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
+                except:
+                    tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10 = {}, {}, {}, {}, {}, {}, {}, {}, {}
+                    tzfxx1 = {}
+                    tzfxx2 = tzfxx
+                    tzfxx1 = json.dumps(tzfxx1, ensure_ascii=False)
+                    tzfxx2 = json.dumps(tzfxx2, ensure_ascii=False)
+                    tzfxx3 = json.dumps(tzfxx3, ensure_ascii=False)
+                    tzfxx4 = json.dumps(tzfxx4, ensure_ascii=False)
+                    tzfxx5 = json.dumps(tzfxx5, ensure_ascii=False)
+                    tzfxx6 = json.dumps(tzfxx6, ensure_ascii=False)
+                    tzfxx7 = json.dumps(tzfxx7, ensure_ascii=False)
+                    tzfxx8 = json.dumps(tzfxx8, ensure_ascii=False)
+                    tzfxx9 = json.dumps(tzfxx9, ensure_ascii=False)
+                    tzfxx10 = json.dumps(tzfxx10, ensure_ascii=False)
+                    params = (
+                        self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5,
+                        tzfxx6,
+                        tzfxx7, tzfxx8, tzfxx9, tzfxx10)
+                    self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
             tuozan1=json.dumps(tuozan1,ensure_ascii=False)
             tuozan2=json.dumps(tuozan2,ensure_ascii=False)
             tuozan3=json.dumps(tuozan3,ensure_ascii=False)

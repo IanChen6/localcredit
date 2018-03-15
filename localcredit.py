@@ -2188,18 +2188,18 @@ def run_test(user, pwd, batchid, companyid, customerid):
         cd = gscredit(user, pwd, batchid, companyid, customerid, logger,sd["9"])
         try:
             jieguo = cd.excute_spider()
+            try:
+                if jieguo==12:
+                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "账号和密码不匹配")
+                    return 0
+            except:
+                pass
             cn = szxinyong['cn']
             if sd['9'] != cn and sd["9"]:
                 job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-3', '公司信息和账号不一致')
                 return False
             if not jieguo:
                 job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')
-                return 0
-            if jieguo==12:
-                try:
-                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "账号和密码不匹配")
-                except:
-                    pass
                 return 0
         except:
             job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')

@@ -68,8 +68,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="2184" column="17" lean-forward="false" selection-start-line="2184" selection-start-column="17" selection-end-line="2184" selection-end-column="17" />
+            <state relative-caret-position="274">
+              <caret line="1239" column="57" lean-forward="true" selection-start-line="1239" selection-start-column="57" selection-end-line="1239" selection-end-column="57" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -516,8 +516,13 @@
           <line>1664</line>
           <option name="timeStamp" value="249" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/localcredit.py</url>
+          <line>2196</line>
+          <option name="timeStamp" value="250" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="250" />
+      <option name="time" value="251" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -863,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="2184" column="17" lean-forward="false" selection-start-line="2184" selection-start-column="17" selection-end-line="2184" selection-end-column="17" />
+        <state relative-caret-position="274">
+          <caret line="1239" column="57" lean-forward="true" selection-start-line="1239" selection-start-column="57" selection-end-line="1239" selection-end-column="57" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

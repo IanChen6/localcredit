@@ -63,7 +63,11 @@ class gscredit(guoshui):
                 }
                 session = requests.session()
                 try:
-                    session.proxies = sys.argv[1]
+                    self.logger.info(type(sys.argv[1]))
+                    proxy = sys.argv[1].replace("'", '"')
+                    self.logger.info(proxy)
+                    proxy = json.loads(proxy)
+                    session.proxies = proxy
                 except:
                     self.logger.info("未传代理参数，启用本机IP")
                 # name='unifsocicrediden=&entname={}&flag=1'
@@ -112,8 +116,11 @@ class gscredit(guoshui):
             # proxy_list = get_all_proxie()
             # proxy = proxy_list[random.randint(0, len(proxy_list) - 1)]
             try:
-                session.proxies = sys.argv[1]
-
+                self.logger.info(type(sys.argv[1]))
+                proxy = sys.argv[1].replace("'", '"')
+                self.logger.info(proxy)
+                proxy = json.loads(proxy)
+                session.proxies = proxy
             except:
                 self.logger.info("未传代理参数，启用本机IP")
             # session.proxies = {'https': 'http://116.22.211.55:6897', 'http': 'http://116.22.211.55:6897'}
@@ -189,7 +196,11 @@ class gscredit(guoshui):
             # proxy_list = get_all_proxie()
             # proxy = proxy_list[random.randint(0, len(proxy_list) - 1)]
             try:
-                session.proxies = sys.argv[1]
+                self.logger.info(type(sys.argv[1]))
+                proxy = sys.argv[1].replace("'", '"')
+                self.logger.info(proxy)
+                proxy = json.loads(proxy)
+                session.proxies = proxy
             except:
                 print("未传入代理参数")
             # session.proxies = {'https': 'http://116.22.211.55:6897', 'http': 'http://116.22.211.55:6897'}

@@ -42,10 +42,56 @@ szxinyong = {}
 
 
 class gscredit(guoshui):
-    def __init__(self, user, pwd, batchid, companyid, customerid, logger):
+    def __init__(self, user, pwd, batchid, companyid, customerid, logger,companyname):
         # self.logger = create_logger(path=os.path.basename(__file__) + str(customerid))
         self.logger = logger
-        self.user = user
+        if companyname and not user:
+            try:
+                ip = ['121.31.159.197', '175.30.238.78', '124.202.247.110']
+                headers = {
+                    'Accept': 'application/json, text/javascript, */*; q=0.01',
+                    'Accept-Encoding': 'gzip, deflate, br',
+                    'Origin': 'https://app02.szmqs.gov.cn',
+                    'Accept-Language': 'zh-CN,zh;q=0.9',
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                    'x-form-id': 'mobile-signin-form',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Referer': 'https://app02.szmqs.gov.cn/outer/entSelect/gs.html',
+                    'X-Forwarded-For': ip[random.randint(0, 2)]
+                    # 'Cookie': 'Hm_lvt_5a517db11da5b1952c8edc36c230a5d6=1516416114; Hm_lpvt_5a517db11da5b1952c8edc36c230a5d6=1516416114; JSESSIONID=0000H--QDbjRJc2YKjpIYc_K3bw:-1'
+                }
+                session = requests.session()
+                try:
+                    session.proxies = sys.argv[1]
+                except:
+                    self.logger.info("未传代理参数，启用本机IP")
+                # name='unifsocicrediden=&entname={}&flag=1'
+                # postdata='unifsocicrediden=&entname={}&flag=1'.format()
+                name = companyname
+                urlname = quote(name)
+                postdata = 'unifsocicrediden=&entname={}&flag=1'.format(urlname)
+                resp = session.post('https://app02.szmqs.gov.cn/outer/entEnt/detail.do', headers=headers, data=postdata)
+                self.logger.info(resp.text)
+                gswsj = resp.json()
+                gswsj = gswsj['data']
+                gswsj = gswsj[0]
+                gswsj = gswsj['data']
+                jbxx = gswsj[0]
+                if 'opto' in jbxx.keys():
+                    if jbxx['opto'] == "5000-01-01" or jbxx['opto'] == "1900-01-01" or jbxx['opto'].strip():
+                        jbxx['营业期限'] = "永续经营"
+                    else:
+                        jbxx['营业期限'] = "自" + jbxx['opfrom'] + "起至" + jbxx['opto'] + "止"
+                else:
+                    jbxx['营业期限'] = "永续经营"
+                index_dict = gswsj[0]
+                unifsocicrediden = index_dict['unifsocicrediden']
+                self.user= unifsocicrediden
+            except:
+                print("。。。")
+        else:
+            self.user = user
         self.pwd = pwd
         self.batchid = batchid
         self.companyid = companyid
@@ -53,6 +99,7 @@ class gscredit(guoshui):
         self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
         if not os.path.exists('resource/{}'.format(user)):
             os.mkdir('resource/{}'.format(user))
+        self.companyname=companyname
 
     def login(self):
         try_times = 0
@@ -105,6 +152,8 @@ class gscredit(guoshui):
             tag = json.dumps(tag)
             self.logger.info("customerid:{}，转换tag完成".format(self.customerid))
             self.logger.info("customerid:{}，{},{},{},{}".format(self.customerid, self.user, self.jiami(), tag, time_l))
+            if len(self.user) ==18 and try_times ==8:
+                self.user==self.user[2:-1]
             login_data = '{"nsrsbh":"%s","nsrpwd":"%s","redirectURL":"","tagger":%s,"time":"%s"}' % (
                 self.user, self.jiami(), tag, time_l)
             login_url = 'http://dzswj.szgs.gov.cn/api/auth/clientWt'
@@ -122,7 +171,7 @@ class gscredit(guoshui):
                             cookies[k] = v
                         return cookies, session
                     elif "账户和密码不匹配" in resp.json()['message'] or "不存在" in resp.json()['message'] or "已注销" in \
-                            resp.json()['message']:
+                            resp.json()['message'] and try_times >10:
                         print('账号和密码不匹配')
                         self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
                         status = "账号和密码不匹配"
@@ -1252,6 +1301,9 @@ class gscredit(guoshui):
                            "gs查询失败")
                 browser.quit()
                 return False
+            if self.companyname!=szxinyong['cn'] and self.companyname:#判断公司名称和账号是否对应上
+                browser.quit()
+                return False
             # 去年年度所得税申报结果
             jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
             browser.get(url=jk_url)
@@ -1633,32 +1685,30 @@ class szcredit(object):
                             self.logger.info("未传代理参数，启用本机IP")
                         # name='unifsocicrediden=&entname={}&flag=1'
                         # postdata='unifsocicrediden=&entname={}&flag=1'.format()
-                        s = self.sID
-                        if s.strip():
-                            print('not null')
-                            postdata = 'unifsocicrediden={}&entname=&flag=1'.format(s)
-                            resp = session.post('https://app02.szmqs.gov.cn/outer/entEnt/detail.do', headers=headers,
-                                                data=postdata,
-                                                timeout=30)
-                            self.logger.info(resp.text)
-                            gswsj = resp.json()
-                            gswsj = gswsj['data']
-                            gswsj = gswsj[0]
-                            gswsj = gswsj['data']
-                            jbxx = gswsj[0]
-                            if 'opto' in jbxx.keys():
-                                if jbxx['opto'] == "5000-01-01" or jbxx['opto'] == "1900-01-01" or jbxx['opto'].strip():
-                                    jbxx['营业期限'] = "永续经营"
-                                else:
-                                    jbxx['营业期限'] = "自" + jbxx['opfrom'] + "起至" + jbxx['opto'] + "止"
-                            else:
+                        name = i[0]
+                        urlname = quote(name)
+                        postdata = 'unifsocicrediden=&entname={}&flag=1'.format(urlname)
+                        resp = session.post('https://app02.szmqs.gov.cn/outer/entEnt/detail.do', headers=headers,
+                                            data=postdata)
+                        self.logger.info(resp.text)
+                        gswsj = resp.json()
+                        gswsj = gswsj['data']
+                        gswsj = gswsj[0]
+                        gswsj = gswsj['data']
+                        jbxx = gswsj[0]
+                        if 'opto' in jbxx.keys():
+                            if jbxx['opto'] == "5000-01-01" or jbxx['opto'] == "1900-01-01" or jbxx['opto'].strip():
                                 jbxx['营业期限'] = "永续经营"
-                            index_dict = gswsj[0]
-                            unifsocicrediden = index_dict['unifsocicrediden']
-                            d3["证件号码"]=unifsocicrediden
-                            d3["地址"]=index_dict['dom']
-                            d3["证件名称"]="营业执照"
-                            d3["国籍"]="中国"
+                            else:
+                                jbxx['营业期限'] = "自" + jbxx['opfrom'] + "起至" + jbxx['opto'] + "止"
+                        else:
+                            jbxx['营业期限'] = "永续经营"
+                        index_dict = gswsj[0]
+                        unifsocicrediden = index_dict['unifsocicrediden']
+                        d3["证件号码"]=unifsocicrediden
+                        d3["地址"]=index_dict['dom']
+                        d3["证件名称"]="营业执照"
+                        d3["国籍"]="中国"
                     except:
                         print("。。。")
                 d2[i[0]] = d3
@@ -2135,9 +2185,13 @@ def run_test(user, pwd, batchid, companyid, customerid):
 
     try:
         szxinyong.clear()
-        cd = gscredit(user, pwd, batchid, companyid, customerid, logger)
+        cd = gscredit(user, pwd, batchid, companyid, customerid, logger,sd["9"])
         try:
             jieguo = cd.excute_spider()
+            cn = szxinyong['cn']
+            if sd['9'] != cn and sd["9"]:
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-3', '公司信息和账号不一致')
+                return False
             if not jieguo:
                 job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')
                 return 0
@@ -2150,7 +2204,6 @@ def run_test(user, pwd, batchid, companyid, customerid):
         except:
             job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '国税局信息获取失败')
             return 0
-        cn = szxinyong['cn']
         sID = szxinyong['xydm']
         credit = szcredit(cn=cn, sID=sID, batchid=batchid, companyid=companyid, customerid=customerid, logger=logger)
         try:
@@ -2185,8 +2238,19 @@ def run_test(user, pwd, batchid, companyid, customerid):
             pjson = json.dumps(goshng_dict, ensure_ascii=False)
             redis_cli.lpush("gongshang", pjson)
             try:
-                credit.login()
-                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取成功、工商网爬取失败')
+                pd=credit.login()
+                try:
+                    if pd==4:
+                        return 4
+                except:
+                    pass
+                try:
+                    if jieguo==2:
+                        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取,无亏损表')
+                    else:
+                        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取成功、工商网爬取失败')
+                except:
+                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取成功、工商网爬取失败')
             except Exception as e:
                 logger.info("信用网爬取失败")
                 logger.info(e)

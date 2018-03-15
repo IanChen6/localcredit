@@ -2182,7 +2182,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
     print("++++++++++++++++++++++++++++++++++++")
     print('jobs[ts_id=%s] running....' % batchid)
     time.sleep(5)
-
+    logger.info(ss)
     try:
         szxinyong.clear()
         cd = gscredit(user, pwd, batchid, companyid, customerid, logger,sd["9"])

@@ -2767,3 +2767,88 @@ Thu 15 Mar 2018 15:30:43 INFO localcredit.py 1561 10316 3472 list index out of r
 Thu 15 Mar 2018 15:30:43 INFO localcredit.py 1562 10316 3472 未传代理参数，启用本机IP
 Thu 15 Mar 2018 15:31:07 INFO localcredit.py 1685 10316 3472 未传代理参数，启用本机IP
 Thu 15 Mar 2018 15:31:12 INFO localcredit.py 1693 10316 3472 {"data":[{"data":[{"apprdate":"2015-12-07","currency":"人民币","dom":"深圳市福田区莲花街道彩云支路长城盛世家园1期彩云支路长城盛世家园1期B510","entflag":"440301001012015120709540","entname":"深圳市华屹投资管理有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2015-12-07","id":"54a820a851df4744a9d381fdd3e12fd6","jinyinfuben":1,"lerep":"郭昉","opetype":"GS","opfrom":"2015-12-07","opscope":"受托资产管理（不得从事信托、金融资产管理、证券资产管理等业务）；股权投资；投资管理；投资咨询；企业管理咨询；企业营销策划。（法律、行政法规、国务院决定禁止的项目除外，限制的项目须取得许可后方可经营）；","opto":"5000-01-01","regcap":100,"regno":"440301114545265","rownum":1,"unifsocicrediden":"91440300359482472D"}],"name":"data","vtype":"attr"}]}
+Thu 15 Mar 2018 17:59:08 INFO localcredit.py 2196 9140 13640 {"6": "39.108.1.170", "2": "01616174", "5": 9, "7": "3433", "9": "", "1": "440300715295500", "3": "5590", "8": "Platform", "4": 18282900}
+Thu 15 Mar 2018 17:59:15 INFO localcredit.py 111 9140 13640 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 17:59:15 INFO localcredit.py 125 9140 13640 未传代理参数，启用本机IP
+Thu 15 Mar 2018 17:59:17 INFO localcredit.py 151 9140 13640 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 17:59:17 INFO localcredit.py 111 9140 13640 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 17:59:17 INFO localcredit.py 125 9140 13640 未传代理参数，启用本机IP
+Thu 15 Mar 2018 17:59:18 INFO localcredit.py 151 9140 13640 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 17:59:18 INFO localcredit.py 111 9140 13640 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 17:59:18 INFO localcredit.py 125 9140 13640 未传代理参数，启用本机IP
+Thu 15 Mar 2018 17:59:20 INFO localcredit.py 151 9140 13640 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 17:59:20 INFO localcredit.py 111 9140 13640 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 17:59:20 INFO localcredit.py 125 9140 13640 未传代理参数，启用本机IP
+Thu 15 Mar 2018 17:59:21 INFO localcredit.py 151 9140 13640 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 17:59:21 INFO localcredit.py 111 9140 13640 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 17:59:21 INFO localcredit.py 125 9140 13640 未传代理参数，启用本机IP
+Thu 15 Mar 2018 17:59:23 INFO localcredit.py 151 9140 13640 customerid:9，获取验证码为：None
+Thu 15 Mar 2018 17:59:23 INFO localcredit.py 111 9140 13640 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 17:59:23 INFO localcredit.py 125 9140 13640 未传代理参数，启用本机IP
+Thu 15 Mar 2018 17:59:24 INFO localcredit.py 151 9140 13640 customerid:9，获取验证码为：[{"x":173,"y":56},{"x":117,"y":26},{"x":20,"y":64}]
+Thu 15 Mar 2018 17:59:24 INFO localcredit.py 155 9140 13640 customerid:9，验证验证码[{"x":173,"y":56},{"x":117,"y":26},{"x":20,"y":64}]
+Thu 15 Mar 2018 17:59:24 INFO localcredit.py 158 9140 13640 customerid:9，转换tag
+Thu 15 Mar 2018 17:59:24 INFO localcredit.py 160 9140 13640 customerid:9，转换tag完成
+Thu 15 Mar 2018 17:59:24 INFO localcredit.py 161 9140 13640 customerid:9，440300715295500,f7514a8b1bf915f0b52dc2e7fe5ec9d64d551772,"[{\"x\":173,\"y\":56},{\"x\":117,\"y\":26},{\"x\":20,\"y\":64}]",2018-03-15 17:59:24
+Thu 15 Mar 2018 17:59:24 INFO localcredit.py 168 9140 13640 customerid:9,成功post数据
+Thu 15 Mar 2018 17:59:24 INFO localcredit.py 175 9140 13640 customerid:9pass
+Thu 15 Mar 2018 17:59:24 INFO localcredit.py 1234 9140 13640 customerid:9获取cookies
+Thu 15 Mar 2018 17:59:33 INFO localcredit.py 1293 9140 13640 customerid9税费种信息{}:
+Thu 15 Mar 2018 17:59:38 INFO localcredit.py 324 9140 13640 customerid:9,基础信息{'纳税主管税务机关：': '深圳市罗湖区国家税务局', '纳税人名称：': '深圳市千祥记实业发展有限公司', '纳税主管科室：': '深圳市罗湖区国家税务局税源管理八科', '主管税务人员：': '赵丽凤'}
+Thu 15 Mar 2018 17:59:38 INFO localcredit.py 326 9140 13640 customerid:9,详细信息[{'scjydz': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', 'bsrsfzjlxmc': '居民身份证', 'bsrsfzjzlDm': '201', 'bsryddh': '13632701670', 'fddbryddh': '13802256006', 'fddbrxm': '吴应坚', 'hsfsmc': '独立核算自负盈亏', 'djzclxmc': '其他有限责任公司', 'scjydlxdh': '25915755', 'cwfzrsfzjhm': '36252919850220002X', 'ggrs': '', 'hhrs': '5', 'wjcyrs': '', 'nsrztDm': '03', 'nsrmc': '深圳市千祥记实业发展有限公司', 'zczb': '0', 'zcdlxdh': '25915755', 'fddbrsfzjlxDm': '201', 'shxydm': '91440300715295500A', 'nsrsbh': '440300715295500', 'bsrdzxx': '', 'djrq': '2001-08-02', 'gdgrs': '', 'hyxl': '其他未列明批发业', 'scjydyzbm': '518024', 'bsrgddh': '25915755', 'fddbrsfzjlxmc': '居民身份证', 'cwfzrxm': '邱璇', 'djxh': '10114403000026272059', 'zcdyzbm': '518024', 'bsrsfzjhm': '36252919850220002X', 'fddbrgddh': '25915755', 'fddbrsfzjhm': '610104196105296111', 'cwfzrsfzjzlDm': '201', 'cyrs': '5', 'bsrxm': '邱璇', 'fddbrdzxx': 'wuyj529@163.com', 'cwfzryddh': '13632701670', 'zzjgDm': '715295500', 'jyfw': '兴办实业（具体项目另行申报）；建筑智能和信息系统工程，建筑装修装饰工程施工，机电设备安装工程，电气、监控、计算机机房设备的销售、维修与保养服务（仅限为客户提供上门服务，且不含需取得行政许可的项目）；国内商业、物资供销业（不含专营、专控、专卖商品）。', 'cwfzrdzxx': '', 'zcdz': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', 'hydl': '批发业', 'cwfzrsfzjlxmc': '居民身份证', 'cwfzrgddh': '25915755'}]
+Thu 15 Mar 2018 17:59:40 INFO localcredit.py 347 9140 13640 customerid:9,json信息{'xxxx': [{'scjydz': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', 'bsrsfzjlxmc': '居民身份证', 'bsrsfzjzlDm': '201', 'bsryddh': '13632701670', 'fddbryddh': '13802256006', 'fddbrxm': '吴应坚', 'hsfsmc': '独立核算自负盈亏', 'djzclxmc': '其他有限责任公司', 'scjydlxdh': '25915755', 'cwfzrsfzjhm': '36252919850220002X', 'ggrs': '', 'hhrs': '5', 'wjcyrs': '', 'nsrztDm': '03', 'nsrmc': '深圳市千祥记实业发展有限公司', 'zczb': '0', 'zcdlxdh': '25915755', 'fddbrsfzjlxDm': '201', 'shxydm': '91440300715295500A', 'nsrsbh': '440300715295500', 'bsrdzxx': '', 'djrq': '2001-08-02', 'gdgrs': '', 'hyxl': '其他未列明批发业', 'scjydyzbm': '518024', 'bsrgddh': '25915755', 'fddbrsfzjlxmc': '居民身份证', 'cwfzrxm': '邱璇', 'djxh': '10114403000026272059', 'zcdyzbm': '518024', 'bsrsfzjhm': '36252919850220002X', 'fddbrgddh': '25915755', 'fddbrsfzjhm': '610104196105296111', 'cwfzrsfzjzlDm': '201', 'cyrs': '5', 'bsrxm': '邱璇', 'fddbrdzxx': 'wuyj529@163.com', 'cwfzryddh': '13632701670', 'zzjgDm': '715295500', 'jyfw': '兴办实业（具体项目另行申报）；建筑智能和信息系统工程，建筑装修装饰工程施工，机电设备安装工程，电气、监控、计算机机房设备的销售、维修与保养服务（仅限为客户提供上门服务，且不含需取得行政许可的项目）；国内商业、物资供销业（不含专营、专控、专卖商品）。', 'cwfzrdzxx': '', 'zcdz': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', 'hydl': '批发业', 'cwfzrsfzjlxmc': '居民身份证', 'cwfzrgddh': '25915755'}], 'jcxx': {'纳税主管税务机关：': '深圳市罗湖区国家税务局', '纳税人名称：': '深圳市千祥记实业发展有限公司', '纳税主管科室：': '深圳市罗湖区国家税务局税源管理八科', '主管税务人员：': '赵丽凤'}, '纳税人基本信息': {1: {'纳税信用等级': 'B', '纳税人识别号': '440300715295500', '纳税人名称': '深圳市千祥记实业发展有限公司'}, 2: {'身份证件名称': '居民身份证', '身份证件号码': '610104196105296111', '法定代表人': '吴应坚'}, 3: {'生产经营地址': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', '生产经营范围': '兴办实业（具体项目另行申报）；建筑智能和信息系统工程，建筑装修装饰工程施工，机电设备安装工程，电气、监控、计算机机房设备的销售、维修与保养服务（仅限为客户提供上门服务，且不含需取得行政许可的项目）；国内商业、物资供销业（不含专营、专控、专卖商品）。'}, 4: {'是否出口退税企业': '否', '组织机构代码': '715295500'}, 5: {'纳税人状态': '正常', '是否一般纳税人': '是', '行业': '其他未列明批发业'}, 6: {'税务机关': '深圳市罗湖区国家税务局', '税源管理责任人': '赵丽凤'}}, '纳税人资格查询': {'1': {'有效期止': '2021-09-30', '序号': '1', '认定日期': '2017-09-07', '有效期起': '2017-09-01', '纳税人资格认定名称': '简易办法征收一般纳税人'}, '3': {'有效期止': '9999-12-31', '序号': '3', '认定日期': '2013-11-11', '有效期起': '2013-12-01', '纳税人资格认定名称': '增值税一般纳税人'}, '2': {'有效期止': '9999-12-31', '序号': '2', '认定日期': '2014-03-01', '有效期起': '2014-03-01', '纳税人资格认定名称': '按适用税率征收增值税小规模纳税人'}}}
+Thu 15 Mar 2018 17:59:47 INFO localcredit.py 578 9140 13640 customerid:9,json信息{}
+Thu 15 Mar 2018 17:59:54 INFO localcredit.py 584 9140 13640 国税季度查询
+Thu 15 Mar 2018 18:00:03 INFO localcredit.py 704 9140 13640 customerid:9开始登录地税
+Thu 15 Mar 2018 18:00:03 INFO localcredit.py 975 9140 13640 customerid:9截取地税登记信息
+Thu 15 Mar 2018 18:00:20 INFO localcredit.py 1126 9140 13640 customerid:9地税企业所得税（季报）信息查询
+Thu 15 Mar 2018 18:00:26 WARNING localcredit.py 720 9140 13640 list index out of range
+Thu 15 Mar 2018 18:00:29 INFO localcredit.py 704 9140 13640 customerid:9开始登录地税
+Thu 15 Mar 2018 18:00:29 INFO localcredit.py 975 9140 13640 customerid:9截取地税登记信息
+Thu 15 Mar 2018 18:00:41 WARNING localcredit.py 720 9140 13640 Message: 
+Screenshot: available via screen
+
+Thu 15 Mar 2018 18:00:45 INFO localcredit.py 704 9140 13640 customerid:9开始登录地税
+Thu 15 Mar 2018 18:00:45 INFO localcredit.py 975 9140 13640 customerid:9截取地税登记信息
+Thu 15 Mar 2018 18:01:02 INFO localcredit.py 1126 9140 13640 customerid:9地税企业所得税（季报）信息查询
+Thu 15 Mar 2018 18:01:09 WARNING localcredit.py 720 9140 13640 list index out of range
+Thu 15 Mar 2018 18:01:11 INFO localcredit.py 704 9140 13640 customerid:9开始登录地税
+Thu 15 Mar 2018 18:01:12 INFO localcredit.py 975 9140 13640 customerid:9截取地税登记信息
+Thu 15 Mar 2018 18:01:24 WARNING localcredit.py 720 9140 13640 Message: 
+Screenshot: available via screen
+
+Thu 15 Mar 2018 18:01:27 WARNING localcredit.py 1461 9140 13640 '年度纳税申报表'
+Thu 15 Mar 2018 18:01:27 WARNING localcredit.py 1462 9140 13640 数据异常
+Thu 15 Mar 2018 18:02:10 INFO localcredit.py 2196 12660 628 {"6": "39.108.1.170", "2": "01616174", "5": 9, "7": "3433", "9": "", "1": "440300715295500", "3": "5590", "8": "Platform", "4": 18282900}
+Thu 15 Mar 2018 18:02:47 INFO localcredit.py 111 12660 628 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 18:02:47 INFO localcredit.py 125 12660 628 未传代理参数，启用本机IP
+Thu 15 Mar 2018 18:02:48 INFO localcredit.py 151 12660 628 customerid:9，获取验证码为：[{"x":20,"y":101},{"x":120,"y":101},{"x":223,"y":95}]
+Thu 15 Mar 2018 18:02:48 INFO localcredit.py 155 12660 628 customerid:9，验证验证码[{"x":20,"y":101},{"x":120,"y":101},{"x":223,"y":95}]
+Thu 15 Mar 2018 18:02:48 INFO localcredit.py 158 12660 628 customerid:9，转换tag
+Thu 15 Mar 2018 18:02:48 INFO localcredit.py 160 12660 628 customerid:9，转换tag完成
+Thu 15 Mar 2018 18:02:48 INFO localcredit.py 161 12660 628 customerid:9，440300715295500,f7514a8b1bf915f0b52dc2e7fe5ec9d64d551772,"[{\"x\":20,\"y\":101},{\"x\":120,\"y\":101},{\"x\":223,\"y\":95}]",2018-03-15 18:02:48
+Thu 15 Mar 2018 18:02:48 INFO localcredit.py 168 12660 628 customerid:9,成功post数据
+Thu 15 Mar 2018 18:02:48 INFO localcredit.py 175 12660 628 customerid:9pass
+Thu 15 Mar 2018 18:02:48 INFO localcredit.py 1234 12660 628 customerid:9获取cookies
+Thu 15 Mar 2018 18:02:56 INFO localcredit.py 1293 12660 628 customerid9税费种信息{}:
+Thu 15 Mar 2018 18:03:02 INFO localcredit.py 324 12660 628 customerid:9,基础信息{'纳税主管科室：': '深圳市罗湖区国家税务局税源管理八科', '纳税人名称：': '深圳市千祥记实业发展有限公司', '主管税务人员：': '赵丽凤', '纳税主管税务机关：': '深圳市罗湖区国家税务局'}
+Thu 15 Mar 2018 18:03:02 INFO localcredit.py 326 12660 628 customerid:9,详细信息[{'cwfzrxm': '邱璇', 'bsrsfzjhm': '36252919850220002X', 'scjydz': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', 'zczb': '0', 'bsrsfzjzlDm': '201', 'fddbryddh': '13802256006', 'jyfw': '兴办实业（具体项目另行申报）；建筑智能和信息系统工程，建筑装修装饰工程施工，机电设备安装工程，电气、监控、计算机机房设备的销售、维修与保养服务（仅限为客户提供上门服务，且不含需取得行政许可的项目）；国内商业、物资供销业（不含专营、专控、专卖商品）。', 'cwfzrsfzjlxmc': '居民身份证', 'bsrdzxx': '', 'cwfzrdzxx': '', 'gdgrs': '', 'fddbrsfzjlxmc': '居民身份证', 'hhrs': '5', 'zzjgDm': '715295500', 'hydl': '批发业', 'scjydyzbm': '518024', 'bsrsfzjlxmc': '居民身份证', 'hsfsmc': '独立核算自负盈亏', 'djxh': '10114403000026272059', 'zcdyzbm': '518024', 'fddbrsfzjlxDm': '201', 'cwfzrsfzjhm': '36252919850220002X', 'bsrxm': '邱璇', 'fddbrdzxx': 'wuyj529@163.com', 'wjcyrs': '', 'shxydm': '91440300715295500A', 'cwfzrsfzjzlDm': '201', 'zcdlxdh': '25915755', 'cwfzrgddh': '25915755', 'fddbrgddh': '25915755', 'zcdz': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', 'djzclxmc': '其他有限责任公司', 'bsryddh': '13632701670', 'nsrsbh': '440300715295500', 'scjydlxdh': '25915755', 'fddbrxm': '吴应坚', 'hyxl': '其他未列明批发业', 'djrq': '2001-08-02', 'nsrmc': '深圳市千祥记实业发展有限公司', 'nsrztDm': '03', 'cwfzryddh': '13632701670', 'ggrs': '', 'fddbrsfzjhm': '610104196105296111', 'bsrgddh': '25915755', 'cyrs': '5'}]
+Thu 15 Mar 2018 18:03:05 INFO localcredit.py 347 12660 628 customerid:9,json信息{'jcxx': {'纳税主管科室：': '深圳市罗湖区国家税务局税源管理八科', '纳税人名称：': '深圳市千祥记实业发展有限公司', '主管税务人员：': '赵丽凤', '纳税主管税务机关：': '深圳市罗湖区国家税务局'}, '纳税人基本信息': {1: {'纳税人名称': '深圳市千祥记实业发展有限公司', '纳税人识别号': '440300715295500', '纳税信用等级': 'B'}, 2: {'法定代表人': '吴应坚', '身份证件号码': '610104196105296111', '身份证件名称': '居民身份证'}, 3: {'生产经营地址': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', '生产经营范围': '兴办实业（具体项目另行申报）；建筑智能和信息系统工程，建筑装修装饰工程施工，机电设备安装工程，电气、监控、计算机机房设备的销售、维修与保养服务（仅限为客户提供上门服务，且不含需取得行政许可的项目）；国内商业、物资供销业（不含专营、专控、专卖商品）。'}, 4: {'组织机构代码': '715295500', '是否出口退税企业': '否'}, 5: {'纳税人状态': '正常', '行业': '其他未列明批发业', '是否一般纳税人': '是'}, 6: {'税务机关': '深圳市罗湖区国家税务局', '税源管理责任人': '赵丽凤'}}, '纳税人资格查询': {'2': {'认定日期': '2014-03-01', '有效期止': '9999-12-31', '序号': '2', '纳税人资格认定名称': '按适用税率征收增值税小规模纳税人', '有效期起': '2014-03-01'}, '3': {'认定日期': '2013-11-11', '有效期止': '9999-12-31', '序号': '3', '纳税人资格认定名称': '增值税一般纳税人', '有效期起': '2013-12-01'}, '1': {'认定日期': '2017-09-07', '有效期止': '2021-09-30', '序号': '1', '纳税人资格认定名称': '简易办法征收一般纳税人', '有效期起': '2017-09-01'}}, 'xxxx': [{'cwfzrxm': '邱璇', 'bsrsfzjhm': '36252919850220002X', 'scjydz': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', 'zczb': '0', 'bsrsfzjzlDm': '201', 'fddbryddh': '13802256006', 'jyfw': '兴办实业（具体项目另行申报）；建筑智能和信息系统工程，建筑装修装饰工程施工，机电设备安装工程，电气、监控、计算机机房设备的销售、维修与保养服务（仅限为客户提供上门服务，且不含需取得行政许可的项目）；国内商业、物资供销业（不含专营、专控、专卖商品）。', 'cwfzrsfzjlxmc': '居民身份证', 'bsrdzxx': '', 'cwfzrdzxx': '', 'gdgrs': '', 'fddbrsfzjlxmc': '居民身份证', 'hhrs': '5', 'zzjgDm': '715295500', 'hydl': '批发业', 'scjydyzbm': '518024', 'bsrsfzjlxmc': '居民身份证', 'hsfsmc': '独立核算自负盈亏', 'djxh': '10114403000026272059', 'zcdyzbm': '518024', 'fddbrsfzjlxDm': '201', 'cwfzrsfzjhm': '36252919850220002X', 'bsrxm': '邱璇', 'fddbrdzxx': 'wuyj529@163.com', 'wjcyrs': '', 'shxydm': '91440300715295500A', 'cwfzrsfzjzlDm': '201', 'zcdlxdh': '25915755', 'cwfzrgddh': '25915755', 'fddbrgddh': '25915755', 'zcdz': '深圳市罗湖区红岗北金祥都市花园金玉苑3栋202号', 'djzclxmc': '其他有限责任公司', 'bsryddh': '13632701670', 'nsrsbh': '440300715295500', 'scjydlxdh': '25915755', 'fddbrxm': '吴应坚', 'hyxl': '其他未列明批发业', 'djrq': '2001-08-02', 'nsrmc': '深圳市千祥记实业发展有限公司', 'nsrztDm': '03', 'cwfzryddh': '13632701670', 'ggrs': '', 'fddbrsfzjhm': '610104196105296111', 'bsrgddh': '25915755', 'cyrs': '5'}]}
+Thu 15 Mar 2018 18:03:44 INFO localcredit.py 578 12660 628 customerid:9,json信息{}
+Thu 15 Mar 2018 18:03:51 INFO localcredit.py 584 12660 628 国税季度查询
+Thu 15 Mar 2018 18:03:58 INFO localcredit.py 704 12660 628 customerid:9开始登录地税
+Thu 15 Mar 2018 18:03:58 INFO localcredit.py 975 12660 628 customerid:9截取地税登记信息
+Thu 15 Mar 2018 18:04:19 INFO localcredit.py 1126 12660 628 customerid:9地税企业所得税（季报）信息查询
+Thu 15 Mar 2018 18:05:08 WARNING localcredit.py 720 12660 628 list index out of range
+Thu 15 Mar 2018 18:06:39 INFO localcredit.py 2196 4980 10568 {"6": "39.108.1.170", "2": "88272474", "5": 9, "7": "3433", "9": "", "1": "440300081895157", "3": "5590", "8": "Platform", "4": 18282900}
+Thu 15 Mar 2018 18:06:41 INFO localcredit.py 111 4980 10568 customerid:9,开始尝试登陆
+Thu 15 Mar 2018 18:06:41 INFO localcredit.py 125 4980 10568 未传代理参数，启用本机IP
+Thu 15 Mar 2018 18:06:43 INFO localcredit.py 151 4980 10568 customerid:9，获取验证码为：[{"x":270,"y":64},{"x":168,"y":105},{"x":118,"y":31}]
+Thu 15 Mar 2018 18:06:43 INFO localcredit.py 155 4980 10568 customerid:9，验证验证码[{"x":270,"y":64},{"x":168,"y":105},{"x":118,"y":31}]
+Thu 15 Mar 2018 18:06:43 INFO localcredit.py 158 4980 10568 customerid:9，转换tag
+Thu 15 Mar 2018 18:06:43 INFO localcredit.py 160 4980 10568 customerid:9，转换tag完成
+Thu 15 Mar 2018 18:06:43 INFO localcredit.py 161 4980 10568 customerid:9，440300081895157,ac05e9827a78bbd7199d1211d5b31e7fa7b34ce2,"[{\"x\":270,\"y\":64},{\"x\":168,\"y\":105},{\"x\":118,\"y\":31}]",2018-03-15 18:06:43
+Thu 15 Mar 2018 18:06:43 INFO localcredit.py 168 4980 10568 customerid:9,成功post数据
+Thu 15 Mar 2018 18:06:43 INFO localcredit.py 183 4980 10568 customerid:9账号和密码不匹配
+Thu 15 Mar 2018 18:06:43 INFO localcredit.py 1234 4980 10568 customerid:9获取cookies
+Thu 15 Mar 2018 18:06:43 WARNING localcredit.py 1237 4980 10568 customerid:9账号和密码不匹配

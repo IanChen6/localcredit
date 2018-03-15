@@ -763,10 +763,13 @@ class gscredit(guoshui):
                     a += 1
                     if isinstance(out, LTTextBoxHorizontal):
                         results = out.get_text()
-                        if a == 21:
-                            sz = results.strip("").split("\n")
-                            print(sz)
-                            break
+                        if a == 21 or "%" in results_last:
+                            pp = results.strip("").split("\n")
+                            if len(pp) == 17:
+                                sz = pp
+                                print(sz)
+                                break
+                        results_last = results
                 break
         pdf_dict = {}
         pdf_dict['实际已预缴所得税额'] = sz[11]

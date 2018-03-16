@@ -1052,7 +1052,18 @@ class gscredit(guoshui):
         tzfxx2,tzfxx3,tzfxx4,tzfxx5,tzfxx6,tzfxx7,tzfxx8,tzfxx9,tzfxx10={},{},{},{},{},{},{},{},{}
         rq=[]
         for i in select:
-            tzftb = i.xpath('.//text()')
+            gz = 0
+            tzftb=[]
+            tzftblist = i.xpath('./td')
+            for xx in tzftblist:
+                gz += 1
+                try:
+                    tzftb.append(xx.xpath('.//text()')[0])
+                except:
+                    if gz==10:
+                        tzftb.append("2000-01-01")
+                    else:
+                        tzftb.append("")
             rq.append(tzftb[9])
         rq=list(set(rq))
         tran=0
@@ -1062,13 +1073,27 @@ class gscredit(guoshui):
                 last_update = r
                 tran = last_stamp
         for i in select:
+            gz=0
             tiaomu = {}
-            tzftb = i.xpath('.//text()')
+            tzftb=[]
+            tzftblist = i.xpath('./td')
+            for xx in tzftblist:
+                gz += 1
+                try:
+                    tzftb.append(xx.xpath('.//text()')[0])
+                except:
+                    if gz==10:
+                        tzftb.append("2000-01-01")
+                    else:
+                        tzftb.append("")
             title = ['序号', '股东名称', '国籍', '地址', '证件种类', '证件号码', '投资金额', '投资比例', '分配比例', '有效期起', '有效期止']
-            if tzftb[9]==last_update:
-                for j in range(1,len(tzftb)):
-                    tiaomu[title[j]] = tzftb[j]
-                tzfxx[tzftb[0]] = tiaomu
+            try:
+                if tzftb[9] == last_update:
+                    for j in range(1, len(tzftb)):
+                        tiaomu[title[j]] = tzftb[j]
+                    tzfxx[tzftb[0]] = tiaomu
+            except:
+                pass
         if len(tzfxx)>20:
             txfxx1={}
             for i in range(1,21):

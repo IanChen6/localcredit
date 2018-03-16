@@ -101,8 +101,8 @@ class gscredit(guoshui):
         self.companyid = companyid
         self.customerid = customerid
         self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
-        if not os.path.exists('resource/{}'.format(user)):
-            os.mkdir('resource/{}'.format(user))
+        if not os.path.exists('resource/{}'.format(self.user)):
+            os.mkdir('resource/{}'.format(self.user))
         self.companyname=companyname
 
     def login(self):

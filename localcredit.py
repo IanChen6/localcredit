@@ -1091,6 +1091,8 @@ class gscredit(guoshui):
                 if tzftb[9] == last_update:
                     for j in range(1, len(tzftb)):
                         tiaomu[title[j]] = tzftb[j]
+                    if "公司" in tiaomu['股东名称']:
+                        tiaomu['证件种类']="营业执照"
                     tzfxx[tzftb[0]] = tiaomu
             except:
                 pass

@@ -1087,6 +1087,14 @@ class gscredit(guoshui):
             if c_window != window1:
                 browser.close()
                 browser.switch_to_window(c_window)
+        wokao=browser.page_source
+        if "调用地税系统认证接口失败，用户不存在!" in wokao:
+            ds_pdf = {}
+            dsdjxx={}
+            dssfz={}
+            tzfxx={}
+            ds_pdf["年度纳税申报表"] = ""
+            return dsdjxx, dssfz, tzfxx, ds_pdf
         wait = ui.WebDriverWait(browser, 10)
         wait.until(
             lambda browser: browser.find_element_by_css_selector("#layui-layer1 div.layui-layer-btn a"))  # timeout
@@ -1494,7 +1502,10 @@ class gscredit(guoshui):
             tuozan3=tzfxx
             tuozan4=pdf_dict
             gs_exist=len(tuozan2)
-            ds_exist=len(tuozan4["年度纳税申报表"])
+            try:
+                ds_exist=len(tuozan4["年度纳税申报表"])
+            except:
+                pass
             gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
             dsxiangqing = json.dumps(dsxiangqing, ensure_ascii=False)
             dsshuifei = json.dumps(dsshuifei, ensure_ascii=False)

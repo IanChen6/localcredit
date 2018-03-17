@@ -1,0 +1,142 @@
+Sat 17 Mar 2018 14:20:12 INFO localcredit.py 2330 14788 15036 {"6": "39.108.1.170", "9": "", "3": "5590", "8": "Platform", "7": "3433", "1": "9144030059909847XQ", "2": "58123456", "5": 9, "4": 18282900}
+Sat 17 Mar 2018 14:20:27 INFO localcredit.py 209 14788 15036 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:20:27 INFO localcredit.py 223 14788 15036 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:20:29 INFO localcredit.py 249 14788 15036 customerid:9，获取验证码为：None
+Sat 17 Mar 2018 14:20:37 INFO localcredit.py 209 14788 15036 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:20:37 INFO localcredit.py 223 14788 15036 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:20:39 INFO localcredit.py 249 14788 15036 customerid:9，获取验证码为：[{"x":117,"y":72},{"x":20,"y":71},{"x":69,"y":65}]
+Sat 17 Mar 2018 14:20:39 INFO localcredit.py 253 14788 15036 customerid:9，验证验证码[{"x":117,"y":72},{"x":20,"y":71},{"x":69,"y":65}]
+Sat 17 Mar 2018 14:20:39 INFO localcredit.py 256 14788 15036 customerid:9，转换tag
+Sat 17 Mar 2018 14:20:39 INFO localcredit.py 258 14788 15036 customerid:9，转换tag完成
+Sat 17 Mar 2018 14:20:39 INFO localcredit.py 259 14788 15036 customerid:9，9144030059909847XQ,d7ad6bc6308169a0a2257229d236c88c1fdbb558,"[{\"x\":117,\"y\":72},{\"x\":20,\"y\":71},{\"x\":69,\"y\":65}]",2018-03-17 14:20:39
+Sat 17 Mar 2018 14:20:39 INFO localcredit.py 264 14788 15036 customerid:9,成功post数据
+Sat 17 Mar 2018 14:20:41 INFO localcredit.py 283 14788 15036 customerid:9账号和密码不匹配
+Sat 17 Mar 2018 14:20:41 WARNING localcredit.py 294 14788 15036 customerid:9登录失败,开始重试
+Sat 17 Mar 2018 14:20:42 INFO localcredit.py 209 14788 15036 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:20:42 INFO localcredit.py 223 14788 15036 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:20:43 INFO localcredit.py 249 14788 15036 customerid:9，获取验证码为：None
+Sat 17 Mar 2018 14:20:44 INFO localcredit.py 209 14788 15036 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:20:44 INFO localcredit.py 223 14788 15036 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:20:45 INFO localcredit.py 249 14788 15036 customerid:9，获取验证码为：None
+Sat 17 Mar 2018 14:20:46 INFO localcredit.py 209 14788 15036 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:20:46 INFO localcredit.py 223 14788 15036 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:20:47 INFO localcredit.py 249 14788 15036 customerid:9，获取验证码为：[{"x":176,"y":85},{"x":217,"y":37},{"x":271,"y":31}]
+Sat 17 Mar 2018 14:20:47 INFO localcredit.py 253 14788 15036 customerid:9，验证验证码[{"x":176,"y":85},{"x":217,"y":37},{"x":271,"y":31}]
+Sat 17 Mar 2018 14:20:47 INFO localcredit.py 256 14788 15036 customerid:9，转换tag
+Sat 17 Mar 2018 14:20:47 INFO localcredit.py 258 14788 15036 customerid:9，转换tag完成
+Sat 17 Mar 2018 14:20:47 INFO localcredit.py 259 14788 15036 customerid:9，9144030059909847XQ,d7ad6bc6308169a0a2257229d236c88c1fdbb558,"[{\"x\":176,\"y\":85},{\"x\":217,\"y\":37},{\"x\":271,\"y\":31}]",2018-03-17 14:20:47
+Sat 17 Mar 2018 14:20:48 INFO localcredit.py 264 14788 15036 customerid:9,成功post数据
+Sat 17 Mar 2018 14:20:49 INFO localcredit.py 271 14788 15036 customerid:9pass
+Sat 17 Mar 2018 14:20:50 INFO localcredit.py 1368 14788 15036 customerid:9获取cookies
+Sat 17 Mar 2018 14:20:59 INFO localcredit.py 1427 14788 15036 customerid9税费种信息{}:
+Sat 17 Mar 2018 14:21:03 INFO localcredit.py 428 14788 15036 customerid:9,基础信息{'主管税务人员：': '张建新', '纳税主管科室：': '深圳市宝安区国家税务局西乡税务分局税源管理三科', '纳税主管税务机关：': '深圳市宝安区国家税务局西乡税务分局', '纳税人名称：': '深圳市祺恒物流有限公司'}
+Sat 17 Mar 2018 14:21:03 INFO localcredit.py 430 14788 15036 customerid:9,详细信息[{'zzjgDm': '59909847X', 'fddbrgddh': '0755-29404400', 'bsrgddh': '', 'ggrs': '', 'scjydz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'bsrsfzjhm': '440782199403250027', 'hhrs': '', 'scjydlxdh': '18028760770', 'fddbrsfzjlxmc': '居民身份证', 'fddbrdzxx': 'zhoushanjie78@163.com', 'bsrdzxx': '', 'zczb': '3000000', 'scjydyzbm': '518000', 'cwfzrsfzjhm': '440782199403250027', 'cwfzrgddh': '', 'bsrsfzjzlDm': '201', 'zcdlxdh': '13826914448', 'cyrs': '20', 'djrq': '2012-07-09', 'fddbryddh': '13826914448', 'nsrmc': '深圳市祺恒物流有限公司', 'cwfzrsfzjlxmc': '居民身份证', 'hsfsmc': '独立核算自负盈亏', 'fddbrxm': '周山杰', 'cwfzrxm': '黄晓敏', 'zcdyzbm': '518000', 'zcdz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'djxh': '10114403000025501863', 'cwfzrsfzjzlDm': '201', 'gdgrs': '', 'bsryddh': '13726160283', 'jyfw': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）', 'bsrxm': '黄晓敏', 'nsrsbh': '44030059909847X', 'hyxl': '装卸搬运', 'wjcyrs': '', 'shxydm': '9144030059909847XQ', 'bsrsfzjlxmc': '居民身份证', 'nsrztDm': '03', 'fddbrsfzjlxDm': '201', 'djzclxmc': '其他有限责任公司', 'hydl': '装卸搬运和仓储业', 'cwfzrdzxx': '', 'fddbrsfzjhm': '460025197808034217', 'cwfzryddh': '13726160283'}]
+Sat 17 Mar 2018 14:21:10 INFO localcredit.py 451 14788 15036 customerid:9,json信息{'jcxx': {'主管税务人员：': '张建新', '纳税主管科室：': '深圳市宝安区国家税务局西乡税务分局税源管理三科', '纳税主管税务机关：': '深圳市宝安区国家税务局西乡税务分局', '纳税人名称：': '深圳市祺恒物流有限公司'}, '纳税人基本信息': {1: {'纳税信用等级': 'B', '纳税人识别号': '44030059909847X', '纳税人名称': '深圳市祺恒物流有限公司'}, 2: {'身份证件名称': '居民身份证', '身份证件号码': '460025197808034217', '法定代表人': '周山杰'}, 3: {'生产经营地址': '深圳市宝安区西乡大道马鞍山小区77栋301房', '生产经营范围': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）'}, 4: {'组织机构代码': '59909847X', '是否出口退税企业': '否'}, 5: {'是否一般纳税人': '否', '纳税人状态': '正常', '行业': '装卸搬运'}, 6: {'税源管理责任人': '张建新', '税务机关': '深圳市宝安区国家税务局西乡税务分局'}}, '纳税人资格查询': {'没有对应查询数据': {'序号': '没有对应查询数据'}}, 'xxxx': [{'zzjgDm': '59909847X', 'fddbrgddh': '0755-29404400', 'bsrgddh': '', 'ggrs': '', 'scjydz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'bsrsfzjhm': '440782199403250027', 'hhrs': '', 'scjydlxdh': '18028760770', 'fddbrsfzjlxmc': '居民身份证', 'fddbrdzxx': 'zhoushanjie78@163.com', 'bsrdzxx': '', 'zczb': '3000000', 'scjydyzbm': '518000', 'cwfzrsfzjhm': '440782199403250027', 'cwfzrgddh': '', 'bsrsfzjzlDm': '201', 'zcdlxdh': '13826914448', 'cyrs': '20', 'djrq': '2012-07-09', 'fddbryddh': '13826914448', 'nsrmc': '深圳市祺恒物流有限公司', 'cwfzrsfzjlxmc': '居民身份证', 'hsfsmc': '独立核算自负盈亏', 'fddbrxm': '周山杰', 'cwfzrxm': '黄晓敏', 'zcdyzbm': '518000', 'zcdz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'djxh': '10114403000025501863', 'cwfzrsfzjzlDm': '201', 'gdgrs': '', 'bsryddh': '13726160283', 'jyfw': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）', 'bsrxm': '黄晓敏', 'nsrsbh': '44030059909847X', 'hyxl': '装卸搬运', 'wjcyrs': '', 'shxydm': '9144030059909847XQ', 'bsrsfzjlxmc': '居民身份证', 'nsrztDm': '03', 'fddbrsfzjlxDm': '201', 'djzclxmc': '其他有限责任公司', 'hydl': '装卸搬运和仓储业', 'cwfzrdzxx': '', 'fddbrsfzjhm': '460025197808034217', 'cwfzryddh': '13726160283'}]}
+Sat 17 Mar 2018 14:21:13 INFO localcredit.py 682 14788 15036 customerid:9,json信息{}
+Sat 17 Mar 2018 14:21:14 INFO localcredit.py 688 14788 15036 国税季度查询
+Sat 17 Mar 2018 14:21:19 INFO localcredit.py 808 14788 15036 customerid:9开始登录地税
+Sat 17 Mar 2018 14:21:19 INFO localcredit.py 1082 14788 15036 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:21:32 WARNING localcredit.py 824 14788 15036 Message: 
+Screenshot: available via screen
+
+Sat 17 Mar 2018 14:21:35 INFO localcredit.py 808 14788 15036 customerid:9开始登录地税
+Sat 17 Mar 2018 14:21:35 INFO localcredit.py 1082 14788 15036 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:21:48 WARNING localcredit.py 824 14788 15036 Message: 
+Screenshot: available via screen
+
+Sat 17 Mar 2018 14:21:51 INFO localcredit.py 808 14788 15036 customerid:9开始登录地税
+Sat 17 Mar 2018 14:21:51 INFO localcredit.py 1082 14788 15036 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:22:04 WARNING localcredit.py 824 14788 15036 Message: 
+Screenshot: available via screen
+
+Sat 17 Mar 2018 14:22:07 INFO localcredit.py 808 14788 15036 customerid:9开始登录地税
+Sat 17 Mar 2018 14:22:07 INFO localcredit.py 1082 14788 15036 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:22:20 WARNING localcredit.py 824 14788 15036 Message: 
+Screenshot: available via screen
+
+Sat 17 Mar 2018 14:22:22 WARNING localcredit.py 1595 14788 15036 '年度纳税申报表'
+Sat 17 Mar 2018 14:22:22 WARNING localcredit.py 1596 14788 15036 数据异常
+Sat 17 Mar 2018 14:30:23 INFO localcredit.py 2333 15044 1324 {"6": "39.108.1.170", "9": "", "3": "5590", "8": "Platform", "7": "3433", "1": "44030059909847X", "2": "58123456", "5": 9, "4": 18282900}
+Sat 17 Mar 2018 14:30:28 INFO localcredit.py 209 15044 1324 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:30:28 INFO localcredit.py 223 15044 1324 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:30:29 INFO localcredit.py 249 15044 1324 customerid:9，获取验证码为：None
+Sat 17 Mar 2018 14:30:31 INFO localcredit.py 209 15044 1324 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:30:31 INFO localcredit.py 223 15044 1324 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:30:33 INFO localcredit.py 249 15044 1324 customerid:9，获取验证码为：[{"x":69,"y":50},{"x":168,"y":24},{"x":218,"y":20}]
+Sat 17 Mar 2018 14:30:33 INFO localcredit.py 253 15044 1324 customerid:9，验证验证码[{"x":69,"y":50},{"x":168,"y":24},{"x":218,"y":20}]
+Sat 17 Mar 2018 14:30:33 INFO localcredit.py 256 15044 1324 customerid:9，转换tag
+Sat 17 Mar 2018 14:30:33 INFO localcredit.py 258 15044 1324 customerid:9，转换tag完成
+Sat 17 Mar 2018 14:30:33 INFO localcredit.py 259 15044 1324 customerid:9，44030059909847X,d7ad6bc6308169a0a2257229d236c88c1fdbb558,"[{\"x\":69,\"y\":50},{\"x\":168,\"y\":24},{\"x\":218,\"y\":20}]",2018-03-17 14:30:33
+Sat 17 Mar 2018 14:30:33 INFO localcredit.py 264 15044 1324 customerid:9,成功post数据
+Sat 17 Mar 2018 14:30:34 INFO localcredit.py 271 15044 1324 customerid:9pass
+Sat 17 Mar 2018 14:30:35 INFO localcredit.py 1368 15044 1324 customerid:9获取cookies
+Sat 17 Mar 2018 14:30:44 INFO localcredit.py 1427 15044 1324 customerid9税费种信息{}:
+Sat 17 Mar 2018 14:30:48 INFO localcredit.py 428 15044 1324 customerid:9,基础信息{'纳税主管科室：': '深圳市宝安区国家税务局西乡税务分局税源管理三科', '纳税人名称：': '深圳市祺恒物流有限公司', '纳税主管税务机关：': '深圳市宝安区国家税务局西乡税务分局', '主管税务人员：': '张建新'}
+Sat 17 Mar 2018 14:30:48 INFO localcredit.py 430 15044 1324 customerid:9,详细信息[{'cwfzrxm': '黄晓敏', 'shxydm': '9144030059909847XQ', 'gdgrs': '', 'nsrztDm': '03', 'zcdyzbm': '518000', 'cwfzrsfzjzlDm': '201', 'bsrsfzjhm': '440782199403250027', 'nsrmc': '深圳市祺恒物流有限公司', 'fddbryddh': '13826914448', 'fddbrsfzjlxDm': '201', 'fddbrdzxx': 'zhoushanjie78@163.com', 'jyfw': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）', 'bsrdzxx': '', 'cwfzrgddh': '', 'scjydz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'bsryddh': '13726160283', 'ggrs': '', 'fddbrgddh': '0755-29404400', 'cwfzrsfzjlxmc': '居民身份证', 'scjydlxdh': '18028760770', 'hhrs': '', 'bsrgddh': '', 'bsrsfzjzlDm': '201', 'hsfsmc': '独立核算自负盈亏', 'cwfzrdzxx': '', 'cwfzryddh': '13726160283', 'bsrxm': '黄晓敏', 'hydl': '装卸搬运和仓储业', 'zczb': '3000000', 'zzjgDm': '59909847X', 'zcdlxdh': '13826914448', 'cyrs': '20', 'zcdz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'cwfzrsfzjhm': '440782199403250027', 'hyxl': '装卸搬运', 'bsrsfzjlxmc': '居民身份证', 'fddbrsfzjlxmc': '居民身份证', 'wjcyrs': '', 'djzclxmc': '其他有限责任公司', 'fddbrxm': '周山杰', 'djxh': '10114403000025501863', 'nsrsbh': '44030059909847X', 'scjydyzbm': '518000', 'fddbrsfzjhm': '460025197808034217', 'djrq': '2012-07-09'}]
+Sat 17 Mar 2018 14:30:53 INFO localcredit.py 451 15044 1324 customerid:9,json信息{'jcxx': {'纳税主管科室：': '深圳市宝安区国家税务局西乡税务分局税源管理三科', '纳税人名称：': '深圳市祺恒物流有限公司', '纳税主管税务机关：': '深圳市宝安区国家税务局西乡税务分局', '主管税务人员：': '张建新'}, 'xxxx': [{'cwfzrxm': '黄晓敏', 'shxydm': '9144030059909847XQ', 'gdgrs': '', 'nsrztDm': '03', 'zcdyzbm': '518000', 'cwfzrsfzjzlDm': '201', 'bsrsfzjhm': '440782199403250027', 'nsrmc': '深圳市祺恒物流有限公司', 'fddbryddh': '13826914448', 'fddbrsfzjlxDm': '201', 'fddbrdzxx': 'zhoushanjie78@163.com', 'jyfw': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）', 'bsrdzxx': '', 'cwfzrgddh': '', 'scjydz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'bsryddh': '13726160283', 'ggrs': '', 'fddbrgddh': '0755-29404400', 'cwfzrsfzjlxmc': '居民身份证', 'scjydlxdh': '18028760770', 'hhrs': '', 'bsrgddh': '', 'bsrsfzjzlDm': '201', 'hsfsmc': '独立核算自负盈亏', 'cwfzrdzxx': '', 'cwfzryddh': '13726160283', 'bsrxm': '黄晓敏', 'hydl': '装卸搬运和仓储业', 'zczb': '3000000', 'zzjgDm': '59909847X', 'zcdlxdh': '13826914448', 'cyrs': '20', 'zcdz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'cwfzrsfzjhm': '440782199403250027', 'hyxl': '装卸搬运', 'bsrsfzjlxmc': '居民身份证', 'fddbrsfzjlxmc': '居民身份证', 'wjcyrs': '', 'djzclxmc': '其他有限责任公司', 'fddbrxm': '周山杰', 'djxh': '10114403000025501863', 'nsrsbh': '44030059909847X', 'scjydyzbm': '518000', 'fddbrsfzjhm': '460025197808034217', 'djrq': '2012-07-09'}], '纳税人基本信息': {1: {'纳税信用等级': 'B', '纳税人识别号': '44030059909847X', '纳税人名称': '深圳市祺恒物流有限公司'}, 2: {'法定代表人': '周山杰', '身份证件号码': '460025197808034217', '身份证件名称': '居民身份证'}, 3: {'生产经营地址': '深圳市宝安区西乡大道马鞍山小区77栋301房', '生产经营范围': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）'}, 4: {'是否出口退税企业': '否', '组织机构代码': '59909847X'}, 5: {'是否一般纳税人': '否', '行业': '装卸搬运', '纳税人状态': '正常'}, 6: {'税务机关': '深圳市宝安区国家税务局西乡税务分局', '税源管理责任人': '张建新'}}, '纳税人资格查询': {'没有对应查询数据': {'序号': '没有对应查询数据'}}}
+Sat 17 Mar 2018 14:30:56 INFO localcredit.py 682 15044 1324 customerid:9,json信息{}
+Sat 17 Mar 2018 14:30:57 INFO localcredit.py 688 15044 1324 国税季度查询
+Sat 17 Mar 2018 14:31:02 INFO localcredit.py 808 15044 1324 customerid:9开始登录地税
+Sat 17 Mar 2018 14:31:02 INFO localcredit.py 1082 15044 1324 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:31:15 WARNING localcredit.py 824 15044 1324 Message: 
+Screenshot: available via screen
+
+Sat 17 Mar 2018 14:31:18 INFO localcredit.py 808 15044 1324 customerid:9开始登录地税
+Sat 17 Mar 2018 14:31:18 INFO localcredit.py 1082 15044 1324 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:31:31 WARNING localcredit.py 824 15044 1324 Message: 
+Screenshot: available via screen
+
+Sat 17 Mar 2018 14:31:38 INFO localcredit.py 808 15044 1324 customerid:9开始登录地税
+Sat 17 Mar 2018 14:31:38 INFO localcredit.py 1082 15044 1324 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:31:51 WARNING localcredit.py 824 15044 1324 Message: 
+Screenshot: available via screen
+
+Sat 17 Mar 2018 14:31:54 INFO localcredit.py 808 15044 1324 customerid:9开始登录地税
+Sat 17 Mar 2018 14:31:54 INFO localcredit.py 1082 15044 1324 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:32:07 WARNING localcredit.py 824 15044 1324 Message: 
+Screenshot: available via screen
+
+Sat 17 Mar 2018 14:34:53 INFO localcredit.py 1569 15044 1324 {"上季度纳税情况": null}
+Sat 17 Mar 2018 14:34:53 INFO localcredit.py 1570 15044 1324 {}
+Sat 17 Mar 2018 14:34:53 INFO localcredit.py 1571 15044 1324 {}
+Sat 17 Mar 2018 14:34:53 INFO localcredit.py 1572 15044 1324 {}
+Sat 17 Mar 2018 14:34:53 INFO localcredit.py 1575 15044 1324 ('5590', '0', '0', 18282900, 9, '{"国税信息": {"jcxx": {"纳税主管科室：": "深圳市宝安区国家税务局西乡税务分局税源管理三科", "纳税人名称：": "深圳市祺恒物流有限公司", "纳税主管税务机关：": "深圳市宝安区国家税务局西乡税务分局", "主管税务人员：": "张建新"}, "xxxx": [{"cwfzrxm": "黄晓敏", "shxydm": "9144030059909847XQ", "gdgrs": "", "nsrztDm": "03", "zcdyzbm": "518000", "cwfzrsfzjzlDm": "201", "bsrsfzjhm": "440782199403250027", "nsrmc": "深圳市祺恒物流有限公司", "fddbryddh": "13826914448", "fddbrsfzjlxDm": "201", "fddbrdzxx": "zhoushanjie78@163.com", "jyfw": "航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）", "bsrdzxx": "", "cwfzrgddh": "", "scjydz": "深圳市宝安区西乡大道马鞍山小区77栋301房", "bsryddh": "13726160283", "ggrs": "", "fddbrgddh": "0755-29404400", "cwfzrsfzjlxmc": "居民身份证", "scjydlxdh": "18028760770", "hhrs": "", "bsrgddh": "", "bsrsfzjzlDm": "201", "hsfsmc": "独立核算自负盈亏", "cwfzrdzxx": "", "cwfzryddh": "13726160283", "bsrxm": "黄晓敏", "hydl": "装卸搬运和仓储业", "zczb": "3000000", "zzjgDm": "59909847X", "zcdlxdh": "13826914448", "cyrs": "20", "zcdz": "深圳市宝安区西乡大道马鞍山小区77栋301房", "cwfzrsfzjhm": "440782199403250027", "hyxl": "装卸搬运", "bsrsfzjlxmc": "居民身份证", "fddbrsfzjlxmc": "居民身份证", "wjcyrs": "", "djzclxmc": "其他有限责任公司", "fddbrxm": "周山杰", "djxh": "10114403000025501863", "nsrsbh": "44030059909847X", "scjydyzbm": "518000", "fddbrsfzjhm": "460025197808034217", "djrq": "2012-07-09"}], "纳税人基本信息": {"1": {"纳税信用等级": "B", "纳税人识别号": "44030059909847X", "纳税人名称": "深圳市祺恒物流有限公司"}, "2": {"法定代表人": "周山杰", "身份证件号码": "460025197808034217", "身份证件名称": "居民身份证"}, "3": {"生产经营地址": "深圳市宝安区西乡大道马鞍山小区77栋301房", "生产经营范围": "航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）"}, "4": {"是否出口退税企业": "否", "组织机构代码": "59909847X"}, "5": {"是否一般纳税人": "否", "行业": "装卸搬运", "纳税人状态": "正常"}, "6": {"税务机关": "深圳市宝安区国家税务局西乡税务分局", "税源管理责任人": "张建新"}}, "纳税人资格查询": {"没有对应查询数据": {"序号": "没有对应查询数据"}}}, "账号详情": {"密码": "58123456", "账号": "44030059909847X"}}', '{"国税税费种信息": {}}', '{"地税信息": {}}', '{"地税税费种信息": {}}', '{"上季度纳税情况": null}', '{}', '{}', '{}')
+Sat 17 Mar 2018 14:34:54 INFO localcredit.py 1577 15044 1324 customerid:9开始插入数据库
+Sat 17 Mar 2018 14:34:55 INFO localcredit.py 1579 15044 1324 customerid:9数据插入完成
+Sat 17 Mar 2018 14:34:57 WARNING localcredit.py 1598 15044 1324 local variable 'ds_exist' referenced before assignment
+Sat 17 Mar 2018 14:35:00 WARNING localcredit.py 1599 15044 1324 数据异常
+Sat 17 Mar 2018 14:40:18 INFO localcredit.py 2341 1168 1352 {"6": "39.108.1.170", "9": "", "3": "5590", "8": "Platform", "7": "3433", "1": "44030059909847X", "2": "58123456", "5": 9, "4": 18282900}
+Sat 17 Mar 2018 14:40:24 INFO localcredit.py 209 1168 1352 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:40:24 INFO localcredit.py 223 1168 1352 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:40:25 INFO localcredit.py 249 1168 1352 customerid:9，获取验证码为：None
+Sat 17 Mar 2018 14:40:32 INFO localcredit.py 209 1168 1352 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:40:33 INFO localcredit.py 223 1168 1352 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:40:35 INFO localcredit.py 249 1168 1352 customerid:9，获取验证码为：None
+Sat 17 Mar 2018 14:40:36 INFO localcredit.py 209 1168 1352 customerid:9,开始尝试登陆
+Sat 17 Mar 2018 14:40:37 INFO localcredit.py 223 1168 1352 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:40:39 INFO localcredit.py 249 1168 1352 customerid:9，获取验证码为：[{"x":118,"y":104},{"x":20,"y":21},{"x":167,"y":52}]
+Sat 17 Mar 2018 14:40:39 INFO localcredit.py 253 1168 1352 customerid:9，验证验证码[{"x":118,"y":104},{"x":20,"y":21},{"x":167,"y":52}]
+Sat 17 Mar 2018 14:40:39 INFO localcredit.py 256 1168 1352 customerid:9，转换tag
+Sat 17 Mar 2018 14:40:39 INFO localcredit.py 258 1168 1352 customerid:9，转换tag完成
+Sat 17 Mar 2018 14:40:39 INFO localcredit.py 259 1168 1352 customerid:9，44030059909847X,d7ad6bc6308169a0a2257229d236c88c1fdbb558,"[{\"x\":118,\"y\":104},{\"x\":20,\"y\":21},{\"x\":167,\"y\":52}]",2018-03-17 14:40:39
+Sat 17 Mar 2018 14:40:39 INFO localcredit.py 264 1168 1352 customerid:9,成功post数据
+Sat 17 Mar 2018 14:40:41 INFO localcredit.py 271 1168 1352 customerid:9pass
+Sat 17 Mar 2018 14:41:07 INFO localcredit.py 1376 1168 1352 customerid:9获取cookies
+Sat 17 Mar 2018 14:41:29 INFO localcredit.py 1435 1168 1352 customerid9税费种信息{}:
+Sat 17 Mar 2018 14:41:33 INFO localcredit.py 428 1168 1352 customerid:9,基础信息{'纳税人名称：': '深圳市祺恒物流有限公司', '纳税主管税务机关：': '深圳市宝安区国家税务局西乡税务分局', '纳税主管科室：': '深圳市宝安区国家税务局西乡税务分局税源管理三科', '主管税务人员：': '张建新'}
+Sat 17 Mar 2018 14:41:33 INFO localcredit.py 430 1168 1352 customerid:9,详细信息[{'bsrsfzjzlDm': '201', 'djzclxmc': '其他有限责任公司', 'nsrmc': '深圳市祺恒物流有限公司', 'fddbryddh': '13826914448', 'cwfzrsfzjlxmc': '居民身份证', 'cyrs': '20', 'djrq': '2012-07-09', 'cwfzrgddh': '', 'scjydyzbm': '518000', 'hyxl': '装卸搬运', 'fddbrsfzjhm': '460025197808034217', 'scjydlxdh': '18028760770', 'cwfzrsfzjhm': '440782199403250027', 'zcdlxdh': '13826914448', 'zzjgDm': '59909847X', 'fddbrsfzjlxmc': '居民身份证', 'cwfzrsfzjzlDm': '201', 'bsryddh': '13726160283', 'nsrsbh': '44030059909847X', 'hhrs': '', 'bsrsfzjhm': '440782199403250027', 'bsrgddh': '', 'zcdz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'zczb': '3000000', 'gdgrs': '', 'fddbrxm': '周山杰', 'cwfzrxm': '黄晓敏', 'jyfw': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）', 'bsrsfzjlxmc': '居民身份证', 'fddbrsfzjlxDm': '201', 'bsrdzxx': '', 'zcdyzbm': '518000', 'djxh': '10114403000025501863', 'ggrs': '', 'wjcyrs': '', 'bsrxm': '黄晓敏', 'hydl': '装卸搬运和仓储业', 'cwfzrdzxx': '', 'hsfsmc': '独立核算自负盈亏', 'nsrztDm': '03', 'scjydz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'cwfzryddh': '13726160283', 'shxydm': '9144030059909847XQ', 'fddbrdzxx': 'zhoushanjie78@163.com', 'fddbrgddh': '0755-29404400'}]
+Sat 17 Mar 2018 14:41:50 INFO localcredit.py 451 1168 1352 customerid:9,json信息{'jcxx': {'纳税人名称：': '深圳市祺恒物流有限公司', '纳税主管税务机关：': '深圳市宝安区国家税务局西乡税务分局', '纳税主管科室：': '深圳市宝安区国家税务局西乡税务分局税源管理三科', '主管税务人员：': '张建新'}, '纳税人基本信息': {1: {'纳税人识别号': '44030059909847X', '纳税信用等级': 'B', '纳税人名称': '深圳市祺恒物流有限公司'}, 2: {'法定代表人': '周山杰', '身份证件号码': '460025197808034217', '身份证件名称': '居民身份证'}, 3: {'生产经营范围': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）', '生产经营地址': '深圳市宝安区西乡大道马鞍山小区77栋301房'}, 4: {'是否出口退税企业': '否', '组织机构代码': '59909847X'}, 5: {'行业': '装卸搬运', '是否一般纳税人': '否', '纳税人状态': '正常'}, 6: {'税源管理责任人': '张建新', '税务机关': '深圳市宝安区国家税务局西乡税务分局'}}, 'xxxx': [{'bsrsfzjzlDm': '201', 'djzclxmc': '其他有限责任公司', 'nsrmc': '深圳市祺恒物流有限公司', 'fddbryddh': '13826914448', 'cwfzrsfzjlxmc': '居民身份证', 'cyrs': '20', 'djrq': '2012-07-09', 'cwfzrgddh': '', 'scjydyzbm': '518000', 'hyxl': '装卸搬运', 'fddbrsfzjhm': '460025197808034217', 'scjydlxdh': '18028760770', 'cwfzrsfzjhm': '440782199403250027', 'zcdlxdh': '13826914448', 'zzjgDm': '59909847X', 'fddbrsfzjlxmc': '居民身份证', 'cwfzrsfzjzlDm': '201', 'bsryddh': '13726160283', 'nsrsbh': '44030059909847X', 'hhrs': '', 'bsrsfzjhm': '440782199403250027', 'bsrgddh': '', 'zcdz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'zczb': '3000000', 'gdgrs': '', 'fddbrxm': '周山杰', 'cwfzrxm': '黄晓敏', 'jyfw': '航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）', 'bsrsfzjlxmc': '居民身份证', 'fddbrsfzjlxDm': '201', 'bsrdzxx': '', 'zcdyzbm': '518000', 'djxh': '10114403000025501863', 'ggrs': '', 'wjcyrs': '', 'bsrxm': '黄晓敏', 'hydl': '装卸搬运和仓储业', 'cwfzrdzxx': '', 'hsfsmc': '独立核算自负盈亏', 'nsrztDm': '03', 'scjydz': '深圳市宝安区西乡大道马鞍山小区77栋301房', 'cwfzryddh': '13726160283', 'shxydm': '9144030059909847XQ', 'fddbrdzxx': 'zhoushanjie78@163.com', 'fddbrgddh': '0755-29404400'}], '纳税人资格查询': {'没有对应查询数据': {'序号': '没有对应查询数据'}}}
+Sat 17 Mar 2018 14:41:55 INFO localcredit.py 682 1168 1352 customerid:9,json信息{}
+Sat 17 Mar 2018 14:41:56 INFO localcredit.py 688 1168 1352 国税季度查询
+Sat 17 Mar 2018 14:42:01 INFO localcredit.py 808 1168 1352 customerid:9开始登录地税
+Sat 17 Mar 2018 14:42:10 INFO localcredit.py 1082 1168 1352 customerid:9截取地税登记信息
+Sat 17 Mar 2018 14:43:22 INFO localcredit.py 1577 1168 1352 {"上季度纳税情况": null}
+Sat 17 Mar 2018 14:43:22 INFO localcredit.py 1578 1168 1352 {}
+Sat 17 Mar 2018 14:43:22 INFO localcredit.py 1579 1168 1352 {}
+Sat 17 Mar 2018 14:43:22 INFO localcredit.py 1580 1168 1352 {"年度纳税申报表": ""}
+Sat 17 Mar 2018 14:43:22 INFO localcredit.py 1583 1168 1352 ('5590', '0', '0', 18282900, 9, '{"国税信息": {"jcxx": {"纳税人名称：": "深圳市祺恒物流有限公司", "纳税主管税务机关：": "深圳市宝安区国家税务局西乡税务分局", "纳税主管科室：": "深圳市宝安区国家税务局西乡税务分局税源管理三科", "主管税务人员：": "张建新"}, "纳税人基本信息": {"1": {"纳税人识别号": "44030059909847X", "纳税信用等级": "B", "纳税人名称": "深圳市祺恒物流有限公司"}, "2": {"法定代表人": "周山杰", "身份证件号码": "460025197808034217", "身份证件名称": "居民身份证"}, "3": {"生产经营范围": "航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）", "生产经营地址": "深圳市宝安区西乡大道马鞍山小区77栋301房"}, "4": {"是否出口退税企业": "否", "组织机构代码": "59909847X"}, "5": {"行业": "装卸搬运", "是否一般纳税人": "否", "纳税人状态": "正常"}, "6": {"税源管理责任人": "张建新", "税务机关": "深圳市宝安区国家税务局西乡税务分局"}}, "xxxx": [{"bsrsfzjzlDm": "201", "djzclxmc": "其他有限责任公司", "nsrmc": "深圳市祺恒物流有限公司", "fddbryddh": "13826914448", "cwfzrsfzjlxmc": "居民身份证", "cyrs": "20", "djrq": "2012-07-09", "cwfzrgddh": "", "scjydyzbm": "518000", "hyxl": "装卸搬运", "fddbrsfzjhm": "460025197808034217", "scjydlxdh": "18028760770", "cwfzrsfzjhm": "440782199403250027", "zcdlxdh": "13826914448", "zzjgDm": "59909847X", "fddbrsfzjlxmc": "居民身份证", "cwfzrsfzjzlDm": "201", "bsryddh": "13726160283", "nsrsbh": "44030059909847X", "hhrs": "", "bsrsfzjhm": "440782199403250027", "bsrgddh": "", "zcdz": "深圳市宝安区西乡大道马鞍山小区77栋301房", "zczb": "3000000", "gdgrs": "", "fddbrxm": "周山杰", "cwfzrxm": "黄晓敏", "jyfw": "航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）", "bsrsfzjlxmc": "居民身份证", "fddbrsfzjlxDm": "201", "bsrdzxx": "", "zcdyzbm": "518000", "djxh": "10114403000025501863", "ggrs": "", "wjcyrs": "", "bsrxm": "黄晓敏", "hydl": "装卸搬运和仓储业", "cwfzrdzxx": "", "hsfsmc": "独立核算自负盈亏", "nsrztDm": "03", "scjydz": "深圳市宝安区西乡大道马鞍山小区77栋301房", "cwfzryddh": "13726160283", "shxydm": "9144030059909847XQ", "fddbrdzxx": "zhoushanjie78@163.com", "fddbrgddh": "0755-29404400"}], "纳税人资格查询": {"没有对应查询数据": {"序号": "没有对应查询数据"}}}, "账号详情": {"密码": "58123456", "账号": "44030059909847X"}}', '{"国税税费种信息": {}}', '{"地税信息": {}}', '{"地税税费种信息": {}}', '{"上季度纳税情况": null}', '{}', '{}', '{"年度纳税申报表": ""}')
+Sat 17 Mar 2018 14:43:23 INFO localcredit.py 1585 1168 1352 customerid:9开始插入数据库
+Sat 17 Mar 2018 14:43:23 INFO localcredit.py 1587 1168 1352 customerid:9数据插入完成
+Sat 17 Mar 2018 14:43:25 INFO localcredit.py 1597 1168 1352 customerid:9全部爬取完成，无亏损表
+Sat 17 Mar 2018 14:43:34 INFO localcredit.py 2165 1168 1352 未传代理参数，启用本机IP
+Sat 17 Mar 2018 14:43:36 INFO localcredit.py 2174 1168 1352 {"data":[{"data":[{"apprdate":"2016-10-09","currency":"人民币","dom":"深圳市宝安区西乡大道马鞍山小区77栋301房","entflag":"440301001012012070602601","entname":"深圳市祺恒物流有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2012-07-06","id":"6b03efdf54a54bb8b469c8c70b16b54e","jinyinfuben":1,"lerep":"周山杰","opetype":"GS","opfrom":"2012-07-06","opscope":"航空、陆路国际货运代理业务；国内货运代理；国内贸易；货物及技术进出口。（法律、行政法规、国务院决定规定在登记前须经批准的项目除外）","opto":"2022-07-06","regcap":300,"regno":"440306106378576","rownum":1,"unifsocicrediden":"9144030059909847XQ"}],"name":"data","vtype":"attr"}]}

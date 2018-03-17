@@ -91,7 +91,7 @@ class gscredit(guoshui):
                     jbxx['营业期限'] = "永续经营"
                 index_dict = gswsj[0]
                 unifsocicrediden = index_dict['unifsocicrediden']
-                self.user= unifsocicrediden[10000]
+                self.user= unifsocicrediden
             except:
                 try:
                     headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',

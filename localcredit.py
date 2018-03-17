@@ -91,9 +91,106 @@ class gscredit(guoshui):
                     jbxx['营业期限'] = "永续经营"
                 index_dict = gswsj[0]
                 unifsocicrediden = index_dict['unifsocicrediden']
-                self.user= unifsocicrediden
+                self.user= unifsocicrediden[10000]
             except:
-                print("。。。")
+                try:
+                    headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                                    'Accept-Language': 'zh-CN,zh;q=0.9',
+                                    'Accept-Encoding': 'gzip, deflate, br',
+                                    'Connection': 'keep-alive',
+                                    'Host': 'www.szcredit.org.cn',
+                                    'Cookie': 'UM_distinctid=160a1f738438cb-047baf52e99fc4-e323462-232800-160a1f73844679; ASP.NET_SessionId=4bxqhcptbvetxqintxwgshll',
+                                    'Origin': 'https://www.szcredit.org.cn',
+                                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                                    'Referer': 'https://www.szcredit.org.cn/web/gspt/newGSPTList.aspx?keyword=%u534E%u88D4&codeR=28',
+                                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+                                    'X-Requested-With': 'XMLHttpRequest',
+                                    }
+                    for t in range(3):
+                        session = requests.session()
+                        try:
+                            self.logger.info(type(sys.argv[1]))
+                            proxy = sys.argv[1].replace("'", '"')
+                            self.logger.info(proxy)
+                            proxy = json.loads(proxy)
+                            session.proxies = proxy
+                        except:
+                            self.logger.info("未传代理参数，启用本机IP")
+                        yzm_url = 'https://www.szcredit.org.cn/web/WebPages/Member/CheckCode.aspx?'
+                        yzm = session.get(url=yzm_url, headers=headers)
+                        # 处理验证码
+                        # with open("{}yzm.jpg".format(self.batchid), "wb") as f:
+                        #     f.write(yzm.content)
+                        #     f.close()
+                        # with open("{}yzm.jpg".format(self.batchid), 'rb') as f:
+                        base64_data = str(base64.b64encode(yzm.content))
+                        base64_data = "data:image/jpg;base64," + base64_data[2:-1]
+                        post_data = {"a": 2, "b": base64_data}
+                        post_data = json.dumps({"a": 2, "b": base64_data})
+                        res = session.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data)
+                        # print(res.text)
+                        # f.close()
+                        postdata = {'action': 'GetEntList',
+                                    'keyword': companyname,
+                                    'type': 'query',
+                                    'ckfull': 'false',
+                                    'yzmResult': res.text
+                                    }
+                        resp1 = session.post(url='https://www.szcredit.org.cn/web/AJax/Ajax.ashx',
+                                             headers=headers,
+                                             data=postdata)
+                        self.logger.info(resp1.text)
+                        resp = resp1.json()
+                        try:
+                            result = resp['resultlist']
+                        except Exception as e:
+                            self.logger.warn(e)
+                            self.logger.info(resp)
+                            self.logger.info("网络连接失败")
+                            sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
+                            time.sleep(sleep_time[random.randint(0, 9)])
+                            continue
+                        if resp1 is not None and resp1.status_code == 200 and result:
+                            sleep_time = [8, 9, 8.5, 9.5, 8.2, 8.8, 8.1, 8.7, 8.3, 8.6]
+                            time.sleep(sleep_time[random.randint(0, 9)])
+                            result_dict = result[0]
+                            print(result_dict["RecordID"])  # 获取ID
+                            detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(
+                                result_dict["RecordID"])
+                            session = requests.session()
+                            try:
+                                self.logger.info(type(sys.argv[1]))
+                                proxy = sys.argv[1].replace("'", '"')
+                                self.logger.info(proxy)
+                                proxy = json.loads(proxy)
+                                session.proxies = proxy
+                            except Exception as e:
+                                self.logger.info(e)
+                                self.logger.info("未传代理参数，启用本机IP")
+                            detail = session.get(url=detai_url, headers=headers, timeout=30)
+                            for i in range(3):
+                                if companyname not in detail.text:
+                                    self.logger.info("您的查询过于频繁，请稍候再查")
+                                    sleep_time = [53, 54, 53.5, 54.5, 53.2, 53.8, 53.1, 53.7, 53.3, 53.6]
+                                    time.sleep(sleep_time[random.randint(0, 9)])
+                                    session = requests.session()
+                                    try:
+                                        proxy = sys.argv[1].replace("'", '"')
+                                        self.logger.info(proxy)
+                                        proxy = json.loads(proxy)
+                                        session.proxies = proxy
+                                    except:
+                                        self.logger.info("未传代理参数，启用本机IP")
+                                    detail = session.get(detai_url, headers=headers, timeout=30)
+                                    if companyname in detail.text:
+                                        break
+                            detail.encoding = detail.apparent_encoding
+                            root = etree.HTML(detail.text)
+                            self.user = root.xpath('//*[@id="tb_0"]/tr[2]/td[2]/text()')[0]
+                            break
+                except Exception as e:
+                    print(e)
+                    pass
         else:
             self.user = user
         self.pwd = pwd
@@ -107,6 +204,7 @@ class gscredit(guoshui):
 
     def login(self):
         try_times = 0
+        user=self.user
         while try_times <= 14:
             self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
             try_times += 1
@@ -159,10 +257,8 @@ class gscredit(guoshui):
             tag = json.dumps(tag)
             self.logger.info("customerid:{}，转换tag完成".format(self.customerid))
             self.logger.info("customerid:{}，{},{},{},{}".format(self.customerid, self.user, self.jiami(), tag, time_l))
-            if len(self.user) ==18 and try_times ==8:
-                self.user==self.user[2:-1]
             login_data = '{"nsrsbh":"%s","nsrpwd":"%s","redirectURL":"","tagger":%s,"time":"%s"}' % (
-                self.user, self.jiami(), tag, time_l)
+                user, self.jiami(), tag, time_l)
             login_url = 'http://dzswj.szgs.gov.cn/api/auth/clientWt'
             resp = session.post(url=login_url, data=login_data)
             self.logger.info("customerid:{},成功post数据".format(self.customerid))
@@ -178,11 +274,19 @@ class gscredit(guoshui):
                             cookies[k] = v
                         return cookies, session
                     elif "账户和密码不匹配" in resp.json()['message'] or "不存在" in resp.json()['message'] or "已注销" in \
-                            resp.json()['message'] and try_times >10:
-                        print('账号和密码不匹配')
-                        self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
-                        status = "账号和密码不匹配"
-                        return status, session
+                            resp.json()['message']:
+                        if len(user) == 18:
+                            user = user[2:-1]
+                            print(self.user)
+                            print(user)
+                            print('账号和密码不匹配')
+                            self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
+                            status = "账号和密码不匹配"
+                        else:
+                            print('账号和密码不匹配')
+                            self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
+                            status = "账号和密码不匹配"
+                            return status, session
                     else:
                         time.sleep(3)
             except Exception as e:

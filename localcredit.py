@@ -192,7 +192,6 @@ class gscredit(guoshui):
                             break
                 except Exception as e:
                     print(e)
-                    self.user=""
                     pass
         else:
             self.user = user
@@ -2358,7 +2357,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
         try:
             cd = gscredit(user, pwd, batchid, companyid, customerid, logger, sd["9"])
         except:
-            job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "未能获取到账号，请重试")
+            job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', "未能获取到账号，请重试")
             return 0
         try:
             jieguo = cd.excute_spider()

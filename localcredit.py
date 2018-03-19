@@ -2357,7 +2357,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
             jieguo = cd.excute_spider()
             try:
                 if jieguo == 12:
-                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "账号和密码不匹配")
+                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "密码不匹配")
                     return 0
             except:
                 pass
@@ -2429,7 +2429,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
         logger.info("深圳企业信用网信息抓取完成")
     except Exception as e:
         logger.error(e)
-        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '爬取失败')
+        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '公司名错误')
     print('jobs[ts_id=%s] done' % batchid)
     result = True
     return result

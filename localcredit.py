@@ -42,7 +42,7 @@ szxinyong = {}
 
 
 class gscredit(guoshui):
-    def __init__(self, user, pwd, batchid, companyid, customerid, logger,companyname):
+    def __init__(self, user, pwd, batchid, companyid, customerid, logger, companyname):
         # self.logger = create_logger(path=os.path.basename(__file__) + str(customerid))
         self.logger = logger
         if companyname and not user:
@@ -91,21 +91,21 @@ class gscredit(guoshui):
                     jbxx['营业期限'] = "永续经营"
                 index_dict = gswsj[0]
                 unifsocicrediden = index_dict['unifsocicrediden']
-                self.user= unifsocicrediden
+                self.user = unifsocicrediden
             except:
                 try:
                     headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
-                                    'Accept-Language': 'zh-CN,zh;q=0.9',
-                                    'Accept-Encoding': 'gzip, deflate, br',
-                                    'Connection': 'keep-alive',
-                                    'Host': 'www.szcredit.org.cn',
-                                    'Cookie': 'UM_distinctid=160a1f738438cb-047baf52e99fc4-e323462-232800-160a1f73844679; ASP.NET_SessionId=4bxqhcptbvetxqintxwgshll',
-                                    'Origin': 'https://www.szcredit.org.cn',
-                                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                                    'Referer': 'https://www.szcredit.org.cn/web/gspt/newGSPTList.aspx?keyword=%u534E%u88D4&codeR=28',
-                                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
-                                    'X-Requested-With': 'XMLHttpRequest',
-                                    }
+                               'Accept-Language': 'zh-CN,zh;q=0.9',
+                               'Accept-Encoding': 'gzip, deflate, br',
+                               'Connection': 'keep-alive',
+                               'Host': 'www.szcredit.org.cn',
+                               'Cookie': 'UM_distinctid=160a1f738438cb-047baf52e99fc4-e323462-232800-160a1f73844679; ASP.NET_SessionId=4bxqhcptbvetxqintxwgshll',
+                               'Origin': 'https://www.szcredit.org.cn',
+                               'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                               'Referer': 'https://www.szcredit.org.cn/web/gspt/newGSPTList.aspx?keyword=%u534E%u88D4&codeR=28',
+                               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+                               'X-Requested-With': 'XMLHttpRequest',
+                               }
                     for t in range(3):
                         session = requests.session()
                         try:
@@ -200,11 +200,11 @@ class gscredit(guoshui):
         self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
         if not os.path.exists('resource/{}'.format(self.user)):
             os.mkdir('resource/{}'.format(self.user))
-        self.companyname=companyname
+        self.companyname = companyname
 
     def login(self):
         try_times = 0
-        user=self.user
+        user = self.user
         while try_times <= 14:
             self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
             try_times += 1
@@ -387,17 +387,17 @@ class gscredit(guoshui):
         content = browser.page_source
         root = etree.HTML(content)
         select = root.xpath('//table[@class="table-common"]//tr')
-        a=0
-        dsdjxx={}
+        a = 0
+        dsdjxx = {}
         for i in select:
             dsdjxx1 = {}
             a += 1
             dsdjtb = i.xpath('.//text()')
-            thlist=i.xpath('.//th')
-            tdlist=i.xpath('.//td')
+            thlist = i.xpath('.//th')
+            tdlist = i.xpath('.//td')
             for tt in range(len(thlist)):
                 try:
-                    dsdjxx1[thlist[tt].xpath('./text()')[0]]=tdlist[tt].xpath('./text()')[0]
+                    dsdjxx1[thlist[tt].xpath('./text()')[0]] = tdlist[tt].xpath('./text()')[0]
                 except Exception as e:
                     print(e)
                     dsdjxx1[thlist[tt].xpath('./text()')[0]] = ""
@@ -412,9 +412,9 @@ class gscredit(guoshui):
         nsrxx = {}
         for i in select[1:]:
             shuizhong = i.xpath('.//text()')
-            if len(shuizhong)==2:
+            if len(shuizhong) == 2:
                 nsrxx[shuizhong[0]] = shuizhong[1]
-            elif len(shuizhong)==1:
+            elif len(shuizhong) == 1:
                 nsrxx[shuizhong[0]] = ""
         jbxx = session.get("http://dzswj.szgs.gov.cn/gzcx/gzcxAction_queryNsrxxBynsrsbh.do").json()
         jbxx = jbxx["data"]
@@ -446,7 +446,7 @@ class gscredit(guoshui):
             gszgcx[zgtb[0]] = tiaomu
 
         jcsj['纳税人资格查询'] = gszgcx
-        jcsj["纳税人基本信息"]=dsdjxx
+        jcsj["纳税人基本信息"] = dsdjxx
         # jcsj=json.dumps(jcsj,ensure_ascii=False)
         self.logger.info("customerid:{},json信息{}".format(self.customerid, jcsj))
         return jcsj
@@ -539,12 +539,12 @@ class gscredit(guoshui):
                     browser.switch_to_frame(iframe)
                     content = browser.page_source
                     root = etree.HTML(content)
-                    sshymx=root.xpath('//*[@id="table_003"]/tbody/tr[5]/td[3]/span/text()')[0]
-                    cyrs=root.xpath('//*[@id="table_003"]/tbody/tr[6]/td[3]/input/@value')[0]
+                    sshymx = root.xpath('//*[@id="table_003"]/tbody/tr[5]/td[3]/span/text()')[0]
+                    cyrs = root.xpath('//*[@id="table_003"]/tbody/tr[6]/td[3]/input/@value')[0]
                     select = root.xpath('//table[@id="table_003"]/tbody/tr')
                     a = 1
                     gdhz = {}
-                    sb=0
+                    sb = 0
                     for i in select[28:33]:
                         try:
                             gd = i.xpath('./td[1]/input/@value')[0]
@@ -560,7 +560,7 @@ class gscredit(guoshui):
                             xq['经济性质'] = jjxz
                             xq['投资比例'] = tzbl
                             xq['国籍'] = gj
-                            sb+=1
+                            sb += 1
                             gdhz["{}".format(sb)] = xq
                         except:
                             continue
@@ -577,11 +577,11 @@ class gscredit(guoshui):
                     tzfxx9 = json.dumps(tzfxx9, ensure_ascii=False)
                     tzfxx10 = json.dumps(tzfxx10, ensure_ascii=False)
                     params = (
-                    self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5,
-                    tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10)
+                        self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5,
+                        tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10)
                     self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
-                    niandu['所属行业明细']=sshymx
-                    niandu['从业人数']=cyrs
+                    niandu['所属行业明细'] = sshymx
+                    niandu['从业人数'] = cyrs
                 except Exception as e:
                     print(e)
                     pass
@@ -599,8 +599,8 @@ class gscredit(guoshui):
                 content = browser.page_source
                 root = etree.HTML(content)
                 # select = root.xpath('//table[@id="table_004"]/tbody/tr')
-                gstzns=root.xpath('//*[@id="table_004"]/tbody/tr[20]/td[4]/input/@value')[0]
-                shenbaobiao['国税调整纳税后所得']=gstzns
+                gstzns = root.xpath('//*[@id="table_004"]/tbody/tr[20]/td[4]/input/@value')[0]
+                shenbaobiao['国税调整纳税后所得'] = gstzns
                 # a = 1
                 # sb = {}
                 # for i in select[1:]:
@@ -663,7 +663,7 @@ class gscredit(guoshui):
                                     xq['项目'] = xiangmu
                                     xq['年度'] = nianfen
                                     try:
-                                        if nianfen=="2016":
+                                        if nianfen == "2016":
                                             xq['纳税调整后所得'] = gstzns
                                         else:
                                             xq['纳税调整后所得'] = nstzhsd
@@ -675,7 +675,7 @@ class gscredit(guoshui):
                                     continue
                             niandu['亏损明细'] = kuisun
                             break
-                        a+=1
+                        a += 1
                 except:
                     print("无选填")
                 break
@@ -719,7 +719,8 @@ class gscredit(guoshui):
             shuizhong = i.xpath('.//text()')
             print(shuizhong)
             a += 1
-            if "度预缴纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
+            if "度预缴纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong and "2017-10-01" in shuizhong[3] and "2017-12-31" in \
+                    shuizhong[4]:
                 self.logger.info("查询到季度表")
                 print("查询到季度表")
                 browser.find_element_by_xpath(
@@ -740,8 +741,8 @@ class gscredit(guoshui):
                     root = etree.HTML(content)
                     yiyujiao = root.xpath('//*[@id="table0"]/tbody/tr[14]/td[7]/span/text()')[0]
                     ybutui = root.xpath('//*[@id="table0"]/tbody/tr[16]/td[7]/span/text()')[0]
-                    ynsds=root.xpath('//*[@id="table0"]/tbody/tr[12]/td[7]/span/text()')[0]
-                    jmsds=root.xpath('//*[@id="table0"]/tbody/tr[13]/td[7]/span/text()')[0]
+                    ynsds = root.xpath('//*[@id="table0"]/tbody/tr[12]/td[7]/span/text()')[0]
+                    jmsds = root.xpath('//*[@id="table0"]/tbody/tr[13]/td[7]/span/text()')[0]
                     jibao = {}
                     jibao["实际已预缴所得税额"] = yiyujiao
                     jibao["应补(退)所得税额"] = ybutui
@@ -754,7 +755,8 @@ class gscredit(guoshui):
                     print(e)
                     return {}
                     pass
-            elif "度预缴纳税申报表" in shuizhong[1] and "查询申报表" not in shuizhong and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
+            elif "度预缴纳税申报表" in shuizhong[1] and "查询申报表" not in shuizhong and "2017-10-01" in shuizhong[
+                3] and "2017-12-31" in shuizhong[4]:
                 browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html")
                 content = browser.page_source
                 browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
@@ -774,22 +776,22 @@ class gscredit(guoshui):
                     shuizhong = i.xpath('.//text()')
                     a += 1
                     if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[4]:
-                        first_season=shuizhong[6]
+                        first_season = shuizhong[6]
                     if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[4]:
-                        second_season=shuizhong[6]
+                        second_season = shuizhong[6]
                     if "度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in shuizhong[4]:
-                        third_season=shuizhong[6]
+                        third_season = shuizhong[6]
                     if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
-                        fourth_season=shuizhong[6]
+                        fourth_season = shuizhong[6]
                 jibao = {}
                 try:
-                    first_season=float(first_season)
-                    second_season=float(second_season)
-                    third_season=float(third_season)
-                    fourth_season=float(fourth_season)
-                    yyj=first_season+second_season
-                    ybt=third_season+fourth_season
-                    ynsdse=yyj+ybt
+                    first_season = float(first_season)
+                    second_season = float(second_season)
+                    third_season = float(third_season)
+                    fourth_season = float(fourth_season)
+                    yyj = first_season + second_season
+                    ybt = third_season + fourth_season
+                    ynsdse = yyj + ybt
                     jibao["实际已预缴所得税额"] = str(yyj)
                     jibao["应补(退)所得税额"] = str(ybt)
                     jibao["应纳所得税额"] = str(ynsdse)
@@ -818,8 +820,8 @@ class gscredit(guoshui):
                 print("无该弹窗")
             browser.find_element_by_xpath("//a[@href='javascript:gotoDs()']").click()
             try:
-                dsdjxx, dssfz,tz3,tz4 = self.dishui(browser)
-                return dsdjxx, dssfz,tz3,tz4
+                dsdjxx, dssfz, tz3, tz4 = self.dishui(browser)
+                return dsdjxx, dssfz, tz3, tz4
             except Exception as e:
                 self.logger.warn(e)
                 pg = browser.page_source
@@ -828,7 +830,7 @@ class gscredit(guoshui):
                 browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html")
                 try_times += 1
                 if try_times > 3:
-                    return {}, {},{},{}
+                    return {}, {}, {}, {}
 
     def parse_pdf(self, pdf_path):
         fp = open(pdf_path, "rb")
@@ -878,8 +880,8 @@ class gscredit(guoshui):
         pdf_dict = {}
         pdf_dict['实际已预缴所得税额'] = sz[11]
         pdf_dict['应补(退)所得税额'] = sz[13]
-        pdf_dict['应纳所得税额']=sz[9]
-        pdf_dict['减:减免所得税额（请填附表3）']=sz[10]
+        pdf_dict['应纳所得税额'] = sz[9]
+        pdf_dict['减:减免所得税额（请填附表3）'] = sz[10]
         print(pdf_dict)
         return pdf_dict
 
@@ -933,7 +935,7 @@ class gscredit(guoshui):
                                 break
                             else:
                                 biaoge = results
-                                gd=False
+                                gd = False
                         # print(results)
                         # results_last = results
                         if biaoge == "A106000企业所得税弥补亏损明细表\n" and results_last == '前五年度\n前四年度\n前三年度\n前二年度\n前一年度\n本年度\n可结转以后年度弥补的亏损额合计\n':
@@ -976,7 +978,8 @@ class gscredit(guoshui):
                             gd = True
                             gdxx = []
                         if biaoge == "A000000企业基础信息表\n" and gd:
-                            if "证件" not in results and "主要股东" not in results and "经济性质" not in results and "投资比例" not in results and "国籍" not in results and "302中国境内" not in results:
+                            if "证件" not in results and "主要股东" not in results and "经济性质" not in results and "投资比例" not in results and "国籍" not in results and "302中国境内" not in results and "公司财务室" not in results \
+                                    and "备抵法" not in results and "直接核销法" not in results and "人民币" not in results:
                                 gdxx.append(results)
                         results_last = results
         pdf_dict = {}
@@ -1067,7 +1070,7 @@ class gscredit(guoshui):
         try:
             for i in range(len(nf) - 1):
                 try:
-                    if nf[i]=="2016":
+                    if nf[i] == "2016":
                         ksmx[nf[i]] = sz[18]
                     else:
                         ksmx[nf[i]] = nstzhsd[i]
@@ -1078,6 +1081,7 @@ class gscredit(guoshui):
         pdf_dict["亏损明细"] = ksmx
         print(pdf_dict)
         return pdf_dict
+
     def dishui(self, browser):
         self.logger.info("customerid:{}截取地税登记信息".format(self.customerid))
         time.sleep(2)
@@ -1087,12 +1091,12 @@ class gscredit(guoshui):
             if c_window != window1:
                 browser.close()
                 browser.switch_to_window(c_window)
-        wokao=browser.page_source
+        wokao = browser.page_source
         if "调用地税系统认证接口失败，用户不存在!" in wokao:
             ds_pdf = {}
-            dsdjxx={}
-            dssfz={}
-            tzfxx={}
+            dsdjxx = {}
+            dssfz = {}
+            tzfxx = {}
             ds_pdf["年度纳税申报表"] = ""
             return dsdjxx, dssfz, tzfxx, ds_pdf
         wait = ui.WebDriverWait(browser, 10)
@@ -1160,41 +1164,41 @@ class gscredit(guoshui):
         root = etree.HTML(content)
         select = root.xpath('//table[@id="hdTab"]/tbody/tr')
         tzfxx = {}
-        tzfxx1={}
-        tzfxx2,tzfxx3,tzfxx4,tzfxx5,tzfxx6,tzfxx7,tzfxx8,tzfxx9,tzfxx10={},{},{},{},{},{},{},{},{}
-        rq=[]
+        tzfxx1 = {}
+        tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10 = {}, {}, {}, {}, {}, {}, {}, {}, {}
+        rq = []
         for i in select:
             gz = 0
-            tzftb=[]
+            tzftb = []
             tzftblist = i.xpath('./td')
             for xx in tzftblist:
                 gz += 1
                 try:
                     tzftb.append(xx.xpath('.//text()')[0])
                 except:
-                    if gz==10:
+                    if gz == 10:
                         tzftb.append("2000-01-01")
                     else:
                         tzftb.append("")
             rq.append(tzftb[9])
-        rq=list(set(rq))
-        tran=0
+        rq = list(set(rq))
+        tran = 0
         for r in rq:
             last_stamp = time.mktime(time.strptime(r, '%Y-%m-%d'))
             if last_stamp > tran:
                 last_update = r
                 tran = last_stamp
         for i in select:
-            gz=0
+            gz = 0
             tiaomu = {}
-            tzftb=[]
+            tzftb = []
             tzftblist = i.xpath('./td')
             for xx in tzftblist:
                 gz += 1
                 try:
                     tzftb.append(xx.xpath('.//text()')[0])
                 except:
-                    if gz==10:
+                    if gz == 10:
                         tzftb.append("2000-01-01")
                     else:
                         tzftb.append("")
@@ -1204,16 +1208,16 @@ class gscredit(guoshui):
                     for j in range(1, len(tzftb)):
                         tiaomu[title[j]] = tzftb[j]
                     if "公司" in tiaomu['股东名称']:
-                        tiaomu['证件种类']="营业执照"
+                        tiaomu['证件种类'] = "营业执照"
                     tzfxx[tzftb[0]] = tiaomu
             except:
                 pass
-        if len(tzfxx)>20:
-            txfxx1={}
-            for i in range(1,21):
-                tzfxx1["{}".format(i)]=tzfxx["{}".format(i)]
+        if len(tzfxx) > 20:
+            txfxx1 = {}
+            for i in range(1, 21):
+                tzfxx1["{}".format(i)] = tzfxx["{}".format(i)]
             try:
-                for i in range(21,41):
+                for i in range(21, 41):
                     tzfxx2["{}".format(i)] = tzfxx["{}".format(i)]
                 for i in range(41, 61):
                     tzfxx3["{}".format(i)] = tzfxx["{}".format(i)]
@@ -1224,21 +1228,21 @@ class gscredit(guoshui):
             except:
                 pass
         else:
-            tzfxx1=tzfxx
-        tzfxx1=json.dumps(tzfxx1,ensure_ascii=False)
-        tzfxx2=json.dumps(tzfxx2,ensure_ascii=False)
-        tzfxx3=json.dumps(tzfxx3,ensure_ascii=False)
-        tzfxx4=json.dumps(tzfxx4,ensure_ascii=False)
-        tzfxx5=json.dumps(tzfxx5,ensure_ascii=False)
-        tzfxx6=json.dumps(tzfxx6,ensure_ascii=False)
-        tzfxx7=json.dumps(tzfxx7,ensure_ascii=False)
-        tzfxx8=json.dumps(tzfxx8,ensure_ascii=False)
-        tzfxx9=json.dumps(tzfxx9,ensure_ascii=False)
-        tzfxx10=json.dumps(tzfxx10,ensure_ascii=False)
+            tzfxx1 = tzfxx
+        tzfxx1 = json.dumps(tzfxx1, ensure_ascii=False)
+        tzfxx2 = json.dumps(tzfxx2, ensure_ascii=False)
+        tzfxx3 = json.dumps(tzfxx3, ensure_ascii=False)
+        tzfxx4 = json.dumps(tzfxx4, ensure_ascii=False)
+        tzfxx5 = json.dumps(tzfxx5, ensure_ascii=False)
+        tzfxx6 = json.dumps(tzfxx6, ensure_ascii=False)
+        tzfxx7 = json.dumps(tzfxx7, ensure_ascii=False)
+        tzfxx8 = json.dumps(tzfxx8, ensure_ascii=False)
+        tzfxx9 = json.dumps(tzfxx9, ensure_ascii=False)
+        tzfxx10 = json.dumps(tzfxx10, ensure_ascii=False)
         # params=(self.batchid,"0","0",self.companyid,self.customerid,tzfxx1,tzfxx2,tzfxx3,tzfxx4,tzfxx5,tzfxx6,tzfxx7,tzfxx8,tzfxx9,tzfxx10)
         # self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]",params)
         # 企业所得税(上个季度的季报)
-        jdpdf_dict={}
+        jdpdf_dict = {}
         browser.switch_to_default_content()
         browser.switch_to_frame('qyIndex')
         browser.find_element_by_css_selector('#menu2_13_110200').click()
@@ -1307,8 +1311,8 @@ class gscredit(guoshui):
                         w.write(pdf_content)
                     jdpdf_dict = self.parse_pdf("resource/{}/申报表详情{}.pdf".format(self.user, pzxh))
                 index += 1
-        #企业所得税（年度）
-        ndpdf_dict={}
+        # 企业所得税（年度）
+        ndpdf_dict = {}
         sb_startd = browser.find_element_by_css_selector('#skssqq')
         sb_startd.clear()
         sb_startd.send_keys('2016-01-01')
@@ -1365,9 +1369,9 @@ class gscredit(guoshui):
                     ndpdf_dict = self.parse_ndpdf("resource/{}/年度申报表详情{}.pdf".format(self.user, pzxh))
                 index += 1
                 break
-        ds_pdf={}
-        ds_pdf["年度纳税申报表"]=ndpdf_dict
-        ds_pdf['季度纳税申报表']=jdpdf_dict
+        ds_pdf = {}
+        ds_pdf["年度纳税申报表"] = ndpdf_dict
+        ds_pdf['季度纳税申报表'] = jdpdf_dict
         return dsdjxx, dssfz, tzfxx, ds_pdf
 
     def excute_spider(self):
@@ -1454,7 +1458,7 @@ class gscredit(guoshui):
                            "gs查询失败")
                 browser.quit()
                 return False
-            if self.companyname!=szxinyong['cn'] and self.companyname:#判断公司名称和账号是否对应上
+            if self.companyname != szxinyong['cn'] and self.companyname:  # 判断公司名称和账号是否对应上
                 browser.quit()
                 return False
             # 去年年度所得税申报结果
@@ -1484,7 +1488,7 @@ class gscredit(guoshui):
                 browser.quit()
                 return False
             try:
-                dsdjxx, dssfz ,tzfxx, pdf_dict= self.qwdishui(browser)
+                dsdjxx, dssfz, tzfxx, pdf_dict = self.qwdishui(browser)
             except Exception as e:
                 self.logger.warn(e)
                 self.logger.info("地税失败")
@@ -1496,26 +1500,29 @@ class gscredit(guoshui):
             dsshuifei = {}
             gsshuifei["国税税费种信息"] = {}
             dsshuifei["地税税费种信息"] = dssfz
-            niandu["上季度纳税情况"]=preseason
+            niandu["上季度纳税情况"] = preseason
             tuozan1 = niandu
             tuozan2 = shenbaobiao
-            tuozan3=tzfxx
-            tuozan4=pdf_dict
-            gs_exist=len(tuozan2)
+            tuozan3 = tzfxx
+            tuozan4 = pdf_dict
+            gs_exist = len(tuozan2)
             try:
-                ds_exist=len(tuozan4["年度纳税申报表"])
+                ds_exist = len(tuozan4["年度纳税申报表"])
             except:
                 pass
-            gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
+            try:
+                gsxiangqing["账号详情"] = {'账号': szxinyong['xydm'], '密码': self.pwd}
+            except:
+                gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
             dsxiangqing = json.dumps(dsxiangqing, ensure_ascii=False)
             dsshuifei = json.dumps(dsshuifei, ensure_ascii=False)
             gsxiangqing = json.dumps(gsxiangqing, ensure_ascii=False)
             gsshuifei = json.dumps(gsshuifei, ensure_ascii=False)
-            #股东信息
+            # 股东信息
             try:
                 tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10 = {}, {}, {}, {}, {}, {}, {}, {}, {}
-                tzfxx1=niandu['主要股东']
-                tzfxx2=tzfxx
+                tzfxx1 = niandu['主要股东']
+                tzfxx2 = tzfxx
                 tzfxx1 = json.dumps(tzfxx1, ensure_ascii=False)
                 tzfxx2 = json.dumps(tzfxx2, ensure_ascii=False)
                 tzfxx3 = json.dumps(tzfxx3, ensure_ascii=False)
@@ -1527,8 +1534,9 @@ class gscredit(guoshui):
                 tzfxx9 = json.dumps(tzfxx9, ensure_ascii=False)
                 tzfxx10 = json.dumps(tzfxx10, ensure_ascii=False)
                 params = (
-                self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5, tzfxx6,
-                tzfxx7, tzfxx8, tzfxx9, tzfxx10)
+                    self.batchid, "0", "0", self.companyid, self.customerid, tzfxx1, tzfxx2, tzfxx3, tzfxx4, tzfxx5,
+                    tzfxx6,
+                    tzfxx7, tzfxx8, tzfxx9, tzfxx10)
                 self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
             except:
                 try:
@@ -1569,17 +1577,18 @@ class gscredit(guoshui):
                         tzfxx6,
                         tzfxx7, tzfxx8, tzfxx9, tzfxx10)
                     self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
-            tuozan1=json.dumps(tuozan1,ensure_ascii=False)
-            tuozan2=json.dumps(tuozan2,ensure_ascii=False)
-            tuozan3=json.dumps(tuozan3,ensure_ascii=False)
-            tuozan4=json.dumps(tuozan4,ensure_ascii=False)
-            tz3=len(tuozan3)
+            tuozan1 = json.dumps(tuozan1, ensure_ascii=False)
+            tuozan2 = json.dumps(tuozan2, ensure_ascii=False)
+            tuozan3 = json.dumps(tuozan3, ensure_ascii=False)
+            tuozan4 = json.dumps(tuozan4, ensure_ascii=False)
+            tz3 = len(tuozan3)
             self.logger.info(tuozan1)
             self.logger.info(tuozan2)
             self.logger.info(tuozan3)
             self.logger.info(tuozan4)
             params = (
-                self.batchid, "0", "0", self.companyid, self.customerid, gsxiangqing, gsshuifei, dsxiangqing, dsshuifei,tuozan1,tuozan2,tuozan3,tuozan4)
+                self.batchid, "0", "0", self.companyid, self.customerid, gsxiangqing, gsshuifei, dsxiangqing, dsshuifei,
+                tuozan1, tuozan2, tuozan3, tuozan4)
             self.logger.info(params)
             try:
                 self.logger.info("customerid:{}开始插入数据库".format(self.customerid))
@@ -1592,12 +1601,14 @@ class gscredit(guoshui):
                            "数据库插入失败")
                 browser.quit()
                 return False
-            if gs_exist==0 and ds_exist==0:
-                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1', '成功爬取,无亏损表')
+            if gs_exist == 0 and ds_exist == 0:
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1',
+                           '成功爬取,无亏损表')
                 self.logger.info("customerid:{}全部爬取完成，无亏损表".format(self.customerid))
                 return 2
             else:
-                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1', '成功爬取')
+                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1',
+                           '成功爬取')
             print("爬取完成")
             self.logger.info("customerid:{}全部爬取完成".format(self.customerid))
             browser.quit()
@@ -1709,9 +1720,9 @@ class szcredit(object):
                     session = requests.session()
                     try:
                         self.logger.info(type(sys.argv[1]))
-                        proxy=sys.argv[1].replace("'", '"')
+                        proxy = sys.argv[1].replace("'", '"')
                         self.logger.info(proxy)
-                        proxy=json.loads(proxy)
+                        proxy = json.loads(proxy)
                         session.proxies = proxy
                     except Exception as e:
                         self.logger.info(e)
@@ -1730,12 +1741,12 @@ class szcredit(object):
                                 session.proxies = proxy
                             except:
                                 self.logger.info("未传代理参数，启用本机IP")
-                            detail=session.get(detai_url,headers=self.headers,timeout=30)
+                            detail = session.get(detai_url, headers=self.headers, timeout=30)
                             if self.cn in detail.text:
                                 break
                             else:
                                 return 4
-                    detail.encoding=detail.apparent_encoding
+                    detail.encoding = detail.apparent_encoding
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
 
                     # dcap = dict(DesiredCapabilities.PHANTOMJS)
@@ -1861,10 +1872,10 @@ class szcredit(object):
                             jbxx['营业期限'] = "永续经营"
                         index_dict = gswsj[0]
                         unifsocicrediden = index_dict['unifsocicrediden']
-                        d3["证件号码"]=unifsocicrediden
-                        d3["地址"]=index_dict['dom']
-                        d3["证件名称"]="营业执照"
-                        d3["国籍"]="中国"
+                        d3["证件号码"] = unifsocicrediden
+                        d3["地址"] = index_dict['dom']
+                        d3["证件名称"] = "营业执照"
+                        d3["国籍"] = "中国"
                     except:
                         print("。。。")
                 d2[i[0]] = d3
@@ -2341,11 +2352,11 @@ def run_test(user, pwd, batchid, companyid, customerid):
     logger.info(ss)
     try:
         szxinyong.clear()
-        cd = gscredit(user, pwd, batchid, companyid, customerid, logger,sd["9"])
+        cd = gscredit(user, pwd, batchid, companyid, customerid, logger, sd["9"])
         try:
             jieguo = cd.excute_spider()
             try:
-                if jieguo==12:
+                if jieguo == 12:
                     job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "账号和密码不匹配")
                     return 0
             except:
@@ -2365,14 +2376,14 @@ def run_test(user, pwd, batchid, companyid, customerid):
         try:
             credit.ssdjp()
             try:
-                pd=credit.login()
+                pd = credit.login()
                 try:
-                    if pd==4:
+                    if pd == 4:
                         return 4
                 except:
                     pass
                 try:
-                    if jieguo==2:
+                    if jieguo == 2:
                         job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取,无亏损表')
                     else:
                         job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取')
@@ -2394,19 +2405,19 @@ def run_test(user, pwd, batchid, companyid, customerid):
             pjson = json.dumps(goshng_dict, ensure_ascii=False)
             redis_cli.lpush("gongshang", pjson)
             try:
-                pd=credit.login()
+                pd = credit.login()
                 try:
-                    if pd==4:
+                    if pd == 4:
                         return 4
                 except:
                     pass
                 try:
-                    if jieguo==2:
+                    if jieguo == 2:
                         job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取,无亏损表')
                     else:
-                        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取成功、工商网爬取失败')
+                        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取')
                 except:
-                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取成功、工商网爬取失败')
+                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '成功爬取')
             except Exception as e:
                 logger.info("信用网爬取失败")
                 logger.info(e)
@@ -2414,7 +2425,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
                                 "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
                 pjson = json.dumps(xinyong_dict, ensure_ascii=False)
                 redis_cli.lpush("xinyong", pjson)
-                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网、工商网爬取失败')
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取失败')
         logger.info("深圳企业信用网信息抓取完成")
     except Exception as e:
         logger.error(e)
@@ -2432,9 +2443,9 @@ while True:
     if ss is not None:
         # print(redis_cli.lpop("list"))
         sd = json.loads(ss)
-        aa=run_test(sd["1"], sd["2"], sd["3"], sd["4"], sd["5"])
+        aa = run_test(sd["1"], sd["2"], sd["3"], sd["4"], sd["5"])
         try:
-            if aa==4:
+            if aa == 4:
                 redis_cli.lpush("sz_credit_list", ss)
         except:
             pass

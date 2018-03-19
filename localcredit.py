@@ -47,6 +47,7 @@ class gscredit(guoshui):
         self.logger = logger
         if companyname and not user:
             try:
+                time.sleep(10)
                 ip = ['121.31.159.197', '175.30.238.78', '124.202.247.110']
                 headers = {
                     'Accept': 'application/json, text/javascript, */*; q=0.01',
@@ -94,6 +95,7 @@ class gscredit(guoshui):
                 self.user = unifsocicrediden
             except:
                 try:
+                    time.sleep(30)
                     headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
                                'Accept-Language': 'zh-CN,zh;q=0.9',
                                'Accept-Encoding': 'gzip, deflate, br',
@@ -151,7 +153,7 @@ class gscredit(guoshui):
                             time.sleep(sleep_time[random.randint(0, 9)])
                             continue
                         if resp1 is not None and resp1.status_code == 200 and result:
-                            sleep_time = [8, 9, 8.5, 9.5, 8.2, 8.8, 8.1, 8.7, 8.3, 8.6]
+                            sleep_time = [18, 19, 18.5, 19.5, 18.2, 18.8, 18.1, 18.7, 18.3, 18.6]
                             time.sleep(sleep_time[random.randint(0, 9)])
                             result_dict = result[0]
                             print(result_dict["RecordID"])  # 获取ID
@@ -190,6 +192,7 @@ class gscredit(guoshui):
                             break
                 except Exception as e:
                     print(e)
+                    self.user=""
                     pass
         else:
             self.user = user
@@ -2352,7 +2355,11 @@ def run_test(user, pwd, batchid, companyid, customerid):
     logger.info(ss)
     try:
         szxinyong.clear()
-        cd = gscredit(user, pwd, batchid, companyid, customerid, logger, sd["9"])
+        try:
+            cd = gscredit(user, pwd, batchid, companyid, customerid, logger, sd["9"])
+        except:
+            job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "未能获取到账号，请重试")
+            return 0
         try:
             jieguo = cd.excute_spider()
             try:

@@ -1,23 +1,42 @@
-[INFO  - 2018-03-20T03:59:40.618Z] GhostDriver - Main - running on port 5370
-[INFO  - 2018-03-20T03:59:41.742Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-03-20T03:59:41.742Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - page.customHeaders:  - {}
-[INFO  - 2018-03-20T03:59:41.742Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","phantomjs.page.settings.loadImages":true}
-[INFO  - 2018-03-20T03:59:41.742Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 1e21d0a0-2bf3-11e8-978c-550db2fc0a7f
-[INFO  - 2018-03-20T04:01:46.099Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-03-20T04:01:46.099Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - page.customHeaders:  - {}
-[INFO  - 2018-03-20T04:03:29.322Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-03-20T04:03:29.322Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - page.customHeaders:  - {}
-[INFO  - 2018-03-20T04:03:56.772Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-03-20T04:03:56.772Z] Session [1e21d0a0-2bf3-11e8-978c-550db2fc0a7f] - page.customHeaders:  - {}
-[INFO  - 2018-03-20T04:04:40.623Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:09:40.623Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:14:40.623Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:19:40.623Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:24:40.623Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:29:40.623Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:34:40.636Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:39:40.645Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:44:40.652Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:49:40.652Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:54:40.653Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2018-03-20T04:59:40.666Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2018-03-20T06:03:43.997Z] GhostDriver - Main - running on port 7699
+[INFO  - 2018-03-20T06:03:45.096Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-03-20T06:03:45.096Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.customHeaders:  - {}
+[INFO  - 2018-03-20T06:03:45.096Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.loadImages":true,"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"}
+[INFO  - 2018-03-20T06:03:45.096Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 72b78040-2c04-11e8-8f51-ddab958f6bd6
+[ERROR - 2018-03-20T06:05:37.375Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - msg: ReferenceError: Can't find variable: jQuery
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:05:37.375Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - stack:
+  global code (http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/ajaxLogin.js:205)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:07:03.091Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - msg: ReferenceError: Can't find variable: mini
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:07:03.091Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - stack:
+  global code (http://dzswj.szgs.gov.cn/BsfwtWeb/apps/js/miniui-plugin.js:54)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:07:03.092Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - msg: ReferenceError: Can't find variable: $
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:07:03.092Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - stack:
+  global code (http://dzswj.szgs.gov.cn/BsfwtWeb/scripts/pagejs/sb/sbcommon.js:886)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:07:03.094Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - msg: ReferenceError: Can't find variable: $
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:07:03.094Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - stack:
+  global code (http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.js:5)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:07:03.095Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - msg: ReferenceError: Can't find variable: $
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-20T06:07:03.095Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.onError - stack:
+  global code (http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/webSocketLogin.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-03-20T06:08:01.722Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-03-20T06:08:01.722Z] Session [72b78040-2c04-11e8-8f51-ddab958f6bd6] - page.customHeaders:  - {}

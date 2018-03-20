@@ -2386,7 +2386,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
             jieguo = cd.excute_spider()
             try:
                 if jieguo == 12:
-                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "密码不匹配")
+                    job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-2', "密码错误")
                     return 0
             except:
                 pass

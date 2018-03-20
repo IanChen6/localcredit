@@ -700,3 +700,120 @@ Tue 20 Mar 2018 12:01:46 INFO localcredit.py 1094 6152 3388 customerid:9截取�
 Tue 20 Mar 2018 12:03:24 INFO localcredit.py 1280 6152 3388 customerid:9地税企业所得税（季报）信息查询
 Tue 20 Mar 2018 12:03:51 INFO localcredit.py 1340 6152 3388 customerid:9地税企业所得税（年度）信息查询
 Tue 20 Mar 2018 12:04:23 WARNING localcredit.py 834 6152 3388 local variable 'sz' referenced before assignment
+Tue 20 Mar 2018 14:02:08 INFO localcredit.py 2374 12200 16184 {"5": 0, "6": "39.108.1.170", "3": "2A41C32A-F6FA-49FB-B565-29E781F0F921", "1": "", "8": "Platform", "7": "3433", "2": "19907711", "4": 0, "9": "\u6df1\u5733\u5e02\u91d1\u5353\u4e94\u91d1\u5851\u80f6\u5236\u54c1\u6709\u9650\u516c\u53f8"}
+Tue 20 Mar 2018 14:02:18 INFO localcredit.py 73 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:18 INFO localcredit.py 80 12200 16184 {"data":[{"data":[{"apprdate":"2017-07-24","currency":"人民币","dom":"深圳市宝安区松岗街道塘下涌社区第二工业大道37号二楼东","entflag":"A166687","entname":"深圳市金卓五金塑胶制品有限公司","entstatus":"开业（存续）","enttype":"有限责任公司（法人独资）","estdate":"2003-02-19","id":"c2ac3a08cf3a45d18d6925e48bee298d","jinyinfuben":1,"lerep":"刘标","opetype":"GS","opfrom":"2003-02-19","opscope":"陶瓷、模具配件、五金制品、塑胶制品的研发与销售；国内贸易。（法律、行政法规、国务院决定禁止的项目除外，限制的项目须取得许可后方可经营）","opto":"2023-02-19","regcap":100,"regno":"440306103157932","rownum":1,"unifsocicrediden":"914403007466208044"}],"name":"data","vtype":"attr"}]}
+Tue 20 Mar 2018 14:02:18 INFO localcredit.py 217 12200 16184 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:02:18 INFO localcredit.py 231 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:20 INFO localcredit.py 257 12200 16184 customerid:0，获取验证码为：None
+Tue 20 Mar 2018 14:02:20 INFO localcredit.py 217 12200 16184 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:02:20 INFO localcredit.py 231 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:21 INFO localcredit.py 257 12200 16184 customerid:0，获取验证码为：None
+Tue 20 Mar 2018 14:02:21 INFO localcredit.py 217 12200 16184 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:02:21 INFO localcredit.py 231 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:23 INFO localcredit.py 257 12200 16184 customerid:0，获取验证码为：None
+Tue 20 Mar 2018 14:02:23 INFO localcredit.py 217 12200 16184 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:02:23 INFO localcredit.py 231 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 257 12200 16184 customerid:0，获取验证码为：[{"x":269,"y":106},{"x":223,"y":49},{"x":22,"y":98}]
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 261 12200 16184 customerid:0，验证验证码[{"x":269,"y":106},{"x":223,"y":49},{"x":22,"y":98}]
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 264 12200 16184 customerid:0，转换tag
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 266 12200 16184 customerid:0，转换tag完成
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 267 12200 16184 customerid:0，914403007466208044,faf244fc337d87e0d294fc201cdaf69df5ac6c89,"[{\"x\":269,\"y\":106},{\"x\":223,\"y\":49},{\"x\":22,\"y\":98}]",2018-03-20 14:02:24
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 272 12200 16184 customerid:0,成功post数据
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 291 12200 16184 customerid:0账号和密码不匹配
+Tue 20 Mar 2018 14:02:24 WARNING localcredit.py 302 12200 16184 customerid:0登录失败,开始重试
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 217 12200 16184 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:02:24 INFO localcredit.py 231 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:26 INFO localcredit.py 257 12200 16184 customerid:0，获取验证码为：None
+Tue 20 Mar 2018 14:02:26 INFO localcredit.py 217 12200 16184 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:02:26 INFO localcredit.py 231 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:27 INFO localcredit.py 257 12200 16184 customerid:0，获取验证码为：None
+Tue 20 Mar 2018 14:02:27 INFO localcredit.py 217 12200 16184 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:02:27 INFO localcredit.py 231 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:29 INFO localcredit.py 257 12200 16184 customerid:0，获取验证码为：[{"x":70,"y":26},{"x":173,"y":56},{"x":116,"y":63}]
+Tue 20 Mar 2018 14:02:30 INFO localcredit.py 261 12200 16184 customerid:0，验证验证码[{"x":70,"y":26},{"x":173,"y":56},{"x":116,"y":63}]
+Tue 20 Mar 2018 14:02:30 INFO localcredit.py 264 12200 16184 customerid:0，转换tag
+Tue 20 Mar 2018 14:02:30 INFO localcredit.py 266 12200 16184 customerid:0，转换tag完成
+Tue 20 Mar 2018 14:02:30 INFO localcredit.py 267 12200 16184 customerid:0，914403007466208044,faf244fc337d87e0d294fc201cdaf69df5ac6c89,"[{\"x\":70,\"y\":26},{\"x\":173,\"y\":56},{\"x\":116,\"y\":63}]",2018-03-20 14:02:30
+Tue 20 Mar 2018 14:02:30 INFO localcredit.py 272 12200 16184 customerid:0,成功post数据
+Tue 20 Mar 2018 14:02:30 INFO localcredit.py 295 12200 16184 customerid:0账号和密码不匹配
+Tue 20 Mar 2018 14:02:30 INFO localcredit.py 1388 12200 16184 customerid:0获取cookies
+Tue 20 Mar 2018 14:02:30 WARNING localcredit.py 1391 12200 16184 customerid:0账号和密码不匹配
+Tue 20 Mar 2018 14:02:40 INFO localcredit.py 2374 12200 16184 {"5": 0, "6": "39.108.1.170", "3": "C8EAF2E3-A931-48AD-9769-28847264B6A8", "1": "", "8": "Platform", "7": "3433", "2": "987987", "4": 0, "9": "\u6df1\u5733\u5e02\u4e09\u8f89\u786c\u8d28\u7cbe\u5bc6\u5de5\u5177\u6709\u9650\u516c\u53f8"}
+Tue 20 Mar 2018 14:02:50 INFO localcredit.py 73 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:02:50 INFO localcredit.py 80 12200 16184 {"data":[{"data":"您查询次数过多，请稍后再查！","name":"data","vtype":"attr"}]}
+Tue 20 Mar 2018 14:03:20 INFO localcredit.py 120 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:03:21 INFO localcredit.py 144 12200 16184 {"status":"ok","resultlist":[{"RecordID":"85cf805ec79d469c832d9ab93f0cd478","EntName":"\u003cfont style=\u0027color:red\u0027\u003e深圳市三辉硬质精密工具有限公司\u003c/font\u003e","EntRegNo":"440306107151877","EntTypeName":"有限责任公司","EstDate":"2004年11月15日"}],"msg":"共找到1条数据。 （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市三辉硬质精密工具有限公司\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市三辉硬质精密工具有限公司\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":""}
+Tue 20 Mar 2018 14:03:39 INFO localcredit.py 173 12200 16184 list index out of range
+Tue 20 Mar 2018 14:03:39 INFO localcredit.py 174 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:03:40 INFO localcredit.py 217 12200 16184 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:03:40 INFO localcredit.py 231 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:03:42 INFO localcredit.py 257 12200 16184 customerid:0，获取验证码为：[{"x":278,"y":103},{"x":217,"y":73},{"x":118,"y":90}]
+Tue 20 Mar 2018 14:03:42 INFO localcredit.py 261 12200 16184 customerid:0，验证验证码[{"x":278,"y":103},{"x":217,"y":73},{"x":118,"y":90}]
+Tue 20 Mar 2018 14:03:42 INFO localcredit.py 264 12200 16184 customerid:0，转换tag
+Tue 20 Mar 2018 14:03:42 INFO localcredit.py 266 12200 16184 customerid:0，转换tag完成
+Tue 20 Mar 2018 14:03:42 INFO localcredit.py 267 12200 16184 customerid:0，9144030076915325XB,700edc7ce39d1156f79a736ee5157e65d2f66bae,"[{\"x\":278,\"y\":103},{\"x\":217,\"y\":73},{\"x\":118,\"y\":90}]",2018-03-20 14:03:42
+Tue 20 Mar 2018 14:03:42 INFO localcredit.py 272 12200 16184 customerid:0,成功post数据
+Tue 20 Mar 2018 14:03:42 INFO localcredit.py 279 12200 16184 customerid:0pass
+Tue 20 Mar 2018 14:03:42 INFO localcredit.py 1388 12200 16184 customerid:0获取cookies
+Tue 20 Mar 2018 14:07:42 INFO localcredit.py 1447 12200 16184 customerid0税费种信息{}:
+Tue 20 Mar 2018 14:07:46 INFO localcredit.py 436 12200 16184 customerid:0,基础信息{'纳税人名称：': '深圳市三辉硬质精密工具有限公司', '纳税主管科室：': '深圳市宝安区国家税务局西乡税务分局税源管理三科', '纳税主管税务机关：': '深圳市宝安区国家税务局西乡税务分局', '主管税务人员：': '张建新'}
+Tue 20 Mar 2018 14:07:46 INFO localcredit.py 438 12200 16184 customerid:0,详细信息[{'djzclxmc': '其他有限责任公司', 'nsrsbh': '44030076915325X', 'hsfsmc': '独立核算自负盈亏', 'zzjgDm': '76915325X', 'fddbrdzxx': '', 'cyrs': '10', 'djxh': '10114403000027611109', 'ggrs': '', 'fddbrxm': '田英', 'zcdlxdh': '27792694', 'hyxl': '锅炉及辅助设备制造', 'bsrsfzjlxmc': '居民身份证', 'djrq': '2004-11-17', 'wjcyrs': '', 'jyfw': '五金工具、电子产品的生产与销售；国内商业、物资供销业（以上不含国家专营、专控、专卖商品，不含国家限制项目）。 许可经营项目：', 'fddbrsfzjlxDm': '201', 'fddbrgddh': '27908526', 'cwfzrdzxx': '', 'zcdz': '深圳市宝安区西乡街道劳动第一工业区A11栋工业厂房第二层', 'cwfzrgddh': '27908526', 'nsrmc': '深圳市三辉硬质精密工具有限公司', 'cwfzrsfzjhm': '422128196602251755', 'hhrs': '', 'bsryddh': '18807529239', 'bsrxm': '江丽云', 'bsrsfzjhm': '441424198710192265', 'cwfzryddh': '13902952811', 'shxydm': '9144030076915325XB', 'bsrdzxx': '', 'fddbrsfzjhm': '422128196910260039', 'scjydz': '深圳市宝安区西乡街道劳动第一工业区Ａ１１栋工业厂房第二层', 'fddbryddh': '13916349342', 'fddbrsfzjlxmc': '居民身份证', 'zcdyzbm': '518000', 'zczb': '500000', 'scjydlxdh': '27792694', 'nsrztDm': '03', 'cwfzrsfzjlxmc': '居民身份证', 'cwfzrxm': '顾松茂', 'scjydyzbm': '518000', 'gdgrs': '', 'hydl': '通用设备制造业', 'bsrgddh': '27908526', 'bsrsfzjzlDm': '201', 'cwfzrsfzjzlDm': '201'}]
+Tue 20 Mar 2018 14:07:48 INFO localcredit.py 459 12200 16184 customerid:0,json信息{'纳税人资格查询': {'1': {'有效期起': '2009-11-01', '有效期止': '2010-06-30', '纳税人资格认定名称': '增值税一般纳税人', '认定日期': '2009-11-06', '序号': '1'}, '2': {'有效期起': '2010-07-01', '有效期止': '9999-12-31', '纳税人资格认定名称': '增值税一般纳税人', '认定日期': '2010-06-25', '序号': '2'}}, 'jcxx': {'纳税人名称：': '深圳市三辉硬质精密工具有限公司', '纳税主管科室：': '深圳市宝安区国家税务局西乡税务分局税源管理三科', '纳税主管税务机关：': '深圳市宝安区国家税务局西乡税务分局', '主管税务人员：': '张建新'}, 'xxxx': [{'djzclxmc': '其他有限责任公司', 'nsrsbh': '44030076915325X', 'hsfsmc': '独立核算自负盈亏', 'zzjgDm': '76915325X', 'fddbrdzxx': '', 'cyrs': '10', 'djxh': '10114403000027611109', 'ggrs': '', 'fddbrxm': '田英', 'zcdlxdh': '27792694', 'hyxl': '锅炉及辅助设备制造', 'bsrsfzjlxmc': '居民身份证', 'djrq': '2004-11-17', 'wjcyrs': '', 'jyfw': '五金工具、电子产品的生产与销售；国内商业、物资供销业（以上不含国家专营、专控、专卖商品，不含国家限制项目）。 许可经营项目：', 'fddbrsfzjlxDm': '201', 'fddbrgddh': '27908526', 'cwfzrdzxx': '', 'zcdz': '深圳市宝安区西乡街道劳动第一工业区A11栋工业厂房第二层', 'cwfzrgddh': '27908526', 'nsrmc': '深圳市三辉硬质精密工具有限公司', 'cwfzrsfzjhm': '422128196602251755', 'hhrs': '', 'bsryddh': '18807529239', 'bsrxm': '江丽云', 'bsrsfzjhm': '441424198710192265', 'cwfzryddh': '13902952811', 'shxydm': '9144030076915325XB', 'bsrdzxx': '', 'fddbrsfzjhm': '422128196910260039', 'scjydz': '深圳市宝安区西乡街道劳动第一工业区Ａ１１栋工业厂房第二层', 'fddbryddh': '13916349342', 'fddbrsfzjlxmc': '居民身份证', 'zcdyzbm': '518000', 'zczb': '500000', 'scjydlxdh': '27792694', 'nsrztDm': '03', 'cwfzrsfzjlxmc': '居民身份证', 'cwfzrxm': '顾松茂', 'scjydyzbm': '518000', 'gdgrs': '', 'hydl': '通用设备制造业', 'bsrgddh': '27908526', 'bsrsfzjzlDm': '201', 'cwfzrsfzjzlDm': '201'}], '纳税人基本信息': {1: {'纳税人识别号': '44030076915325X', '纳税人名称': '深圳市三辉硬质精密工具有限公司', '纳税信用等级': 'A'}, 2: {'法定代表人': '田英', '身份证件名称': '居民身份证', '身份证件号码': '422128196910260039'}, 3: {'生产经营地址': '深圳市宝安区西乡街道劳动第一工业区Ａ１１栋工业厂房第二层', '生产经营范围': '五金工具、电子产品的生产与销售；国内商业、物资供销业（以上不含国家专营、专控、专卖商品，不含国家限制项目）。 许可经营项目：'}, 4: {'组织机构代码': '76915325X', '是否出口退税企业': '否'}, 5: {'是否一般纳税人': '是', '行业': '锅炉及辅助设备制造', '纳税人状态': '正常'}, 6: {'税源管理责任人': '张建新', '税务机关': '深圳市宝安区国家税务局西乡税务分局'}}}
+Tue 20 Mar 2018 14:07:51 INFO localcredit.py 690 12200 16184 customerid:0,json信息{}
+Tue 20 Mar 2018 14:07:52 INFO localcredit.py 696 12200 16184 国税季度查询
+Tue 20 Mar 2018 14:07:56 INFO localcredit.py 732 12200 16184 查询到季度表
+Tue 20 Mar 2018 14:07:56 INFO localcredit.py 736 12200 16184 2
+Tue 20 Mar 2018 14:08:00 INFO localcredit.py 759 12200 16184 季度表已查询
+Tue 20 Mar 2018 14:08:00 INFO localcredit.py 760 12200 16184 {'减:减免所得税额（请填附表3）': '0.00', '实际已预缴所得税额': '0.00', '应补(退)所得税额': '0.00', '应纳所得税额': '0.00'}
+Tue 20 Mar 2018 14:08:01 INFO localcredit.py 818 12200 16184 customerid:0开始登录地税
+Tue 20 Mar 2018 14:08:01 INFO localcredit.py 1094 12200 16184 customerid:0截取地税登记信息
+Tue 20 Mar 2018 14:08:19 INFO localcredit.py 1280 12200 16184 customerid:0地税企业所得税（季报）信息查询
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1340 12200 16184 customerid:0地税企业所得税（年度）信息查询
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1596 12200 16184 {"上季度纳税情况": {"减:减免所得税额（请填附表3）": "0.00", "实际已预缴所得税额": "0.00", "应补(退)所得税额": "0.00", "应纳所得税额": "0.00"}}
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1597 12200 16184 {}
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1598 12200 16184 {"1": {"分配比例": "0%", "股东名称": "田英", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "422128196910260178", "证件种类": "居民身份证", "有效期起": "2016-08-11", "有效期止": "9999-12-31", "投资比例": "50%", "地址": "湖北省蕲春县漕河镇市府大道184号"}, "2": {"分配比例": "0%", "股东名称": "顾松茂", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "422128196602251755", "证件种类": "居民身份证", "有效期起": "2016-08-11", "有效期止": "9999-12-31", "投资比例": "50%", "地址": "湖北省蕲春县蕲州镇街口村3-138"}}
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1599 12200 16184 {"年度纳税申报表": {}, "季度纳税申报表": {}}
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1603 12200 16184 ('C8EAF2E3-A931-48AD-9769-28847264B6A8', '0', '0', 0, 0, '{"国税信息": {"纳税人资格查询": {"1": {"有效期起": "2009-11-01", "有效期止": "2010-06-30", "纳税人资格认定名称": "增值税一般纳税人", "认定日期": "2009-11-06", "序号": "1"}, "2": {"有效期起": "2010-07-01", "有效期止": "9999-12-31", "纳税人资格认定名称": "增值税一般纳税人", "认定日期": "2010-06-25", "序号": "2"}}, "jcxx": {"纳税人名称：": "深圳市三辉硬质精密工具有限公司", "纳税主管科室：": "深圳市宝安区国家税务局西乡税务分局税源管理三科", "纳税主管税务机关：": "深圳市宝安区国家税务局西乡税务分局", "主管税务人员：": "张建新"}, "xxxx": [{"djzclxmc": "其他有限责任公司", "nsrsbh": "44030076915325X", "hsfsmc": "独立核算自负盈亏", "zzjgDm": "76915325X", "fddbrdzxx": "", "cyrs": "10", "djxh": "10114403000027611109", "ggrs": "", "fddbrxm": "田英", "zcdlxdh": "27792694", "hyxl": "锅炉及辅助设备制造", "bsrsfzjlxmc": "居民身份证", "djrq": "2004-11-17", "wjcyrs": "", "jyfw": "五金工具、电子产品的生产与销售；国内商业、物资供销业（以上不含国家专营、专控、专卖商品，不含国家限制项目）。 许可经营项目：", "fddbrsfzjlxDm": "201", "fddbrgddh": "27908526", "cwfzrdzxx": "", "zcdz": "深圳市宝安区西乡街道劳动第一工业区A11栋工业厂房第二层", "cwfzrgddh": "27908526", "nsrmc": "深圳市三辉硬质精密工具有限公司", "cwfzrsfzjhm": "422128196602251755", "hhrs": "", "bsryddh": "18807529239", "bsrxm": "江丽云", "bsrsfzjhm": "441424198710192265", "cwfzryddh": "13902952811", "shxydm": "9144030076915325XB", "bsrdzxx": "", "fddbrsfzjhm": "422128196910260039", "scjydz": "深圳市宝安区西乡街道劳动第一工业区Ａ１１栋工业厂房第二层", "fddbryddh": "13916349342", "fddbrsfzjlxmc": "居民身份证", "zcdyzbm": "518000", "zczb": "500000", "scjydlxdh": "27792694", "nsrztDm": "03", "cwfzrsfzjlxmc": "居民身份证", "cwfzrxm": "顾松茂", "scjydyzbm": "518000", "gdgrs": "", "hydl": "通用设备制造业", "bsrgddh": "27908526", "bsrsfzjzlDm": "201", "cwfzrsfzjzlDm": "201"}], "纳税人基本信息": {"1": {"纳税人识别号": "44030076915325X", "纳税人名称": "深圳市三辉硬质精密工具有限公司", "纳税信用等级": "A"}, "2": {"法定代表人": "田英", "身份证件名称": "居民身份证", "身份证件号码": "422128196910260039"}, "3": {"生产经营地址": "深圳市宝安区西乡街道劳动第一工业区Ａ１１栋工业厂房第二层", "生产经营范围": "五金工具、电子产品的生产与销售；国内商业、物资供销业（以上不含国家专营、专控、专卖商品，不含国家限制项目）。 许可经营项目："}, "4": {"组织机构代码": "76915325X", "是否出口退税企业": "否"}, "5": {"是否一般纳税人": "是", "行业": "锅炉及辅助设备制造", "纳税人状态": "正常"}, "6": {"税源管理责任人": "张建新", "税务机关": "深圳市宝安区国家税务局西乡税务分局"}}}, "账号详情": {"账号": "9144030076915325XB", "密码": "987987"}}', '{"国税税费种信息": {}}', '{"地税信息": {"1": {"纳税人名称：": "深圳市三辉硬质精密工具有限公司", "纳税人识别号：": "44030076915325X"}, "2": {"税务登记表类型：": "单位纳税人税务登记", "统一社会信用代码：": "9144030076915325XB"}, "3": {"注册地址：": "深圳市宝安区西乡街道劳动第一工业区A11栋工业厂房第二层"}, "4": {"生产经营地址：": "深圳市宝安区西乡街道劳动第一工业区Ａ１１栋工业厂房第二层"}, "5": {"街道乡镇：": "西乡街道"}, "6": {"手机/联系电话：": "13916349342", "法人代表：": "田英"}, "7": {"手机/联系电话：": "13902952811", "财务负责人：": "顾松茂"}, "8": {"办税人员：": "张琴琴", "手机/联系电话：": "15818625092"}, "9": {"经营期限起：": "2004-11-15", "开业设立日期：": "2004-11-15"}, "10": {"登记注册类型：": "其他有限责任公司", "国地共管户标志：": "国地共管"}, "11": {"纳税人状态：": "正常", "核算方式：": "独立核算自负盈亏"}, "12": {"主管税务机关：": "深圳市宝安区地方税务局西乡税务所", "业务受理点：": "深圳市宝安区地方税务局西乡税务所"}}}', '{"地税税费种信息": {"3": {"税率": "0.07", "征收代理方式": "自行申报", "有效期起": "2010-12-01", "申报期限": "期满之日起15日内", "序号": "3", "有效期止": "9999-12-31", "征收品目": "市区（增值税附征）", "征收项目": "城市维护建设税", "纳税期限": "月"}, "4": {"税率": "0.02", "征收代理方式": "自行申报", "有效期起": "2009-01-01", "申报期限": "期满之日起15日内", "序号": "4", "有效期止": "9999-12-31", "征收品目": "增值税地方教育附加", "征收项目": "地方教育附加", "纳税期限": "月"}, "1": {"税率": "0.03", "征收代理方式": "自行申报", "有效期起": "2009-01-01", "申报期限": "期满之日起15日内", "序号": "1", "有效期止": "9999-12-31", "征收品目": "增值税教育费附加", "征收项目": "教育费附加", "纳税期限": "月"}, "2": {"税率": "0.1", "征收代理方式": "代扣代缴", "有效期起": "2004-11-01", "申报期限": "期满之日起15日内", "序号": "2", "有效期止": "9999-12-31", "征收品目": "工资薪金所得", "征收项目": "个人所得税", "纳税期限": "月"}}}', '{"上季度纳税情况": {"减:减免所得税额（请填附表3）": "0.00", "实际已预缴所得税额": "0.00", "应补(退)所得税额": "0.00", "应纳所得税额": "0.00"}}', '{}', '{"1": {"分配比例": "0%", "股东名称": "田英", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "422128196910260178", "证件种类": "居民身份证", "有效期起": "2016-08-11", "有效期止": "9999-12-31", "投资比例": "50%", "地址": "湖北省蕲春县漕河镇市府大道184号"}, "2": {"分配比例": "0%", "股东名称": "顾松茂", "投资金额": "0.00", "国籍": "中华人民共和国", "证件号码": "422128196602251755", "证件种类": "居民身份证", "有效期起": "2016-08-11", "有效期止": "9999-12-31", "投资比例": "50%", "地址": "湖北省蕲春县蕲州镇街口村3-138"}}', '{"年度纳税申报表": {}, "季度纳税申报表": {}}')
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1605 12200 16184 customerid:0开始插入数据库
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1607 12200 16184 customerid:0数据插入完成
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1618 12200 16184 customerid:0全部爬取完成，无亏损表
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 2198 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 2207 12200 16184 {"data":[{"data":"您查询次数过多，请稍后再查！","name":"data","vtype":"attr"}]}
+Tue 20 Mar 2018 14:08:22 WARNING localcredit.py 2430 12200 16184 'str' object has no attribute 'keys'
+Tue 20 Mar 2018 14:08:22 WARNING localcredit.py 2431 12200 16184 工商网爬取失败
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1683 12200 16184 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:08:22 INFO localcredit.py 1713 12200 16184 {"status":"ok","resultlist":[{"RecordID":"85cf805ec79d469c832d9ab93f0cd478","EntName":"深圳市三辉硬质精密工具有限公司","EntRegNo":"440306107151877","EntTypeName":"有限责任公司","EstDate":"2004年11月15日"}],"msg":"共找到1条数据。 （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=9144030076915325XB\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=9144030076915325XB\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":""}
+Tue 20 Mar 2018 14:39:48 INFO localcredit.py 2374 6048 9504 {"6": "39.108.1.170", "2": "000999or hu168", "9": "\u6df1\u5733\u5e02\u529b\u661f\u79d1\u6280\u6709\u9650\u516c\u53f8", "5": 0, "4": 0, "3": "562AE49D-0ACA-401B-BF17-F1E17C93720D", "8": "Platform", "7": "3433", "1": ""}
+Tue 20 Mar 2018 14:39:58 INFO localcredit.py 73 6048 9504 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:39:58 INFO localcredit.py 80 6048 9504 {"data":[{"data":[{"apprdate":"2016-07-02","currency":"人民币","dom":"深圳市宝安区西乡街道宝源路1053号资信达大厦108室","entflag":"440301001012012122602698","entname":"深圳市力星科技有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2012-12-26","id":"b790fbf74e9f468d9fda028f56a7bfa9","jinyinfuben":1,"lerep":"张师友","opetype":"GS","opfrom":"2012-12-26","opscope":"电子产品、电子元器件的研发与销售，国内贸易，经营进出口业务（以上法律、行政法规、国务院决定禁止的项目除外，限制的项目须取得许可后方可经营）。","opto":"2022-12-26","regcap":50,"regno":"440301106787542","rownum":1,"unifsocicrediden":"914403000602796486"}],"name":"data","vtype":"attr"}]}
+Tue 20 Mar 2018 14:39:58 INFO localcredit.py 217 6048 9504 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:39:58 INFO localcredit.py 231 6048 9504 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:39:59 INFO localcredit.py 257 6048 9504 customerid:0，获取验证码为：[{"x":124,"y":87},{"x":268,"y":88},{"x":224,"y":30}]
+Tue 20 Mar 2018 14:39:59 INFO localcredit.py 261 6048 9504 customerid:0，验证验证码[{"x":124,"y":87},{"x":268,"y":88},{"x":224,"y":30}]
+Tue 20 Mar 2018 14:39:59 INFO localcredit.py 264 6048 9504 customerid:0，转换tag
+Tue 20 Mar 2018 14:39:59 INFO localcredit.py 266 6048 9504 customerid:0，转换tag完成
+Tue 20 Mar 2018 14:39:59 INFO localcredit.py 267 6048 9504 customerid:0，914403000602796486,592516d99e495f9204a35db91b774a23faa00008,"[{\"x\":124,\"y\":87},{\"x\":268,\"y\":88},{\"x\":224,\"y\":30}]",2018-03-20 14:39:59
+Tue 20 Mar 2018 14:40:00 INFO localcredit.py 272 6048 9504 customerid:0,成功post数据
+Tue 20 Mar 2018 14:40:00 INFO localcredit.py 291 6048 9504 customerid:0账号和密码不匹配
+Tue 20 Mar 2018 14:40:00 WARNING localcredit.py 302 6048 9504 customerid:0登录失败,开始重试
+Tue 20 Mar 2018 14:40:00 INFO localcredit.py 217 6048 9504 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:40:00 INFO localcredit.py 231 6048 9504 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:40:01 INFO localcredit.py 257 6048 9504 customerid:0，获取验证码为：None
+Tue 20 Mar 2018 14:40:01 INFO localcredit.py 217 6048 9504 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:40:01 INFO localcredit.py 231 6048 9504 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:40:02 INFO localcredit.py 257 6048 9504 customerid:0，获取验证码为：None
+Tue 20 Mar 2018 14:40:02 INFO localcredit.py 217 6048 9504 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:40:02 INFO localcredit.py 231 6048 9504 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:40:04 INFO localcredit.py 257 6048 9504 customerid:0，获取验证码为：None
+Tue 20 Mar 2018 14:40:04 INFO localcredit.py 217 6048 9504 customerid:0,开始尝试登陆
+Tue 20 Mar 2018 14:40:04 INFO localcredit.py 231 6048 9504 未传代理参数，启用本机IP
+Tue 20 Mar 2018 14:40:05 INFO localcredit.py 257 6048 9504 customerid:0，获取验证码为：[{"x":21,"y":86},{"x":123,"y":49},{"x":221,"y":91}]
+Tue 20 Mar 2018 14:40:05 INFO localcredit.py 261 6048 9504 customerid:0，验证验证码[{"x":21,"y":86},{"x":123,"y":49},{"x":221,"y":91}]
+Tue 20 Mar 2018 14:40:05 INFO localcredit.py 264 6048 9504 customerid:0，转换tag
+Tue 20 Mar 2018 14:40:05 INFO localcredit.py 266 6048 9504 customerid:0，转换tag完成
+Tue 20 Mar 2018 14:40:05 INFO localcredit.py 267 6048 9504 customerid:0，914403000602796486,592516d99e495f9204a35db91b774a23faa00008,"[{\"x\":21,\"y\":86},{\"x\":123,\"y\":49},{\"x\":221,\"y\":91}]",2018-03-20 14:40:05
+Tue 20 Mar 2018 14:40:05 INFO localcredit.py 272 6048 9504 customerid:0,成功post数据
+Tue 20 Mar 2018 14:40:05 INFO localcredit.py 295 6048 9504 customerid:0账号和密码不匹配
+Tue 20 Mar 2018 14:40:05 INFO localcredit.py 1388 6048 9504 customerid:0获取cookies
+Tue 20 Mar 2018 14:40:05 WARNING localcredit.py 1391 6048 9504 customerid:0账号和密码不匹配

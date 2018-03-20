@@ -956,9 +956,13 @@ class gscredit(guoshui):
                                     nstzhsd = nstzhs
                                     print(nstzhsd)
                         # 解析年度纳税申报表
-                        if biaoge == "中华人民共和国企业所得税年度纳税申报表（A类）\n" and results_last == '金额\n' and a == 11:
-                            sz = results.strip("").split("\n")
-                            print(sz)
+                        if biaoge == "中华人民共和国企业所得税年度纳税申报表（A类）\n":
+                            if results_last == '金额\n' and a == 11:
+                                sz = results.strip("").split("\n")
+                                print(sz)
+                            elif a == 10 and "%" in results and "0.00" in results:
+                                sz = results.strip("").split("\n")
+                                print(sz)
                         # 解析基础信息表
                         if biaoge == "A000000企业基础信息表\n":
                             if "备抵法" in results or "直接核销法" in results:

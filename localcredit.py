@@ -735,7 +735,7 @@ class gscredit(guoshui):
                     '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()
                 self.logger.info(a)
                 wait = ui.WebDriverWait(browser, 5)
-                time.sleep(2)
+                time.sleep(3)
                 # wait.until(
                 #     lambda browser: browser.find_element_by_css_selector("#mini-2"))
                 # time.sleep(0.5)
@@ -758,7 +758,60 @@ class gscredit(guoshui):
                     jibao["减:减免所得税额（请填附表3）"] = jmsds
                     self.logger.info("季度表已查询")
                     self.logger.info(jibao)
-                    return jibao
+                    yysr=root.xpath('//*[@id="table0"]/tbody/tr[3]/td[7]/span/text()')[0]
+                    yycb=root.xpath('//*[@id="table0"]/tbody/tr[4]/td[7]/span/text()')[0]
+                    lrze=root.xpath('//*[@id="table0"]/tbody/tr[5]/td[7]/span/text()')[0]
+                    if yiyujiao=="0.00" and ybutui=="0.00" and ynsds=="0.00" and jmsds=="0.00" and yysr=="0.00" and yycb=="0.00" and lrze=="0.00":
+                        browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html")
+                        content = browser.page_source
+                        browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+                        browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
+                        browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+                        browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(20170101)
+                        # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+                        # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+                        # 所属日期
+                        browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+                        time.sleep(2)
+                        content = browser.page_source
+                        root = etree.HTML(content)
+                        select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
+                        a = 1
+                        for i in select[1:]:
+                            shuizhong = i.xpath('.//text()')
+                            a += 1
+                            first_season, second_season, third_season, fourth_season = 0, 0, 0, 0
+                            if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in \
+                                    shuizhong[4]:
+                                first_season = shuizhong[6]
+                            if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in \
+                                    shuizhong[4]:
+                                second_season = shuizhong[6]
+                            if "度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in \
+                                    shuizhong[4]:
+                                third_season = shuizhong[6]
+                            if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in \
+                                    shuizhong[4]:
+                                fourth_season = shuizhong[6]
+                        jibao = {}
+                        try:
+                            first_season = float(first_season)
+                            second_season = float(second_season)
+                            third_season = float(third_season)
+                            fourth_season = float(fourth_season)
+                            yyj = first_season + second_season
+                            ybt = third_season + fourth_season
+                            ynsdse = yyj + ybt
+                            jibao["实际已预缴所得税额"] = str(yyj)
+                            jibao["应补(退)所得税额"] = str(ybt)
+                            jibao["应纳所得税额"] = str(ynsdse)
+                            jibao["减:减免所得税额（请填附表3）"] = "0"
+                            self.logger.info(jibao)
+                        except:
+                            return {}
+                        return jibao
+                    else:
+                        return jibao
                 except Exception as e:
                     print(e)
                     return {}
@@ -783,6 +836,7 @@ class gscredit(guoshui):
                 for i in select[1:]:
                     shuizhong = i.xpath('.//text()')
                     a += 1
+                    first_season,second_season,third_season,fourth_season=0,0,0,0
                     if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[4]:
                         first_season = shuizhong[6]
                     if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[4]:

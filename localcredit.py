@@ -1823,7 +1823,7 @@ class szcredit(object):
                                 continue
                     detail.encoding = detail.apparent_encoding
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
-
+                    #使用phantom（使用requests繁体字会乱码）
                     # dcap = dict(DesiredCapabilities.PHANTOMJS)
                     # dcap["phantomjs.page.settings.userAgent"] = (
                     #     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
@@ -2217,7 +2217,7 @@ class szcredit(object):
             self.logger.info("无股东信息")
         print(gdjg)
         print(data_dict)
-        data_dict["关联公司信息"] = gdjg
+        # data_dict["关联公司信息"] = gdjg
         infojson = json.dumps(data_dict, ensure_ascii=False)
         self.logger.info(infojson)
         params = (

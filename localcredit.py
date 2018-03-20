@@ -1762,7 +1762,7 @@ class szcredit(object):
                             if self.cn in detail.text:
                                 break
                             else:
-                                return 4
+                                continue
                     detail.encoding = detail.apparent_encoding
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
 
@@ -2473,11 +2473,7 @@ while True:
         # print(redis_cli.lpop("list"))
         sd = json.loads(ss)
         aa = run_test(sd["1"], sd["2"], sd["3"], sd["4"], sd["5"])
-        try:
-            if aa == 4:
-                redis_cli.lpush("sz_credit_list", ss)
-        except:
-            pass
+
     else:
         time.sleep(10)
         print("no task waited")

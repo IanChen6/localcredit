@@ -152,6 +152,9 @@ class gscredit(guoshui):
                             sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
                             time.sleep(sleep_time[random.randint(0, 9)])
                             continue
+                        if len(result)==0:
+                            self.user=000
+                            break
                         if resp1 is not None and resp1.status_code == 200 and result:
                             sleep_time = [18, 19, 18.5, 19.5, 18.2, 18.8, 18.1, 18.7, 18.3, 18.6]
                             time.sleep(sleep_time[random.randint(0, 9)])
@@ -177,9 +180,12 @@ class gscredit(guoshui):
                                     time.sleep(sleep_time[random.randint(0, 9)])
                                     session = requests.session()
                                     try:
-                                        proxy = sys.argv[1].replace("'", '"')
+                                        proxy_list=[{'http': 'http://bjhz:bjhz@139.199.12.61:7777', 'https': 'http://bjhz:bjhz@139.199.12.61:7777'},
+                                                    {'http': 'http://bjhz:bjhz@123.207.122.25:7777', 'https': 'http://bjhz:bjhz@123.207.122.25:7777'},
+                                                    {'http': 'http://bjhz:bjhz@123.207.125.141:7777','https': 'http://bjhz:bjhz@123.207.125.141:7777'},
+                                                    {'http': 'http://bjhz:bjhz@123.207.24.103:7777','https': 'http://bjhz:bjhz@123.207.24.103:7777'}]
+                                        proxy = proxy_list[random.randint(0,3)]
                                         self.logger.info(proxy)
-                                        proxy = json.loads(proxy)
                                         session.proxies = proxy
                                     except:
                                         self.logger.info("未传代理参数，启用本机IP")
@@ -1513,7 +1519,10 @@ class gscredit(guoshui):
             except:
                 pass
             try:
-                gsxiangqing["账号详情"] = {'账号': szxinyong['xydm'], '密码': self.pwd}
+                if len(szxinyong['xydm'])!=0:
+                    gsxiangqing["账号详情"] = {'账号': szxinyong['xydm'], '密码': self.pwd}
+                else:
+                    gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
             except:
                 gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
             dsxiangqing = json.dumps(dsxiangqing, ensure_ascii=False)
@@ -1737,9 +1746,15 @@ class szcredit(object):
                             time.sleep(sleep_time[random.randint(0, 9)])
                             session = requests.session()
                             try:
-                                proxy = sys.argv[1].replace("'", '"')
-                                self.logger.info(proxy)
-                                proxy = json.loads(proxy)
+                                proxy_list = [{'http': 'http://bjhz:bjhz@139.199.12.61:7777',
+                                               'https': 'http://bjhz:bjhz@139.199.12.61:7777'},
+                                              {'http': 'http://bjhz:bjhz@123.207.122.25:7777',
+                                               'https': 'http://bjhz:bjhz@123.207.122.25:7777'},
+                                              {'http': 'http://bjhz:bjhz@123.207.125.141:7777',
+                                               'https': 'http://bjhz:bjhz@123.207.125.141:7777'},
+                                              {'http': 'http://bjhz:bjhz@123.207.24.103:7777',
+                                               'https': 'http://bjhz:bjhz@123.207.24.103:7777'}]
+                                proxy = proxy_list[random.randint(0, 3)]
                                 session.proxies = proxy
                             except:
                                 self.logger.info("未传代理参数，启用本机IP")
@@ -1815,7 +1830,12 @@ class szcredit(object):
             get_data = data_dict["登记备案信息"]
             for i in get_data:
                 try:
-                    d1[i[0]] = i[1]
+                    if "经营场所" in i[0] or "营业场所" in i[0]:
+                        d1["住所"] = i[1]
+                    elif "注册资金" in i[0] or "投资总额" in i[0]:
+                        d1["认缴注册资本总额"] = i[1]
+                    else:
+                        d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
             data_dict["登记备案信息"] = d1
@@ -2356,6 +2376,9 @@ def run_test(user, pwd, batchid, companyid, customerid):
         szxinyong.clear()
         try:
             cd = gscredit(user, pwd, batchid, companyid, customerid, logger, sd["9"])
+            if cd.user==000:
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', "信用网无该公司信息")
+                return 0
         except:
             job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', "未能获取到账号，请重试")
             return 0

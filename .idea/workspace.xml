@@ -69,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="464">
-              <caret line="1472" column="42" lean-forward="true" selection-start-line="1472" selection-start-column="42" selection-end-line="1472" selection-end-column="42" />
+              <caret line="1823" column="41" lean-forward="true" selection-start-line="1823" selection-start-column="41" selection-end-line="1823" selection-end-column="41" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -151,8 +151,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="461" />
-    <option name="y" value="76" />
+    <option name="x" value="481" />
+    <option name="y" value="62" />
     <option name="width" value="1735" />
     <option name="height" value="983" />
   </component>
@@ -338,7 +338,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="461" y="76" width="1735" height="983" extended-state="0" />
+    <frame x="481" y="62" width="1735" height="983" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -864,7 +864,7 @@
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
-          <caret line="1472" column="42" lean-forward="true" selection-start-line="1472" selection-start-column="42" selection-end-line="1472" selection-end-column="42" />
+          <caret line="1823" column="41" lean-forward="true" selection-start-line="1823" selection-start-column="41" selection-end-line="1823" selection-end-column="41" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

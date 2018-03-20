@@ -1821,7 +1821,7 @@ class szcredit(object):
                                 break
                             else:
                                 continue
-                    detail.encoding = detail.apparent_encoding
+                    detail.encoding = 'gbk'
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
                     #使用phantom（使用requests繁体字会乱码）
                     # dcap = dict(DesiredCapabilities.PHANTOMJS)

@@ -1101,3 +1101,39 @@ Wed 21 Mar 2018 13:23:25 INFO localcredit.py 267 21808 26316 customerid:9，转�
 Wed 21 Mar 2018 13:23:25 INFO localcredit.py 268 21808 26316 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":119,\"y\":35},{\"x\":172,\"y\":74},{\"x\":215,\"y\":54}]",2018-03-21 13:23:25
 Wed 21 Mar 2018 13:23:25 INFO localcredit.py 273 21808 26316 customerid:9,成功post数据
 Wed 21 Mar 2018 13:23:47 WARNING localcredit.py 322 21808 26316 customerid:9登录失败
+Wed 21 Mar 2018 13:24:56 INFO localcredit.py 2497 21172 20188 {"4": 18282900, "3": "5590", "9": "", "6": "39.108.1.170", "1": "91440300748854225W", "2": "123456", "7": "3433", "8": "Platform", "5": 9}
+Wed 21 Mar 2018 13:25:21 INFO localcredit.py 218 21172 20188 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 13:25:21 INFO localcredit.py 232 21172 20188 未传代理参数，启用本机IP
+Wed 21 Mar 2018 13:25:23 INFO localcredit.py 258 21172 20188 customerid:9，获取验证码为：[{"x":71,"y":31},{"x":270,"y":85},{"x":220,"y":100}]
+Wed 21 Mar 2018 13:25:23 INFO localcredit.py 262 21172 20188 customerid:9，验证验证码[{"x":71,"y":31},{"x":270,"y":85},{"x":220,"y":100}]
+Wed 21 Mar 2018 13:25:23 INFO localcredit.py 265 21172 20188 customerid:9，转换tag
+Wed 21 Mar 2018 13:25:23 INFO localcredit.py 267 21172 20188 customerid:9，转换tag完成
+Wed 21 Mar 2018 13:25:23 INFO localcredit.py 268 21172 20188 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":71,\"y\":31},{\"x\":270,\"y\":85},{\"x\":220,\"y\":100}]",2018-03-21 13:25:23
+Wed 21 Mar 2018 13:25:23 INFO localcredit.py 273 21172 20188 customerid:9,成功post数据
+Wed 21 Mar 2018 13:25:28 INFO localcredit.py 292 21172 20188 customerid:9账号和密码不匹配
+Wed 21 Mar 2018 13:25:29 WARNING localcredit.py 323 21172 20188 customerid:9登录失败,开始重试
+Wed 21 Mar 2018 13:25:29 INFO localcredit.py 218 21172 20188 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 13:25:29 INFO localcredit.py 232 21172 20188 未传代理参数，启用本机IP
+Wed 21 Mar 2018 13:25:31 INFO localcredit.py 258 21172 20188 customerid:9，获取验证码为：[{"x":216,"y":34},{"x":271,"y":52},{"x":170,"y":36}]
+Wed 21 Mar 2018 13:25:31 INFO localcredit.py 262 21172 20188 customerid:9，验证验证码[{"x":216,"y":34},{"x":271,"y":52},{"x":170,"y":36}]
+Wed 21 Mar 2018 13:25:31 INFO localcredit.py 265 21172 20188 customerid:9，转换tag
+Wed 21 Mar 2018 13:25:31 INFO localcredit.py 267 21172 20188 customerid:9，转换tag完成
+Wed 21 Mar 2018 13:25:31 INFO localcredit.py 268 21172 20188 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":216,\"y\":34},{\"x\":271,\"y\":52},{\"x\":170,\"y\":36}]",2018-03-21 13:25:31
+Wed 21 Mar 2018 13:25:31 INFO localcredit.py 273 21172 20188 customerid:9,成功post数据
+Wed 21 Mar 2018 13:25:39 INFO localcredit.py 302 21172 20188 customerid:9账号和密码不匹配
+Wed 21 Mar 2018 13:25:41 WARNING localcredit.py 323 21172 20188 customerid:9登录失败,开始重试
+Wed 21 Mar 2018 13:25:41 INFO localcredit.py 218 21172 20188 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 13:25:41 INFO localcredit.py 232 21172 20188 未传代理参数，启用本机IP
+Wed 21 Mar 2018 13:25:43 INFO localcredit.py 258 21172 20188 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 13:25:43 INFO localcredit.py 218 21172 20188 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 13:25:43 INFO localcredit.py 232 21172 20188 未传代理参数，启用本机IP
+Wed 21 Mar 2018 13:25:44 INFO localcredit.py 258 21172 20188 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 13:25:44 INFO localcredit.py 218 21172 20188 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 13:25:44 INFO localcredit.py 232 21172 20188 未传代理参数，启用本机IP
+Wed 21 Mar 2018 13:25:46 INFO localcredit.py 258 21172 20188 customerid:9，获取验证码为：[{"x":171,"y":104},{"x":22,"y":103},{"x":220,"y":22}]
+Wed 21 Mar 2018 13:25:46 INFO localcredit.py 262 21172 20188 customerid:9，验证验证码[{"x":171,"y":104},{"x":22,"y":103},{"x":220,"y":22}]
+Wed 21 Mar 2018 13:25:46 INFO localcredit.py 265 21172 20188 customerid:9，转换tag
+Wed 21 Mar 2018 13:25:46 INFO localcredit.py 267 21172 20188 customerid:9，转换tag完成
+Wed 21 Mar 2018 13:25:46 INFO localcredit.py 268 21172 20188 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":171,\"y\":104},{\"x\":22,\"y\":103},{\"x\":220,\"y\":22}]",2018-03-21 13:25:46
+Wed 21 Mar 2018 13:25:46 INFO localcredit.py 273 21172 20188 customerid:9,成功post数据
+Wed 21 Mar 2018 13:25:49 INFO localcredit.py 280 21172 20188 customerid:9pass

@@ -305,7 +305,7 @@ class gscredit(guoshui):
                             try:
                                 user=self.backup
                             except:
-                                user = user.rereplace("440301", '440306', 1)
+                                user = user.replace("440301", '440306', 1)
                             print(self.user)
                             print(user)
                             print('账号和密码不匹配')

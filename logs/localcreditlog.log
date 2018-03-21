@@ -1137,3 +1137,138 @@ Wed 21 Mar 2018 13:25:46 INFO localcredit.py 267 21172 20188 customerid:9，转�
 Wed 21 Mar 2018 13:25:46 INFO localcredit.py 268 21172 20188 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":171,\"y\":104},{\"x\":22,\"y\":103},{\"x\":220,\"y\":22}]",2018-03-21 13:25:46
 Wed 21 Mar 2018 13:25:46 INFO localcredit.py 273 21172 20188 customerid:9,成功post数据
 Wed 21 Mar 2018 13:25:49 INFO localcredit.py 280 21172 20188 customerid:9pass
+Wed 21 Mar 2018 14:02:49 INFO localcredit.py 1495 21172 20188 customerid:9获取cookies
+Wed 21 Mar 2018 14:20:33 INFO localcredit.py 2527 24820 24900 {"4": 18282900, "3": "5590", "9": "\u6df1\u5733\u5e02\u5bcc\u53cb\u65b0\u5b9e\u4e1a\u6709\u9650\u516c\u53f8", "6": "39.108.1.170", "1": "", "2": "123456", "7": "3433", "8": "Platform", "5": 9}
+Wed 21 Mar 2018 14:20:43 INFO localcredit.py 74 24820 24900 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:20:43 INFO localcredit.py 81 24820 24900 {"data":[{"data":[{"apprdate":"2017-04-26","currency":"人民币","dom":"深圳市福田区滨河大道与益田路交界东南皇都广场3号楼612","entflag":"A169740","entname":"深圳市富友新实业有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2003-04-01","id":"f8ac69c715ac4eae8e3c64cd948856d9","jinyinfuben":1,"lerep":"伍兵","opetype":"GS","opfrom":"2003-04-01","opscope":"兴办实业（具体项目另行申报）；电子产品的技术开发和销售，其他国内商业、物资供销业（不含专营、专控、专卖商品及限制项目）。","opto":"2023-04-01","regcap":100,"regno":"440301103647587","rownum":1,"unifsocicrediden":"91440300748854225W"}],"name":"data","vtype":"attr"}]}
+Wed 21 Mar 2018 14:21:02 INFO localcredit.py 225 24820 24900 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:21:02 INFO localcredit.py 239 24820 24900 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:21:04 INFO localcredit.py 265 24820 24900 customerid:9，获取验证码为：[{"x":118,"y":47},{"x":65,"y":54},{"x":276,"y":44}]
+Wed 21 Mar 2018 14:21:04 INFO localcredit.py 269 24820 24900 customerid:9，验证验证码[{"x":118,"y":47},{"x":65,"y":54},{"x":276,"y":44}]
+Wed 21 Mar 2018 14:21:04 INFO localcredit.py 272 24820 24900 customerid:9，转换tag
+Wed 21 Mar 2018 14:21:04 INFO localcredit.py 274 24820 24900 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:21:04 INFO localcredit.py 275 24820 24900 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":118,\"y\":47},{\"x\":65,\"y\":54},{\"x\":276,\"y\":44}]",2018-03-21 14:21:04
+Wed 21 Mar 2018 14:21:04 INFO localcredit.py 280 24820 24900 customerid:9,成功post数据
+Wed 21 Mar 2018 14:21:32 INFO localcredit.py 299 24820 24900 customerid:9账号和密码不匹配
+Wed 21 Mar 2018 14:21:35 WARNING localcredit.py 321 24820 24900 customerid:9登录失败,开始重试
+Wed 21 Mar 2018 14:21:37 INFO localcredit.py 225 24820 24900 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:21:37 INFO localcredit.py 239 24820 24900 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:23:22 INFO localcredit.py 2527 20032 27328 {"4": 18282900, "3": "5590", "9": "\u6df1\u5733\u5e02\u5bcc\u53cb\u65b0\u5b9e\u4e1a\u6709\u9650\u516c\u53f8", "6": "39.108.1.170", "1": "", "2": "123456", "7": "3433", "8": "Platform", "5": 9}
+Wed 21 Mar 2018 14:23:32 INFO localcredit.py 74 20032 27328 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:23:32 INFO localcredit.py 81 20032 27328 {"data":[{"data":[{"apprdate":"2017-04-26","currency":"人民币","dom":"深圳市福田区滨河大道与益田路交界东南皇都广场3号楼612","entflag":"A169740","entname":"深圳市富友新实业有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2003-04-01","id":"f8ac69c715ac4eae8e3c64cd948856d9","jinyinfuben":1,"lerep":"伍兵","opetype":"GS","opfrom":"2003-04-01","opscope":"兴办实业（具体项目另行申报）；电子产品的技术开发和销售，其他国内商业、物资供销业（不含专营、专控、专卖商品及限制项目）。","opto":"2023-04-01","regcap":100,"regno":"440301103647587","rownum":1,"unifsocicrediden":"91440300748854225W"}],"name":"data","vtype":"attr"}]}
+Wed 21 Mar 2018 14:23:58 INFO localcredit.py 225 20032 27328 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:23:58 INFO localcredit.py 239 20032 27328 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:24:00 INFO localcredit.py 265 20032 27328 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 14:24:00 INFO localcredit.py 225 20032 27328 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:24:00 INFO localcredit.py 239 20032 27328 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:24:01 INFO localcredit.py 265 20032 27328 customerid:9，获取验证码为：[{"x":171,"y":48},{"x":221,"y":36},{"x":68,"y":86}]
+Wed 21 Mar 2018 14:24:02 INFO localcredit.py 269 20032 27328 customerid:9，验证验证码[{"x":171,"y":48},{"x":221,"y":36},{"x":68,"y":86}]
+Wed 21 Mar 2018 14:24:02 INFO localcredit.py 272 20032 27328 customerid:9，转换tag
+Wed 21 Mar 2018 14:24:02 INFO localcredit.py 274 20032 27328 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:24:02 INFO localcredit.py 275 20032 27328 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":171,\"y\":48},{\"x\":221,\"y\":36},{\"x\":68,\"y\":86}]",2018-03-21 14:24:02
+Wed 21 Mar 2018 14:24:02 INFO localcredit.py 280 20032 27328 customerid:9,成功post数据
+Wed 21 Mar 2018 14:24:08 INFO localcredit.py 299 20032 27328 customerid:9账号和密码不匹配
+Wed 21 Mar 2018 14:24:09 WARNING localcredit.py 321 20032 27328 customerid:9登录失败,开始重试
+Wed 21 Mar 2018 14:24:10 INFO localcredit.py 225 20032 27328 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:24:11 INFO localcredit.py 239 20032 27328 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:24:18 INFO localcredit.py 265 20032 27328 customerid:9，获取验证码为：[{"x":276,"y":18},{"x":18,"y":30},{"x":220,"y":25}]
+Wed 21 Mar 2018 14:24:19 INFO localcredit.py 269 20032 27328 customerid:9，验证验证码[{"x":276,"y":18},{"x":18,"y":30},{"x":220,"y":25}]
+Wed 21 Mar 2018 14:24:20 INFO localcredit.py 272 20032 27328 customerid:9，转换tag
+Wed 21 Mar 2018 14:24:20 INFO localcredit.py 274 20032 27328 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:24:20 INFO localcredit.py 275 20032 27328 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":276,\"y\":18},{\"x\":18,\"y\":30},{\"x\":220,\"y\":25}]",2018-03-21 14:24:19
+Wed 21 Mar 2018 14:24:21 INFO localcredit.py 280 20032 27328 customerid:9,成功post数据
+Wed 21 Mar 2018 14:25:46 INFO localcredit.py 136 20032 27328 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:26:38 INFO localcredit.py 160 20032 27328 {"status":"ok","resultlist":[{"RecordID":"3F4E911C17864C3D918466EC80D7F30F","EntName":"\u003cfont style=\u0027color:red\u0027\u003e深圳市富友新实业有限公司\u003c/font\u003e","EntRegNo":"440301103647587","EntTypeName":"有限责任公司","EstDate":"2003年04月01日"}],"msg":"共找到1条数据。 （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市富友新实业有限公司\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市富友新实业有限公司\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":""}
+Wed 21 Mar 2018 14:27:08 INFO localcredit.py 189 20032 27328 list index out of range
+Wed 21 Mar 2018 14:27:09 INFO localcredit.py 190 20032 27328 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:29:05 INFO localcredit.py 2528 25964 24656 {"4": 18282900, "3": "5590", "9": "\u6df1\u5733\u5e02\u5bcc\u53cb\u65b0\u5b9e\u4e1a\u6709\u9650\u516c\u53f8", "6": "39.108.1.170", "1": "", "2": "123456", "7": "3433", "8": "Platform", "5": 9}
+Wed 21 Mar 2018 14:29:15 INFO localcredit.py 74 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:29:15 INFO localcredit.py 81 25964 24656 {"data":[{"data":[{"apprdate":"2017-04-26","currency":"人民币","dom":"深圳市福田区滨河大道与益田路交界东南皇都广场3号楼612","entflag":"A169740","entname":"深圳市富友新实业有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2003-04-01","id":"f8ac69c715ac4eae8e3c64cd948856d9","jinyinfuben":1,"lerep":"伍兵","opetype":"GS","opfrom":"2003-04-01","opscope":"兴办实业（具体项目另行申报）；电子产品的技术开发和销售，其他国内商业、物资供销业（不含专营、专控、专卖商品及限制项目）。","opto":"2023-04-01","regcap":100,"regno":"440301103647587","rownum":1,"unifsocicrediden":"91440300748854225W"}],"name":"data","vtype":"attr"}]}
+Wed 21 Mar 2018 14:29:19 INFO localcredit.py 225 25964 24656 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:29:19 INFO localcredit.py 239 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:29:21 INFO localcredit.py 265 25964 24656 customerid:9，获取验证码为：[{"x":173,"y":103},{"x":118,"y":22},{"x":20,"y":81}]
+Wed 21 Mar 2018 14:29:21 INFO localcredit.py 269 25964 24656 customerid:9，验证验证码[{"x":173,"y":103},{"x":118,"y":22},{"x":20,"y":81}]
+Wed 21 Mar 2018 14:29:21 INFO localcredit.py 272 25964 24656 customerid:9，转换tag
+Wed 21 Mar 2018 14:29:21 INFO localcredit.py 274 25964 24656 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:29:21 INFO localcredit.py 275 25964 24656 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":173,\"y\":103},{\"x\":118,\"y\":22},{\"x\":20,\"y\":81}]",2018-03-21 14:29:21
+Wed 21 Mar 2018 14:29:21 INFO localcredit.py 280 25964 24656 customerid:9,成功post数据
+Wed 21 Mar 2018 14:29:27 INFO localcredit.py 299 25964 24656 customerid:9账号和密码不匹配
+Wed 21 Mar 2018 14:29:27 WARNING localcredit.py 322 25964 24656 customerid:9登录失败,开始重试
+Wed 21 Mar 2018 14:29:27 INFO localcredit.py 225 25964 24656 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:29:27 INFO localcredit.py 239 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:29:29 INFO localcredit.py 265 25964 24656 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 14:29:29 INFO localcredit.py 225 25964 24656 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:29:29 INFO localcredit.py 239 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:29:30 INFO localcredit.py 265 25964 24656 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 14:29:30 INFO localcredit.py 225 25964 24656 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:29:30 INFO localcredit.py 239 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:29:32 INFO localcredit.py 265 25964 24656 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 14:29:32 INFO localcredit.py 225 25964 24656 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:29:32 INFO localcredit.py 239 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:29:33 INFO localcredit.py 265 25964 24656 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 14:29:33 INFO localcredit.py 225 25964 24656 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:29:33 INFO localcredit.py 239 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:29:35 INFO localcredit.py 265 25964 24656 customerid:9，获取验证码为：[{"x":18,"y":41},{"x":272,"y":82},{"x":221,"y":101}]
+Wed 21 Mar 2018 14:29:35 INFO localcredit.py 269 25964 24656 customerid:9，验证验证码[{"x":18,"y":41},{"x":272,"y":82},{"x":221,"y":101}]
+Wed 21 Mar 2018 14:29:35 INFO localcredit.py 272 25964 24656 customerid:9，转换tag
+Wed 21 Mar 2018 14:29:35 INFO localcredit.py 274 25964 24656 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:29:35 INFO localcredit.py 275 25964 24656 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":18,\"y\":41},{\"x\":272,\"y\":82},{\"x\":221,\"y\":101}]",2018-03-21 14:29:35
+Wed 21 Mar 2018 14:29:35 INFO localcredit.py 280 25964 24656 customerid:9,成功post数据
+Wed 21 Mar 2018 14:30:17 INFO localcredit.py 136 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:30:45 INFO localcredit.py 160 25964 24656 {"status":"ok","resultlist":[{"RecordID":"3F4E911C17864C3D918466EC80D7F30F","EntName":"\u003cfont style=\u0027color:red\u0027\u003e深圳市富友新实业有限公司\u003c/font\u003e","EntRegNo":"440301103647587","EntTypeName":"有限责任公司","EstDate":"2003年04月01日"}],"msg":"共找到1条数据。 （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市富友新实业有限公司\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市富友新实业有限公司\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":""}
+Wed 21 Mar 2018 14:31:06 INFO localcredit.py 189 25964 24656 list index out of range
+Wed 21 Mar 2018 14:31:06 INFO localcredit.py 190 25964 24656 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:33:08 INFO localcredit.py 2528 20252 22720 {"4": 18282900, "3": "5590", "9": "\u6df1\u5733\u5e02\u5bcc\u53cb\u65b0\u5b9e\u4e1a\u6709\u9650\u516c\u53f8", "6": "39.108.1.170", "1": "", "2": "123456", "7": "3433", "8": "Platform", "5": 9}
+Wed 21 Mar 2018 14:33:18 INFO localcredit.py 74 20252 22720 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:33:18 INFO localcredit.py 81 20252 22720 {"data":[{"data":[{"apprdate":"2017-04-26","currency":"人民币","dom":"深圳市福田区滨河大道与益田路交界东南皇都广场3号楼612","entflag":"A169740","entname":"深圳市富友新实业有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2003-04-01","id":"f8ac69c715ac4eae8e3c64cd948856d9","jinyinfuben":1,"lerep":"伍兵","opetype":"GS","opfrom":"2003-04-01","opscope":"兴办实业（具体项目另行申报）；电子产品的技术开发和销售，其他国内商业、物资供销业（不含专营、专控、专卖商品及限制项目）。","opto":"2023-04-01","regcap":100,"regno":"440301103647587","rownum":1,"unifsocicrediden":"91440300748854225W"}],"name":"data","vtype":"attr"}]}
+Wed 21 Mar 2018 14:33:24 INFO localcredit.py 225 20252 22720 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:33:24 INFO localcredit.py 239 20252 22720 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:33:26 INFO localcredit.py 265 20252 22720 customerid:9，获取验证码为：[{"x":68,"y":40},{"x":19,"y":73},{"x":118,"y":42}]
+Wed 21 Mar 2018 14:33:26 INFO localcredit.py 269 20252 22720 customerid:9，验证验证码[{"x":68,"y":40},{"x":19,"y":73},{"x":118,"y":42}]
+Wed 21 Mar 2018 14:33:26 INFO localcredit.py 272 20252 22720 customerid:9，转换tag
+Wed 21 Mar 2018 14:33:26 INFO localcredit.py 274 20252 22720 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:33:26 INFO localcredit.py 275 20252 22720 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":68,\"y\":40},{\"x\":19,\"y\":73},{\"x\":118,\"y\":42}]",2018-03-21 14:33:26
+Wed 21 Mar 2018 14:33:26 INFO localcredit.py 280 20252 22720 customerid:9,成功post数据
+Wed 21 Mar 2018 14:33:29 INFO localcredit.py 299 20252 22720 customerid:9账号和密码不匹配
+Wed 21 Mar 2018 14:33:29 WARNING localcredit.py 322 20252 22720 customerid:9登录失败,开始重试
+Wed 21 Mar 2018 14:33:29 INFO localcredit.py 225 20252 22720 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:33:29 INFO localcredit.py 239 20252 22720 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:33:30 INFO localcredit.py 265 20252 22720 customerid:9，获取验证码为：[{"x":168,"y":90},{"x":24,"y":96},{"x":122,"y":93}]
+Wed 21 Mar 2018 14:33:30 INFO localcredit.py 269 20252 22720 customerid:9，验证验证码[{"x":168,"y":90},{"x":24,"y":96},{"x":122,"y":93}]
+Wed 21 Mar 2018 14:33:30 INFO localcredit.py 272 20252 22720 customerid:9，转换tag
+Wed 21 Mar 2018 14:33:30 INFO localcredit.py 274 20252 22720 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:33:30 INFO localcredit.py 275 20252 22720 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":168,\"y\":90},{\"x\":24,\"y\":96},{\"x\":122,\"y\":93}]",2018-03-21 14:33:30
+Wed 21 Mar 2018 14:33:31 INFO localcredit.py 280 20252 22720 customerid:9,成功post数据
+Wed 21 Mar 2018 14:34:15 INFO localcredit.py 136 20252 22720 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:34:40 INFO localcredit.py 160 20252 22720 {"status":"ok","resultlist":[{"RecordID":"3F4E911C17864C3D918466EC80D7F30F","EntName":"\u003cfont style=\u0027color:red\u0027\u003e深圳市富友新实业有限公司\u003c/font\u003e","EntRegNo":"440301103647587","EntTypeName":"有限责任公司","EstDate":"2003年04月01日"}],"msg":"共找到1条数据。 （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市富友新实业有限公司\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市富友新实业有限公司\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":""}
+Wed 21 Mar 2018 14:35:02 INFO localcredit.py 189 20252 22720 list index out of range
+Wed 21 Mar 2018 14:35:02 INFO localcredit.py 190 20252 22720 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:36:15 INFO localcredit.py 2528 26240 24004 {"4": 18282900, "3": "5590", "9": "\u6df1\u5733\u5e02\u5bcc\u53cb\u65b0\u5b9e\u4e1a\u6709\u9650\u516c\u53f8", "6": "39.108.1.170", "1": "", "2": "123456", "7": "3433", "8": "Platform", "5": 9}
+Wed 21 Mar 2018 14:36:25 INFO localcredit.py 74 26240 24004 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:36:25 INFO localcredit.py 81 26240 24004 {"data":[{"data":[{"apprdate":"2017-04-26","currency":"人民币","dom":"深圳市福田区滨河大道与益田路交界东南皇都广场3号楼612","entflag":"A169740","entname":"深圳市富友新实业有限公司","entstatus":"开业（存续）","enttype":"有限责任公司","estdate":"2003-04-01","id":"f8ac69c715ac4eae8e3c64cd948856d9","jinyinfuben":1,"lerep":"伍兵","opetype":"GS","opfrom":"2003-04-01","opscope":"兴办实业（具体项目另行申报）；电子产品的技术开发和销售，其他国内商业、物资供销业（不含专营、专控、专卖商品及限制项目）。","opto":"2023-04-01","regcap":100,"regno":"440301103647587","rownum":1,"unifsocicrediden":"91440300748854225W"}],"name":"data","vtype":"attr"}]}
+Wed 21 Mar 2018 14:36:29 INFO localcredit.py 225 26240 24004 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:36:29 INFO localcredit.py 239 26240 24004 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:36:31 INFO localcredit.py 265 26240 24004 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 14:36:31 INFO localcredit.py 225 26240 24004 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:36:31 INFO localcredit.py 239 26240 24004 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:36:32 INFO localcredit.py 265 26240 24004 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 14:36:32 INFO localcredit.py 225 26240 24004 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:36:32 INFO localcredit.py 239 26240 24004 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:36:35 INFO localcredit.py 265 26240 24004 customerid:9，获取验证码为：[{"x":221,"y":23},{"x":116,"y":61},{"x":22,"y":99}]
+Wed 21 Mar 2018 14:36:35 INFO localcredit.py 269 26240 24004 customerid:9，验证验证码[{"x":221,"y":23},{"x":116,"y":61},{"x":22,"y":99}]
+Wed 21 Mar 2018 14:36:35 INFO localcredit.py 272 26240 24004 customerid:9，转换tag
+Wed 21 Mar 2018 14:36:35 INFO localcredit.py 274 26240 24004 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:36:35 INFO localcredit.py 275 26240 24004 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":221,\"y\":23},{\"x\":116,\"y\":61},{\"x\":22,\"y\":99}]",2018-03-21 14:36:35
+Wed 21 Mar 2018 14:36:36 INFO localcredit.py 280 26240 24004 customerid:9,成功post数据
+Wed 21 Mar 2018 14:37:02 INFO localcredit.py 299 26240 24004 customerid:9账号和密码不匹配
+Wed 21 Mar 2018 14:37:02 WARNING localcredit.py 322 26240 24004 customerid:9登录失败,开始重试
+Wed 21 Mar 2018 14:37:02 INFO localcredit.py 225 26240 24004 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 14:37:02 INFO localcredit.py 239 26240 24004 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:37:03 INFO localcredit.py 265 26240 24004 customerid:9，获取验证码为：[{"x":69,"y":84},{"x":20,"y":91},{"x":270,"y":36}]
+Wed 21 Mar 2018 14:37:03 INFO localcredit.py 269 26240 24004 customerid:9，验证验证码[{"x":69,"y":84},{"x":20,"y":91},{"x":270,"y":36}]
+Wed 21 Mar 2018 14:37:03 INFO localcredit.py 272 26240 24004 customerid:9，转换tag
+Wed 21 Mar 2018 14:37:03 INFO localcredit.py 274 26240 24004 customerid:9，转换tag完成
+Wed 21 Mar 2018 14:37:03 INFO localcredit.py 275 26240 24004 customerid:9，91440300748854225W,7c4a8d09ca3762af61e59520943dc26494f8941b,"[{\"x\":69,\"y\":84},{\"x\":20,\"y\":91},{\"x\":270,\"y\":36}]",2018-03-21 14:37:03
+Wed 21 Mar 2018 14:37:03 INFO localcredit.py 280 26240 24004 customerid:9,成功post数据
+Wed 21 Mar 2018 14:37:40 INFO localcredit.py 136 26240 24004 未传代理参数，启用本机IP
+Wed 21 Mar 2018 14:38:11 INFO localcredit.py 160 26240 24004 {"status":"ok","resultlist":[],"msg":"未查询到该企业的信息，请重新输入！ （\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市富友新实业有限公司\u0026Type=9\u0027\u003e\u003cfont color=blue\u003e非企业组织（社团、学校等）\u003c/font\u003e\u003c/a\u003e或\u003ca href=\u0027newSZNoMatchItem.aspx?NameKey=深圳市富友新实业有限公司\u0026Type=a\u0027\u003e\u003cfont color=blue\u003e 注册登记名称不一致市场主体查询\u003c/font\u003e\u003c/a\u003e）","tipMsg":"如按名称未查询到相关信息，您可以增加名称关键字或勾选右侧按钮根据企业全称进行查询，也可改用注册号、统一信用代码进行查询！"}

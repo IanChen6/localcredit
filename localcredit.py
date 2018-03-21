@@ -45,6 +45,7 @@ class gscredit(guoshui):
     def __init__(self, user, pwd, batchid, companyid, customerid, logger, companyname):
         # self.logger = create_logger(path=os.path.basename(__file__) + str(customerid))
         self.logger = logger
+        self.companyname = companyname
         if companyname and not user:
             try:
                 time.sleep(10)
@@ -95,108 +96,7 @@ class gscredit(guoshui):
                 self.user = unifsocicrediden
             except:
                 try:
-                    time.sleep(30)
-                    headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
-                               'Accept-Language': 'zh-CN,zh;q=0.9',
-                               'Accept-Encoding': 'gzip, deflate, br',
-                               'Connection': 'keep-alive',
-                               'Host': 'www.szcredit.org.cn',
-                               'Cookie': 'UM_distinctid=160a1f738438cb-047baf52e99fc4-e323462-232800-160a1f73844679; ASP.NET_SessionId=4bxqhcptbvetxqintxwgshll',
-                               'Origin': 'https://www.szcredit.org.cn',
-                               'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                               'Referer': 'https://www.szcredit.org.cn/web/gspt/newGSPTList.aspx?keyword=%u534E%u88D4&codeR=28',
-                               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
-                               'X-Requested-With': 'XMLHttpRequest',
-                               }
-                    for t in range(3):
-                        session = requests.session()
-                        try:
-                            self.logger.info(type(sys.argv[1]))
-                            proxy = sys.argv[1].replace("'", '"')
-                            self.logger.info(proxy)
-                            proxy = json.loads(proxy)
-                            session.proxies = proxy
-                        except:
-                            self.logger.info("未传代理参数，启用本机IP")
-                        yzm_url = 'https://www.szcredit.org.cn/web/WebPages/Member/CheckCode.aspx?'
-                        yzm = session.get(url=yzm_url, headers=headers)
-                        # 处理验证码
-                        # with open("{}yzm.jpg".format(self.batchid), "wb") as f:
-                        #     f.write(yzm.content)
-                        #     f.close()
-                        # with open("{}yzm.jpg".format(self.batchid), 'rb') as f:
-                        base64_data = str(base64.b64encode(yzm.content))
-                        base64_data = "data:image/jpg;base64," + base64_data[2:-1]
-                        post_data = {"a": 2, "b": base64_data}
-                        post_data = json.dumps({"a": 2, "b": base64_data})
-                        res = session.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data)
-                        # print(res.text)
-                        # f.close()
-                        postdata = {'action': 'GetEntList',
-                                    'keyword': companyname,
-                                    'type': 'query',
-                                    'ckfull': 'false',
-                                    'yzmResult': res.text
-                                    }
-                        resp1 = session.post(url='https://www.szcredit.org.cn/web/AJax/Ajax.ashx',
-                                             headers=headers,
-                                             data=postdata)
-                        self.logger.info(resp1.text)
-                        resp = resp1.json()
-                        try:
-                            result = resp['resultlist']
-                        except Exception as e:
-                            self.logger.warn(e)
-                            self.logger.info(resp)
-                            self.logger.info("网络连接失败")
-                            sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
-                            time.sleep(sleep_time[random.randint(0, 9)])
-                            continue
-                        if len(result)==0:
-                            self.user=000
-                            break
-                        if resp1 is not None and resp1.status_code == 200 and result:
-                            sleep_time = [18, 19, 18.5, 19.5, 18.2, 18.8, 18.1, 18.7, 18.3, 18.6]
-                            time.sleep(sleep_time[random.randint(0, 9)])
-                            result_dict = result[0]
-                            print(result_dict["RecordID"])  # 获取ID
-                            detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(
-                                result_dict["RecordID"])
-                            session = requests.session()
-                            try:
-                                self.logger.info(type(sys.argv[1]))
-                                proxy = sys.argv[1].replace("'", '"')
-                                self.logger.info(proxy)
-                                proxy = json.loads(proxy)
-                                session.proxies = proxy
-                            except Exception as e:
-                                self.logger.info(e)
-                                self.logger.info("未传代理参数，启用本机IP")
-                            detail = session.get(url=detai_url, headers=headers, timeout=30)
-                            for i in range(3):
-                                if companyname not in detail.text:
-                                    self.logger.info("您的查询过于频繁，请稍候再查")
-                                    sleep_time = [53, 54, 53.5, 54.5, 53.2, 53.8, 53.1, 53.7, 53.3, 53.6]
-                                    time.sleep(sleep_time[random.randint(0, 9)])
-                                    session = requests.session()
-                                    try:
-                                        proxy_list=[{'http': 'http://bjhz:bjhz@139.199.12.61:7777', 'https': 'http://bjhz:bjhz@139.199.12.61:7777'},
-                                                    {'http': 'http://bjhz:bjhz@123.207.122.25:7777', 'https': 'http://bjhz:bjhz@123.207.122.25:7777'},
-                                                    {'http': 'http://bjhz:bjhz@123.207.125.141:7777','https': 'http://bjhz:bjhz@123.207.125.141:7777'},
-                                                    {'http': 'http://bjhz:bjhz@123.207.24.103:7777','https': 'http://bjhz:bjhz@123.207.24.103:7777'}]
-                                        proxy = proxy_list[random.randint(0,3)]
-                                        self.logger.info(proxy)
-                                        session.proxies = proxy
-                                    except:
-                                        self.logger.info("未传代理参数，启用本机IP")
-                                    detail = session.get(detai_url, headers=headers, timeout=30)
-                                    if companyname in detail.text:
-                                        break
-                            detail.encoding = detail.apparent_encoding
-                            root = etree.HTML(detail.text)
-                            self.user = root.xpath('//*[@id="tb_0"]/tr[2]/td[2]/text()')[0]
-                            self.backup=root.xpath('//*[@id="tb_4"]/tbody/tr[1]/td[2]/text()')[0]
-                            break
+                    self.getuser()
                 except Exception as e:
                     print(e)
                     pass
@@ -207,9 +107,117 @@ class gscredit(guoshui):
         self.companyid = companyid
         self.customerid = customerid
         self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
+        self.backup="0"
         if not os.path.exists('resource/{}'.format(self.user)):
             os.mkdir('resource/{}'.format(self.user))
-        self.companyname = companyname
+
+    def getuser(self):
+        time.sleep(30)
+        headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                   'Accept-Language': 'zh-CN,zh;q=0.9',
+                   'Accept-Encoding': 'gzip, deflate, br',
+                   'Connection': 'keep-alive',
+                   'Host': 'www.szcredit.org.cn',
+                   'Cookie': 'UM_distinctid=160a1f738438cb-047baf52e99fc4-e323462-232800-160a1f73844679; ASP.NET_SessionId=4bxqhcptbvetxqintxwgshll',
+                   'Origin': 'https://www.szcredit.org.cn',
+                   'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                   'Referer': 'https://www.szcredit.org.cn/web/gspt/newGSPTList.aspx?keyword=%u534E%u88D4&codeR=28',
+                   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+                   'X-Requested-With': 'XMLHttpRequest',
+                   }
+        for t in range(3):
+            session = requests.session()
+            try:
+                self.logger.info(type(sys.argv[1]))
+                proxy = sys.argv[1].replace("'", '"')
+                self.logger.info(proxy)
+                proxy = json.loads(proxy)
+                session.proxies = proxy
+            except:
+                self.logger.info("未传代理参数，启用本机IP")
+            yzm_url = 'https://www.szcredit.org.cn/web/WebPages/Member/CheckCode.aspx?'
+            yzm = session.get(url=yzm_url, headers=headers)
+            # 处理验证码
+            # with open("{}yzm.jpg".format(self.batchid), "wb") as f:
+            #     f.write(yzm.content)
+            #     f.close()
+            # with open("{}yzm.jpg".format(self.batchid), 'rb') as f:
+            base64_data = str(base64.b64encode(yzm.content))
+            base64_data = "data:image/jpg;base64," + base64_data[2:-1]
+            post_data = {"a": 2, "b": base64_data}
+            post_data = json.dumps({"a": 2, "b": base64_data})
+            res = session.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data)
+            # print(res.text)
+            # f.close()
+            postdata = {'action': 'GetEntList',
+                        'keyword': self.companyname,
+                        'type': 'query',
+                        'ckfull': 'false',
+                        'yzmResult': res.text
+                        }
+            resp1 = session.post(url='https://www.szcredit.org.cn/web/AJax/Ajax.ashx',
+                                 headers=headers,
+                                 data=postdata)
+            self.logger.info(resp1.text)
+            resp = resp1.json()
+            try:
+                result = resp['resultlist']
+            except Exception as e:
+                self.logger.warn(e)
+                self.logger.info(resp)
+                self.logger.info("网络连接失败")
+                sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
+                time.sleep(sleep_time[random.randint(0, 9)])
+                continue
+            if len(result) == 0:
+                self.user = 000
+                break
+            if resp1 is not None and resp1.status_code == 200 and result:
+                sleep_time = [18, 19, 18.5, 19.5, 18.2, 18.8, 18.1, 18.7, 18.3, 18.6]
+                time.sleep(sleep_time[random.randint(0, 9)])
+                result_dict = result[0]
+                print(result_dict["RecordID"])  # 获取ID
+                detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(
+                    result_dict["RecordID"])
+                session = requests.session()
+                try:
+                    self.logger.info(type(sys.argv[1]))
+                    proxy = sys.argv[1].replace("'", '"')
+                    self.logger.info(proxy)
+                    proxy = json.loads(proxy)
+                    session.proxies = proxy
+                except Exception as e:
+                    self.logger.info(e)
+                    self.logger.info("未传代理参数，启用本机IP")
+                detail = session.get(url=detai_url, headers=headers, timeout=30)
+                for i in range(3):
+                    if self.companyname not in detail.text:
+                        self.logger.info("您的查询过于频繁，请稍候再查")
+                        sleep_time = [53, 54, 53.5, 54.5, 53.2, 53.8, 53.1, 53.7, 53.3, 53.6]
+                        time.sleep(sleep_time[random.randint(0, 9)])
+                        session = requests.session()
+                        try:
+                            proxy_list = [{'http': 'http://bjhz:bjhz@139.199.12.61:7777',
+                                           'https': 'http://bjhz:bjhz@139.199.12.61:7777'},
+                                          {'http': 'http://bjhz:bjhz@123.207.122.25:7777',
+                                           'https': 'http://bjhz:bjhz@123.207.122.25:7777'},
+                                          {'http': 'http://bjhz:bjhz@123.207.125.141:7777',
+                                           'https': 'http://bjhz:bjhz@123.207.125.141:7777'},
+                                          {'http': 'http://bjhz:bjhz@123.207.24.103:7777',
+                                           'https': 'http://bjhz:bjhz@123.207.24.103:7777'}]
+                            proxy = proxy_list[random.randint(0, 3)]
+                            self.logger.info(proxy)
+                            session.proxies = proxy
+                        except:
+                            self.logger.info("未传代理参数，启用本机IP")
+                        detail = session.get(detai_url, headers=headers, timeout=30)
+                        if self.companyname in detail.text:
+                            break
+                detail.encoding = detail.apparent_encoding
+                root = etree.HTML(detail.text)
+                self.user = root.xpath('//*[@id="tb_0"]/tr[2]/td[2]/text()')[0]
+                self.backup = root.xpath('//*[@id="tb_4"]/tr[1]/td[2]/text()')[0]
+                break
 
     def login(self):
         try_times = 0
@@ -218,7 +226,7 @@ class gscredit(guoshui):
             self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
             try_times += 1
             if try_times > 10:
-                time.sleep(1)
+                time.sleep(2)
             session = requests.session()
             # proxy_list = get_all_proxie()
             # proxy = proxy_list[random.randint(0, len(proxy_list) - 1)]
@@ -291,21 +299,13 @@ class gscredit(guoshui):
                             print('账号和密码不匹配')
                             self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
                             status = "账号和密码不匹配"
-                        elif "440300" in user and len(user)==15:
+                        elif len(user)==15:
                             try:
+                                self.getuser()
                                 user=self.backup
-                            except:
+                            except Exception as e:
                                 user = user.replace("440300",'440301',1)
-                            print(self.user)
-                            print(user)
-                            print('账号和密码不匹配')
-                            self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
-                            status = "账号和密码不匹配"
-                        elif "440301" in user and len(user)==15:
-                            try:
-                                user=self.backup
-                            except:
-                                user = user.replace("440301", '440306', 1)
+                                print(e)
                             print(self.user)
                             print(user)
                             print('账号和密码不匹配')
@@ -762,8 +762,40 @@ class gscredit(guoshui):
         browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
         time.sleep(3)
         content = browser.page_source
-        # with open("jieguo.html",'w') as f:
-        #     f.write(content)
+        if "度预缴纳税申报表"  not in content:
+            for nm in range(10):
+                if "度预缴纳税申报表"  not in content:
+                    self.logger.info("查询季报失败，重新查询")
+                    jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
+                    browser.get(url=jk_url)
+                    time.sleep(0.5)
+                    content = browser.page_source
+                    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+                    time.sleep(0.1)
+                    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
+                    time.sleep(0.1)
+                    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+                    time.sleep(0.1)
+                    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(20170101)
+                    time.sleep(0.1)
+                    # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+                    # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+                    # 所属日期
+                    browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").clear()
+                    time.sleep(0.1)
+                    browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").send_keys(20171001)
+                    time.sleep(0.1)
+                    browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
+                    time.sleep(0.1)
+                    browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(20171231)
+                    time.sleep(0.1)
+                    browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+                    time.sleep(3)
+                    content = browser.page_source
+                else:
+                    break
+        else:
+            self.logger.info("成功查询到数据")
         root = etree.HTML(content)
         select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
         a = 1

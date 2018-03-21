@@ -290,6 +290,13 @@ class gscredit(guoshui):
                             print('账号和密码不匹配')
                             self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
                             status = "账号和密码不匹配"
+                        elif "440300" in user and len(user)==15:
+                            user = user.rereplace("440300",'440301',1)
+                            print(self.user)
+                            print(user)
+                            print('账号和密码不匹配')
+                            self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
+                            status = "账号和密码不匹配"
                         else:
                             print('账号和密码不匹配')
                             self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))

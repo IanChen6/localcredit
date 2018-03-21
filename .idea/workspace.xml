@@ -68,8 +68,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="1904" column="19" lean-forward="true" selection-start-line="1904" selection-start-column="19" selection-end-line="1904" selection-end-column="19" />
+            <state relative-caret-position="255">
+              <caret line="1489" column="51" lean-forward="false" selection-start-line="1489" selection-start-column="44" selection-end-line="1489" selection-end-column="51" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -126,8 +126,8 @@
       <find>sz</find>
       <find>ynsds</find>
       <find>phantom</find>
-      <find>gsnd</find>
       <find>phanto</find>
+      <find>gsnd</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,8 +151,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="809" />
-    <option name="y" value="36" />
+    <option name="x" value="659" />
+    <option name="y" value="94" />
     <option name="width" value="1735" />
     <option name="height" value="983" />
   </component>
@@ -338,7 +338,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="809" y="36" width="1735" height="983" extended-state="0" />
+    <frame x="659" y="94" width="1735" height="983" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -375,42 +375,42 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2435</line>
+          <line>2460</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2370</line>
+          <line>2395</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1566</line>
+          <line>1591</line>
           <option name="timeStamp" value="210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2490</line>
+          <line>2515</line>
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2491</line>
+          <line>2516</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>635</line>
+          <line>660</line>
           <option name="timeStamp" value="218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1135</line>
+          <line>1160</line>
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1575</line>
+          <line>1600</line>
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -420,32 +420,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1818</line>
+          <line>1843</line>
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1749</line>
+          <line>1774</line>
           <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2484</line>
+          <line>2509</line>
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2251</line>
+          <line>2276</line>
           <option name="timeStamp" value="234" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>614</line>
+          <line>639</line>
           <option name="timeStamp" value="235" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1878</line>
+          <line>1903</line>
           <option name="timeStamp" value="237" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -460,22 +460,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1609</line>
+          <line>1634</line>
           <option name="timeStamp" value="244" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1930</line>
+          <line>1955</line>
           <option name="timeStamp" value="249" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2469</line>
+          <line>2494</line>
           <option name="timeStamp" value="250" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>898</line>
+          <line>923</line>
           <option name="timeStamp" value="253" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -495,17 +495,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1578</line>
+          <line>1603</line>
           <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1153</line>
+          <line>1178</line>
           <option name="timeStamp" value="272" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1629</line>
+          <line>1654</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -515,7 +515,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2454</line>
+          <line>2479</line>
           <option name="timeStamp" value="275" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -525,42 +525,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>693</line>
+          <line>718</line>
           <option name="timeStamp" value="278" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>870</line>
+          <line>895</line>
           <option name="timeStamp" value="279" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1437</line>
+          <line>1462</line>
           <option name="timeStamp" value="280" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1380</line>
+          <line>1405</line>
           <option name="timeStamp" value="286" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1054</line>
+          <line>1079</line>
           <option name="timeStamp" value="287" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>952</line>
+          <line>977</line>
           <option name="timeStamp" value="288" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>762</line>
+          <line>787</line>
           <option name="timeStamp" value="289" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>812</line>
+          <line>837</line>
           <option name="timeStamp" value="290" />
         </line-breakpoint>
       </breakpoints>
@@ -863,8 +863,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="1904" column="19" lean-forward="true" selection-start-line="1904" selection-start-column="19" selection-end-line="1904" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="1489" column="51" lean-forward="false" selection-start-line="1489" selection-start-column="44" selection-end-line="1489" selection-end-column="51" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

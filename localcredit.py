@@ -502,12 +502,37 @@ class gscredit(guoshui):
                     break
         else:
             self.logger.info("查询成功")
+        if "中华人民共和国企业所得税年度纳税申报表"  not in content:
+            for lj in range(10):
+                if "中华人民共和国企业所得税年度纳税申报表"  not in content:
+                    self.logger.info("查询年报失败，重新查询")
+                    jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
+                    browser.get(url=jk_url)
+                    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
+                    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(20170101)
+                    browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+                    # 所属日期
+                    browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").send_keys(20160101)
+                    browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(20161231)
+                    browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+                    time.sleep(3)
+                    content = browser.page_source
+                else:
+                    break
+        else:
+            self.logger.info("成功查询到数据")
         root = etree.HTML(content)
         select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
         a = 1
         for i in select[1:]:
             shuizhong = i.xpath('.//text()')
             a += 1
+            self.logger.info("成功查询到数据")
             if "中华人民共和国企业所得税年度纳税申报表" in shuizhong[1] and "查询申报表" in shuizhong and "申报成功" in shuizhong:
                 browser.find_element_by_xpath(
                     '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()

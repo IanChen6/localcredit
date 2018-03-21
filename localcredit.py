@@ -195,6 +195,7 @@ class gscredit(guoshui):
                             detail.encoding = detail.apparent_encoding
                             root = etree.HTML(detail.text)
                             self.user = root.xpath('//*[@id="tb_0"]/tr[2]/td[2]/text()')[0]
+                            self.backup=root.xpath('//*[@id="tb_4"]/tbody/tr[1]/td[2]/text()')[0]
                             break
                 except Exception as e:
                     print(e)
@@ -213,7 +214,7 @@ class gscredit(guoshui):
     def login(self):
         try_times = 0
         user = self.user
-        while try_times <= 14:
+        while try_times <= 20:
             self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
             try_times += 1
             if try_times > 10:
@@ -291,7 +292,20 @@ class gscredit(guoshui):
                             self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
                             status = "账号和密码不匹配"
                         elif "440300" in user and len(user)==15:
-                            user = user.rereplace("440300",'440301',1)
+                            try:
+                                user=self.backup
+                            except:
+                                user = user.rereplace("440300",'440301',1)
+                            print(self.user)
+                            print(user)
+                            print('账号和密码不匹配')
+                            self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
+                            status = "账号和密码不匹配"
+                        elif "440301" in user and len(user)==15:
+                            try:
+                                user=self.backup
+                            except:
+                                user = user.rereplace("440301", '440306', 1)
                             print(self.user)
                             print(user)
                             print('账号和密码不匹配')
@@ -1500,12 +1514,12 @@ class gscredit(guoshui):
             dcap["phantomjs.page.settings.loadImages"] = True
             service_args = []
             service_args.append('--webdriver=szgs')
-            # browser = webdriver.PhantomJS(
-            #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
-            #     desired_capabilities=dcap, service_args=service_args)
             browser = webdriver.PhantomJS(
-                executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-                desired_capabilities=dcap)
+                executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
+                desired_capabilities=dcap, service_args=service_args)
+            # browser = webdriver.PhantomJS(
+            #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+            #     desired_capabilities=dcap)
             browser.implicitly_wait(10)
             browser.viewportSize = {'width': 2200, 'height': 2200}
             browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
@@ -1628,7 +1642,8 @@ class gscredit(guoshui):
                 pass
             try:
                 if len(szxinyong['xydm'])!=0:
-                    gsxiangqing["账号详情"] = {'账号': szxinyong['xydm'], '密码': self.pwd}
+                    if self.user in szxinyong['xydm']:
+                        gsxiangqing["账号详情"] = {'账号': szxinyong['xydm'], '密码': self.pwd}
                 else:
                     gsxiangqing["账号详情"] = {'账号': self.user, '密码': self.pwd}
             except:

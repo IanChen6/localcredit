@@ -68,8 +68,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="1645" column="59" lean-forward="true" selection-start-line="1645" selection-start-column="59" selection-end-line="1645" selection-end-column="59" />
+            <state relative-caret-position="548">
+              <caret line="1523" column="66" lean-forward="true" selection-start-line="1523" selection-start-column="66" selection-end-line="1523" selection-end-column="66" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -116,7 +116,6 @@
       <find>您的查询</find>
       <find>login</find>
       <find>gsc</find>
-      <find>phan</find>
       <find>aa</find>
       <find>4</find>
       <find>phant</find>
@@ -128,6 +127,7 @@
       <find>phanto</find>
       <find>gsnd</find>
       <find>phantom</find>
+      <find>phan</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -868,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="1645" column="59" lean-forward="true" selection-start-line="1645" selection-start-column="59" selection-end-line="1645" selection-end-column="59" />
+        <state relative-caret-position="548">
+          <caret line="1523" column="66" lean-forward="true" selection-start-line="1523" selection-start-column="66" selection-end-line="1523" selection-end-column="66" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

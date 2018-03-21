@@ -1906,7 +1906,7 @@ class szcredit(object):
             get_data = data_dict["登记备案信息"]
             for i in get_data:
                 try:
-                    if "经营场所" in i[0] or "营业场所" in i[0]:
+                    if "经营场所" in i[0] or "营业场所" in i[0] or "地址" in i[0]:
                         d1["住所"] = i[1]
                     elif "注册资金" in i[0] or "投资总额" in i[0]:
                         d1["认缴注册资本总额"] = i[1]

@@ -460,6 +460,7 @@ class gscredit(guoshui):
         return jcsj
 
     def gsndsb(self, browser, session):
+        self.logger.info("国税年度查询")
         niandu = {}
         shenbaobiao = {}
         content = browser.page_source
@@ -475,8 +476,32 @@ class gscredit(guoshui):
         browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
         browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(20161231)
         browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
-        time.sleep(2)
+        time.sleep(3)
         content = browser.page_source
+        if "正在查询，请稍候" in content:
+            for lj in range(10):
+                if "正在查询，请稍候" in content:
+                    self.logger.info("查询年报失败，重新查询")
+                    jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
+                    browser.get(url=jk_url)
+                    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("{}".format("所得税"))
+                    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(20170101)
+                    browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+                    # 所属日期
+                    browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").send_keys(20160101)
+                    browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
+                    browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(20161231)
+                    browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+                    time.sleep(3)
+                    content = browser.page_source
+                else:
+                    break
+        else:
+            self.logger.info("查询成功")
         root = etree.HTML(content)
         select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
         a = 1
@@ -488,6 +513,7 @@ class gscredit(guoshui):
                     '//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr[%s]//a[1]' % (a,)).click()
                 handle = browser.current_window_handle
                 handles = browser.window_handles
+                self.logger.info('查询到年度申报表')
                 for c in handles:
                     if c != handle:
                         browser.close()
@@ -591,7 +617,7 @@ class gscredit(guoshui):
                     niandu['所属行业明细'] = sshymx
                     niandu['从业人数'] = cyrs
                 except Exception as e:
-                    print(e)
+                    self.logger.info("未查询到股东信息")
                     pass
                 # 年度纳税申报表
                 shenbaobiao = {}
@@ -609,34 +635,7 @@ class gscredit(guoshui):
                 # select = root.xpath('//table[@id="table_004"]/tbody/tr')
                 gstzns = root.xpath('//*[@id="table_004"]/tbody/tr[20]/td[4]/input/@value')[0]
                 shenbaobiao['国税调整纳税后所得'] = gstzns
-                # a = 1
-                # sb = {}
-                # for i in select[1:]:
-                #     try:
-                #         lb = i.xpath('./td[2]/text()')[0]
-                #         if lb != None:
-                #             leibie = lb
-                #         else:
-                #             leibie = xq['类别']
-                #         xiangmu = i.xpath('./td[3]/text()')[0]
-                #         jiner = i.xpath('./td[4]/input/@value')[0]
-                #         xq = {}
-                #         xq['类别'] = leibie
-                #         xq['项目'] = xiangmu
-                #         xq['金额'] = xiangmu
-                #         shenbaobiao["{}".format(a)] = xq
-                #         a += 1
-                #     except:
-                #         leibie = leibie
-                #         xiangmu = i.xpath('./td[3]/text()')[0]
-                #         jiner = i.xpath('./td[4]/input/@value')[0]
-                #         xq = {}
-                #         xq['类别'] = leibie
-                #         xq['项目'] = xiangmu
-                #         xq['金额'] = xiangmu
-                #         shenbaobiao["{}".format(a)] = xq
-                #         a += 1
-                #         continue
+
                 # 亏损明细表
                 try:
                     kuisun = {}
@@ -742,7 +741,7 @@ class gscredit(guoshui):
                 # 股东信息
                 try:
                     iframe = browser.find_element_by_xpath('//div[@id="mini-39"]//iframe')
-                    print("进入查询结果")
+                    self.logger.info("进入查询结果")
                     browser.switch_to_frame(iframe)
                     time.sleep(1.5)
                     content = browser.page_source
@@ -762,6 +761,7 @@ class gscredit(guoshui):
                     yycb=root.xpath('//*[@id="table0"]/tbody/tr[4]/td[7]/span/text()')[0]
                     lrze=root.xpath('//*[@id="table0"]/tbody/tr[5]/td[7]/span/text()')[0]
                     if yiyujiao=="0.00" and ybutui=="0.00" and ynsds=="0.00" and jmsds=="0.00" and yysr=="0.00" and yycb=="0.00" and lrze=="0.00":
+                        self.logger.info("所有额度都为0")
                         browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html")
                         content = browser.page_source
                         browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
@@ -808,16 +808,18 @@ class gscredit(guoshui):
                             jibao["减:减免所得税额（请填附表3）"] = "0"
                             self.logger.info(jibao)
                         except:
-                            return {}
+                            self.logger.info("季度报表查询失败，重试")
+                            return "季报表查询失败"
                         return jibao
                     else:
                         return jibao
                 except Exception as e:
-                    print(e)
-                    return {}
+                    self.logger.info("季度报表查询失败，重试")
+                    return "季报表查询失败"
                     pass
             elif "度预缴纳税申报表" in shuizhong[1] and "查询申报表" not in shuizhong and "2017-10-01" in shuizhong[
                 3] and "2017-12-31" in shuizhong[4]:
+                self.logger.info('第四季度报表打不开')
                 browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html")
                 content = browser.page_source
                 browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
@@ -860,6 +862,7 @@ class gscredit(guoshui):
                     jibao["减:减免所得税额（请填附表3）"] = "0"
                     self.logger.info(jibao)
                 except:
+                    self.logger.info("季度报表查询失败，重试")
                     return {}
                 return jibao
 
@@ -1546,6 +1549,21 @@ class gscredit(guoshui):
             time.sleep(0.5)
             try:
                 preseason = self.gsjdsb(browser, session)
+                try:
+                    if "季报表查询失败" in preseason:
+                        for cs in range(10):
+                            try:
+                                if "季报表查询失败" in preseason:
+                                    jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
+                                    browser.get(url=jk_url)
+                                    time.sleep(0.5)
+                                    preseason = self.gsjdsb(browser, session)
+                            except:
+                                self.logger.info("季度表查询成功")
+                                self.logger.info(preseason)
+                except:
+                    self.logger.info("季度表查询成功")
+                    self.logger.info(preseason)
             except Exception as e:
                 self.logger.info(e)
                 self.logger.info("季度所得税查询失败")

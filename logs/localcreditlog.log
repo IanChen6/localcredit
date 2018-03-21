@@ -1496,3 +1496,50 @@ Wed 21 Mar 2018 17:48:24 INFO localcredit.py 2329 19584 33440 ('5590', 18282900,
 Wed 21 Mar 2018 17:48:24 INFO localcredit.py 2330 19584 33440 信用网数据插入完成
 Wed 21 Mar 2018 17:48:24 INFO localcredit.py 2615 19584 33440 深圳企业信用网信息抓取完成
 Wed 21 Mar 2018 17:48:37 INFO localcredit.py 2531 19584 33440 {"5": 0, "3": "B48565FB-EFD5-4F0C-9479-8AF18897B62C", "6": "39.108.1.170", "2": "96765127", "4": 0, "8": "Platform", "7": "3433", "9": "\u6df1\u5733\u5e02\u5bbd\u901a\u5149\u7f06\u79d1\u6280\u6709\u9650\u516c\u53f8", "1": ""}
+Wed 21 Mar 2018 17:53:41 INFO localcredit.py 2531 32116 32288 {"4": 18282900, "3": "5590", "9": "", "6": "39.108.1.170", "1": "440300065468552", "2": "86779523", "7": "3433", "8": "Platform", "5": 9}
+Wed 21 Mar 2018 17:53:48 INFO localcredit.py 227 32116 32288 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 17:53:48 INFO localcredit.py 241 32116 32288 未传代理参数，启用本机IP
+Wed 21 Mar 2018 17:53:49 INFO localcredit.py 267 32116 32288 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 17:53:49 INFO localcredit.py 227 32116 32288 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 17:53:49 INFO localcredit.py 241 32116 32288 未传代理参数，启用本机IP
+Wed 21 Mar 2018 17:53:51 INFO localcredit.py 267 32116 32288 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 17:53:51 INFO localcredit.py 227 32116 32288 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 17:53:51 INFO localcredit.py 241 32116 32288 未传代理参数，启用本机IP
+Wed 21 Mar 2018 17:53:52 INFO localcredit.py 267 32116 32288 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 17:53:52 INFO localcredit.py 227 32116 32288 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 17:53:52 INFO localcredit.py 241 32116 32288 未传代理参数，启用本机IP
+Wed 21 Mar 2018 17:53:53 INFO localcredit.py 267 32116 32288 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 17:53:53 INFO localcredit.py 227 32116 32288 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 17:53:53 INFO localcredit.py 241 32116 32288 未传代理参数，启用本机IP
+Wed 21 Mar 2018 17:53:55 INFO localcredit.py 267 32116 32288 customerid:9，获取验证码为：None
+Wed 21 Mar 2018 17:53:55 INFO localcredit.py 227 32116 32288 customerid:9,开始尝试登陆
+Wed 21 Mar 2018 17:53:55 INFO localcredit.py 241 32116 32288 未传代理参数，启用本机IP
+Wed 21 Mar 2018 17:53:56 INFO localcredit.py 267 32116 32288 customerid:9，获取验证码为：[{"x":172,"y":46},{"x":123,"y":79},{"x":273,"y":79}]
+Wed 21 Mar 2018 17:53:56 INFO localcredit.py 271 32116 32288 customerid:9，验证验证码[{"x":172,"y":46},{"x":123,"y":79},{"x":273,"y":79}]
+Wed 21 Mar 2018 17:53:56 INFO localcredit.py 274 32116 32288 customerid:9，转换tag
+Wed 21 Mar 2018 17:53:56 INFO localcredit.py 276 32116 32288 customerid:9，转换tag完成
+Wed 21 Mar 2018 17:53:56 INFO localcredit.py 277 32116 32288 customerid:9，440300065468552,071807db6c4243356d8e903facf90889359c7994,"[{\"x\":172,\"y\":46},{\"x\":123,\"y\":79},{\"x\":273,\"y\":79}]",2018-03-21 17:53:56
+Wed 21 Mar 2018 17:53:57 INFO localcredit.py 282 32116 32288 customerid:9,成功post数据
+Wed 21 Mar 2018 17:53:59 INFO localcredit.py 289 32116 32288 customerid:9pass
+Wed 21 Mar 2018 17:53:59 INFO localcredit.py 1529 32116 32288 customerid:9获取cookies
+Wed 21 Mar 2018 17:54:08 INFO localcredit.py 1588 32116 32288 customerid9税费种信息{}:
+Wed 21 Mar 2018 17:54:11 INFO localcredit.py 459 32116 32288 customerid:9,基础信息{'主管税务人员：': '古思灵', '纳税人名称：': '深圳市兴达兴材料有限公司', '纳税主管税务机关：': '深圳市宝安区国家税务局松岗税务分局', '纳税主管科室：': '深圳市宝安区国家税务局松岗税务分局税源管理三科'}
+Wed 21 Mar 2018 17:54:11 INFO localcredit.py 461 32116 32288 customerid:9,详细信息[{'bsrgddh': '', 'cwfzrxm': '吴海玲', 'fddbrsfzjlxDm': '201', 'bsrdzxx': '', 'djxh': '10114403000026460121', 'cwfzrsfzjzlDm': '201', 'bsrxm': '黄涌', 'nsrsbh': '440300065468552', 'hsfsmc': '独立核算自负盈亏', 'fddbrsfzjhm': '440723196807253722', 'zzjgDm': '065468552', 'hhrs': '', 'djzclxmc': '其他有限责任公司', 'cyrs': '8', 'shxydm': '914403000654685524', 'bsrsfzjhm': '360729199205280610', 'zcdyzbm': '518000', 'scjydlxdh': '13702441136', 'fddbrsfzjlxmc': '居民身份证', 'zcdlxdh': '13702441136', 'ggrs': '', 'fddbrgddh': '27145356', 'nsrmc': '深圳市兴达兴材料有限公司', 'cwfzrdzxx': '', 'cwfzrsfzjlxmc': '居民身份证', 'cwfzryddh': '13686455844', 'fddbryddh': '13702441136', 'jyfw': '五金钢板的销售；国内贸易，货物及技术进出口。^五金钢板的生产。', 'hyxl': '其他未列明制造业', 'nsrztDm': '03', 'cwfzrsfzjhm': '44078519920510372X', 'fddbrxm': '梁云英', 'zczb': '100000', 'scjydyzbm': '518000', 'hydl': '其他制造业', 'bsrsfzjzlDm': '201', 'zcdz': '深圳市宝安区松岗街道东方社区帝纬路二号D栋102', 'bsryddh': '13500186427', 'fddbrdzxx': '', 'gdgrs': '', 'cwfzrgddh': '27145356', 'scjydz': '深圳市宝安区松岗街道东方社区帝纬路二号D栋102', 'wjcyrs': '', 'bsrsfzjlxmc': '居民身份证', 'djrq': '2013-04-02'}]
+Wed 21 Mar 2018 17:54:17 INFO localcredit.py 482 32116 32288 customerid:9,json信息{'xxxx': [{'bsrgddh': '', 'cwfzrxm': '吴海玲', 'fddbrsfzjlxDm': '201', 'bsrdzxx': '', 'djxh': '10114403000026460121', 'cwfzrsfzjzlDm': '201', 'bsrxm': '黄涌', 'nsrsbh': '440300065468552', 'hsfsmc': '独立核算自负盈亏', 'fddbrsfzjhm': '440723196807253722', 'zzjgDm': '065468552', 'hhrs': '', 'djzclxmc': '其他有限责任公司', 'cyrs': '8', 'shxydm': '914403000654685524', 'bsrsfzjhm': '360729199205280610', 'zcdyzbm': '518000', 'scjydlxdh': '13702441136', 'fddbrsfzjlxmc': '居民身份证', 'zcdlxdh': '13702441136', 'ggrs': '', 'fddbrgddh': '27145356', 'nsrmc': '深圳市兴达兴材料有限公司', 'cwfzrdzxx': '', 'cwfzrsfzjlxmc': '居民身份证', 'cwfzryddh': '13686455844', 'fddbryddh': '13702441136', 'jyfw': '五金钢板的销售；国内贸易，货物及技术进出口。^五金钢板的生产。', 'hyxl': '其他未列明制造业', 'nsrztDm': '03', 'cwfzrsfzjhm': '44078519920510372X', 'fddbrxm': '梁云英', 'zczb': '100000', 'scjydyzbm': '518000', 'hydl': '其他制造业', 'bsrsfzjzlDm': '201', 'zcdz': '深圳市宝安区松岗街道东方社区帝纬路二号D栋102', 'bsryddh': '13500186427', 'fddbrdzxx': '', 'gdgrs': '', 'cwfzrgddh': '27145356', 'scjydz': '深圳市宝安区松岗街道东方社区帝纬路二号D栋102', 'wjcyrs': '', 'bsrsfzjlxmc': '居民身份证', 'djrq': '2013-04-02'}], '纳税人基本信息': {1: {'纳税人识别号': '440300065468552', '纳税人名称': '深圳市兴达兴材料有限公司', '纳税信用等级': 'B'}, 2: {'身份证件号码': '440723196807253722', '身份证件名称': '居民身份证', '法定代表人': '梁云英'}, 3: {'生产经营地址': '深圳市宝安区松岗街道东方社区帝纬路二号D栋102', '生产经营范围': '五金钢板的销售；国内贸易，货物及技术进出口。^五金钢板的生产。'}, 4: {'组织机构代码': '065468552', '是否出口退税企业': '否'}, 5: {'纳税人状态': '正常', '行业': '', '是否一般纳税人': '是'}, 6: {'税源管理责任人': '古思灵', '税务机关': '深圳市宝安区国家税务局松岗税务分局'}}, 'jcxx': {'主管税务人员：': '古思灵', '纳税人名称：': '深圳市兴达兴材料有限公司', '纳税主管税务机关：': '深圳市宝安区国家税务局松岗税务分局', '纳税主管科室：': '深圳市宝安区国家税务局松岗税务分局税源管理三科'}, '纳税人资格查询': {'1': {'纳税人资格认定名称': '增值税一般纳税人', '有效期起': '2013-07-01', '序号': '1', '认定日期': '2013-06-20', '有效期止': '9999-12-31'}}}
+Wed 21 Mar 2018 17:54:40 INFO localcredit.py 486 32116 32288 国税年度查询
+Wed 21 Mar 2018 17:54:44 INFO localcredit.py 527 32116 32288 查询成功
+Wed 21 Mar 2018 17:54:44 INFO localcredit.py 551 32116 32288 成功查询到数据
+Wed 21 Mar 2018 17:54:44 INFO localcredit.py 558 32116 32288 成功查询到数据
+Wed 21 Mar 2018 17:54:44 INFO localcredit.py 564 32116 32288 查询到年度申报表
+Wed 21 Mar 2018 17:55:20 INFO localcredit.py 737 32116 32288 customerid:9,json信息{'亏损明细': {'5': {'项目': '前一年度', '年度': '2015', '纳税调整后所得': '4925.16'}, '2': {'项目': '前四年度', '年度': '2012', '纳税调整后所得': '0.00'}, '4': {'项目': '前二年度', '年度': '2014', '纳税调整后所得': '13815.36'}, '1': {'项目': '前五年度', '年度': '2011', '纳税调整后所得': '0.00'}, '6': {'项目': '本年度', '年度': '2016', '纳税调整后所得': '7381.15'}, '3': {'项目': '前三年度', '年度': '2013', '纳税调整后所得': '1992.58'}}, '所属行业明细': '鬃毛加工、制刷及清扫工具制造', '存货计价方法': '先进先出法', '企业会计准则为': '小企业会计准则', '主要股东': {'2': {'证件种类': '居民身份证', '经济性质': '内资个人', '投资比例': '50.0000%', '股东名称': '梁伟棠', '证件号码': '440723196705163718', '国籍': '中华人民共和国'}, '1': {'证件种类': '居民身份证', '经济性质': '内资个人', '投资比例': '50.0000%', '股东名称': '梁云英', '证件号码': '440723196807253722', '国籍': '中华人民共和国'}}, '从业人数': '4'}
+Wed 21 Mar 2018 17:55:23 INFO localcredit.py 743 32116 32288 国税季度查询
+Wed 21 Mar 2018 17:55:28 INFO localcredit.py 800 32116 32288 成功查询到数据
+Wed 21 Mar 2018 17:55:28 INFO localcredit.py 811 32116 32288 查询到季度表
+Wed 21 Mar 2018 17:55:28 INFO localcredit.py 815 32116 32288 2
+Wed 21 Mar 2018 17:55:31 INFO localcredit.py 824 32116 32288 进入查询结果
+Wed 21 Mar 2018 17:55:32 INFO localcredit.py 838 32116 32288 季度表已查询
+Wed 21 Mar 2018 17:55:32 INFO localcredit.py 839 32116 32288 {'应补(退)所得税额': '1325.03', '实际已预缴所得税额': '633.97', '减:减免所得税额（请填附表3）': '2938.50', '应纳所得税额': '4897.50'}
+Wed 21 Mar 2018 17:55:45 INFO localcredit.py 955 32116 32288 customerid:9开始登录地税
+Wed 21 Mar 2018 17:55:46 INFO localcredit.py 1235 32116 32288 customerid:9截取地税登记信息
+Wed 21 Mar 2018 17:56:03 INFO localcredit.py 1421 32116 32288 customerid:9地税企业所得税（季报）信息查询
+Wed 21 Mar 2018 17:56:06 INFO localcredit.py 1481 32116 32288 customerid:9地税企业所得税（年度）信息查询

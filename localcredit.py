@@ -222,6 +222,7 @@ class gscredit(guoshui):
     def login(self):
         try_times = 0
         user = self.user
+        have_backup=True
         while try_times <= 20:
             self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
             try_times += 1
@@ -299,7 +300,8 @@ class gscredit(guoshui):
                             print('账号和密码不匹配')
                             self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
                             status = "账号和密码不匹配"
-                        elif len(user)==15:
+                        elif len(user)==15 and have_backup:
+                            have_backup=False
                             try:
                                 self.getuser()
                                 user=self.backup

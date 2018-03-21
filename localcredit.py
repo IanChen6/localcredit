@@ -2069,7 +2069,7 @@ class szcredit(object):
             get_data = data_dict["成员登记信息"]
             for i in get_data[1:]:
                 try:
-                    d1[i[0]] = i[1]
+                    d1[i[0].replace("\\","")] = i[1].replace("\\","")
                 except:
                     d1[i[0]] = ""
             data_dict["成员登记信息"] = d1
@@ -2582,7 +2582,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
                                 "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
                 pjson = json.dumps(xinyong_dict, ensure_ascii=False)
                 redis_cli.lpush("xinyong", pjson)
-                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取失败')
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '信用网爬取失败')
         except Exception as e:
             logger.warn(e)
             logger.warn("工商网爬取失败")
@@ -2611,7 +2611,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
                                 "5": customerid, "6": sd["6"], "7": sd["7"], "8": sd["8"]}
                 pjson = json.dumps(xinyong_dict, ensure_ascii=False)
                 redis_cli.lpush("xinyong", pjson)
-                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '1', '信用网爬取失败')
+                job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '信用网爬取失败')
         logger.info("深圳企业信用网信息抓取完成")
     except Exception as e:
         logger.error(e)

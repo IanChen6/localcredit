@@ -854,24 +854,46 @@ class gscredit(guoshui):
                         browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
                         time.sleep(2)
                         content = browser.page_source
+                        if "度预缴纳税申报表" not in content:
+                            for nm in range(10):
+                                if "度预缴纳税申报表" not in content:
+                                    self.logger.info("查询季报失败，重新查询")
+                                    browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html")
+                                    content = browser.page_source
+                                    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+                                    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys(
+                                        "{}".format("所得税"))
+                                    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+                                    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(
+                                        20170101)
+                                    # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+                                    # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+                                    # 所属日期
+                                    browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+                                    time.sleep(2)
+                                    content = browser.page_source
+                                else:
+                                    break
+                        else:
+                            self.logger.info("成功查询到数据")
                         root = etree.HTML(content)
                         select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
                         a = 1
+                        first_season, second_season, third_season, fourth_season = 0, 0, 0, 0
                         for i in select[1:]:
                             shuizhong = i.xpath('.//text()')
                             a += 1
-                            first_season, second_season, third_season, fourth_season = 0, 0, 0, 0
                             if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in \
-                                    shuizhong[4]:
+                                    shuizhong[4] and '申报成功' in shuizhong:
                                 first_season = shuizhong[6]
                             if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in \
-                                    shuizhong[4]:
+                                    shuizhong[4] and '申报成功' in shuizhong:
                                 second_season = shuizhong[6]
                             if "度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in \
-                                    shuizhong[4]:
+                                    shuizhong[4] and '申报成功' in shuizhong:
                                 third_season = shuizhong[6]
                             if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in \
-                                    shuizhong[4]:
+                                    shuizhong[4] and '申报成功' in shuizhong:
                                 fourth_season = shuizhong[6]
                         jibao = {}
                         try:
@@ -912,20 +934,42 @@ class gscredit(guoshui):
                 browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
                 time.sleep(2)
                 content = browser.page_source
+                if "度预缴纳税申报表" not in content:
+                    for nm in range(10):
+                        if "度预缴纳税申报表" not in content:
+                            self.logger.info("查询季报失败，重新查询")
+                            browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html")
+                            content = browser.page_source
+                            browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+                            browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys(
+                                "{}".format("所得税"))
+                            browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
+                            browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys(
+                                20170101)
+                            # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").clear()
+                            # browser.find_element_by_css_selector("#sbrqz .mini-buttonedit-input").send_keys(20171231)
+                            # 所属日期
+                            browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+                            time.sleep(2)
+                            content = browser.page_source
+                        else:
+                            break
+                else:
+                    self.logger.info("成功查询到数据")
                 root = etree.HTML(content)
                 select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
                 a = 1
+                first_season, second_season, third_season, fourth_season = 0, 0, 0, 0
                 for i in select[1:]:
                     shuizhong = i.xpath('.//text()')
                     a += 1
-                    first_season,second_season,third_season,fourth_season=0,0,0,0
-                    if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[4]:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[4] and '申报成功' in shuizhong:
                         first_season = shuizhong[6]
-                    if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[4]:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[4] and '申报成功' in shuizhong:
                         second_season = shuizhong[6]
-                    if "度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in shuizhong[4]:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in shuizhong[4] and '申报成功' in shuizhong:
                         third_season = shuizhong[6]
-                    if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4]:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4] and '申报成功' in shuizhong:
                         fourth_season = shuizhong[6]
                 jibao = {}
                 try:

@@ -641,7 +641,10 @@ class gscredit(guoshui):
                             xq['证件号码'] = haoma
                             xq['经济性质'] = jjxz
                             xq['投资比例'] = tzbl
-                            xq['国籍'] = gj
+                            if "中华人民" in gj or "香港" in gj:
+                                xq['国籍'] = "中国"
+                            else:
+                                xq['国籍'] = gj
                             sb += 1
                             gdhz["{}".format(sb)] = xq
                         except:
@@ -1232,7 +1235,10 @@ class gscredit(guoshui):
                 gdxxdict["证件号码"] = clean[j + 1]
                 gdxxdict["经济性质"] = tzxx[j]
                 gdxxdict["投资比例"] = tzxx[j + 1]
-                gdxxdict["国籍"] = gj[sb]
+                if "中华人民" in gj[sb] or "香港" in gj[sb]:
+                    gdxxdict["国籍"] = "中国"
+                else:
+                    gdxxdict["国籍"] = gj[sb]
                 gdxxdict["股东名称"] = xm[sb]
                 wc = gdxxdict
                 sb += 1
@@ -1402,6 +1408,8 @@ class gscredit(guoshui):
                         tiaomu[title[j]] = tzftb[j]
                     if "公司" in tiaomu['股东名称']:
                         tiaomu['证件种类'] = "营业执照"
+                    if "中华人民" in tiaomu['国籍'] or "香港" in tiaomu['国籍']:
+                        tiaomu['国籍'] = "中国"
                     tzfxx[tzftb[0]] = tiaomu
             except:
                 pass

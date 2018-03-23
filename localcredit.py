@@ -637,7 +637,10 @@ class gscredit(guoshui):
                             gj = i.xpath('./td[8]/span/text()')[0].split("|")[1]
                             xq = {}
                             xq['股东名称'] = gd
-                            xq['证件种类'] = zl
+                            if "其他单位证件" in zl:
+                                xq['证件种类'] = "居民身份证"
+                            else:
+                                xq['证件种类'] = zl
                             xq['证件号码'] = haoma
                             xq['经济性质'] = jjxz
                             xq['投资比例'] = tzbl
@@ -1231,7 +1234,10 @@ class gscredit(guoshui):
             sb = 0
             for j in range(0, len(clean), 2):
                 gdxxdict = {}
-                gdxxdict["证件种类"] = clean[j]
+                if '其他单位证件' in clean[j]:
+                    gdxxdict["证件种类"] = "居民身份证"
+                else:
+                    gdxxdict["证件种类"] = clean[j]
                 gdxxdict["证件号码"] = clean[j + 1]
                 gdxxdict["经济性质"] = tzxx[j]
                 gdxxdict["投资比例"] = tzxx[j + 1]
@@ -1408,6 +1414,8 @@ class gscredit(guoshui):
                         tiaomu[title[j]] = tzftb[j]
                     if "公司" in tiaomu['股东名称']:
                         tiaomu['证件种类'] = "营业执照"
+                    if "其他单位证件" in tiaomu['证件种类']:
+                        tiaomu['证件种类'] = "居民身份证"
                     if "中华人民" in tiaomu['国籍'] or "香港" in tiaomu['国籍']:
                         tiaomu['国籍'] = "中国"
                     tzfxx[tzftb[0]] = tiaomu

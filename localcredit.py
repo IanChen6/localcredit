@@ -219,6 +219,94 @@ class gscredit(guoshui):
                 self.backup = root.xpath('//*[@id="tb_4"]/tr[1]/td[2]/text()')[0]
                 break
 
+    def login_byphone(self,se):
+        try_times = 0
+        phone =se.group()
+        while try_times <= 20:
+            # self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
+            try_times += 1
+            if try_times > 10:
+                time.sleep(2)
+            session = requests.session()
+            try:
+                self.logger.info(type(sys.argv[1]))
+                proxy = sys.argv[1].replace("'", '"')
+                self.logger.info(proxy)
+                proxy = json.loads(proxy)
+                session.proxies = proxy
+            except:
+                self.logger.info("未传代理参数，启用本机IP")
+            headers = {'Host': 'dzswj.szgs.gov.cn',
+                       'Accept': 'application/json, text/javascript, */*; q=0.01',
+                       'Accept-Language': 'zh-CN,zh;q=0.9',
+                       'Accept-Encoding': 'gzip, deflate',
+                       'Content-Type': 'application/json; charset=UTF-8',
+                       'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
+                       'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                       'x-form-id': 'mobile-signin-form',
+                       'Connection': 'keep-alive',
+                       'X-Requested-With': 'XMLHttpRequest',
+                       'Origin': 'http://dzswj.szgs.gov.cn'}
+            session.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html", headers=headers)
+            captcha_url = 'http://dzswj.szgs.gov.cn/tipCaptcha'
+            tupian_resp = session.get(url=captcha_url, timeout=10)
+            tupian_resp.encoding = 'utf8'
+            tupian = tupian_resp.json()
+            image = tupian['image']
+            tipmessage = tupian["tipMessage"]
+            tupian = json.dumps(tupian, ensure_ascii=False)
+            m = hashlib.md5()
+            tupian1 = tupian.encode(encoding='utf8')
+            m.update(tupian1)
+            md = m.hexdigest()
+            print(md)
+            tag = self.tagger(tupian, md)
+            self.logger.info("customerid:{}，获取验证码为：{}".format(self.customerid, tag))
+            if tag is None:
+                continue
+            jyjg = session.post(url='http://dzswj.szgs.gov.cn/api/checkClickTipCaptcha', data=tag)
+            self.logger.info("customerid:{}，验证验证码{}".format(self.customerid, tag))
+            time_l = time.localtime(int(time.time()))
+            time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)
+            tag = json.dumps(tag)
+            login_data = '{"mobile":"%s","password":"%s","tagger":%s,"time":"%s","redirectURL":""}' % (
+                phone, base64.b64encode(self.pwd.encode('utf8')).decode(), tag, time_l)
+            login_url = 'http://dzswj.szgs.gov.cn/api/web/general/login'
+            resp = session.post(url=login_url, data=login_data, headers=headers)
+            fh = resp.json()
+            if not fh['success']:
+                status = "账号和密码不匹配"
+                return status, session
+            else:
+                djxh = fh['data']["nsrList"][0]['djxh']
+                roleid = fh['data']["nsrList"][0]['roleList'][0]['roleId']
+                self.logger.info("customerid:{},成功post数据".format(self.customerid))
+                time_l = time.localtime(int(time.time()))
+                time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)
+                choseurl = 'http://dzswj.szgs.gov.cn/api/web/general/chooseCompany'
+                headers2 = {'Accept-Encoding': 'gzip, deflate',
+                            'Content-Type': 'application/json; charset=UTF-8',
+                            'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
+                            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                            'Connection': 'keep-alive',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Origin': 'http://dzswj.szgs.gov.cn'}
+                resp = session.post(url=choseurl, data='{"mobile":"%s","djxh":"%s","roleId":"%s","time":"%s"}' % (
+                    phone, djxh, roleid, time_l), headers=headers2)
+                try:
+                    if "验证码正确" in jyjg.json()['message']:
+                        if "登录成功" in resp.json()['message']:
+                            print('登录成功')
+                            self.logger.info('customerid:{}pass'.format(self.customerid))
+                            cookies = {}
+                            for (k, v) in zip(session.cookies.keys(), session.cookies.values()):
+                                cookies[k] = v
+                            return cookies, session
+                        else:
+                            time.sleep(3)
+                except Exception as e:
+                    pass
+        return False
     def login(self):
         try_times = 0
         user = self.user
@@ -1585,17 +1673,31 @@ class gscredit(guoshui):
 
     def excute_spider(self):
         try:
-            cookies, session = self.login()
-            self.logger.info("customerid:{}获取cookies".format(self.customerid))
-            jsoncookies = json.dumps(cookies, ensure_ascii=False)
-            if "账号和密码不匹配" in jsoncookies:
-                self.logger.warn("customerid:{}账号和密码不匹配".format(self.customerid))
-                # job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
-                #            "账号和密码不匹配")
-                return 12
-            with open('cookies/{}cookies.json'.format(self.batchid), 'w') as f:  # 将login后的cookies提取出来
-                f.write(jsoncookies)
-                f.close()
+            se = re.search('1[3458]\\d{9}', sd["10"])
+            if se:
+                cookies, session = self.login_byphone(se)
+                self.logger.info("customerid:{}获取cookies".format(self.customerid))
+                jsoncookies = json.dumps(cookies, ensure_ascii=False)
+                if "账号和密码不匹配" in jsoncookies:
+                    self.logger.warn("customerid:{}账号和密码不匹配".format(self.customerid))
+                    # job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
+                    #            "账号和密码不匹配")
+                    return 12
+                with open('cookies/{}cookies.json'.format(self.batchid), 'w') as f:  # 将login后的cookies提取出来
+                    f.write(jsoncookies)
+                    f.close()
+            else:
+                cookies, session = self.login()
+                self.logger.info("customerid:{}获取cookies".format(self.customerid))
+                jsoncookies = json.dumps(cookies, ensure_ascii=False)
+                if "账号和密码不匹配" in jsoncookies:
+                    self.logger.warn("customerid:{}账号和密码不匹配".format(self.customerid))
+                    # job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '-2',
+                    #            "账号和密码不匹配")
+                    return 12
+                with open('cookies/{}cookies.json'.format(self.batchid), 'w') as f:  # 将login后的cookies提取出来
+                    f.write(jsoncookies)
+                    f.close()
         except Exception as e:
             self.logger.warn(e)
             self.logger.warn("customerid:{}登陆失败".format(self.customerid))

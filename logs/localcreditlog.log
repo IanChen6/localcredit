@@ -1628,3 +1628,37 @@ Thu 22 Mar 2018 15:12:27 INFO localcredit.py 800 12968 21416 成功查询到数�
 Thu 22 Mar 2018 15:12:28 INFO localcredit.py 924 12968 21416 第四季度报表打不开
 Thu 22 Mar 2018 15:12:34 INFO localcredit.py 958 12968 21416 成功查询到数据
 Thu 22 Mar 2018 15:12:47 INFO localcredit.py 987 12968 21416 {'应纳所得税额': '2975.36', '应补(退)所得税额': '1153.43', '减:减免所得税额（请填附表3）': '0', '实际已预缴所得税额': '1821.93'}
+Mon 26 Mar 2018 20:18:23 INFO localcredit.py 2704 31076 21844 {"7": "3433", "2": "79066664", "9": "", "1": "91440300775551684W", "10": "\u5b9e\u540d\u767b\u5f5513802550373\uff0czqd123568", "5": 9, "6": "39.108.1.170", "3": "5590", "8": "Platform", "4": 18282900}
+Mon 26 Mar 2018 20:19:31 INFO localcredit.py 2704 6944 25064 {"7": "3433", "2": "79066664", "9": "", "1": "91440300775551684W", "10": "\u5b9e\u540d\u767b\u5f5513802550373\uff0czqd123568", "5": 9, "6": "39.108.1.170", "3": "5590", "8": "Platform", "4": 18282900}
+Mon 26 Mar 2018 20:19:48 INFO localcredit.py 238 6944 25064 未传代理参数，启用本机IP
+Mon 26 Mar 2018 20:19:56 INFO localcredit.py 264 6944 25064 customerid:9，获取验证码为：None
+Mon 26 Mar 2018 20:20:00 INFO localcredit.py 238 6944 25064 未传代理参数，启用本机IP
+Mon 26 Mar 2018 20:20:08 INFO localcredit.py 264 6944 25064 customerid:9，获取验证码为：None
+Mon 26 Mar 2018 20:20:10 INFO localcredit.py 238 6944 25064 未传代理参数，启用本机IP
+Mon 26 Mar 2018 20:20:25 INFO localcredit.py 264 6944 25064 customerid:9，获取验证码为：[{"x":19,"y":89},{"x":169,"y":28},{"x":72,"y":25}]
+Mon 26 Mar 2018 20:20:31 INFO localcredit.py 268 6944 25064 customerid:9，验证验证码[{"x":19,"y":89},{"x":169,"y":28},{"x":72,"y":25}]
+Mon 26 Mar 2018 20:20:36 WARNING localcredit.py 1702 6944 25064 'latin-1' codec can't encode characters in position 11-14: Body ('实名登录') is not valid Latin-1. Use body.encode('utf-8') if you want to send it encoded in UTF-8.
+Mon 26 Mar 2018 20:20:38 WARNING localcredit.py 1703 6944 25064 customerid:9登陆失败
+Mon 26 Mar 2018 20:21:15 INFO localcredit.py 2704 30832 30340 {"7": "3433", "2": "79066664", "9": "", "1": "91440300775551684W", "10": "\u5b9e\u540d\u767b\u5f5513802550373\uff0czqd123568", "5": 9, "6": "39.108.1.170", "3": "5590", "8": "Platform", "4": 18282900}
+Mon 26 Mar 2018 20:21:31 INFO localcredit.py 238 30832 30340 未传代理参数，启用本机IP
+Mon 26 Mar 2018 20:21:32 INFO localcredit.py 264 30832 30340 customerid:9，获取验证码为：[{"x":225,"y":62},{"x":168,"y":86},{"x":72,"y":65}]
+Mon 26 Mar 2018 20:21:35 INFO localcredit.py 268 30832 30340 customerid:9，验证验证码[{"x":225,"y":62},{"x":168,"y":86},{"x":72,"y":65}]
+Mon 26 Mar 2018 20:21:47 WARNING localcredit.py 1702 30832 30340 'latin-1' codec can't encode characters in position 11-14: Body ('实名登录') is not valid Latin-1. Use body.encode('utf-8') if you want to send it encoded in UTF-8.
+Mon 26 Mar 2018 20:24:17 INFO localcredit.py 2704 920 25200 {"7": "3433", "2": "79066664", "9": "", "1": "91440300775551684W", "10": "\u5b9e\u540d\u767b\u5f5513802550373\uff0czqd123568", "5": 9, "6": "39.108.1.170", "3": "5590", "8": "Platform", "4": 18282900}
+Mon 26 Mar 2018 20:24:21 WARNING localcredit.py 1702 920 25200 login_byphone() missing 1 required positional argument: 'se'
+Mon 26 Mar 2018 20:24:21 WARNING localcredit.py 1703 920 25200 customerid:9登陆失败
+Mon 26 Mar 2018 20:24:57 INFO localcredit.py 2704 31220 29808 {"7": "3433", "2": "79066664", "9": "", "1": "91440300775551684W", "10": "\u5b9e\u540d\u767b\u5f5513802550373\uff0czqd123568", "5": 9, "6": "39.108.1.170", "3": "5590", "8": "Platform", "4": 18282900}
+Mon 26 Mar 2018 20:25:03 WARNING localcredit.py 1702 31220 29808 login_byphone() missing 1 required positional argument: 'se'
+Mon 26 Mar 2018 20:25:03 WARNING localcredit.py 1703 31220 29808 customerid:9登陆失败
+Mon 26 Mar 2018 20:25:36 INFO localcredit.py 2704 29316 29864 {"7": "3433", "2": "79066664", "9": "", "1": "91440300775551684W", "10": "\u5b9e\u540d\u767b\u5f5513802550373\uff0czqd123568", "5": 9, "6": "39.108.1.170", "3": "5590", "8": "Platform", "4": 18282900}
+Mon 26 Mar 2018 20:25:44 INFO localcredit.py 238 29316 29864 未传代理参数，启用本机IP
+Mon 26 Mar 2018 20:25:45 INFO localcredit.py 264 29316 29864 customerid:9，获取验证码为：None
+Mon 26 Mar 2018 20:25:49 INFO localcredit.py 238 29316 29864 未传代理参数，启用本机IP
+Mon 26 Mar 2018 20:25:50 INFO localcredit.py 264 29316 29864 customerid:9，获取验证码为：None
+Mon 26 Mar 2018 20:25:52 INFO localcredit.py 238 29316 29864 未传代理参数，启用本机IP
+Mon 26 Mar 2018 20:25:54 INFO localcredit.py 264 29316 29864 customerid:9，获取验证码为：None
+Mon 26 Mar 2018 20:25:56 INFO localcredit.py 238 29316 29864 未传代理参数，启用本机IP
+Mon 26 Mar 2018 20:25:57 INFO localcredit.py 264 29316 29864 customerid:9，获取验证码为：[{"x":71,"y":31},{"x":269,"y":35},{"x":218,"y":79}]
+Mon 26 Mar 2018 20:26:00 INFO localcredit.py 268 29316 29864 customerid:9，验证验证码[{"x":71,"y":31},{"x":269,"y":35},{"x":218,"y":79}]
+Mon 26 Mar 2018 20:26:06 INFO localcredit.py 1679 29316 29864 customerid:9获取cookies
+Mon 26 Mar 2018 20:26:07 WARNING localcredit.py 1682 29316 29864 customerid:9账号和密码不匹配

@@ -278,34 +278,38 @@ class gscredit(guoshui):
                 status = "账号和密码不匹配"
                 return status, session
             else:
-                djxh = fh['data']["nsrList"][0]['djxh']
-                roleid = fh['data']["nsrList"][0]['roleList'][0]['roleId']
-                self.logger.info("customerid:{},成功post数据".format(self.customerid))
-                time_l = time.localtime(int(time.time()))
-                time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)
-                choseurl = 'http://dzswj.szgs.gov.cn/api/web/general/chooseCompany'
-                headers2 = {'Accept-Encoding': 'gzip, deflate',
-                            'Content-Type': 'application/json; charset=UTF-8',
-                            'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
-                            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
-                            'Connection': 'keep-alive',
-                            'X-Requested-With': 'XMLHttpRequest',
-                            'Origin': 'http://dzswj.szgs.gov.cn'}
-                resp = session.post(url=choseurl, data='{"mobile":"%s","djxh":"%s","roleId":"%s","time":"%s"}' % (
-                    phone, djxh, roleid, time_l), headers=headers2)
-                try:
-                    if "验证码正确" in jyjg.json()['message']:
-                        if "登录成功" in resp.json()['message']:
-                            print('登录成功')
-                            self.logger.info('customerid:{}pass'.format(self.customerid))
-                            cookies = {}
-                            for (k, v) in zip(session.cookies.keys(), session.cookies.values()):
-                                cookies[k] = v
-                            return cookies, session
-                        else:
-                            time.sleep(3)
-                except Exception as e:
-                    pass
+                nsrlist=fh['data']["nsrList"]
+                for nsr in nsrlist:
+                    if self.companyname in nsr['gsNsrmc']:
+                        djxh = fh['data']["nsrList"][0]['djxh']
+                        roleid = fh['data']["nsrList"][0]['roleList'][0]['roleId']
+                        self.logger.info("customerid:{},成功post数据".format(self.customerid))
+                        time_l = time.localtime(int(time.time()))
+                        time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)
+                        choseurl = 'http://dzswj.szgs.gov.cn/api/web/general/chooseCompany'
+                        headers2 = {'Accept-Encoding': 'gzip, deflate',
+                                    'Content-Type': 'application/json; charset=UTF-8',
+                                    'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
+                                    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                                    'Connection': 'keep-alive',
+                                    'X-Requested-With': 'XMLHttpRequest',
+                                    'Origin': 'http://dzswj.szgs.gov.cn'}
+                        resp = session.post(url=choseurl,
+                                            data='{"mobile":"%s","djxh":"%s","roleId":"%s","time":"%s"}' % (
+                                                phone, djxh, roleid, time_l), headers=headers2)
+                        try:
+                            if "验证码正确" in jyjg.json()['message']:
+                                if "登录成功" in resp.json()['message']:
+                                    print('登录成功')
+                                    self.logger.info('customerid:{}pass'.format(self.customerid))
+                                    cookies = {}
+                                    for (k, v) in zip(session.cookies.keys(), session.cookies.values()):
+                                        cookies[k] = v
+                                    return cookies, session
+                                else:
+                                    time.sleep(3)
+                        except Exception as e:
+                            pass
         return False
     def login(self):
         try_times = 0

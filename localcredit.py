@@ -281,8 +281,8 @@ class gscredit(guoshui):
                 nsrlist=fh['data']["nsrList"]
                 for nsr in nsrlist:
                     if self.companyname in nsr['gsNsrmc']:
-                        djxh = fh['data']["nsrList"][0]['djxh']
-                        roleid = fh['data']["nsrList"][0]['roleList'][0]['roleId']
+                        djxh = nsr['djxh']
+                        roleid = nsr['roleId']
                         self.logger.info("customerid:{},成功post数据".format(self.customerid))
                         time_l = time.localtime(int(time.time()))
                         time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)

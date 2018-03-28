@@ -190,6 +190,7 @@ class gscredit(guoshui):
                     self.logger.info(e)
                     self.logger.info("未传代理参数，启用本机IP")
                 detail = session.get(url=detai_url, headers=headers, timeout=30)
+                detail.encoding = 'gbk'
                 for i in range(3):
                     if self.companyname not in detail.text:
                         self.logger.info("您的查询过于频繁，请稍候再查")
@@ -2107,8 +2108,10 @@ class szcredit(object):
                         self.logger.info(e)
                         self.logger.info("未传代理参数，启用本机IP")
                     detail = session.get(url=detai_url, headers=self.headers, timeout=30)
+                    detail.encoding = 'gbk'
                     for i in range(3):
                         if self.cn not in detail.text:
+                            self.logger.info(self.cn)
                             self.logger.info("您的查询过于频繁，请稍候再查")
                             sleep_time = [13, 14, 13.5, 14.5, 13.2, 13.8, 13.1, 13.7, 13.3, 13.6]
                             time.sleep(sleep_time[random.randint(0, 9)])

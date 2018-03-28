@@ -1987,8 +1987,7 @@ class gscredit(guoshui):
                 self.logger.info("customerid:{}全部爬取完成，无季度报表".format(self.customerid))
                 return 33
             else:
-                job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1',
-                           '成功爬取')
+                pass
             print("爬取完成")
             self.logger.info("customerid:{}全部爬取完成".format(self.customerid))
             browser.quit()

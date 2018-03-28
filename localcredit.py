@@ -2087,8 +2087,11 @@ class szcredit(object):
                                               {'http': 'http://bjhz:bjhz@123.207.125.141:7777',
                                                'https': 'http://bjhz:bjhz@123.207.125.141:7777'},
                                               {'http': 'http://bjhz:bjhz@123.207.24.103:7777',
-                                               'https': 'http://bjhz:bjhz@123.207.24.103:7777'}]
-                                proxy = proxy_list[random.randint(0, 3)]
+                                               'https': 'http://bjhz:bjhz@123.207.24.103:7777'},
+                                              {'http': 'http://bjhz:bjhz@123.206.44.226:7777',
+                                               'https': 'http://bjhz:bjhz@123.206.44.226:7777'}
+                                              ]
+                                proxy = proxy_list[random.randint(0, 4)]
                                 session.proxies = proxy
                             except:
                                 self.logger.info("未传代理参数，启用本机IP")
@@ -2097,7 +2100,7 @@ class szcredit(object):
                                 break
                             else:
                                 continue
-                    if self.companyname not in detail.text:
+                    if self.cn not in detail.text:
                         self.logger.info("信用网查询失败")
                         return 4
                     detail.encoding = 'gbk'

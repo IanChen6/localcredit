@@ -659,7 +659,7 @@ class gscredit(guoshui):
                 self.logger.info('查询到年度申报表')
                 for c in handles:
                     if c != handle:
-                        browser.close()
+                        # browser.close()
                         browser.switch_to_window(c)
                 wait = ui.WebDriverWait(browser, 5)
                 wait.until(

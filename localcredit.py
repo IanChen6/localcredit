@@ -102,7 +102,7 @@ class gscredit(guoshui):
                     pass
         else:
             self.user = user
-        self.pwd = pwd
+        self.pwd = pwd.strip()
         self.batchid = batchid
         self.companyid = companyid
         self.customerid = customerid
@@ -368,7 +368,7 @@ class gscredit(guoshui):
             self.logger.info("customerid:{}，转换tag完成".format(self.customerid))
             self.logger.info("customerid:{}，{},{},{},{}".format(self.customerid, self.user, self.jiami(), tag, time_l))
             login_data = '{"nsrsbh":"%s","nsrpwd":"%s","redirectURL":"","tagger":%s,"time":"%s"}' % (
-                user, hashlib.sha1(sd["2"].encode('utf8')).hexdigest(), tag, time_l)
+                user, self.jiami(), tag, time_l)
             login_url = 'http://dzswj.szgs.gov.cn/api/auth/clientWt'
             resp = session.post(url=login_url, data=login_data)
             self.logger.info(login_data)
@@ -664,8 +664,18 @@ class gscredit(guoshui):
                 wait = ui.WebDriverWait(browser, 5)
                 wait.until(
                     lambda browser: browser.find_element_by_css_selector("#mini-2"))
+                browser.execute_script("window.confirm=function(msg){returntrue;}")
+                # browser.find_element_by_xpath('//*[@id="0"]').click()
+                shuaxin = browser.page_source
+                while "企业基础信息表" not in shuaxin:
+                    browser.get(
+                        'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
+                    try:
+                        browser.find_element_by_xpath('//*[@id="0"]').click()
+                    except:
+                        pass
+                    shuaxin = browser.page_source
                 time.sleep(0.5)
-                browser.find_element_by_css_selector('#mini-2 span').click()
                 postdata = 'djxh=10114403000048444932&zsxmDm=10104&sbrqq=20170101&sbrqz=20171231&sssqq=20160101&sssqz=20161231&sbztDm='
                 headers = {'Host': 'dzswj.szgs.gov.cn',
                            'Accept': 'application/json, text/javascript, */*; q=0.01',
@@ -706,8 +716,28 @@ class gscredit(guoshui):
                         break
                 # 股东信息
                 try:
-                    # browser.get('http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
-                    # browser.find_element_by_css_selector('#mini-2 span').click()
+                    newwindow = 'window.open("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview")'
+                    browser.execute_script(newwindow)
+                    all = browser.window_handles
+                    curr = browser.current_window_handle
+                    for window in all:
+                        if window != curr:
+                            browser.switch_to_window(all[-1])
+                            break
+                    browser.get('http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
+                    try:
+                        browser.find_element_by_xpath('//*[@id="0"]').click()
+                    except:
+                        pass
+                    shuaxin = browser.page_source
+                    while "企业基础信息表" not in shuaxin:
+                        browser.get(
+                            'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
+                        try:
+                            browser.find_element_by_xpath('//*[@id="0"]').click()
+                        except:
+                            pass
+                        shuaxin = browser.page_source
                     browser.find_element_by_xpath('/html/body/div[2]/div[1]/table/tbody/tr[3]/td[3]/a[3]').click()
                     time.sleep(2)
                     content = browser.page_source
@@ -766,6 +796,7 @@ class gscredit(guoshui):
                     niandu['所属行业明细'] = sshymx
                     niandu['从业人数'] = cyrs
                 except Exception as e:
+                    self.logger.info(e)
                     self.logger.info("未查询到股东信息")
                     pass
                 # 年度纳税申报表
@@ -773,7 +804,7 @@ class gscredit(guoshui):
                 browser.get(
                     'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
                 time.sleep(1)
-                browser.find_element_by_css_selector('#mini-2 span').click()
+                # browser.find_element_by_xpath('//*[@id="0"]').click()
                 time.sleep(0.5)
                 browser.find_element_by_xpath('/html/body/div[2]/div[1]/table/tbody/tr[4]/td[3]/a[3]').click()
                 time.sleep(2)
@@ -791,7 +822,7 @@ class gscredit(guoshui):
                     browser.get(
                         'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
                     time.sleep(1)
-                    browser.find_element_by_css_selector('#mini-2 span').click()
+                    # browser.find_element_by_xpath('//*[@id="0"]').click()
                     time.sleep(0.5)
                     content = browser.page_source
                     root = etree.HTML(content)
@@ -1725,7 +1756,7 @@ class gscredit(guoshui):
                 desired_capabilities=dcap)
             browser.implicitly_wait(10)
             browser.viewportSize = {'width': 2200, 'height': 2200}
-            browser.set_window_size(1400, 1600)  # Chrome无法使用这功能
+            browser.set_window_size(2200, 2200)  # Chrome无法使用这功能
             # options = webdriver.ChromeOptions()
             # options.add_argument('disable-infobars')
             # options.add_argument("--start-maximized")

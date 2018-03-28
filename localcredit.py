@@ -2097,6 +2097,9 @@ class szcredit(object):
                                 break
                             else:
                                 continue
+                    if self.companyname not in detail.text:
+                        self.logger.info("信用网查询失败")
+                        return 4
                     detail.encoding = 'gbk'
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
                     #使用phantom（使用requests繁体字会乱码）
@@ -2742,7 +2745,8 @@ def run_test(user, pwd, batchid, companyid, customerid):
                 pd = credit.login()
                 try:
                     if pd == 4:
-                        return 4
+                        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '信用网爬取失败')
+                        return
                 except:
                     pass
                 try:
@@ -2775,7 +2779,8 @@ def run_test(user, pwd, batchid, companyid, customerid):
                 pd = credit.login()
                 try:
                     if pd == 4:
-                        return 4
+                        job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', '信用网爬取失败')
+                        return
                 except:
                     pass
                 try:

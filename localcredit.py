@@ -2137,7 +2137,10 @@ class szcredit(object):
 
                     self.parse(root)
                     # browser.quit()
+                elif resp1.status_code!=200:
+                    return 4
                 return
+
 
     def parse(self, root):
         title = root.xpath('//*[@id="Table31"]//li[@class="current"]')

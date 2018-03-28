@@ -371,6 +371,7 @@ class gscredit(guoshui):
                 user, self.jiami(), tag, time_l)
             login_url = 'http://dzswj.szgs.gov.cn/api/auth/clientWt'
             resp = session.post(url=login_url, data=login_data)
+            self.logger.info(login_data)
             self.logger.info("customerid:{},成功post数据".format(self.customerid))
             # panduan=resp.json()['message']
             # self.logger(panduan)
@@ -385,6 +386,7 @@ class gscredit(guoshui):
                         return cookies, session
                     elif "账户和密码不匹配" in resp.json()['message'] or "不存在" in resp.json()['message'] or "已注销" in \
                             resp.json()['message']:
+                        self.logger.info("密码有误，尝试更换账号")
                         if len(user) == 18:
                             user = user[2:-1]
                             print(self.user)
@@ -395,13 +397,14 @@ class gscredit(guoshui):
                         elif len(user)==15 and have_backup:
                             have_backup=False
                             try:
+                                self.logger.info("信用网获取国税登录号码")
                                 self.getuser()
                                 user=self.backup
                             except Exception as e:
                                 user = user.replace("440300",'440301',1)
                                 print(e)
-                            print(self.user)
-                            print(user)
+                            self.logger.info(self.user)
+                            self.logger.info(user)
                             print('账号和密码不匹配')
                             self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
                             status = "账号和密码不匹配"

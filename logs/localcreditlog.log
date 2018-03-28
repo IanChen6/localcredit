@@ -20,3 +20,14 @@ Tue 27 Mar 2018 10:47:27 INFO localcredit.py 264 20888 31216 customerid:9，获�
 Tue 27 Mar 2018 10:47:29 INFO localcredit.py 268 20888 31216 customerid:9，验证验证码[{"x":167,"y":47},{"x":119,"y":102},{"x":22,"y":101}]
 Tue 27 Mar 2018 10:47:40 INFO localcredit.py 286 20888 31216 customerid:9,成功post数据
 Tue 27 Mar 2018 10:47:52 INFO localcredit.py 304 20888 31216 customerid:9pass
+Wed 28 Mar 2018 14:36:22 INFO localcredit.py 2717 23680 28660 {"9": "\u6df1\u5733\u5e02\u98de\u5fb7\u5229\u7cbe\u5bc6\u4e94\u91d1\u6709\u9650\u516c\u53f8", "5": 9, "4": 18282900, "8": "Platform", "1": "440300088471201", "6": "39.108.1.170", "2": "ys12345678", "7": "3433", "3": "5590", "10": ""}
+Wed 28 Mar 2018 14:36:31 INFO localcredit.py 319 23680 28660 customerid:9,开始尝试登陆
+Wed 28 Mar 2018 14:36:32 INFO localcredit.py 333 23680 28660 未传代理参数，启用本机IP
+Wed 28 Mar 2018 14:36:39 INFO localcredit.py 359 23680 28660 customerid:9，获取验证码为：[{"x":17,"y":44},{"x":169,"y":62},{"x":68,"y":19}]
+Wed 28 Mar 2018 14:36:41 INFO localcredit.py 363 23680 28660 customerid:9，验证验证码[{"x":17,"y":44},{"x":169,"y":62},{"x":68,"y":19}]
+Wed 28 Mar 2018 14:36:42 INFO localcredit.py 366 23680 28660 customerid:9，转换tag
+Wed 28 Mar 2018 14:36:43 INFO localcredit.py 368 23680 28660 customerid:9，转换tag完成
+Wed 28 Mar 2018 14:36:43 INFO localcredit.py 369 23680 28660 customerid:9，440300088471201,ab29e25d1cfe8bb493497eb95579366df85e9f4a,"[{\"x\":17,\"y\":44},{\"x\":169,\"y\":62},{\"x\":68,\"y\":19}]",2018-03-28 14:36:41
+Wed 28 Mar 2018 14:36:45 INFO localcredit.py 374 23680 28660 customerid:9,成功post数据
+Wed 28 Mar 2018 14:36:47 INFO localcredit.py 381 23680 28660 customerid:9pass
+Wed 28 Mar 2018 14:36:51 INFO localcredit.py 1695 23680 28660 customerid:9获取cookies

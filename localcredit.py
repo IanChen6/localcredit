@@ -1633,27 +1633,28 @@ class gscredit(guoshui):
                 # url=browser.find_element_by_name('sbbFormCj').get_attribute('action')
                 jsxx = i.xpath('.//text()')
                 pzxh = jsxx[0]
-                print(jsxx)
-                b_ck = browser.get_cookies()
-                ck = {}
-                for x in b_ck:
-                    ck[x['name']] = x['value']
-                post_url = parse.urljoin("https://dzswj.szds.gov.cn",
-                                         browser.find_element_by_name('sbbFormCj').get_attribute('action'))
-                post_data = {'SubmitTokenTokenId': '', 'yzpzxhArray': pzxh, 'btSelectItem': 'on'}
-                headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
-                           'Accept-Language': 'zh-CN,zh;q=0.8',
-                           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
-                           'X-Requested-With': 'XMLHttpRequest'}
-                resp = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
-                                     cookies=ck).text
-                pdf_content = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
-                                            cookies=ck).content
+                self.logger.info(jsxx)
+                if "度预缴纳税申报表" in jsxx[1]:
+                    b_ck = browser.get_cookies()
+                    ck = {}
+                    for x in b_ck:
+                        ck[x['name']] = x['value']
+                    post_url = parse.urljoin("https://dzswj.szds.gov.cn",
+                                             browser.find_element_by_name('sbbFormCj').get_attribute('action'))
+                    post_data = {'SubmitTokenTokenId': '', 'yzpzxhArray': pzxh, 'btSelectItem': 'on'}
+                    headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                               'Accept-Language': 'zh-CN,zh;q=0.8',
+                               'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                               'X-Requested-With': 'XMLHttpRequest'}
+                    resp = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
+                                         cookies=ck).text
+                    pdf_content = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
+                                                cookies=ck).content
 
-                if "错误" not in resp:
-                    with open("resource/{}/申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
-                        w.write(pdf_content)
-                    jdpdf_dict = self.parse_pdf("resource/{}/申报表详情{}.pdf".format(self.user, pzxh))
+                    if "错误" not in resp:
+                        with open("resource/{}/申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
+                            w.write(pdf_content)
+                        jdpdf_dict = self.parse_pdf("resource/{}/申报表详情{}.pdf".format(self.user, pzxh))
                 index += 1
         # 企业所得税（年度）
         ndpdf_dict = {}
@@ -1690,29 +1691,31 @@ class gscredit(guoshui):
                 # url=browser.find_element_by_name('sbbFormCj').get_attribute('action')
                 jsxx = i.xpath('.//text()')
                 pzxh = jsxx[0]
-                print(jsxx)
-                b_ck = browser.get_cookies()
-                ck = {}
-                for x in b_ck:
-                    ck[x['name']] = x['value']
-                post_url = parse.urljoin("https://dzswj.szds.gov.cn",
-                                         browser.find_element_by_name('sbbFormCj').get_attribute('action'))
-                post_data = {'SubmitTokenTokenId': '', 'yzpzxhArray': pzxh, 'btSelectItem': 'on'}
-                headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
-                           'Accept-Language': 'zh-CN,zh;q=0.8',
-                           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
-                           'X-Requested-With': 'XMLHttpRequest'}
-                resp = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
-                                     cookies=ck).text
-                pdf_content = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
-                                            cookies=ck).content
+                self.logger.info(jsxx)
+                if "中华人民共和国企业所得税年度纳税申报表" in jsxx[1]:
+                    b_ck = browser.get_cookies()
+                    ck = {}
+                    for x in b_ck:
+                        ck[x['name']] = x['value']
+                    post_url = parse.urljoin("https://dzswj.szds.gov.cn",
+                                             browser.find_element_by_name('sbbFormCj').get_attribute('action'))
+                    post_data = {'SubmitTokenTokenId': '', 'yzpzxhArray': pzxh, 'btSelectItem': 'on'}
+                    headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                               'Accept-Language': 'zh-CN,zh;q=0.8',
+                               'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                               'X-Requested-With': 'XMLHttpRequest'}
+                    resp = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
+                                         cookies=ck).text
+                    pdf_content = requests.post(url=post_url, headers=headers, data=post_data, timeout=10,
+                                                cookies=ck).content
 
-                if "错误" not in resp:
-                    with open("resource/{}/年度申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
-                        w.write(pdf_content)
-                    ndpdf_dict = self.parse_ndpdf("resource/{}/年度申报表详情{}.pdf".format(self.user, pzxh))
+                    if "错误" not in resp:
+                        with open("resource/{}/年度申报表详情{}.pdf".format(self.user, pzxh), 'wb') as w:
+                            w.write(pdf_content)
+                        ndpdf_dict = self.parse_ndpdf("resource/{}/年度申报表详情{}.pdf".format(self.user, pzxh))
+                    break
                 index += 1
-                break
+                continue
         ds_pdf = {}
         ds_pdf["年度纳税申报表"] = ndpdf_dict
         ds_pdf['季度纳税申报表'] = jdpdf_dict

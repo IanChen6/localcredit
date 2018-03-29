@@ -152,7 +152,7 @@ class gscredit(guoshui):
             postdata = {'action': 'GetEntList',
                         'keyword': self.companyname,
                         'type': 'query',
-                        'ckfull': 'false',
+                        'ckfull': 'true',
                         'yzmResult': res.text
                         }
             resp1 = session.post(url='https://www.szcredit.org.cn/web/AJax/Ajax.ashx',
@@ -2081,7 +2081,7 @@ class szcredit(object):
                 postdata = {'action': 'GetEntList',
                             'keyword': q,
                             'type': 'query',
-                            'ckfull': 'false',
+                            'ckfull': 'true',
                             'yzmResult': res.text
                             }
                 resp1 = session.post(url='https://www.szcredit.org.cn/web/AJax/Ajax.ashx', headers=self.headers,

@@ -2225,6 +2225,9 @@ class szcredit(object):
                         d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
+            if "营业期限" in d1.keys():
+                if not d1["营业期限"].strip():
+                    d1["营业期限"] ="永久经营"
             xydata["登记备案信息"] = d1
             # dm = {}
             # dm["登记备案信息"] = d1

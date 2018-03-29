@@ -1,29 +1,16 @@
-[INFO  - 2018-03-28T11:51:18.476Z] GhostDriver - Main - running on port 46602
-[INFO  - 2018-03-28T11:51:19.528Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-03-28T11:51:19.529Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.customHeaders:  - {}
-[INFO  - 2018-03-28T11:51:19.529Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.loadImages":true,"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36"}
-[INFO  - 2018-03-28T11:51:19.529Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 543afc20-327e-11e8-ad12-19f0002e517c
-[ERROR - 2018-03-28T11:51:19.825Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.onError - msg: ReferenceError: Can't find variable: mini
+[INFO  - 2018-03-29T02:06:08.419Z] GhostDriver - Main - running on port 3418
+[INFO  - 2018-03-29T02:06:09.464Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-03-29T02:06:09.464Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.customHeaders:  - {}
+[INFO  - 2018-03-29T02:06:09.464Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","phantomjs.page.settings.loadImages":true}
+[INFO  - 2018-03-29T02:06:09.464Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: bf6a6f40-32f5-11e8-8663-31baa277ad23
+[INFO  - 2018-03-29T02:08:07.723Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-03-29T02:08:07.723Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.customHeaders:  - {}
+[ERROR - 2018-03-29T02:08:19.644Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1522289299630
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2018-03-28T11:51:19.825Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.onError - stack:
-  global code (http://dzswj.szgs.gov.cn/BsfwtWeb/apps/js/miniui-plugin.js:54)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2018-03-28T11:51:19.875Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.onError - msg: ReferenceError: Can't find variable: mini
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2018-03-28T11:51:19.875Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.onError - stack:
-  (anonymous function) (http://dzswj.szgs.gov.cn/BsfwtWeb/apps/js/message.js:389)
-  c (http://dzswj.szgs.gov.cn/BsfwtWeb/lib/jquery/jquery.min.js:4)
-  fireWith (http://dzswj.szgs.gov.cn/BsfwtWeb/lib/jquery/jquery.min.js:4)
-  ready (http://dzswj.szgs.gov.cn/BsfwtWeb/lib/jquery/jquery.min.js:4)
-  q (http://dzswj.szgs.gov.cn/BsfwtWeb/lib/jquery/jquery.min.js:4)
-
-  phantomjs://platform/console++.js:263 in error
-[INFO  - 2018-03-28T11:51:40.511Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-03-28T11:51:40.511Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.customHeaders:  - {}
-[INFO  - 2018-03-28T11:51:50.825Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-03-28T11:51:50.825Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.customHeaders:  - {}
-[INFO  - 2018-03-28T11:52:29.455Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-03-28T11:52:29.455Z] Session [543afc20-327e-11e8-ad12-19f0002e517c] - page.customHeaders:  - {}
+[INFO  - 2018-03-29T02:08:22.413Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-03-29T02:08:22.413Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.customHeaders:  - {}
+[INFO  - 2018-03-29T02:08:41.577Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-03-29T02:08:41.577Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.customHeaders:  - {}
+[INFO  - 2018-03-29T02:08:49.854Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-03-29T02:08:49.854Z] Session [bf6a6f40-32f5-11e8-8663-31baa277ad23] - page.customHeaders:  - {}

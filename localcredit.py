@@ -524,7 +524,10 @@ class gscredit(guoshui):
             tdlist = i.xpath('.//td')
             for tt in range(len(thlist)):
                 try:
-                    dsdjxx1[thlist[tt].xpath('./text()')[0]] = tdlist[tt].xpath('./text()')[0]
+                    if "生产经营范围" in dsdjxx1[thlist[tt].xpath('./text()')[0]]:
+                        dsdjxx1[thlist[tt].xpath('./text()')[0]] = ""
+                    else:
+                        dsdjxx1[thlist[tt].xpath('./text()')[0]] = tdlist[tt].xpath('./text()')[0]
                 except Exception as e:
                     print(e)
                     dsdjxx1[thlist[tt].xpath('./text()')[0]] = ""
@@ -545,6 +548,7 @@ class gscredit(guoshui):
                 nsrxx[shuizhong[0]] = ""
         jbxx = session.get("http://dzswj.szgs.gov.cn/gzcx/gzcxAction_queryNsrxxBynsrsbh.do").json()
         jbxx = jbxx["data"]
+        jbxx[0]['jyfw']=""
         data = jbxx[0]
         shxydm = data['shxydm']
         nsrmc = data['nsrmc']
@@ -570,8 +574,9 @@ class gscredit(guoshui):
             title = ['序号', '纳税人资格认定名称', '认定日期', '有效期起', '有效期止']
             for j in range(len(zgtb)):
                 tiaomu[title[j]] = zgtb[j]
+            if "增值税一般纳税人" not in tiaomu["纳税人资格认定名称"]:
+                continue
             gszgcx[zgtb[0]] = tiaomu
-
         jcsj['纳税人资格查询'] = gszgcx
         jcsj["纳税人基本信息"] = dsdjxx
         # jcsj=json.dumps(jcsj,ensure_ascii=False)
@@ -2203,7 +2208,7 @@ class szcredit(object):
         for i in range(len(t_list)):
             data_dict[t_list[i]] = tb_list[i]
         print(data_dict)
-
+        xydata={}
         if "登记备案信息" in data_dict.keys():
             d1 = {}
             get_data = data_dict["登记备案信息"]
@@ -2217,7 +2222,7 @@ class szcredit(object):
                         d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["登记备案信息"] = d1
+            xydata["登记备案信息"] = d1
             # dm = {}
             # dm["登记备案信息"] = d1
             # print(dm)
@@ -2281,10 +2286,10 @@ class szcredit(object):
                         print("。。。")
                 d2[i[0]] = d3
             d1['股东名称'] = d2
-            data_dict["股东登记信息"] = d1
+            xydata["股东登记信息"] = d1
             dm = {}
             dm["股东登记信息"] = d1
-            print(dm)
+
 
         if "成员登记信息" in data_dict.keys():
             d1 = {}
@@ -2294,7 +2299,7 @@ class szcredit(object):
                     d1[i[0].replace("\\","")] = i[1].replace("\\","")
                 except:
                     d1[i[0]] = ""
-            data_dict["成员登记信息"] = d1
+            xydata["成员登记信息"] = d1
             # dm = {}
             # dm["成员登记信息"] = d1
             # print(dm)
@@ -2307,7 +2312,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["税务登记信息(国税)"] = d1
+            xydata["税务登记信息(国税)"] = d1
             # dm = {}
             # dm["税务登记信息(国税)"] = d1
             # print(dm)
@@ -2320,7 +2325,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["税务登记信息(地税)"] = d1
+            xydata["税务登记信息(地税)"] = d1
             # dm = {}
             # dm["税务登记信息(地税)"] = d1
             # print(dm)
@@ -2333,7 +2338,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["机构代码信息"] = d1
+            xydata["机构代码信息"] = d1
             # dm = {}
             # dm["机构代码信息"] = d1
             # print(dm)
@@ -2351,7 +2356,7 @@ class szcredit(object):
                 d3['详情'] = i[5]
                 d2[i[0]] = d3
             d1['印章名称'] = d2
-            data_dict["印章备案信息"] = d1
+            xydata["印章备案信息"] = d1
             # dm = {}
             # dm["印章备案信息"] = d1
             # print(dm)
@@ -2364,7 +2369,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["企业参保信息"] = d1
+            xydata["企业参保信息"] = d1
             # dm = {}
             # dm["企业参保信息"] = d1
             # print(dm)
@@ -2377,7 +2382,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["海关企业基本登记信息"] = d1
+            xydata["海关企业基本登记信息"] = d1
             # dm = {}
             # dm["海关企业基本登记信息"] = d1
             # print(dm)
@@ -2390,7 +2395,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["高新技术企业认定信息"] = d1
+            xydata["高新技术企业认定信息"] = d1
             # dm = {}
             # dm["高新技术企业认定信息"] = d1
             # print(dm)
@@ -2403,7 +2408,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["对外贸易经营者备案登记资料"] = d1
+            xydata["对外贸易经营者备案登记资料"] = d1
             # dm = {}
             # dm["对外贸易经营者备案登记资料"] = d1
             # print(dm)
@@ -2416,7 +2421,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["住房公积金缴存数据表"] = d1
+            xydata["住房公积金缴存数据表"] = d1
             # dm = {}
             # dm["住房公积金缴存数据表"] = d1
             # print(dm)
@@ -2429,7 +2434,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["电子商务认证企业信息"] = d1
+            xydata["电子商务认证企业信息"] = d1
             # dm = {}
             # dm["电子商务认证企业信息"] = d1
             # print(dm)
@@ -2442,7 +2447,7 @@ class szcredit(object):
                     d1[i[0]] = i[1]
                 except:
                     d1[i[0]] = ""
-            data_dict["电子商务认证企业网站信息"] = d1
+            xydata["电子商务认证企业网站信息"] = d1
             # dm = {}
             # dm["电子商务认证企业网站信息"] = d1
             # print(dm)
@@ -2455,7 +2460,7 @@ class szcredit(object):
                 d3['报送年度'] = get_data[i * 2][1]
                 d3['发布日期'] = get_data[i * 2 + 1][1]
                 d2[i + 1] = d3
-            data_dict["企业年报信息"] = d1
+            xydata["企业年报信息"] = d1
             # dm = {}
             # dm["企业年报信息"] = d2
             # print(dm)
@@ -2539,7 +2544,7 @@ class szcredit(object):
         # print(gdjg)
         # print(data_dict)
         # data_dict["关联公司信息"] = gdjg
-        infojson = json.dumps(data_dict, ensure_ascii=False)
+        infojson = json.dumps(xydata, ensure_ascii=False)
         self.logger.info(infojson)
         params = (
             self.batchid, self.companyid, self.customerid, self.cn, self.sID, infojson)

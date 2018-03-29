@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a278a7-1197-45b6-937e-16e401451265" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/cookies/5590cookies.json" afterPath="$PROJECT_DIR$/cookies/5590cookies.json" />
+      <change beforePath="$PROJECT_DIR$/ghostdriver.log" afterPath="$PROJECT_DIR$/ghostdriver.log" />
       <change beforePath="$PROJECT_DIR$/localcredit.py" afterPath="$PROJECT_DIR$/localcredit.py" />
-      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="$PROJECT_DIR$/logs/localcreditlog.log" />
+      <change beforePath="$PROJECT_DIR$/logs/localcreditlog.log" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +19,7 @@
     <SUITE FILE_PATH="coverage/xygs$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517209116086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$gscredit.coverage" NAME="gscredit Coverage Results" MODIFIED="1517822356585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$guoshui.coverage" NAME="guoshui Coverage Results" MODIFIED="1520840294843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1522237852981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/localcredit$localcredit.coverage" NAME="localcredit Coverage Results" MODIFIED="1522289155418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/localcredit$get_db.coverage" NAME="get_db Coverage Results" MODIFIED="1520935008051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
@@ -69,8 +72,8 @@
       <file leaf-file-name="localcredit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/localcredit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="1989" column="20" lean-forward="false" selection-start-line="1989" selection-start-column="20" selection-end-line="1989" selection-end-column="20" />
+            <state relative-caret-position="396">
+              <caret line="1754" column="29" lean-forward="true" selection-start-line="1754" selection-start-column="29" selection-end-line="1754" selection-end-column="29" />
               <folding>
                 <element signature="e#314#327#0" expanded="true" />
               </folding>
@@ -81,8 +84,8 @@
       <file leaf-file-name="localcreditlog.log" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <caret line="764" column="13" lean-forward="true" selection-start-line="764" selection-start-column="13" selection-end-line="764" selection-end-column="13" />
+            <state relative-caret-position="677">
+              <caret line="151" column="93" lean-forward="false" selection-start-line="151" selection-start-column="93" selection-end-line="151" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -99,12 +102,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>信用网爬取失败</find>
       <find>phant</find>
       <find>szxinyong</find>
       <find>账号详情</find>
       <find>gsjdsb</find>
-      <find>phantomjs</find>
       <find>gsjb</find>
       <find>gsjd</find>
       <find>国籍</find>
@@ -129,6 +130,8 @@
       <find>self.cn not in detail.text</find>
       <find>not in detail.text</find>
       <find>phantomj</find>
+      <find>phantomjs</find>
+      <find>纳税人</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -370,77 +373,77 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2738</line>
+          <line>2743</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2673</line>
+          <line>2678</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1847</line>
+          <line>1852</line>
           <option name="timeStamp" value="210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2794</line>
+          <line>2799</line>
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2795</line>
+          <line>2800</line>
           <option name="timeStamp" value="212" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>816</line>
+          <line>821</line>
           <option name="timeStamp" value="218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1398</line>
+          <line>1403</line>
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1856</line>
+          <line>1861</line>
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>577</line>
+          <line>582</line>
           <option name="timeStamp" value="225" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2111</line>
+          <line>2116</line>
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2041</line>
+          <line>2046</line>
           <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2787</line>
+          <line>2792</line>
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2554</line>
+          <line>2559</line>
           <option name="timeStamp" value="234" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>794</line>
+          <line>799</line>
           <option name="timeStamp" value="235" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2181</line>
+          <line>2186</line>
           <option name="timeStamp" value="237" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -455,22 +458,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1891</line>
+          <line>1896</line>
           <option name="timeStamp" value="244" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2233</line>
+          <line>2238</line>
           <option name="timeStamp" value="249" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2772</line>
+          <line>2777</line>
           <option name="timeStamp" value="250" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1155</line>
+          <line>1160</line>
           <option name="timeStamp" value="253" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -480,42 +483,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1859</line>
+          <line>1864</line>
           <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1911</line>
+          <line>1916</line>
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1127</line>
+          <line>1132</line>
           <option name="timeStamp" value="279" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1704</line>
+          <line>1709</line>
           <option name="timeStamp" value="280" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1647</line>
+          <line>1652</line>
           <option name="timeStamp" value="286" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1311</line>
+          <line>1316</line>
           <option name="timeStamp" value="287" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>975</line>
+          <line>980</line>
           <option name="timeStamp" value="289" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1047</line>
+          <line>1052</line>
           <option name="timeStamp" value="290" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -560,27 +563,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>2291</line>
+          <line>2296</line>
           <option name="timeStamp" value="301" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1877</line>
+          <line>1882</line>
           <option name="timeStamp" value="302" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1873</line>
+          <line>1878</line>
           <option name="timeStamp" value="303" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1054</line>
+          <line>1059</line>
           <option name="timeStamp" value="306" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1714</line>
+          <line>1719</line>
           <option name="timeStamp" value="308" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -605,27 +608,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>581</line>
+          <line>586</line>
           <option name="timeStamp" value="317" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>875</line>
+          <line>880</line>
           <option name="timeStamp" value="318" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1210</line>
+          <line>1215</line>
           <option name="timeStamp" value="319" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>1417</line>
+          <line>1422</line>
           <option name="timeStamp" value="320" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/localcredit.py</url>
-          <line>670</line>
+          <line>675</line>
           <option name="timeStamp" value="322" />
         </line-breakpoint>
       </breakpoints>
@@ -920,16 +923,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/localcreditlog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="764" column="13" lean-forward="true" selection-start-line="764" selection-start-column="13" selection-end-line="764" selection-end-column="13" />
+        <state relative-caret-position="677">
+          <caret line="151" column="93" lean-forward="false" selection-start-line="151" selection-start-column="93" selection-end-line="151" selection-end-column="93" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/localcredit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="1989" column="20" lean-forward="false" selection-start-line="1989" selection-start-column="20" selection-end-line="1989" selection-end-column="20" />
+        <state relative-caret-position="396">
+          <caret line="1754" column="29" lean-forward="true" selection-start-line="1754" selection-start-column="29" selection-end-line="1754" selection-end-column="29" />
           <folding>
             <element signature="e#314#327#0" expanded="true" />
           </folding>

@@ -2031,7 +2031,7 @@ class szcredit(object):
         self.sID = sID
         self.companyid = companyid
         self.customerid = customerid
-        self.query = [sID, cn]
+        self.query = [cn,sID]
         self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
 
     def insert_db(self, sql, params):
@@ -2186,6 +2186,8 @@ class szcredit(object):
                     # browser.quit()
                 elif resp1.status_code!=200:
                     return 4
+                else:
+                    continue
                 return
 
 

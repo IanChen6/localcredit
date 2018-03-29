@@ -574,7 +574,10 @@ class gscredit(guoshui):
             title = ['序号', '纳税人资格认定名称', '认定日期', '有效期起', '有效期止']
             for j in range(len(zgtb)):
                 tiaomu[title[j]] = zgtb[j]
-            if "增值税一般纳税人" not in tiaomu["纳税人资格认定名称"]:
+            try:
+                if "增值税一般纳税人" not in tiaomu["纳税人资格认定名称"]:
+                    continue
+            except:
                 continue
             gszgcx[zgtb[0]] = tiaomu
         jcsj['纳税人资格查询'] = gszgcx

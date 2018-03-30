@@ -1721,6 +1721,8 @@ class gscredit(guoshui):
     def excute_spider(self):
         try:
             se = re.search('1[3458]\\d{9}', sd["10"])
+            if not se:
+                se=re.search('\d{18}|\d{17}[X|x]', sd["10"])
             if se:
                 cookies, session = self.login_byphone(se)
                 self.logger.info("customerid:{}获取cookies".format(self.customerid))

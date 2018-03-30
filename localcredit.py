@@ -524,10 +524,7 @@ class gscredit(guoshui):
             tdlist = i.xpath('.//td')
             for tt in range(len(thlist)):
                 try:
-                    if "生产经营范围" in dsdjxx1[thlist[tt].xpath('./text()')[0]]:
-                        dsdjxx1[thlist[tt].xpath('./text()')[0]] = ""
-                    else:
-                        dsdjxx1[thlist[tt].xpath('./text()')[0]] = tdlist[tt].xpath('./text()')[0]
+                    dsdjxx1[thlist[tt].xpath('./text()')[0]] = tdlist[tt].xpath('./text()')[0]
                 except Exception as e:
                     print(e)
                     dsdjxx1[thlist[tt].xpath('./text()')[0]] = ""

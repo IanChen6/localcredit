@@ -336,7 +336,7 @@ class gscredit(guoshui):
             headers = {'Host': 'dzswj.szgs.gov.cn',
                        'Accept': 'application/json, text/javascript, */*; q=0.01',
                        'Accept-Language': 'zh-CN,zh;q=0.8',
-                       'Content-Type': 'application/json; charset=UTF-8',
+                       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
                        'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
                        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
                        'x-form-id': 'mobile-signin-form',
@@ -370,7 +370,7 @@ class gscredit(guoshui):
             self.logger.info("customerid:{}，{},{},{},{}".format(self.customerid, self.user, self.jiami(), tag, time_l))
             login_data = '{"nsrsbh":"%s","nsrpwd":"%s","redirectURL":"","tagger":%s,"time":"%s"}' % (
                 user, self.jiami(), tag, time_l)
-            login_url = 'http://dzswj.szgs.gov.cn/api/auth/clientWt'
+            login_url = 'http://dzswj.szgs.gov.cn/api/auth/txClientWt'
             resp = session.post(url=login_url, data=login_data)
             self.logger.info(login_data)
             self.logger.info("customerid:{},成功post数据".format(self.customerid))

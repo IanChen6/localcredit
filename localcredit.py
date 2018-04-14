@@ -112,7 +112,7 @@ class gscredit(guoshui):
         self.companyid = companyid
         self.customerid = customerid
         self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
-        self.backup="0"
+        self.backup = "0"
         if not os.path.exists('resource/{}'.format(self.user)):
             os.mkdir('resource/{}'.format(self.user))
 
@@ -232,24 +232,54 @@ class gscredit(guoshui):
                 self.backup = root.xpath('//*[@id="tb_4"]/tr[1]/td[2]/text()')[0]
                 break
 
-    def login_byphone(self,se):
+    def login_byphone(self, se):
         try_times = 0
-        phone =se.group()
-        while try_times <= 20:
+        phone = se.group()
+        while try_times <= 15:
             # self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
             try_times += 1
             if try_times > 10:
                 time.sleep(2)
             session = requests.session()
-            try:
-                self.logger.info(type(sys.argv[1]))
-                proxy = sys.argv[1].replace("'", '"')
-                self.logger.info(proxy)
-                proxy = json.loads(proxy)
-                session.proxies = proxy
-            except:
-                self.logger.info("未传代理参数，启用本机IP")
-            #旧的验证码方式
+            proxy_list = [
+                {'http': 'http://112.74.37.197:6832', 'https': 'http://112.74.37.197:6832'},
+                {'http': 'http://120.77.147.59:6832', 'https': 'http://120.77.147.59:6832'},
+                {'http': 'http://120.79.188.47:6832', 'https': 'http://120.79.188.47:6832'},
+                {'http': 'http://120.79.190.239:6832', 'https': 'http://120.79.190.239:6832'},
+                {'http': 'http://39.108.220.10:6832', 'https': 'http://39.108.220.10:6832'},
+                {'http': 'http://47.106.138.4:6832', 'https': 'http://47.106.138.4:6832'},
+                {'http': 'http://47.106.142.153:6832', 'https': 'http://47.106.142.153:6832'},
+                {'http': 'http://47.106.146.171:6832', 'https': 'http://47.106.146.171:6832'},
+                {'http': 'http://47.106.136.116:6832', 'https': 'http://47.106.136.116:6832'},
+                {'http': 'http://47.106.135.170:6832', 'https': 'http://47.106.135.170:6832'},
+                {'http': 'http://47.106.137.245:6832', 'https': 'http://47.106.137.245:6832'},
+                {'http': 'http://47.106.137.212:6832', 'https': 'http://47.106.137.212:6832'},
+                {'http': 'http://39.108.167.244:6832', 'https': 'http://39.108.167.244:6832'},
+                {'http': 'http://47.106.146.3:6832', 'https': 'http://47.106.146.3:6832'},
+                {'http': 'http://47.106.128.33:6832', 'https': 'http://47.106.128.33:6832'}
+            ]
+            proxy = proxy_list[random.randint(0, 14)]
+            session.proxies = proxy
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+                'Accept': 'application/json, text/javascript, */*; q=0.01',
+                'Accept-Encoding': 'gzip,deflate',
+                'Accept-Language': 'zh-CN,zh;q=0.9',
+                'Connection': 'keep-alive',
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'Host': 'dzswj.szgs.gov.cn',
+                'Referer': 'http://dzswj.szgs.gov.cn / BsfwtWeb / apps / views / login / login.html',
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+            # try:
+            #     # self.logger.info(type(sys.argv[1]))
+            #     # proxy = sys.argv[1].replace("'", '"')
+            #     # self.logger.info(proxy)
+            #     # proxy = json.loads(proxy)
+            #     session.proxies = {"http": "http://112.74.37.197:6832", "https": "http://112.74.37.197:6832"}
+            # except:
+            #     self.logger.info("未传代理参数，启用本机IP")
+            # 旧的验证码方式
             # headers = {'Host': 'dzswj.szgs.gov.cn',
             #            'Accept': 'application/json, text/javascript, */*; q=0.01',
             #            'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -288,16 +318,43 @@ class gscredit(guoshui):
             # login_url = 'http://dzswj.szgs.gov.cn/api/web/general/login'
             # resp = session.post(url=login_url, data=login_data, headers=headers)
             # fh = resp.json()
-            #滑动验证
-            add = session.get("http://dzswj.szgs.gov.cn/api/auth/queryTxUrl?json&_=1522658530831")
+            # 滑动验证
+            try:
+                add = session.get(
+                    "http://dzswj.szgs.gov.cn/api/auth/queryTxUrl?json&_={}".format(str(int(time.time() * 1000))),
+                    headers=headers, timeout=10)
+            except Exception as e:
+                self.logger.info("滑动验证码获取失败")
+                self.logger.info(headers)
+                self.logger.info(e)
             query = urlparse(add.json()['data']).query
             d = dict([(k, v[0]) for k, v in parse_qs(query).items()])
             sess_url = "https://captcha.guard.qcloud.com/cap_union_prehandle?aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=835414&forcestyle=undefined&collect=xV6XnEXCTYbfMkq3nBXtS0c%2FV5AAZtsYtOqYjNBVDwvu0DT8YIl0%2BdlKp2UjKu0nw9G%2FTRvlmFAxGhorC%2BMq4MBMdkhfEnITqxh7Bad0q7e0ffClmuKkyX15QuZqT42Ej1RCgowaxr6ltGKYPgkVX6Fx%2B9pf6brr%2FIXbyp5trWz5UYDqJQ%2B%2B%2But2YkbKEwsE7%2BazqQ7y1qM9HHGC28%2Bz0iWZ6bjExtUYlbSH1g7zqEuq1FbFd1O%2B6xFztsvzI8lPuYhqwh0zUf4%2Fitr4PxPMGPo7MwUy%2BiJzaG%2F7bPCPvGB%2F9hGrC5V6V9e0uad0iK0FDDhPn0Ge%2F8mMlN7BoJzFAXkNrG1Iax2r0YqqLCffVwuDr1pHyhpq8wySNEYl70BeaVWdeDhT5QQd9Sujkg4EeDp5AEKDKrcvEhfcXrmKVFsH35s0XsFRr67VOyfKi%2BGDuJz4xCXH66ySt2BTycTC55FdfQ0Ef5uTuNFLkPgki2x09ePD7cHJXV7T86%2FkP%2Fi9GSEXBOy31%2B%2BZuLYInfEeiZRbuNEBMwyPa1MNrIMnUun4Dk5m7qP3aaga3UV24bZEhNWE0rYX3XrKLCgcw1JyD%2BF%2B%2F%2BUwcrewMBKzWcceZULq033o9HCRVaDzWxeyUNc%2FYLoGmJBCAhKRuKI35yAcYPZvtfEb6s29jqgMRTNkxSvJfIEHvAdBFYs44%2Fkf0P%2FdwiIHol1TITJVsbmlNehuFt39dXR15aOxbd4L8rv6YxW2j3rxBkWhaZwhgFUR066icYpz6%2FYgcsYbCoSt1Vxaz%2Fu8Wm06dmvyElvOFW2gdQbQYez1ju5x%2FfPFRZR%2B%2FCgOGa7nu8iMQHabdKlwoCRFN5ZHmqRcs01mA4iFQg6MB10aI%2FeuwB4JmHufAT1l5gCWfs1HqJBMRt5flx9KOY0uRi7usyloLQXzXnnCkK%2BRx78gP5n7Ex0ciAVivXjqaxpQKpmgv94IplHxliSNfglULAYvzpr9kSS5saFYSNjP7w0HCyrbRbl6%2B2STCU1MKzRS8UxJ2anCrkyC4vfUeXZY6CIoGVsW9BloXO%2BD7ZSLBgZkPscWv%2FOt8TFywebfHm7YtMfjvCaWCnkT5MtkVrbTUp3vaycuMKB7z%2Fen7yfTP2vkEfmPWxQQtNDKjIKEGtno0EA0SSihw6pfk1hZHD%2BeOji0oQ4IHr2EjvXtibIvKLIOCLRMrMAlSxl%2Fy48utVt4LJa6%2BBLZhNzkuvbgoJL9ss1NZdIt7GIEOhY3HV%2FVnRbMv8zs7pKKqx5Mx%2BjQ61yCjmFHO6ldQrNuKb%2BMYKAennyD9XXd4hFguk13iFcb8luOyJvwg4%2BobY3X5lY975qsxK%2BYZfEwqNE7EatDGCqHCJnM23GdfMKq4ibSTMQe%2FOLziUHKZtI3x%2FvroZ4Fue0ygY5Lmt0cZCK7ik2Xu5U6jcxh1aegAFFzZh18aQPVyGL1Z%2B4Ugg4A0WDgkk0T%2Fzy6FRo8TWf0b%2BbN8Y6HEzty2HaRtU6y2SfifxTmo81uwqAV4GXhzwwNr2zJWoAFnL8pV1119CSXEcXeDxmTDnD4qMmgcBezHWthydUcK66XhZXIlwNQ6yoCTBS75ifUCD%2FImJfYPdClKurBU6MTIvHTIvhb5daodgCEJM%2BwQWPAGOs%2FjRrs7o2%2BopVMQLLDBqcyrDdJrI%2B1XM69Z5qXVxdhTVNayG22R545iv2tvafQr7Z4SAqJr6P7EYupMfgVTCuHyOMJEG0SJd4f3d4arqF%2Bg0gY5drdpJMp94P06X5YovTwldW3t8fIB2QhAqjSRCCr&firstvrytype=1&random=0.017271072963999323&_=1522664696316".format(
                 d['asig'])
-            sess = session.get(sess_url)
+            session = requests.session()
+            headers_capt = {
+                'Host': 'captcha.guard.qcloud.com',
+                'Accept': 'application/json, text/javascript, */*; q=0.01',
+                'Accept-Language': 'zh-CN,zh;q=0.9',
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                # 'Referer': vsig_url,
+                'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                'X-Requested-With': 'XMLHttpRequest',
+                }
+            try:
+                sess = session.get(sess_url,headers=headers_capt, timeout=10)
+            except:
+                self.logger.info(sess_url)
+                continue
             vsig_url = "https://captcha.guard.qcloud.com/cap_union_new_show?aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=835414&forcestyle=undefined&rand=0.4457241752210961&sess={}&firstvrytype=1&showtype=point".format(
                 d['asig'], sess.json()["sess"])
-            vsig_r = session.get(vsig_url)
+            self.logger.info(vsig_url)
+            try:
+                vsig_r = session.get(vsig_url,headers=headers_capt, timeout=10)
+            except:
+                self.logger.info(vsig_url)
+                continue
             ad = re.search("Q=\"(.*?)\"", vsig_r.text)
             websig = re.search("websig\:\"(.*?)\"", vsig_r.text)
             websig = websig.group(1)
@@ -313,21 +370,40 @@ class gscredit(guoshui):
             y_locte = int(y_locte.group(1))
             post_url = "https://captcha.guard.qcloud.com/template/new_placeholder.html?aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=102579&forcestyle=undefined".format(
                 d['asig'])
-            holder = session.get(post_url)
+            self.logger.info(post_url)
+            try:
+                holder = session.get(post_url, headers=headers_capt,timeout=10)
+            except:
+                self.logger.info(post_url)
+                continue
             if "tdc.js" in holder.text or "TDC.js" in holder.text:
                 ase = False
             else:
                 ase = True
-            client = suds.client.Client(url="http://120.79.184.213:8023/yzmmove.asmx?wsdl")
-            x_locate = client.service.GetTackXForDll(image_url, y_locte)
-            if x_locate is 0:
+            client = suds.client.Client(url="http://39.108.112.203:8023/yzmmove.asmx?wsdl")
+            # client = suds.client.Client(url="http://192.168.18.101:1421/SZYZService.asmx?wsdl")
+            try:
+                resp = requests.get(image_url,headers=headers_capt)
+            except:
+                self.logger.info(image_url)
                 continue
+            con = str(base64.b64encode(resp.content))[2:-1]
+            auto = client.service.GetYZCodeForDll(con)
+            try:
+                x_locate = int(auto)
+            except:
+                x_locate = 475
+            client = suds.client.Client(url="http://120.79.184.213:8023/yzmmove.asmx?wsdl")
+            # x_locate = client.service.GetTackXForDll(image_url, y_locte)
+            # if x_locate is 0:
+            #     continue
             track = client.service.GetTackDataForDll(int(x_locate), cdat, ase)
             track = json.loads(track)["Data"]
             time_l = str(int(time.time() * 1000))
             ticket_url = 'https://captcha.guard.qcloud.com/cap_union_new_verify?random={}'.format(time_l)
             login_data = 'aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=846062&forcestyle=undefined&rand=0.388811798088319&sess={}&firstvrytype=1&showtype=point&subcapclass=10&vsig={}&ans={},{};&cdata=68&badbdd={}&websig={}&fpinfo=undefined&tlg=1&vlg=0_0_0&vmtime=_&vmData='.format(
                 d['asig'], sess.json()["sess"], vsig, x_locate, y_locte, track, websig)
+            session = requests.session()
             headers = {'Host': 'captcha.guard.qcloud.com',
                        'Accept': 'application/json, text/javascript, */*; q=0.01',
                        'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -337,12 +413,16 @@ class gscredit(guoshui):
                        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
                        'X-Requested-With': 'XMLHttpRequest',
                        'Origin': 'https://captcha.guard.qcloud.com'}
-            tickek = session.post(ticket_url, data=login_data, headers=headers)
+            try:
+                tickek = session.post(ticket_url, data=login_data, headers=headers, timeout=10)
+            except:
+                self.logger.info(ticket_url)
             tickek = json.loads(tickek.text)["ticket"]
+            self.logger.info("ticket:{}".format(tickek))
             if not tickek:
-                jyjg=False
+                jyjg = False
             else:
-                jyjg=True
+                jyjg = True
             headers = {'Host': 'dzswj.szgs.gov.cn',
                        'Accept': 'application/json, text/javascript, */*; q=0.01',
                        'Cookie': 'DZSWJ_TGC = d412d6f36d0e4ee99e81018e53030bd8;tgw_l7_route = b94834e2974fcc2d07f1104d31093469;JSESSIONID = AB9D6CD57ECE264151B938716744BE7D',
@@ -350,7 +430,7 @@ class gscredit(guoshui):
                        'Content-Type': 'application/json; charset=UTF-8',
                        'Accept-Encoding': 'gzip, deflate',
                        'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
-                       'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                       # 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
                        'X-Requested-With': 'XMLHttpRequest',
                        'x-form-id': 'mobile-signin-form',
                        'Origin': 'http://dzswj.szgs.gov.cn'}
@@ -360,14 +440,14 @@ class gscredit(guoshui):
                 phone, base64.b64encode(self.pwd.encode('utf8')).decode(), tickek, time_l)
             self.logger.info(login_data)
             login_url = 'http://dzswj.szgs.gov.cn/api/web/general/txLogin'
-            resp = session.post(login_url, data=login_data,headers=headers)
+            resp = session.post(login_url, data=login_data, headers=headers, timeout=10)
             self.logger.info("customerid:{},成功post数据".format(self.customerid))
-            fh=resp.json()
+            fh = resp.json()
             if not fh['success']:
                 status = "账号和密码不匹配"
                 return status, session
             else:
-                nsrlist=fh['data']["nsrList"]
+                nsrlist = fh['data']["nsrList"]
                 for nsr in nsrlist:
                     if self.companyname in nsr['gsNsrmc']:
                         djxh = nsr['djxh']
@@ -379,13 +459,13 @@ class gscredit(guoshui):
                         headers2 = {'Accept-Encoding': 'gzip, deflate',
                                     'Content-Type': 'application/json; charset=UTF-8',
                                     'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
-                                    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                                    'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0',
                                     'Connection': 'keep-alive',
                                     'X-Requested-With': 'XMLHttpRequest',
                                     'Origin': 'http://dzswj.szgs.gov.cn'}
                         resp = session.post(url=choseurl,
                                             data='{"mobile":"%s","djxh":"%s","roleId":"%s","time":"%s"}' % (
-                                                phone, djxh, roleid, time_l), headers=headers2)
+                                                phone, djxh, roleid, time_l), headers=headers2, timeout=10)
                         try:
                             if jyjg:
                                 if "登录成功" in resp.json()['message']:
@@ -403,42 +483,102 @@ class gscredit(guoshui):
 
     def get_js(self):
         # f = open("D:/WorkSpace/MyWorkSpace/jsdemo/js/des_rsa.js",'r',encoding='UTF-8')
-        f = open("./cdata.js", 'r', encoding='UTF-8')
+        # f = open("/home/mycode/localcredit/cdata.js", 'r', encoding='UTF-8')
+        f = open("cdata.js", 'r', encoding='UTF-8')
         line = f.readline()
         htmlstr = ''
         while line:
             htmlstr = htmlstr + line
             line = f.readline()
         return htmlstr
+
     def login(self):
         try_times = 0
         user = self.user
-        have_backup=True
-        while try_times <= 20:
+        have_backup = True
+        while try_times <= 15:
             self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
             try_times += 1
             if try_times > 10:
                 time.sleep(2)
             session = requests.session()
+            proxy_list = [
+                {'http': 'http://112.74.37.197:6832', 'https': 'http://112.74.37.197:6832'},
+                {'http': 'http://120.77.147.59:6832', 'https': 'http://120.77.147.59:6832'},
+                {'http': 'http://120.79.188.47:6832', 'https': 'http://120.79.188.47:6832'},
+                {'http': 'http://120.79.190.239:6832', 'https': 'http://120.79.190.239:6832'},
+                {'http': 'http://39.108.220.10:6832', 'https': 'http://39.108.220.10:6832'},
+                {'http': 'http://47.106.138.4:6832', 'https': 'http://47.106.138.4:6832'},
+                {'http': 'http://47.106.142.153:6832', 'https': 'http://47.106.142.153:6832'},
+                {'http': 'http://47.106.146.171:6832', 'https': 'http://47.106.146.171:6832'},
+                {'http': 'http://47.106.136.116:6832', 'https': 'http://47.106.136.116:6832'},
+                {'http': 'http://47.106.135.170:6832', 'https': 'http://47.106.135.170:6832'},
+                {'http': 'http://47.106.137.245:6832', 'https': 'http://47.106.137.245:6832'},
+                {'http': 'http://47.106.137.212:6832', 'https': 'http://47.106.137.212:6832'},
+                {'http': 'http://39.108.167.244:6832', 'https': 'http://39.108.167.244:6832'},
+                {'http': 'http://47.106.146.3:6832', 'https': 'http://47.106.146.3:6832'},
+                {'http': 'http://47.106.128.33:6832', 'https': 'http://47.106.128.33:6832'}
+            ]
+            proxy = proxy_list[random.randint(0, 14)]
+            # session.proxies = proxy
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+                'Accept': 'application/json, text/javascript, */*; q=0.01',
+                'Accept-Encoding': 'gzip,deflate',
+                'Accept-Language': 'zh-CN,zh;q=0.9',
+                'Connection': 'keep-alive',
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'Host': 'dzswj.szgs.gov.cn',
+                'Referer': 'http://dzswj.szgs.gov.cn / BsfwtWeb / apps / views / login / login.html',
+                'X-Requested-With': 'XMLHttpRequest'
+            }
             # proxy_list = get_all_proxie()
             # proxy = proxy_list[random.randint(0, len(proxy_list) - 1)]
+            # try:
+            #     self.logger.info(type(sys.argv[1]))
+            #     proxy = sys.argv[1].replace("'", '"')
+            #     self.logger.info(proxy)
+            #     proxy = json.loads(proxy)
+            #     session.proxies = proxy
+            # except:
+            #     self.logger.info("未传代理参数，启用本机IP")
             try:
-                self.logger.info(type(sys.argv[1]))
-                proxy = sys.argv[1].replace("'", '"')
-                self.logger.info(proxy)
-                proxy = json.loads(proxy)
-                session.proxies = proxy
-            except:
-                self.logger.info("未传代理参数，启用本机IP")
-            add = session.get("http://dzswj.szgs.gov.cn/api/auth/queryTxUrl?json&_=1522658530831")
+                add = session.get(
+                    "http://dzswj.szgs.gov.cn/api/auth/queryTxUrl?json&_={}".format(str(int(time.time() * 1000))),
+                    headers=headers, timeout=10)
+            except Exception as e:
+                self.logger.info("滑动验证码获取失败")
+                self.logger.info(headers)
+                self.logger.info(e)
+                continue
             query = urlparse(add.json()['data']).query
             d = dict([(k, v[0]) for k, v in parse_qs(query).items()])
             sess_url = "https://captcha.guard.qcloud.com/cap_union_prehandle?aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=835414&forcestyle=undefined&collect=xV6XnEXCTYbfMkq3nBXtS0c%2FV5AAZtsYtOqYjNBVDwvu0DT8YIl0%2BdlKp2UjKu0nw9G%2FTRvlmFAxGhorC%2BMq4MBMdkhfEnITqxh7Bad0q7e0ffClmuKkyX15QuZqT42Ej1RCgowaxr6ltGKYPgkVX6Fx%2B9pf6brr%2FIXbyp5trWz5UYDqJQ%2B%2B%2But2YkbKEwsE7%2BazqQ7y1qM9HHGC28%2Bz0iWZ6bjExtUYlbSH1g7zqEuq1FbFd1O%2B6xFztsvzI8lPuYhqwh0zUf4%2Fitr4PxPMGPo7MwUy%2BiJzaG%2F7bPCPvGB%2F9hGrC5V6V9e0uad0iK0FDDhPn0Ge%2F8mMlN7BoJzFAXkNrG1Iax2r0YqqLCffVwuDr1pHyhpq8wySNEYl70BeaVWdeDhT5QQd9Sujkg4EeDp5AEKDKrcvEhfcXrmKVFsH35s0XsFRr67VOyfKi%2BGDuJz4xCXH66ySt2BTycTC55FdfQ0Ef5uTuNFLkPgki2x09ePD7cHJXV7T86%2FkP%2Fi9GSEXBOy31%2B%2BZuLYInfEeiZRbuNEBMwyPa1MNrIMnUun4Dk5m7qP3aaga3UV24bZEhNWE0rYX3XrKLCgcw1JyD%2BF%2B%2F%2BUwcrewMBKzWcceZULq033o9HCRVaDzWxeyUNc%2FYLoGmJBCAhKRuKI35yAcYPZvtfEb6s29jqgMRTNkxSvJfIEHvAdBFYs44%2Fkf0P%2FdwiIHol1TITJVsbmlNehuFt39dXR15aOxbd4L8rv6YxW2j3rxBkWhaZwhgFUR066icYpz6%2FYgcsYbCoSt1Vxaz%2Fu8Wm06dmvyElvOFW2gdQbQYez1ju5x%2FfPFRZR%2B%2FCgOGa7nu8iMQHabdKlwoCRFN5ZHmqRcs01mA4iFQg6MB10aI%2FeuwB4JmHufAT1l5gCWfs1HqJBMRt5flx9KOY0uRi7usyloLQXzXnnCkK%2BRx78gP5n7Ex0ciAVivXjqaxpQKpmgv94IplHxliSNfglULAYvzpr9kSS5saFYSNjP7w0HCyrbRbl6%2B2STCU1MKzRS8UxJ2anCrkyC4vfUeXZY6CIoGVsW9BloXO%2BD7ZSLBgZkPscWv%2FOt8TFywebfHm7YtMfjvCaWCnkT5MtkVrbTUp3vaycuMKB7z%2Fen7yfTP2vkEfmPWxQQtNDKjIKEGtno0EA0SSihw6pfk1hZHD%2BeOji0oQ4IHr2EjvXtibIvKLIOCLRMrMAlSxl%2Fy48utVt4LJa6%2BBLZhNzkuvbgoJL9ss1NZdIt7GIEOhY3HV%2FVnRbMv8zs7pKKqx5Mx%2BjQ61yCjmFHO6ldQrNuKb%2BMYKAennyD9XXd4hFguk13iFcb8luOyJvwg4%2BobY3X5lY975qsxK%2BYZfEwqNE7EatDGCqHCJnM23GdfMKq4ibSTMQe%2FOLziUHKZtI3x%2FvroZ4Fue0ygY5Lmt0cZCK7ik2Xu5U6jcxh1aegAFFzZh18aQPVyGL1Z%2B4Ugg4A0WDgkk0T%2Fzy6FRo8TWf0b%2BbN8Y6HEzty2HaRtU6y2SfifxTmo81uwqAV4GXhzwwNr2zJWoAFnL8pV1119CSXEcXeDxmTDnD4qMmgcBezHWthydUcK66XhZXIlwNQ6yoCTBS75ifUCD%2FImJfYPdClKurBU6MTIvHTIvhb5daodgCEJM%2BwQWPAGOs%2FjRrs7o2%2BopVMQLLDBqcyrDdJrI%2B1XM69Z5qXVxdhTVNayG22R545iv2tvafQr7Z4SAqJr6P7EYupMfgVTCuHyOMJEG0SJd4f3d4arqF%2Bg0gY5drdpJMp94P06X5YovTwldW3t8fIB2QhAqjSRCCr&firstvrytype=1&random=0.017271072963999323&_=1522664696316".format(
                 d['asig'])
-            sess = session.get(sess_url)
+            headers_capt = {
+                'Host': 'captcha.guard.qcloud.com',
+                'Accept': 'application/json, text/javascript, */*; q=0.01',
+                'Accept-Language': 'zh-CN,zh;q=0.9',
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                # 'Referer': vsig_url,
+                'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0',
+                'X-Requested-With': 'XMLHttpRequest',
+                }
+            try:
+                sess = session.get(sess_url, headers=headers_capt,timeout=10)
+            except Exception as e:
+                self.logger.info(e)
+                self.logger.info(sess_url)
+                continue
             vsig_url = "https://captcha.guard.qcloud.com/cap_union_new_show?aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=835414&forcestyle=undefined&rand=0.4457241752210961&sess={}&firstvrytype=1&showtype=point".format(
                 d['asig'], sess.json()["sess"])
-            vsig_r = session.get(vsig_url)
+            try:
+                vsig_r = session.get(vsig_url, headers=headers_capt,timeout=10)
+            except Exception as e:
+                self.logger.info(e)
+                self.logger.info(vsig_url)
+                continue
             ad = re.search("Q=\"(.*?)\"", vsig_r.text)
             websig = re.search("websig\:\"(.*?)\"", vsig_r.text)
             websig = websig.group(1)
@@ -454,34 +594,63 @@ class gscredit(guoshui):
             y_locte = int(y_locte.group(1))
             post_url = "https://captcha.guard.qcloud.com/template/new_placeholder.html?aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=102579&forcestyle=undefined".format(
                 d['asig'])
-            holder = session.get(post_url)
+            try:
+                holder = session.get(post_url, headers=headers_capt,timeout=10)
+            except Exception as e:
+                self.logger.info(e)
+                self.logger.info(post_url)
+                continue
             if "tdc.js" in holder.text or "TDC.js" in holder.text:
                 ase = False
             else:
                 ase = True
+
+            client = suds.client.Client(url="http://39.108.112.203:8023/yzmmove.asmx?wsdl")
+            # client = suds.client.Client(url="http://192.168.18.101:1421/SZYZService.asmx?wsdl")
+            try:
+                resp = requests.get(image_url)
+            except Exception as e:
+                self.logger.info(e)
+                self.logger.info(image_url)
+                continue
+            con = str(base64.b64encode(resp.content))[2:-1]
+            auto = client.service.GetYZCodeForDll(con)
+            try:
+                x_locate = int(auto)
+            except:
+                x_locate = 475
             client = suds.client.Client(url="http://120.79.184.213:8023/yzmmove.asmx?wsdl")
-            x_locate = client.service.GetTackXForDll(image_url, y_locte)
+            # x_locate = client.service.GetTackXForDll(image_url, y_locte)
             track = client.service.GetTackDataForDll(int(x_locate), cdat, ase)
             track = json.loads(track)["Data"]
             time_l = str(int(time.time() * 1000))
             ticket_url = 'https://captcha.guard.qcloud.com/cap_union_new_verify?random={}'.format(time_l)
             login_data = 'aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=846062&forcestyle=undefined&rand=0.388811798088319&sess={}&firstvrytype=1&showtype=point&subcapclass=10&vsig={}&ans={},{};&cdata=68&badbdd={}&websig={}&fpinfo=undefined&tlg=1&vlg=0_0_0&vmtime=_&vmData='.format(
                 d['asig'], sess.json()["sess"], vsig, x_locate, y_locte, track, websig)
-            headers = {'Host': 'captcha.guard.qcloud.com',
-                       'Accept': 'application/json, text/javascript, */*; q=0.01',
-                       'Accept-Language': 'zh-CN,zh;q=0.9',
-                       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                       'Accept-Encoding': 'gzip, deflate, br',
-                       'Referer': vsig_url,
-                       'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
-                       'X-Requested-With': 'XMLHttpRequest',
-                       'Origin': 'https://captcha.guard.qcloud.com'}
-            tickek = session.post(ticket_url, data=login_data, headers=headers)
+            session = requests.session()
+
+            headers = {
+                'Host': 'captcha.guard.qcloud.com',
+                'Accept': 'application/json, text/javascript, */*; q=0.01',
+                'Accept-Language': 'zh-CN,zh;q=0.9',
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Referer': vsig_url,
+                'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
+                'X-Requested-With': 'XMLHttpRequest',
+                'Origin': 'https://captcha.guard.qcloud.com'}
+            try:
+                tickek = session.post(ticket_url, data=login_data, headers=headers, timeout=10)
+            except Exception as e:
+                self.logger.info(e)
+                self.logger.info(ticket_url)
+                continue
             tickek = json.loads(tickek.text)["ticket"]
+            self.logger.info("ticket:{}".format(tickek))
             if not tickek:
-                jyjg=False
+                jyjg = False
             else:
-                jyjg=True
+                jyjg = True
             headers = {'Host': 'captcha.guard.qcloud.com',
                        'Accept': 'application/json, text/javascript, */*; q=0.01',
                        'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -498,7 +667,7 @@ class gscredit(guoshui):
                 user, self.jiami(), tickek, time_l)
             self.logger.info(login_data)
             login_url = 'http://dzswj.szgs.gov.cn/api/auth/txClientWt'
-            resp = session.post(login_url, data=login_data)
+            resp = session.post(login_url, data=login_data, timeout=10)
             self.logger.info("customerid:{},成功post数据".format(self.customerid))
             try:
                 if jyjg:
@@ -519,14 +688,14 @@ class gscredit(guoshui):
                             print('账号和密码不匹配')
                             self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
                             status = "账号和密码不匹配"
-                        elif len(user)==15 and have_backup:
-                            have_backup=False
+                        elif len(user) == 15 and have_backup:
+                            have_backup = False
                             try:
                                 self.logger.info("信用网获取国税登录号码")
                                 self.getuser()
-                                user=self.backup
+                                user = self.backup
                             except Exception as e:
-                                user = user.replace("440300",'440301',1)
+                                user = user.replace("440300", '440301', 1)
                                 print(e)
                             self.logger.info(self.user)
                             self.logger.info(user)
@@ -543,71 +712,6 @@ class gscredit(guoshui):
             except Exception as e:
                 self.logger.warn("customerid:{}登录失败".format(self.customerid))
             self.logger.warn("customerid:{}登录失败,开始重试".format(self.customerid))
-        try_handed = 0
-        while try_handed <= 3:
-            self.logger.info("customerid:{}手动登陆".format())
-            try_handed += 1
-            session = requests.session()
-            # proxy_list = get_all_proxie()
-            # proxy = proxy_list[random.randint(0, len(proxy_list) - 1)]
-            try:
-                self.logger.info(type(sys.argv[1]))
-                proxy = sys.argv[1].replace("'", '"')
-                self.logger.info(proxy)
-                proxy = json.loads(proxy)
-                session.proxies = proxy
-            except:
-                print("未传入代理参数")
-            # session.proxies = {'https': 'http://116.22.211.55:6897', 'http': 'http://116.22.211.55:6897'}
-            headers = {'Host': 'dzswj.szgs.gov.cn',
-                       'Accept': 'application/json, text/javascript, */*; q=0.01',
-                       'Accept-Language': 'zh-CN,zh;q=0.8',
-                       'Content-Type': 'application/json; charset=UTF-8',
-                       'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
-                       'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
-                       'x-form-id': 'mobile-signin-form',
-                       'X-Requested-With': 'XMLHttpRequest',
-                       'Origin': 'http://dzswj.szgs.gov.cn'}
-            session.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html", headers=headers)
-            captcha_url = 'http://dzswj.szgs.gov.cn/tipCaptcha'
-            tupian_resp = session.get(url=captcha_url, timeout=10)
-            tupian_resp.encoding = 'utf8'
-            tupian = tupian_resp.json()
-            image = tupian['image']
-            tipmessage = tupian["tipMessage"]
-            tupian = json.dumps(tupian, ensure_ascii=False)
-            m = hashlib.md5()
-            tupian1 = tupian.encode(encoding='utf8')
-            m.update(tupian1)
-            md = m.hexdigest()
-            print(md)
-            tag = self.taggertwo(tupian, md)
-            jyjg = session.post(url='http://dzswj.szgs.gov.cn/api/checkClickTipCaptcha', data=tag)
-            time_l = time.localtime(int(time.time()))
-            time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)
-            tag = json.dumps(tag)
-            login_data = '{"nsrsbh":"%s","nsrpwd":"%s","redirectURL":"","tagger":%s,"time":"%s"}' % (
-                self.user, self.jiami(), tag, time_l)
-            login_url = 'http://dzswj.szgs.gov.cn/api/auth/clientWt'
-            resp = session.post(url=login_url, data=login_data)
-            panduan = resp.json()['message']
-            if "验证码正确" in jyjg.json()['message']:
-                if "登录成功" in resp.json()['message']:
-                    print('登录成功')
-                    cookies = {}
-                    for (k, v) in zip(session.cookies.keys(), session.cookies.values()):
-                        cookies[k] = v
-                    return cookies, session
-                elif "账户和密码不匹配" in resp.json()['message'] or "不存在" in resp.json()['message'] or "已注销" in resp.json()[
-                    'message']:
-                    print('账号和密码不匹配')
-                    self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
-                    status = "账号和密码不匹配"
-                    return status, session
-                else:
-                    time.sleep(3)
-            else:
-                self.logger.warn("customerid:{}登录失败,重试".format(self.customerid))
         self.logger.warn("{}登陆失败".format(self.customerid))
         return False
 
@@ -669,7 +773,7 @@ class gscredit(guoshui):
                 nsrxx[shuizhong[0]] = ""
         jbxx = session.get("http://dzswj.szgs.gov.cn/gzcx/gzcxAction_queryNsrxxBynsrsbh.do").json()
         jbxx = jbxx["data"]
-        jbxx[0]['jyfw']=""
+        jbxx[0]['jyfw'] = ""
         data = jbxx[0]
         shxydm = data['shxydm']
         nsrmc = data['nsrmc']
@@ -750,9 +854,9 @@ class gscredit(guoshui):
                     break
         else:
             self.logger.info("查询成功")
-        if "中华人民共和国企业所得税年度纳税申报表"  not in content:
+        if "中华人民共和国企业所得税年度纳税申报表" not in content:
             for lj in range(10):
-                if "中华人民共和国企业所得税年度纳税申报表"  not in content:
+                if "中华人民共和国企业所得税年度纳税申报表" not in content:
                     self.logger.info("查询年报失败，重新查询")
                     jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
                     browser.get(url=jk_url)
@@ -857,7 +961,8 @@ class gscredit(guoshui):
                         if window != curr:
                             browser.switch_to_window(all[-1])
                             break
-                    browser.get('http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
+                    browser.get(
+                        'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/suodeshuiA_year/suodeshuiA_year.html?10423&preview')
                     try:
                         browser.find_element_by_xpath('//*[@id="0"]').click()
                     except:
@@ -1029,9 +1134,9 @@ class gscredit(guoshui):
         browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
         time.sleep(3)
         content = browser.page_source
-        if "度预缴纳税申报表"  not in content:
+        if "度预缴纳税申报表" not in content:
             for nm in range(10):
-                if "度预缴纳税申报表"  not in content:
+                if "度预缴纳税申报表" not in content:
                     self.logger.info("查询季报失败，重新查询")
                     jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
                     browser.get(url=jk_url)
@@ -1102,10 +1207,10 @@ class gscredit(guoshui):
                     jibao["减:减免所得税额（请填附表3）"] = jmsds
                     self.logger.info("季度表已查询")
                     self.logger.info(jibao)
-                    yysr=root.xpath('//*[@id="table0"]/tbody/tr[3]/td[7]/span/text()')[0]
-                    yycb=root.xpath('//*[@id="table0"]/tbody/tr[4]/td[7]/span/text()')[0]
-                    lrze=root.xpath('//*[@id="table0"]/tbody/tr[5]/td[7]/span/text()')[0]
-                    if yiyujiao=="0.00" and ybutui=="0.00" and ynsds=="0.00" and jmsds=="0.00" and yysr=="0.00" and yycb=="0.00" and lrze=="0.00":
+                    yysr = root.xpath('//*[@id="table0"]/tbody/tr[3]/td[7]/span/text()')[0]
+                    yycb = root.xpath('//*[@id="table0"]/tbody/tr[4]/td[7]/span/text()')[0]
+                    lrze = root.xpath('//*[@id="table0"]/tbody/tr[5]/td[7]/span/text()')[0]
+                    if yiyujiao == "0.00" and ybutui == "0.00" and ynsds == "0.00" and jmsds == "0.00" and yysr == "0.00" and yycb == "0.00" and lrze == "0.00":
                         self.logger.info("所有额度都为0")
                         browser.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html")
                         content = browser.page_source
@@ -1228,13 +1333,17 @@ class gscredit(guoshui):
                 for i in select[1:]:
                     shuizhong = i.xpath('.//text()')
                     a += 1
-                    if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[4] and '申报成功' in shuizhong:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-01-01" in shuizhong[3] and "2017-03-31" in shuizhong[
+                        4] and '申报成功' in shuizhong:
                         first_season = shuizhong[6]
-                    if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[4] and '申报成功' in shuizhong:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-04-01" in shuizhong[3] and "2017-06-30" in shuizhong[
+                        4] and '申报成功' in shuizhong:
                         second_season = shuizhong[6]
-                    if "度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in shuizhong[4] and '申报成功' in shuizhong:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-07-01" in shuizhong[3] and "2017-09-30" in shuizhong[
+                        4] and '申报成功' in shuizhong:
                         third_season = shuizhong[6]
-                    if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[4] and '申报成功' in shuizhong:
+                    if "度预缴纳税申报表" in shuizhong[1] and "2017-10-01" in shuizhong[3] and "2017-12-31" in shuizhong[
+                        4] and '申报成功' in shuizhong:
                         fourth_season = shuizhong[6]
                 jibao = {}
                 try:
@@ -1854,7 +1963,7 @@ class gscredit(guoshui):
         try:
             se = re.search('1[3458]\\d{9}', sd["10"])
             if not se:
-                se=re.search('\d{18}|\d{17}[X|x]', sd["10"])
+                se = re.search('\d{18}|\d{17}[X|x]', sd["10"])
             if se:
                 cookies, session = self.login_byphone(se)
                 self.logger.info("customerid:{}获取cookies".format(self.customerid))
@@ -1891,12 +2000,12 @@ class gscredit(guoshui):
             dcap["phantomjs.page.settings.loadImages"] = True
             service_args = []
             service_args.append('--webdriver=szgs')
-            # browser = webdriver.PhantomJS(
-            #     executable_path='phantomjs.exe',
-            #     desired_capabilities=dcap, service_args=service_args)
             browser = webdriver.PhantomJS(
-                executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-                desired_capabilities=dcap)
+                executable_path='phantomjs.exe',
+                desired_capabilities=dcap, service_args=service_args)
+            # browser = webdriver.PhantomJS(
+            #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+            #     desired_capabilities=dcap)
             browser.implicitly_wait(10)
             browser.viewportSize = {'width': 2200, 'height': 2200}
             browser.set_window_size(2200, 2200)  # Chrome无法使用这功能
@@ -2018,7 +2127,7 @@ class gscredit(guoshui):
             except:
                 pass
             try:
-                if len(szxinyong['xydm'])!=0:
+                if len(szxinyong['xydm']) != 0:
                     if self.user in szxinyong['xydm']:
                         gsxiangqing["账号详情"] = {'账号': szxinyong['xydm'], '密码': self.pwd}
                 else:
@@ -2113,7 +2222,7 @@ class gscredit(guoshui):
                 browser.quit()
                 return False
             if gs_exist == 0 and ds_exist == 0:
-                if not preseason and ds_exist==0:
+                if not preseason and ds_exist == 0:
                     job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1',
                                '成功爬取,无亏损表、无季度报表（重试10次）')
                     self.logger.info("customerid:{}全部爬取完成，无亏损表".format(self.customerid))
@@ -2123,7 +2232,7 @@ class gscredit(guoshui):
                                '成功爬取,无亏损表、无季度报表（重试10次）')
                     self.logger.info("customerid:{}全部爬取完成，无亏损表".format(self.customerid))
                     return 2
-            elif not preseason and ds_exist==0:
+            elif not preseason and ds_exist == 0:
                 job_finish('39.108.1.170', '3433', 'Platform', self.batchid, self.companyid, self.customerid, '1',
                            '成功爬取,无季度报表（重试10次）')
                 self.logger.info("customerid:{}全部爬取完成，无季度报表".format(self.customerid))
@@ -2162,7 +2271,7 @@ class szcredit(object):
         self.sID = sID
         self.companyid = companyid
         self.customerid = customerid
-        self.query = [cn,sID]
+        self.query = [cn, sID]
         self.host, self.port, self.db = '39.108.1.170', '3433', 'Platform'
 
     def insert_db(self, sql, params):
@@ -2274,7 +2383,7 @@ class szcredit(object):
                                     {'http': 'http://39.108.167.244:6832', 'https': 'http://39.108.167.244:6832'},
                                     {'http': 'http://47.106.146.3:6832', 'https': 'http://47.106.146.3:6832'},
                                     {'http': 'http://47.106.128.33:6832', 'https': 'http://47.106.128.33:6832'}
-                                    ]
+                                ]
                                 proxy = proxy_list[random.randint(0, 14)]
                                 session.proxies = proxy
                             except:
@@ -2289,7 +2398,7 @@ class szcredit(object):
                         return 4
                     detail.encoding = 'gbk'
                     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
-                    #使用phantom（使用requests繁体字会乱码）
+                    # 使用phantom（使用requests繁体字会乱码）
                     # dcap = dict(DesiredCapabilities.PHANTOMJS)
                     # dcap["phantomjs.page.settings.userAgent"] = (
                     #     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
@@ -2321,12 +2430,11 @@ class szcredit(object):
 
                     self.parse(root)
                     # browser.quit()
-                elif resp1.status_code!=200:
+                elif resp1.status_code != 200:
                     return 4
                 else:
                     continue
                 return
-
 
     def parse(self, root):
         title = root.xpath('//*[@id="Table31"]//li[@class="current"]')
@@ -2353,7 +2461,7 @@ class szcredit(object):
         for i in range(len(t_list)):
             data_dict[t_list[i]] = tb_list[i]
         print(data_dict)
-        xydata={}
+        xydata = {}
         if "登记备案信息" in data_dict.keys():
             d1 = {}
             get_data = data_dict["登记备案信息"]
@@ -2369,10 +2477,10 @@ class szcredit(object):
                     d1[i[0]] = ""
             if "营业期限" in d1.keys():
                 if not d1["营业期限"].strip():
-                    d1["营业期限"] ="永久经营"
+                    d1["营业期限"] = "永久经营"
             if "经营范围" in d1.keys():
                 if not d1["经营范围"].strip():
-                    d1["经营范围"] =""
+                    d1["经营范围"] = ""
             xydata["登记备案信息"] = d1
             # dm = {}
             # dm["登记备案信息"] = d1
@@ -2441,13 +2549,12 @@ class szcredit(object):
             dm = {}
             dm["股东登记信息"] = d1
 
-
         if "成员登记信息" in data_dict.keys():
             d1 = {}
             get_data = data_dict["成员登记信息"]
             for i in get_data[1:]:
                 try:
-                    d1[i[0].replace("\\","")] = i[1].replace("\\","")
+                    d1[i[0].replace("\\", "")] = i[1].replace("\\", "")
                 except:
                     d1[i[0]] = ""
             xydata["成员登记信息"] = d1
@@ -2911,7 +3018,7 @@ def run_test(user, pwd, batchid, companyid, customerid):
         szxinyong.clear()
         try:
             cd = gscredit(user, pwd, batchid, companyid, customerid, logger, sd["9"])
-            if cd.user==000:
+            if cd.user == 000:
                 job_finish(sd["6"], sd["7"], sd["8"], sd["3"], sd["4"], sd["5"], '-1', "信用网无该公司信息")
                 return 0
         except:

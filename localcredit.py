@@ -203,16 +203,23 @@ class gscredit(guoshui):
                         time.sleep(sleep_time[random.randint(0, 9)])
                         session = requests.session()
                         try:
-                            proxy_list = [{'http': 'http://bjhz:bjhz@139.199.12.61:7777',
-                                           'https': 'http://bjhz:bjhz@139.199.12.61:7777'},
-                                          {'http': 'http://bjhz:bjhz@123.207.122.25:7777',
-                                           'https': 'http://bjhz:bjhz@123.207.122.25:7777'},
-                                          {'http': 'http://bjhz:bjhz@123.207.125.141:7777',
-                                           'https': 'http://bjhz:bjhz@123.207.125.141:7777'},
-                                          {'http': 'http://bjhz:bjhz@123.207.24.103:7777',
-                                           'https': 'http://bjhz:bjhz@123.207.24.103:7777'}]
-                            proxy = proxy_list[random.randint(0, 3)]
-                            self.logger.info(proxy)
+                            proxy_list = [{'http': 'http://112.74.37.197:6832', 'https': 'http://112.74.37.197:6832'},
+                                          {'http': 'http://120.77.147.59:6832', 'https': 'http://120.77.147.59:6832'},
+                                          {'http': 'http://120.79.188.47:6832', 'https': 'http://120.79.188.47:6832'},
+                                          {'http': 'http://120.79.190.239:6832', 'https': 'http://120.79.190.239:6832'},
+                                          {'http': 'http://39.108.220.10:6832', 'https': 'http://39.108.220.10:6832'},
+                                          {'http': 'http://47.106.138.4:6832', 'https': 'http://47.106.138.4:6832'},
+                                          {'http': 'http://47.106.142.153:6832', 'https': 'http://47.106.142.153:6832'},
+                                          {'http': 'http://47.106.146.171:6832', 'https': 'http://47.106.146.171:6832'},
+                                          {'http': 'http://47.106.136.116:6832', 'https': 'http://47.106.136.116:6832'},
+                                          {'http': 'http://47.106.135.170:6832', 'https': 'http://47.106.135.170:6832'},
+                                          {'http': 'http://47.106.137.245:6832', 'https': 'http://47.106.137.245:6832'},
+                                          {'http': 'http://47.106.137.212:6832', 'https': 'http://47.106.137.212:6832'},
+                                          {'http': 'http://39.108.167.244:6832', 'https': 'http://39.108.167.244:6832'},
+                                          {'http': 'http://47.106.146.3:6832', 'https': 'http://47.106.146.3:6832'},
+                                          {'http': 'http://47.106.128.33:6832', 'https': 'http://47.106.128.33:6832'}
+                                          ]
+                            proxy = proxy_list[random.randint(0, 14)]
                             session.proxies = proxy
                         except:
                             self.logger.info("未传代理参数，启用本机IP")
@@ -396,7 +403,7 @@ class gscredit(guoshui):
 
     def get_js(self):
         # f = open("D:/WorkSpace/MyWorkSpace/jsdemo/js/des_rsa.js",'r',encoding='UTF-8')
-        f = open("cdata.js", 'r', encoding='UTF-8')
+        f = open("./cdata.js", 'r', encoding='UTF-8')
         line = f.readline()
         htmlstr = ''
         while line:
@@ -2251,18 +2258,24 @@ class szcredit(object):
                             time.sleep(sleep_time[random.randint(0, 9)])
                             session = requests.session()
                             try:
-                                proxy_list = [{'http': 'http://bjhz:bjhz@139.199.12.61:7777',
-                                               'https': 'http://bjhz:bjhz@139.199.12.61:7777'},
-                                              {'http': 'http://bjhz:bjhz@123.207.122.25:7777',
-                                               'https': 'http://bjhz:bjhz@123.207.122.25:7777'},
-                                              {'http': 'http://bjhz:bjhz@123.207.125.141:7777',
-                                               'https': 'http://bjhz:bjhz@123.207.125.141:7777'},
-                                              {'http': 'http://bjhz:bjhz@123.207.24.103:7777',
-                                               'https': 'http://bjhz:bjhz@123.207.24.103:7777'},
-                                              {'http': 'http://bjhz:bjhz@123.206.44.226:7777',
-                                               'https': 'http://bjhz:bjhz@123.206.44.226:7777'}
-                                              ]
-                                proxy = proxy_list[random.randint(0, 4)]
+                                proxy_list = [
+                                    {'http': 'http://112.74.37.197:6832', 'https': 'http://112.74.37.197:6832'},
+                                    {'http': 'http://120.77.147.59:6832', 'https': 'http://120.77.147.59:6832'},
+                                    {'http': 'http://120.79.188.47:6832', 'https': 'http://120.79.188.47:6832'},
+                                    {'http': 'http://120.79.190.239:6832', 'https': 'http://120.79.190.239:6832'},
+                                    {'http': 'http://39.108.220.10:6832', 'https': 'http://39.108.220.10:6832'},
+                                    {'http': 'http://47.106.138.4:6832', 'https': 'http://47.106.138.4:6832'},
+                                    {'http': 'http://47.106.142.153:6832', 'https': 'http://47.106.142.153:6832'},
+                                    {'http': 'http://47.106.146.171:6832', 'https': 'http://47.106.146.171:6832'},
+                                    {'http': 'http://47.106.136.116:6832', 'https': 'http://47.106.136.116:6832'},
+                                    {'http': 'http://47.106.135.170:6832', 'https': 'http://47.106.135.170:6832'},
+                                    {'http': 'http://47.106.137.245:6832', 'https': 'http://47.106.137.245:6832'},
+                                    {'http': 'http://47.106.137.212:6832', 'https': 'http://47.106.137.212:6832'},
+                                    {'http': 'http://39.108.167.244:6832', 'https': 'http://39.108.167.244:6832'},
+                                    {'http': 'http://47.106.146.3:6832', 'https': 'http://47.106.146.3:6832'},
+                                    {'http': 'http://47.106.128.33:6832', 'https': 'http://47.106.128.33:6832'}
+                                    ]
+                                proxy = proxy_list[random.randint(0, 14)]
                                 session.proxies = proxy
                             except:
                                 self.logger.info("未传代理参数，启用本机IP")

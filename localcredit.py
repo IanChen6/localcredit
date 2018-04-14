@@ -380,7 +380,7 @@ class gscredit(guoshui):
                                             data='{"mobile":"%s","djxh":"%s","roleId":"%s","time":"%s"}' % (
                                                 phone, djxh, roleid, time_l), headers=headers2)
                         try:
-                            if "验证码正确" in jyjg.json()['message']:
+                            if jyjg:
                                 if "登录成功" in resp.json()['message']:
                                     print('登录成功')
                                     self.logger.info('customerid:{}pass'.format(self.customerid))
@@ -1884,12 +1884,12 @@ class gscredit(guoshui):
             dcap["phantomjs.page.settings.loadImages"] = True
             service_args = []
             service_args.append('--webdriver=szgs')
-            browser = webdriver.PhantomJS(
-                executable_path='phantomjs.exe',
-                desired_capabilities=dcap, service_args=service_args)
             # browser = webdriver.PhantomJS(
-            #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
-            #     desired_capabilities=dcap)
+            #     executable_path='phantomjs.exe',
+            #     desired_capabilities=dcap, service_args=service_args)
+            browser = webdriver.PhantomJS(
+                executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
+                desired_capabilities=dcap)
             browser.implicitly_wait(10)
             browser.viewportSize = {'width': 2200, 'height': 2200}
             browser.set_window_size(2200, 2200)  # Chrome无法使用这功能

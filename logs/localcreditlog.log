@@ -709,3 +709,10 @@ Fri 13 Apr 2018 19:24:34 INFO localcredit.py 2896 86300 90144 {"8": "Platform", 
 Fri 13 Apr 2018 19:24:39 INFO localcredit.py 244 86300 90144 未传代理参数，启用本机IP
 Fri 13 Apr 2018 19:37:16 INFO localcredit.py 2896 89912 58384 {"8": "Platform", "9": "", "2": "abcd1234", "7": "3433", "1": "440300692516197", "5": 0, "6": "39.108.1.170", "3": "111", "10": "\u767b\u5f55\u8d26\u53f7\uff1a13590240680 \u5bc6\u7801\uff1aabcd1234", "4": 0}
 Fri 13 Apr 2018 19:37:37 INFO localcredit.py 244 89912 58384 未传代理参数，启用本机IP
+Fri 13 Apr 2018 19:39:26 INFO localcredit.py 2896 91180 87876 {"8": "Platform", "9": "", "2": "abcd1234", "7": "3433", "1": "440300692516197", "5": 0, "6": "39.108.1.170", "3": "111", "10": "\u767b\u5f55\u8d26\u53f7\uff1a13590240680 \u5bc6\u7801\uff1aabcd1234", "4": 0}
+Fri 13 Apr 2018 19:39:37 INFO localcredit.py 244 91180 87876 未传代理参数，启用本机IP
+Sat 14 Apr 2018 16:31:58 INFO localcredit.py 2896 120904 120584 {"8": "Platform", "9": "", "2": "abcd1234", "7": "3433", "1": "440300692516197", "5": 0, "6": "39.108.1.170", "3": "111", "10": "\u767b\u5f55\u8d26\u53f7\uff1a13590240680 \u5bc6\u7801\uff1aabcd1234", "4": 0}
+Sat 14 Apr 2018 16:32:04 INFO localcredit.py 244 120904 120584 未传代理参数，启用本机IP
+Sat 14 Apr 2018 16:32:26 INFO localcredit.py 354 120904 120584 {"mobile":"13590240680","password":"YWJjZDEyMzQ=","tagger":"gSo6JQ5pDwtEozFyPTa16MCnQ1h3uJbXCLHNydZI0Y8TCv4YA2G_KMr-Beb4SG-l4dHxTizeJa4*","redirectURL":"","time":"2018-04-14 16:32:26"}
+Sat 14 Apr 2018 16:32:33 INFO localcredit.py 357 120904 120584 customerid:0,成功post数据
+Sat 14 Apr 2018 16:32:46 INFO localcredit.py 368 120904 120584 customerid:0,成功post数据
